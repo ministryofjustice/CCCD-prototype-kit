@@ -1,0 +1,88 @@
+{% extends "layout.html" %}
+
+{% block content %}
+<main id="content" role="main">
+
+  {% include "includes/breadcrumb_examples.html" %}
+  {% include "./agfs-page-header.html" %}
+
+  <div class="grid-row">
+    <div class="column-two-thirds">
+      <form action="./misc-fee" method="post" class="form">
+        <h2 class="heading-large">
+          Graduated fees
+        </h2>
+
+        <p>
+          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fugit eligendi iste facilis laborum ducimus quis quos est non aspernatur.
+        </p>
+
+        <h3 class="heading-medium">
+          Initial fees
+        </h3>
+        <p>
+          Lorem ipsum dolor sit amet, consectetur adipisici <a href="#">A 19px body copy link</a> ad he ck the.
+        </p>
+
+        <div class="form-group">
+          <label class="form-label" for="case_type">Case type</label>
+          <input class="form-control" id="case_type" name="case_type" type="text">
+        </div>
+
+
+        <!-- Check list with reveals -->
+        <div class="form-group">
+          <fieldset>
+            <legend>
+              <h1 class="heading-medium">
+                Fee type
+              </h1>
+              <span class="body-text">Please choose all relevant option</span>
+            </legend>
+            {% set optioncount = 4 %}
+            {% include "includes/tmpl-reveal-checkbox.html" %}
+          </fieldset>
+        </div>
+
+        <!-- Witnesses -->
+        <fieldset>
+          <legend>
+            <h3 class="heading-medium">Witnesses</h3>
+          </legend>
+          <div class="form-group">
+            <label class="form-label" for="prosecution-witnesses">Total number of prosecution witnesses</label>
+            <input class="form-control" id="prosecution-witnesses" name="prosecution-witnesses" type="text">
+          </div>
+
+          <div class="form-group">
+            <label class="form-label" for="prosecution-witnesses-net-amount">Net amount</label>
+            <input class="form-control" id="prosecution-witnesses-net-amount" name="prosecution-witnesses-net-amount" type="text">
+          </div>
+        </fieldset>
+
+        <!-- PPE -->
+        <fieldset>
+          <legend>
+            <h3 class="heading-medium">Pages of Prosecution Evidence (PPE)</h3>
+          </legend>
+          <div class="form-group">
+            <label class="form-label" for="ppe">Total number of pages</label>
+            <input class="form-control" id="ppe" name="ppe" type="text">
+          </div>
+          <div class="form-group">
+            <label class="form-label" for="ppe-net-amount">Net amount</label>
+            <input class="form-control" id="ppe-net-amount" name="ppe-net-amount" type="text">
+          </div>
+        </fieldset>
+
+        {% include "./form-buttons.html" %}
+
+        {% include "./agfs-help-summary.html" %}
+      </form>
+    </div>
+    <div class="column-one-third">
+      {% include "includes/sidebar.html" %}
+    </div>
+  </div>
+</main>
+{% endblock %}

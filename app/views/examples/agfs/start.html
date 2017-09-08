@@ -1,0 +1,39 @@
+{% extends "layout.html" %}
+
+{% block content %}
+<main id="content" role="main">
+
+  {% include "includes/breadcrumb_examples.html" %}
+
+  <div class="grid-row">
+    <div class="column-two-thirds">
+
+      <form action="./fixed-fee" method="post" class="form">
+
+        {% include "./agfs-page-header.html" %}
+
+        <h2 class="heading-large">
+          Claim details
+        </h2>
+
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sapiente similique molestiae dolores odit. Aperiam et fugiat dolore, voluptatem, cumque debitis rerum deserunt nam nihil optio minus, hic recusandae ipsa at.</p>
+
+        <div class="form-group">
+          <input type="submit" class="button" value="Continue">
+          <input type="submit" class="button button-secondary" value="Continue">
+        </div>
+
+        <details>
+          <summary><span class="summary">Summary text</span></summary>
+          <div class="panel panel-border-narrow">
+            <p>
+              Lorem ipsum dolor sit amet, consectetur adipisicing elit. Reprehenderit, quis.
+            </p>
+          </div>
+        </details>
+      </form>
+
+    </div>
+  </div>
+</main>
+{% endblock %}

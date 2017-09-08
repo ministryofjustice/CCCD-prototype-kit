@@ -1,0 +1,10 @@
+{% for i in range(0, optioncount) -%}
+<div class="multiple-choice" data-target="option-{{i}}-reveal">
+  <input id="option-{{i}}" name="nationalities" type="checkbox" value="Option {{i}} value">
+  <label for="option-{{i}}">This is option {{i}}</label>
+</div>
+<div class="panel panel-border-narrow js-hidden" id="option-{{i}}-reveal">
+  <label class="form-label" for="option-{{i}}-reveal-input">Option {{i}} reveal input</label>
+  <input class="form-control" type="text" id="option-{{i}}-reveal-input" name="option-{{i}}-reveal-input">
+</div>
+{%- endfor %}

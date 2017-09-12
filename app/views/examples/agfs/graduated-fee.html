@@ -46,31 +46,10 @@
         </div>
 
         <!-- Witnesses -->
-        <fieldset>
-          <legend>
-            <h3 class="heading-medium">Witnesses</h3>
-          </legend>
-
-
-          <div class="form-group">
-            <label class="form-label" for="prosecution-witnesses">Total number of prosecution witnesses</label>
-            <input class="form-control" id="prosecution-witnesses" name="prosecution-witnesses" type="text">
-          </div>
-
-          {% include "includes/tmpl-net-amount.html" %}
-        </fieldset>
+        {% include "includes/tmpl-witnesses.html" %}
 
         <!-- PPE -->
-        <fieldset>
-          <legend>
-            <h3 class="heading-medium">Pages of Prosecution Evidence (PPE)</h3>
-          </legend>
-          <div class="form-group">
-            <label class="form-label" for="ppe">Total number of pages</label>
-            <input class="form-control" id="ppe" name="ppe" type="text">
-          </div>
-          {% include "includes/tmpl-net-amount.html" %}
-        </fieldset>
+        {% include "includes/tmpl-ppe.html" %}
 
         {% include "includes/tmpl-form-buttons.html" %}
         {% include "includes/tmpl-help-summary.html" %}

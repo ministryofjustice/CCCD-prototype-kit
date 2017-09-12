@@ -4,6 +4,11 @@
 <main id="content" role="main">
 
   {% include "./breadcrumb.html" %}
+
+  {% if errorState %}
+    {% include "includes/tmpl-error-summary.html" %}
+  {% endif %}
+
   {% include "./agfs-page-header.html" %}
 
   <div class="grid-row">
@@ -21,15 +26,7 @@
           Item 1
         </h3>
 
-        <div class="form-group">
-          <label class="form-label" for="example-form-label">
-            Fee type
-            <span class="form-hint">
-              Choose a fee type
-            </span>
-          </label>
-          <input class="form-control" id="example-form-label" type="text">
-        </div>
+        {% include "includes/tmpl-input-hint.html" %}
 
         {% include "includes/tmpl-net-amount.html" %}
 

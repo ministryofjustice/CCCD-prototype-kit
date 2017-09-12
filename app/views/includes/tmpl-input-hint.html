@@ -1,0 +1,14 @@
+<div class="form-group {% if errorState %}form-group-error{% endif %}">
+  <label class="form-label" for="general-input">
+    Fee type
+    <span class="form-hint">
+      Choose a fee type
+    </span>
+    {% if errorState %}
+      <span class="error-message">
+        Error message goes here
+      </span>
+    {% endif %}
+  </label>
+  <input class="form-control {% if errorState %}form-control-error{% endif %}" id="general-input" type="text">
+</div>

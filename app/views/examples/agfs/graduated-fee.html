@@ -4,6 +4,11 @@
 <main id="content" role="main">
 
   {% include "./breadcrumb.html" %}
+
+  {% if errorState %}
+    {% include "includes/tmpl-error-summary.html" %}
+  {% endif %}
+
   {% include "./agfs-page-header.html" %}
 
   <div class="grid-row">

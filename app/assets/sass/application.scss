@@ -10,6 +10,8 @@ $path: "/public/images/";
 @import 'patterns/check-your-answers';
 @import 'patterns/task-list';
 
+@import 'govuk_overides';
+
 // Related items
 // (These styles will be moved to GOV.UK elements, duplicating here for now.)
 .govuk-related-items {
@@ -32,4 +34,24 @@ $path: "/public/images/";
   @include button ($grey-2);
 }
 
+.input-group-prefix {
+    position: absolute;
+    z-index: 1;
+    width: 10px;
+    margin: 2px 0 0 2px;
+    background: $grey-3;
+    padding: 5px 9px 4px 8px;
+    border: 0;
+
+    + input {
+        position: relative;
+        padding-left: 2em;
+        margin: 0;
+        background: transparent;
+    }
+
+    .form-group-error > & {
+        margin: 4px 0 0 4px;
+    }
+}
 // Add extra styles here, or re-organise the Sass files in whichever way makes most sense to you

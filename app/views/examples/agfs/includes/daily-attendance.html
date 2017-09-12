@@ -1,0 +1,17 @@
+<div class="multiple-choice" data-target="option-DA-reveal">
+  <input id="option-DA" name="nationalities" type="checkbox" value="Option DA value">
+  <label for="option-DA">Daily attendance fee</label>
+</div>
+<div class="panel panel-border-narrow js-hidden" id="option-DA-reveal">
+  {% set tmplNumOfDays = {label: "Number of days"} %}
+  {% include "includes/tmpl-number-of-days.html" %}
+
+  {% set tmplDate = {label: "Dates attended (from)"} %}
+  {% include "includes/tmpl-date.html" %}
+
+  {% set tmplDate = {label: "Dates attended (to - optional)"} %}
+  {% include "includes/tmpl-date.html" %}
+
+  {% include "includes/tmpl-net-amount.html" %}
+
+</div>

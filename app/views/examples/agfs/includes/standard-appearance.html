@@ -1,0 +1,18 @@
+<div class="multiple-choice" data-target="option-SA-reveal">
+  <input id="option-SA" name="nationalities" type="checkbox" value="Option SA value">
+  <label for="option-SA">Standard appearance fee</label>
+</div>
+<div class="panel panel-border-narrow js-hidden" id="option-SA-reveal">
+  {% set tmplNumOfDays = {label: "Number of appearances"} %}
+  {% include "includes/tmpl-number-of-days.html" %}
+
+  {% set tmplDate = {label: "Date of appearance 1"} %}
+  {% include "includes/tmpl-date.html" %}
+
+  <div class="form-group">
+    <a href="#noop">Add another date</a>
+  </div>
+
+  {% include "includes/tmpl-net-amount.html" %}
+
+</div>

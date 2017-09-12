@@ -1,4 +1,7 @@
 <div class="form-group">
   <input type="submit" class="button" value="Save and continue">
   <input type="submit" class="button button-secondary" value="Save as draft">
+  {% if useSkip %}
+  <a href="#skip">Skip this section</a>
+  {% endif %}
 </div>

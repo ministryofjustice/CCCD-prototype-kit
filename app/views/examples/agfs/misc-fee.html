@@ -3,24 +3,46 @@
 {% block content %}
 <main id="content" role="main">
 
-  {% include "includes/breadcrumb_examples.html" %}
+  {% include "./breadcrumb.html" %}
   {% include "./agfs-page-header.html" %}
 
   <div class="grid-row">
     <div class="column-two-thirds">
-      <form action="" method="post" class="form">
+      <form action="./" method="post" class="form">
+        <h2 class="heading-large">
+          Miscellaneous fees
+        </h2>
 
+        <p>
+          Something something special prep form <a href="#">A 19px body copy link</a>
+        </p>
 
+        <h3 class="heading-medium">
+          Item 1
+        </h3>
 
+        <div class="form-group">
+          <label class="form-label" for="example-form-label">
+            Fee type
+            <span class="form-hint">
+              Choose a fee type
+            </span>
+          </label>
+          <input class="form-control" id="example-form-label" type="text">
+        </div>
 
+        {% include "includes/tmpl-net-amount.html" %}
 
-
-
-        {% include "./form-buttons.html" %}
-
-        {% include "./agfs-help-summary.html" %}
+        <hr/>
+        <div class="form-group">
+          <input type="submit" class="button button-secondary" value="Add another fee">
+        </div>
+        {% set useSkip = true %}
+        {% include "includes/tmpl-form-buttons.html" %}
+        {% include "includes/tmpl-help-summary.html" %}
       </form>
     </div>
+    {% include "includes/sidebar.html" %}
   </div>
 </main>
 {% endblock %}

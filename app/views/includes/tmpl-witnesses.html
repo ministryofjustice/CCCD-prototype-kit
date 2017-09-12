@@ -3,9 +3,16 @@
     <h3 class="heading-medium">Witnesses</h3>
   </legend>
 
-  <div class="form-group">
-    <label class="form-label" for="prosecution-witnesses">Total number of prosecution witnesses</label>
-    <input class="form-control form-control-1-8" id="prosecution-witnesses" name="prosecution-witnesses" type="text">
+  <div class="form-group {% if errorState %}form-group-error{% endif %}">
+    <label class="form-label" for="prosecution-witnesses">
+      Total number of prosecution witnesses
+      {% if errorState %}
+      <span class="error-message">
+        Error message goes here
+      </span>
+    {% endif %}
+    </label>
+    <input class="form-control form-control-1-8 {% if errorState %}form-control-error{% endif %}" id="prosecution-witnesses" name="prosecution-witnesses" type="text">
   </div>
 
   {% include "includes/tmpl-total.html" %}

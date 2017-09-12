@@ -1,0 +1,11 @@
+<div class="form-group {% if errorState %}form-group-error{% endif %}">
+  <label class="form-label" for="general-input">
+    Case type
+    {% if errorState %}
+      <span class="error-message">
+        Error message goes here
+      </span>
+    {% endif %}
+  </label>
+  <input type="text" id="general-input" name="" class="form-control {% if errorState %}form-control-error{% endif %}"/>
+</div>

@@ -1,5 +1,10 @@
-<div class="form-group">
-  <label class="form-label" for="net-amount">Net amount</label>
-  <span class="input-group-prefix">£</span>
-  <input type="text" id="net-amount" name="" class="form-control form-control-1-4"/>
+<div class="form-group {% if errorState %}form-group-error{% endif %}">
+  <label class="form-label" for="net-amount">
+    Net amount
+    {% if errorState %}
+    <span class="error-message">
+      Error message goes here
+    </span>
+    {% endif %}
+  </label><span class="input-group-prefix">£</span><input type="text" id="net-amount" name="" class="form-control form-control-1-4 {% if errorState %}form-control-error{% endif %}"/>
 </div>

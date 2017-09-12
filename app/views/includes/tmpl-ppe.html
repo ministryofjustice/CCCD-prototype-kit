@@ -2,9 +2,16 @@
   <legend>
     <h3 class="heading-medium">Pages of Prosecution Evidence (PPE)</h3>
   </legend>
-  <div class="form-group">
-    <label class="form-label" for="ppe">Total number of pages</label>
-    <input class="form-control form-control-1-8" id="ppe" name="ppe" type="text">
+  <div class="form-group {% if errorState %}form-group-error{% endif %}">
+    <label class="form-label" for="ppe">
+      Total number of pages
+      {% if errorState %}
+      <span class="error-message">
+        Error message goes here
+      </span>
+    {% endif %}
+    </label>
+    <input class="form-control form-control-1-8 {% if errorState %}form-control-error{% endif %}" id="ppe" name="ppe" type="text">
   </div>
   {% include "includes/tmpl-total.html" %}
 </fieldset>

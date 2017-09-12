@@ -1,4 +1,11 @@
-<div class="form-group">
-  <label class="form-label" for="number-of-days">{{tmplNumOfDays.label}}</label>
-  <input type="text" id="number-of-days" name="" class="form-control form-control-1-4"/>
+<div class="form-group {% if errorState %}form-group-error{% endif %}">
+  <label class="form-label" for="number-of-days">
+    {{tmplNumOfDays.label}}
+    {% if errorState %}
+    <span class="error-message">
+      Error message goes here
+    </span>
+    {% endif %}
+  </label>
+  <input type="text" id="number-of-days" name="" class="form-control form-control-1-8 {% if errorState %}form-control-error{% endif %}"/>
 </div>

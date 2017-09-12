@@ -4,11 +4,16 @@
 <main id="content" role="main">
 
   {% include "./breadcrumb.html" %}
+
+  {% if errorState %}
+    {% include "includes/tmpl-error-summary.html" %}
+  {% endif %}
+
   {% include "./agfs-page-header.html" %}
 
   <div class="grid-row">
     <div class="column-two-thirds">
-      <form action="./graduated-fee" method="post" class="form">
+      <form action="./fixed-fee" method="post" class="form">
         <h2 class="heading-large">
           Fixed fees
         </h2>
@@ -17,12 +22,9 @@
           Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fugit eligendi iste facilis laborum ducimus quis quos est non aspernatur.
         </p>
 
+        {% include "includes/tmpl-input.html" %}
 
-        <div class="form-group">
-          <label class="form-label" for="case-type">Case type</label>
-          <input class="form-control" id="case-type" name="case-type" type="text">
-        </div>
-
+        {% set tmplDate = {label: "Date of hearing"} %}
         {% include "includes/tmpl-date.html" %}
 
         {% include "includes/tmpl-net-amount.html" %}

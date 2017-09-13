@@ -1,11 +1,15 @@
-<div class="form-group">
+<div class="form-group {% if errorState %}form-group-error{% endif %}">
   <fieldset class="inline">
     <legend>
       <h1 class="heading-small">
-      Cost per mile
+        Cost per mile
       </h1>
+      {% if errorState %}
+      <span class="error-message">
+        Error message about personal details goes here
+      </span>
     </legend>
-
+    {% endif %}
     <div class="multiple-choice">
       <input id="radio-inline-1" type="radio" name="radio-inline-group" value="25">
       <label for="radio-inline-1">25p per mile</label>

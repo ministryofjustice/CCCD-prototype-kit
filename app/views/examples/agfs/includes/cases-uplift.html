@@ -1,0 +1,13 @@
+<div class="multiple-choice" data-target="option-CU-reveal">
+  <input id="option-CU" name="nationalities" type="checkbox" value="Option CU value" {% if errorState %}checked{% endif %}>
+  <label for="option-CU">Number of cases uplift</label>
+</div>
+<div class="panel panel-border-narrow js-hidden" id="option-CU-reveal">
+  {% set tmplNumOfDays = {label: "Number of cases"} %}
+  {% include "includes/tmpl-number-of-days.html" %}
+
+  {% include "includes/tmpl-input-hint.html" %}
+
+  {% include "includes/tmpl-net-amount.html" %}
+
+</div>

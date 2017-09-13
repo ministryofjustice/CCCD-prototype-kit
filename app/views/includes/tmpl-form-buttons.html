@@ -1,4 +1,14 @@
-<div class="form-group">
+<style>
+  .fx-form-buttons *{
+    margin-right: 20px;
+    display: inline-block;
+  }
+  .fx-form-buttons a{
+    line-height: 2;
+  }
+
+</style>
+<div class="form-group fx-form-buttons">
   <input type="submit" class="button" value="Save and continue">
   <input type="submit" class="button button-secondary" value="Save as draft">
   {% if useSkip %}

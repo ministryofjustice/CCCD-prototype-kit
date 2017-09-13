@@ -1,0 +1,74 @@
+{% extends "layout.html" %}
+
+{% block content %}
+<main id="content" role="main">
+
+  {% include "./breadcrumb.html" %}
+
+  {% if errorState %}
+  {% include "includes/tmpl-error-summary.html" %}
+  {% endif %}
+
+  {% include "./agfs-page-header.html" %}
+  <div class="grid-row">
+    <div class="column-two-thirds">
+
+
+      <form action="./fixed-fee" method="post" class="form">
+        <h2 class="heading-large">
+          Travel expenses
+        </h2>
+
+        <h3 class="heading-medium">
+          Item 1
+          <a href="#noop" style="float:right;" class="font-small">Remove this</a>
+        </h3>
+        <div class="grid-row">
+          <div class="column-half">
+            {% include "includes/tmpl-input.html" %}
+          </div>
+          <div class="column-half">
+            {% include "includes/tmpl-input.html" %}
+          </div>
+        </div>
+
+        <div class="grid-row">
+          <div class="column-three-quarters">
+            {% include "includes/tmpl-input.html" %}
+          </div>
+          <div class="column-one-quarter">
+            {% include "includes/tmpl-input.html" %}
+          </div>
+        </div>
+
+        <div class="grid-row">
+          <div class="column-half">
+            {% set tmplDate = {label: "Date of travel"} %}
+            {% include "includes/tmpl-date.html" %}
+          </div>
+
+          <div class="column-one-quarter">
+            <br/><br/>
+            {% include "includes/tmpl-net-amount.html" %}
+          </div>
+          <div class="column-one-quarter">
+            <br/><br/>
+            {% include "includes/tmpl-vat-amount.html" %}
+          </div>
+        </div>
+
+        {% include "includes/tmpl-radio-inline.html" %}
+
+        <hr/>
+        <div class="form-group">
+          <input type="submit" class="button button-secondary" value="Add another fee">
+        </div>
+        {% set useSkip = true %}
+        {% include "includes/tmpl-form-buttons.html" %}
+        {% include "includes/tmpl-help-summary.html" %}
+      </form>
+    </div>
+    {% include "includes/sidebar.html" %}
+  </div>
+</main>
+{% endblock %}

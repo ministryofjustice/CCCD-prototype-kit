@@ -25,10 +25,12 @@
         </h3>
         <div class="grid-row">
           <div class="column-half">
-            {% include "includes/tmpl-input.html" %}
+            {% set tmplSelect = {label: "Label 1"} %}
+            {% include "includes/tmpl-select.html" %}
           </div>
           <div class="column-half">
-            {% include "includes/tmpl-input.html" %}
+            {% set tmplSelect = {label: "Label 2"} %}
+            {% include "includes/tmpl-select.html" %}
           </div>
         </div>
 

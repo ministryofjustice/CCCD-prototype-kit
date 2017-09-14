@@ -1,0 +1,19 @@
+<div class="form-group {% if errorState %}form-group-error{% endif %}">
+  <label class="form-label-bold" for="select-box">
+    {{tmplSelect.label | default("something")}}
+    <!-- Generic select label text -->
+    <!--  <span class="form-hint">
+      Generic hint text
+     --></span>
+    {% if errorState %}
+      <span class="error-message">
+        Generic select error message
+      </span>
+    {% endif %}
+  </label>
+  <select class="form-control {% if errorState %}form-control-error{% endif %}" id="select-box" name="select-box">
+    <option>GOV.UK elements option 1</option>
+    <option>GOV.UK elements option 2</option>
+    <option>GOV.UK elements option 3</option>
+  </select>
+</div>

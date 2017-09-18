@@ -19,6 +19,7 @@
   }
 
   li{
+    @include core-14;
     &:first-child{
     border-left: 0;
   }

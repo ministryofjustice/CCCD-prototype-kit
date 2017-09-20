@@ -1,0 +1,84 @@
+{% extends "layout.html" %}
+
+{% block content %}
+<main id="content" role="main">
+
+  {% include "./breadcrumb.html" %}
+
+  {% include "examples/agfs/agfs-page-header.html" %}
+
+  <div class="grid-row">
+    <div class="column-full">
+
+      <h2 class="heading-large">
+        Cost summary
+      </h2>
+      {% include "./includes/cost-summary.html" %}
+
+      <h2 class="heading-large">
+        Claim summary
+      </h2>
+
+      <h3 class="heading-medium">
+        Case details
+        <a href="#noop" style="float:right;" class="font-small">Change</a>
+      </h3>
+      {% include "./includes/table-case-details.html" %}
+
+      <h3 class="heading-medium">
+        Defendant details
+        <a href="#noop" style="float:right;" class="font-small">Change</a>
+      </h3>
+      {% include "./includes/table-defendant-details.html" %}
+
+
+      <h3 class="heading-medium">
+        Offence details
+        <a href="#noop" style="float:right;" class="font-small">Change</a>
+      </h3>
+
+      <h3 class="heading-medium">
+        Fixed fees
+        <a href="#noop" style="float:right;" class="font-small">Change</a>
+      </h3>
+
+      <h3 class="heading-medium">
+        Miscellaneous fees
+        <a href="#noop" style="float:right;" class="font-small">Change</a>
+      </h3>
+
+      <h3 class="heading-medium">
+        Travel expenses
+        <a href="#noop" style="float:right;" class="font-small">Change</a>
+      </h3>
+
+      <h3 class="heading-medium">
+        Supporting evidence
+        <a href="#noop" style="float:right;" class="font-small">Change</a>
+      </h3>
+
+      <h3 class="heading-medium">
+        Additional information
+        <a href="#noop" style="float:right;" class="font-small">Change</a>
+      </h3>
+      <table>
+        <caption class="visuallyhidden">Case details table</caption>
+        <tr>
+          <td>Additional information</td>
+          <td>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci provident maiores autem beatae quia quidem omnis, eveniet! Alias ipsam maiores consequatur odio, blanditiis necessitatibus ullam, dolorum, mollitia repudiandae harum commodi! Saepe fuga porro eveniet odit.</td>
+        </tr>
+      </table>
+    </div>
+  </div>
+  <br>
+  <br>
+  <div class="grid-row">
+    <div class="column-full">
+      {% include "includes/tmpl-form-buttons.html" %}
+
+      {% include "includes/tmpl-help-summary.html" %}
+    </div>
+
+  </div>
+</main>
+{% endblock %}

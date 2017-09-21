@@ -1,0 +1,25 @@
+{% extends "layout.html" %}
+
+{% block content %}
+<main id="content" role="main">
+
+  {% include "./breadcrumb.html" %}
+
+  {% include "includes/tmpl-confirmation-header.html" %}
+
+  {% include "includes/tmpl-form-page-header.html" %}
+
+  <div class="grid-row">
+    <div class="column-two-thirds">
+      <p>
+        We have sent you a confirmation email.
+      </p>
+
+      <h2 class="heading-medium">What happens next</h2>
+      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quasi velit laborum soluta iste sequi labore praesentium accusamus! Doloremque iure placeat sapiente velit, unde enim, ab, quidem quia ad voluptatem accusantium?</p>
+      {% set tmplButtons = {main: "Submit a new claim", secondary: "View your claims"} %}
+      {% include "includes/tmpl-form-buttons.html" %}
+    </div>
+  </div>
+</main>
+{% endblock %}

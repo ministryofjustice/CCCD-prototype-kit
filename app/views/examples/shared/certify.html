@@ -1,0 +1,35 @@
+{% extends "layout.html" %}
+
+{% block content %}
+<main id="content" role="main">
+
+  {% include "./breadcrumb.html" %}
+
+  {% include "includes/tmpl-form-page-header.html" %}
+
+  <div class="grid-row">
+    <div class="column-two-thirds">
+      <form action="">
+
+
+      <h2 class="heading-large">
+        Certify the claim
+      </h2>
+      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Earum voluptatum facilis ipsum nam fugiat veniam dicta, neque aut accusamus, totam soluta molestias ab fugit, dolorem ex voluptas necessitatibus tempore possimus.</p>
+
+      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Non, incidunt eos dolorum, veniam nesciunt facere.</p>
+
+      {% include "includes/tmpl-input-hint.html" %}
+
+      {% set tmplDate = {label: "Date of certification"} %}
+      {% include "includes/tmpl-date.html" %}
+
+      {% include "includes/tmpl-form-buttons.html" %}
+
+      {% include "includes/tmpl-help-summary.html" %}
+
+      </form>
+    </div>
+  </div>
+</main>
+{% endblock %}

@@ -1,0 +1,66 @@
+{
+  "routes": {
+    "agfs/index": {
+      "formData": {
+        "pagename":"agfs-page-1",
+        "action": "/examples/agfs/page2",
+        "radiogroup": {
+          "heading": "Adovate category",
+          "bodytext": "Please select relevant option",
+          "options": [
+            "Junior alone",
+            "Leading junior",
+            "Led junior",
+            "QC"
+          ]
+        },
+        "0": {
+          "label": "Advocate",
+          "hint": "Instructed Advocate for the case"
+        },
+        "1": {
+          "label": "Referance number",
+          "hint": "Your internal referance number for this case"
+        },
+        "2": {
+          "label": "Case type",
+          "hint": "For example Trail"
+        },
+        "3": {
+          "label": "Court",
+          "hint": "For example Cardiff"
+        },
+        "4": {
+          "label": "Case number",
+          "hint": "For example T20160001"
+        },
+        "5": {
+          "label": "Transfer court",
+          "hint": "For example T20160001"
+        },
+        "6": {
+          "label": "Transfer case number",
+          "hint": "For example T20160001"
+        },
+        "7": {
+          "legend": "First day of trial"
+        },
+        "8": {
+          "legend": "Estimated trial length",
+          "label": "Days",
+          "hint": "Number of days"
+        },
+        "9": {
+          "legend": "Estimated trial length",
+
+          "hint": "Number of days"
+        },
+        "10": {
+          "legend": "Actual trial length",
+          "label": "Days",
+          "hint": "Number of days"
+        }
+      }
+    }
+  }
+}

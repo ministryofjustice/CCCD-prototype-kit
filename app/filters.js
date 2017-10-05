@@ -1,4 +1,4 @@
-module.exports = function (env) {
+module.exports = function(env) {
   /**
    * Instantiate object used to store the methods registered as a
    * 'filter' (of the same name) within nunjucks. You can override
@@ -41,5 +41,10 @@ module.exports = function (env) {
   /* ------------------------------------------------------------------
     keep the following line to return your filters to the app
   ------------------------------------------------------------------ */
+
+  filters.nameAttr = function(string) {
+    return string.replace(/\s+/g, '-').toLowerCase();
+  }
+
   return filters
 }

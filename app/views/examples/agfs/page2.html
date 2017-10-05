@@ -1,0 +1,71 @@
+{% extends "layout.html" %}
+
+{% block content %}
+
+<main id="content" role="main">
+
+  {% include "./breadcrumb.html" %}
+  <div class="grid-row">
+    <div class="column-two-thirds">
+      <form action="{{formData.action}}" method="post" class="form">
+
+        {% include "includes/tmpl-form-page-header.html" %}
+
+        <h2 class="heading-large">
+          Case details
+        </h2>
+
+
+
+        <div class="form-section">
+          {{FORM.input(formData[0])}}
+        </div>
+        <div class="form-section">
+          {{FORM.input(formData[2])}}
+        </div>
+        <div class="form-section">
+          {{FORM.input(formData[1])}}
+        </div>
+
+        <div class="form-section">
+          {{FORM.radiogroup(formData.radiogroup)}}
+        </div>
+        <div class="grid-row">
+
+          <div class="column-one-half">
+            <div class="form-section">
+              {{FORM.input(formData[5])}}
+            </div>
+          </div>
+
+          <div class="column-one-half">
+            <div class="form-section">
+              {{FORM.input(formData[6])}}
+            </div>
+          </div>
+        </div>
+
+        <div class="grid-row">
+
+          <div class="column-one-half">
+            <div class="form-section">
+              {{FORM.input(formData[3])}}
+            </div>
+          </div>
+
+          <div class="column-one-half">
+            <div class="form-section">
+              {{FORM.input(formData[4])}}
+            </div>
+          </div>
+
+        </div>
+
+
+        {% include "includes/tmpl-form-buttons.html" %}
+        {% include "includes/tmpl-help-summary.html" %}
+      </form>
+    </div>
+  </div>
+</main>
+{% endblock %}

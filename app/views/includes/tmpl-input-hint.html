@@ -1,12 +1,12 @@
 <div class="form-group {% if errorState %}form-group-error{% endif %}">
   <label class="form-label-bold" for="general-input">
-    Generic label text
+    {{viewModel.label | default('Generic label text')}}
     <span class="form-hint">
-      Generic hint text
+      {{viewModel.hint | default('Generic hint text')}}
     </span>
     {% if errorState %}
       <span class="error-message">
-        Generic input error message
+        {{viewModel.error | default('Generic error text')}}
       </span>
     {% endif %}
   </label>

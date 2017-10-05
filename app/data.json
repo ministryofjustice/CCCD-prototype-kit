@@ -2,8 +2,8 @@
   "routes": {
     "agfs/index": {
       "formData": {
-        "pagename":"agfs-page-1",
-        "action": "/examples/agfs/page2",
+        "pagename": "agfs-case-details",
+        "action": "/examples/agfs/defendants",
         "radiogroup": {
           "heading": "Adovate category",
           "bodytext": "Please select relevant option",
@@ -59,6 +59,28 @@
           "legend": "Actual trial length",
           "label": "Days",
           "hint": "Number of days"
+        }
+      }
+    },
+    "agfs/defendants": {
+      "formData": {
+        "pagename": "agfs-defendants",
+        "action": "/examples/agfs/defendants",
+        "0": {
+          "label": "First name"
+        },
+        "1": {
+          "label": "Last name"
+        },
+        "2": {
+          "legend": "Date of birth"
+        },
+        "3": {
+          "legend": "Representation order date"
+        },
+        "4": {
+          "label": "MAAT Referance",
+          "hint": "For example 123456789"
         }
       }
     }

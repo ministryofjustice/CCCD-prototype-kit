@@ -13,9 +13,9 @@ router.get('/examples/agfs', function (req, res) {
 })
 
 // Route agfs page
-router.get('/examples/agfs/page2', function (req, res) {
+router.get('/examples/agfs/defendants', function (req, res) {
   console.log(req.session.data);
-  res.render('examples/agfs/page2', data.routes['agfs/index'])
+  res.render('examples/agfs/defendants', data.routes['agfs/defendants'])
 })
 
 

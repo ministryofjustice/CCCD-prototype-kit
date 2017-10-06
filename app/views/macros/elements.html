@@ -5,14 +5,14 @@
     {{data.label | default('Generic label text')}}
 
     {% if data.hint %}
-      <span class="form-hint">
-        {{data.hint}}
-      </span>
+    <span class="form-hint">
+      {{data.hint}}
+    </span>
     {% endif %}
     {% if errorState %}
-      <span class="error-message">
-        {{data.error | default('Generic error text')}}
-      </span>
+    <span class="error-message">
+      {{data.error | default('Generic error text')}}
+    </span>
     {% endif %}
   </label>
   <input class="form-control {{ 'form-group-error' if errorState }}" id="general-input-{{data.label | nameAttr}}" type="{{data.type | default('text')}}" name="input-{{data.label | nameAttr}}">
@@ -22,7 +22,7 @@
 
 
 {% macro radiogroup(data, errorState=false) %}
-<div class="form-group">
+<div class="form-group {{ 'form-group-error' if errorState }}">
   <fieldset>
     <legend>
       <h1 class="heading-medium">
@@ -30,7 +30,11 @@
       </h1>
 
       <span class="body-text">{{data.bodytext | default('Generic body text')}}</span>
-
+      {% if errorState %}
+      <span class="error-message">
+        {{data.error | default('Generic error text')}}
+      </span>
+      {% endif %}
     </legend>
 
     {% for item in data.options %}
@@ -46,7 +50,7 @@
 {% endmacro %}
 
 {% macro date(data, errorState=false) %}
-<div class="form-group {% if errorState %}form-group-error{% endif %}">
+<div class="form-group {{ 'form-group-error' if errorState }}">
   <fieldset>
     <legend>
       <span class="form-label-bold">
@@ -55,9 +59,9 @@
       <span class="form-hint">For example, 31 3 1980</span>
       {% if errorState %}
       <span class="error-message">
-        Error message goes here
+        {{data.error | default('Generic error text')}}
       </span>
-    {% endif %}
+      {% endif %}
     </legend>
     <div class="form-date">
       <div class="form-group form-group-day">
@@ -79,7 +83,7 @@
 {% endmacro %}
 
 {% macro inputfieldset(data, errorState=false) %}
-<div class="form-group {% if errorState %}form-group-error{% endif %}">
+<div class="form-group {{ 'form-group-error' if errorState }}">
   <fieldset>
     <legend>
       <span class="form-label-bold">
@@ -88,9 +92,9 @@
       <span class="form-hint">{{data.hint | default('For example, 31 3 1980')}}</span>
       {% if errorState %}
       <span class="error-message">
-        Error message goes here
+        {{data.error | default('Generic error text')}}
       </span>
-    {% endif %}
+      {% endif %}
     </legend>
     <div class="form-date">
       <div class="form-group form-group-day">
@@ -103,3 +107,42 @@
 
 {% endmacro %}
 
+
+{% macro checkboxlist(data, errorState=false) %}
+  {% if data.heading %}
+  <h3 class="heading-medium">{{data.heading}}</h3>
+  {% endif %}
+  <div class="form-group {{ 'form-group-error' if errorState }}">
+    <fieldset>
+      <legend>
+        {% if data.bodytext %}
+        <span class="body-text">
+          {{ data.bodytext }}
+        </span>
+        {% endif %}
+        {% if errorState %}
+        <span class="error-message">
+          {{data.error | default('Generic error text')}}
+        </span>
+        {% endif %}
+      </legend>
+
+      {% for item in data.options %}
+      <div class="multiple-choice">
+        <input id="checkbox-{{loop.index}}" type="checkbox" name="checkbox-group-{{data.heading | nameAttr}}" value="{{item}}" />
+        <label for="checkbox-{{loop.index}}">{{item}}</label>
+      </div>
+      {% endfor %}
+    </fieldset>
+  </div>
+{% endmacro %}
+
+
+
+
+{% macro addmore(data) %}
+<hr/>
+<div class="form-group">
+  <input type="{{data.type | default('submit')}}" class="button button-secondary" value="{{data.value | default('Add another')}}" />
+</div>
+{% endmacro %}

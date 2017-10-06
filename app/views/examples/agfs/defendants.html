@@ -20,29 +20,24 @@
         </h3>
         <div class="form-section">
           {{FORM.input(formData[0])}}
-        </div>
-
-        <div class="form-section">
           {{FORM.input(formData[1])}}
         </div>
 
         <div class="form-section">
           {{FORM.date(formData[2])}}
-        </div>
-
-        <div class="form-section">
-          D A
+          {{FORM.checkboxlist(formData[3])}}
         </div>
 
         <h3 class="heading-medium">
           Representation order details
         </h3>
         <div class="form-section">
-          {{FORM.date(formData[3])}}
+          {{FORM.date(formData[4])}}
+          {{FORM.input(formData[5])}}
         </div>
 
         <div class="form-section">
-          {{FORM.input(formData[4])}}
+          {{FORM.addmore(formData[6])}}
         </div>
 
         {% include "includes/tmpl-form-buttons.html" %}

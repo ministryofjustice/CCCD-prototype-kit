@@ -75,12 +75,21 @@
         "2": {
           "legend": "Date of birth"
         },
-        "3": {
-          "legend": "Representation order date"
+        "3":{
+          "options": [
+            "Order for judicial apportionment"
+          ]
         },
         "4": {
+          "legend": "Representation order date"
+        },
+        "5": {
           "label": "MAAT Referance",
           "hint": "For example 123456789"
+        },
+        "6":{
+          "value": "Add another defendant",
+          "type": "button"
         }
       }
     }

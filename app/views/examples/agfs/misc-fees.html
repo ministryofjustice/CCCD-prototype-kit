@@ -22,7 +22,7 @@
           Item 1
         </h3>
         <div class="form-section">
-          {{FORM.input(formData[0])}}
+          {{FORM.select(formData[0])}}
           {{FORM.netamount(formData[1])}}
         </div>
 
@@ -30,7 +30,7 @@
           {{FORM.addmore(formData[2])}}
         </div>
 
-
+        {% set useSkip = true %}
         {% include "includes/tmpl-form-buttons.html" %}
         {% include "includes/tmpl-help-summary.html" %}
       </form>

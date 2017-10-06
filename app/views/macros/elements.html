@@ -1,112 +1,106 @@
 {% macro input(data, errorState=false) %}
 
-<div class="form-group {{ 'form-group-error' if errorState }}">
-  <label class="form-label-bold {{'-bold' if data.bold }}" for="general-input-{{data.label | nameAttr}}">
-    {{data.label | default('Generic label text')}}
+  <div class="form-group {{ 'form-group-error' if errorState }}">
+    <label class="form-label-bold {{'-bold' if data.bold }}" for="general-input-{{data.label | nameAttr}}">
+      {{data.label | default('Generic label text')}}
 
-    {% if data.hint %}
-    <span class="form-hint">
-      {{data.hint}}
-    </span>
-    {% endif %}
-    {% if errorState %}
-    <span class="error-message">
-      {{data.error | default('Generic error text')}}
-    </span>
-    {% endif %}
-  </label>
-  <input class="form-control {{ 'form-group-error' if errorState }}" id="general-input-{{data.label | nameAttr}}" type="{{data.type | default('text')}}" name="input-{{data.label | nameAttr}}">
-</div>
-
-{% endmacro %}
-
-
-{% macro radiogroup(data, errorState=false) %}
-<div class="form-group {{ 'form-group-error' if errorState }}">
-  <fieldset>
-    <legend>
-      <h1 class="heading-medium">
-        {{data.heading | default('Generic heading text')}}
-      </h1>
-
-      <span class="body-text">{{data.bodytext | default('Generic body text')}}</span>
+      {% if data.hint %}
+      <span class="form-hint">
+        {{data.hint}}
+      </span>
+      {% endif %}
       {% if errorState %}
       <span class="error-message">
         {{data.error | default('Generic error text')}}
       </span>
       {% endif %}
-    </legend>
+    </label>
+    <input class="form-control {{ 'form-group-error' if errorState }}" id="general-input-{{data.label | nameAttr}}" type="{{data.type | default('text')}}" name="input-{{data.label | nameAttr}}">
+  </div>
+{% endmacro %}
 
-    {% for item in data.options %}
-    <div class="multiple-choice">
-      <input id="radio-{{loop.index}}" type="radio" name="radio-group-{{data.heading | nameAttr}}" value="{{item}}" />
-      <label for="radio-{{loop.index}}">{{item}}</label>
-    </div>
-    {% endfor %}
+{% macro radiogroup(data, errorState=false) %}
+  <div class="form-group {{ 'form-group-error' if errorState }}">
+    <fieldset>
+      <legend>
+        <h1 class="heading-medium">
+          {{data.heading | default('Generic heading text')}}
+        </h1>
 
-  </fieldset>
-</div>
+        <span class="body-text">{{data.bodytext | default('Generic body text')}}</span>
+        {% if errorState %}
+        <span class="error-message">
+          {{data.error | default('Generic error text')}}
+        </span>
+        {% endif %}
+      </legend>
 
+      {% for item in data.options %}
+      <div class="multiple-choice">
+        <input id="radio-{{loop.index}}" type="radio" name="radio-group-{{data.heading | nameAttr}}" value="{{item}}" />
+        <label for="radio-{{loop.index}}">{{item}}</label>
+      </div>
+      {% endfor %}
+
+    </fieldset>
+  </div>
 {% endmacro %}
 
 {% macro date(data, errorState=false) %}
-<div class="form-group {{ 'form-group-error' if errorState }}">
-  <fieldset>
-    <legend>
-      <span class="form-label-bold">
-        {{data.legend | default('Generic label text')}}
-      </span>
-      <span class="form-hint">For example, 31 3 1980</span>
-      {% if errorState %}
-      <span class="error-message">
-        {{data.error | default('Generic error text')}}
-      </span>
-      {% endif %}
-    </legend>
-    <div class="form-date">
-      <div class="form-group form-group-day">
-        <label class="form-label" for="dob-day-{{data.legend | nameAttr}}">Day</label>
-        <input class="form-control {{ 'form-control-error' if errorState }}" id="dob-day-{{data.legend | nameAttr}}" name="dob-day-{{data.legend | nameAttr}}" type="number" pattern="[0-9]*" min="0" max="31">
+  <div class="form-group {{ 'form-group-error' if errorState }}">
+    <fieldset>
+      <legend>
+        <span class="form-label-bold">
+          {{data.legend | default('Generic label text')}}
+        </span>
+        <span class="form-hint">For example, 31 3 1980</span>
+        {% if errorState %}
+        <span class="error-message">
+          {{data.error | default('Generic error text')}}
+        </span>
+        {% endif %}
+      </legend>
+      <div class="form-date">
+        <div class="form-group form-group-day">
+          <label class="form-label" for="dob-day-{{data.legend | nameAttr}}">Day</label>
+          <input class="form-control {{ 'form-control-error' if errorState }}" id="dob-day-{{data.legend | nameAttr}}" name="dob-day-{{data.legend | nameAttr}}" type="number" pattern="[0-9]*" min="0" max="31">
+        </div>
+        <div class="form-group form-group-month">
+          <label class="form-label" for="dob-month-{{data.legend | nameAttr}}">Month</label>
+          <input class="form-control {{ 'form-control-error' if errorState }}" id="dob-month-{{data.legend | nameAttr}}" name="dob-month-{{data.legend | nameAttr}}" type="number" pattern="[0-9]*" min="0" max="12">
+        </div>
+        <div class="form-group form-group-year">
+          <label class="form-label" for="dob-year-{{data.legend | nameAttr}}">Year</label>
+          <input class="form-control {{ 'form-control-error' if errorState }}" id="dob-year-{{data.legend | nameAttr}}" name="dob-year-{{data.legend | nameAttr}}" type="number" pattern="[0-9]*" min="0" max="2016">
+        </div>
       </div>
-      <div class="form-group form-group-month">
-        <label class="form-label" for="dob-month-{{data.legend | nameAttr}}">Month</label>
-        <input class="form-control {{ 'form-control-error' if errorState }}" id="dob-month-{{data.legend | nameAttr}}" name="dob-month-{{data.legend | nameAttr}}" type="number" pattern="[0-9]*" min="0" max="12">
-      </div>
-      <div class="form-group form-group-year">
-        <label class="form-label" for="dob-year-{{data.legend | nameAttr}}">Year</label>
-        <input class="form-control {{ 'form-control-error' if errorState }}" id="dob-year-{{data.legend | nameAttr}}" name="dob-year-{{data.legend | nameAttr}}" type="number" pattern="[0-9]*" min="0" max="2016">
-      </div>
-    </div>
-  </fieldset>
-</div>
-
+    </fieldset>
+  </div>
 {% endmacro %}
 
 {% macro inputfieldset(data, errorState=false) %}
-<div class="form-group {{ 'form-group-error' if errorState }}">
-  <fieldset>
-    <legend>
-      <span class="form-label-bold">
-        {{data.legend | default('Generic label text')}}
-      </span>
-      <span class="form-hint">{{data.hint | default('For example, 31 3 1980')}}</span>
-      {% if errorState %}
-      <span class="error-message">
-        {{data.error | default('Generic error text')}}
-      </span>
-      {% endif %}
-    </legend>
-    <div class="form-date">
-      <div class="form-group form-group-day">
-        <label class="form-label" for="dob-day-{{data.legend | nameAttr}}">{{data.label | default('Day')}}</label>
-        <input class="form-control {{ 'form-control-error' if errorState }}" id="dob-day-{{data.legend | nameAttr}}" name="dob-day-{{data.legend | nameAttr}}" type="number" pattern="[0-9]*" min="0" max="31">
+  <div class="form-group {{ 'form-group-error' if errorState }}">
+    <fieldset>
+      <legend>
+        <span class="form-label-bold">
+          {{data.legend | default('Generic label text')}}
+        </span>
+        <span class="form-hint">{{data.hint | default('For example, 31 3 1980')}}</span>
+        {% if errorState %}
+        <span class="error-message">
+          {{data.error | default('Generic error text')}}
+        </span>
+        {% endif %}
+      </legend>
+      <div class="form-date">
+        <div class="form-group form-group-day">
+          <label class="form-label" for="dob-day-{{data.legend | nameAttr}}">{{data.label | default('Day')}}</label>
+          <input class="form-control {{ 'form-control-error' if errorState }}" id="dob-day-{{data.legend | nameAttr}}" name="dob-day-{{data.legend | nameAttr}}" type="number" pattern="[0-9]*" min="0" max="31">
+        </div>
       </div>
-    </div>
-  </fieldset>
-</div>
-
+    </fieldset>
+  </div>
 {% endmacro %}
-
 
 {% macro checkboxlist(data, errorState=false) %}
   {% if data.heading %}
@@ -137,12 +131,54 @@
   </div>
 {% endmacro %}
 
-
-
-
 {% macro addmore(data) %}
-<hr/>
-<div class="form-group">
-  <input type="{{data.type | default('submit')}}" class="button button-secondary" value="{{data.value | default('Add another')}}" />
-</div>
+  <hr/>
+  <div class="form-group">
+    <input type="{{data.type | default('submit')}}" class="button button-secondary" value="{{data.value | default('Add another')}}" />
+  </div>
 {% endmacro %}
+
+
+{% macro select(data, errorState=false) %}
+
+<div class="form-group {{ 'form-group-error' if errorState }}">
+  <label class="form-label-bold" for="select-box">
+    {{data.label | default("Generic label text")}}
+
+    {% if data.hint %}
+      <span class="form-hint">
+        {{data.hint}}
+      </span>
+    {% endif %}
+
+
+    {% if errorState %}
+      <span class="error-message">
+        {{data.error | default('Generic select error message')}}
+      </span>
+    {% endif %}
+  </label>
+  <select class="form-control typeahead
+    {{ data.cssClasses if data.cssClasses }}
+    {{ 'form-control-error' if errorState }}"
+    id="select-box-{{data.label | nameAttr}}"
+    name="select-box-{{data.label | nameAttr}}">
+
+    <option value=""></option>
+    {% for item in data.options %}
+      <option value="{{item}}">{{item}}</option>
+    {% endfor %}
+  </select>
+</div>
+
+{% endmacro %}
+
+
+
+
+
+
+
+
+
+

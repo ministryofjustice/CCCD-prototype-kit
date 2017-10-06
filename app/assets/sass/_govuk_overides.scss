@@ -50,3 +50,30 @@
 .align-right{
   text-align: right;
 }
+
+
+
+.tt-menu {
+  background-color: #fff;
+  border: 1px solid #ccc;
+  width: 65%;
+  max-height: 220px;
+  overflow-y: scroll;
+}
+
+.tt-suggestion {
+  padding: 0.5em;
+}
+
+.tt-suggestion:hover, .tt-suggestion.tt-cursor {
+  color: #fff;
+  background-color: #0097cf;
+}
+
+.tt-suggestion:hover {
+  cursor: pointer;
+}
+
+.twitter-typeahead {
+  width: 100%;
+}

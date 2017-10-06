@@ -118,7 +118,7 @@
     "agfs/fixed-fees": {
       "formData": {
         "pagename": "agfs-fixed-fees",
-        "action": "/examples/agfs/fixed-fees",
+        "action": "/examples/agfs/misc-fees",
         "objRefs": {
           "0": "agfs-case-types"
         },
@@ -129,6 +129,28 @@
         },
         "1": {
           "legend": "Date of hearing"
+        }
+      }
+    },
+    "agfs/misc-fees": {
+      "formData": {
+        "pagename": "agfs-misc-fees",
+        "action": "/examples/agfs/misc-fees",
+        "objRefs": {
+          "0": "agfs-case-types"
+        },
+        "0": {
+          "label": "Fee type",
+          "hint": "Choose a fee type",
+          "cssClasses": "form-control-3-4",
+          "options": "[[ REPLACED WHEN ROUTE IS CALLED ]]"
+        },
+        "1": {
+          "legend": "Net amount"
+        },
+        "2": {
+          "value": "Add another fee",
+          "type": "button"
         }
       }
     }

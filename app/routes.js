@@ -35,5 +35,20 @@ router.get('/examples/agfs/offence', function (req, res) {
 })
 
 
+// Route agfs page
+router.get('/examples/agfs/fixed-fees', function (req, res) {
+
+  // read a map of ids to data store names
+  var dataMap = data.routes['agfs/fixed-fees'].formData.objRefs;
+
+  // loop over the map and attach the data lists to the options key
+  _.each(dataMap, function(obj, idx, list){
+    data.routes['agfs/fixed-fees'].formData[idx].options = data.lists[list[idx]];
+  });
+
+  res.render('examples/agfs/fixed-fees', data.routes['agfs/fixed-fees'])
+})
+
+
 // add your routes here
 module.exports = router

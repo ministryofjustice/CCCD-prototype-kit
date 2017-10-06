@@ -96,7 +96,7 @@
     "agfs/offence": {
       "formData": {
         "pagename": "agfs-offence",
-        "action": "/examples/agfs/offence",
+        "action": "/examples/agfs/fixedfees",
         "objRefs": {
           "0": "agfs-offence-categories",
           "1": "agfs-offence-classes"
@@ -113,6 +113,23 @@
           "options": "[[ REPLACED WHEN ROUTE IS CALLED ]]"
         }
 
+      }
+    },
+    "agfs/fixed-fees": {
+      "formData": {
+        "pagename": "agfs-fixed-fees",
+        "action": "/examples/agfs/fixed-fees",
+        "objRefs": {
+          "0": "agfs-case-types"
+        },
+        "0": {
+          "label": "Case type",
+          "cssClasses": "form-control-3-4",
+          "options": "[[ REPLACED WHEN ROUTE IS CALLED ]]"
+        },
+        "1": {
+          "legend": "Date of hearing"
+        }
       }
     }
   },
@@ -455,6 +472,55 @@
       "I: Offences against public justice and similar offences",
       "J: Serious sexual offences, offences against children",
       "K: Offences of dishonesty in Class F where the value in is in excess of £100,000"
-    ]
+    ],
+    "agfs-case-types": [{
+      "trigger": "true",
+      "value": "1",
+      "text": "Appeal against conviction"
+    }, {
+      "trigger": "true",
+      "value": "2",
+      "text": "Appeal against sentence"
+    }, {
+      "trigger": "true",
+      "value": "3",
+      "text": "Breach of Crown Court order"
+    }, {
+      "trigger": "true",
+      "value": "4",
+      "text": "Committal for Sentence"
+    }, {
+      "trigger": "true",
+      "value": "5",
+      "text": "Contempt"
+    }, {
+      "trigger": "false",
+      "value": "7",
+      "text": "Cracked before retrial"
+    }, {
+      "trigger": "false",
+      "value": "6",
+      "text": "Cracked Trial"
+    }, {
+      "trigger": "false",
+      "value": "8",
+      "text": "Discontinuance"
+    }, {
+      "trigger": "true",
+      "value": "9",
+      "text": "Elected cases not proceeded"
+    }, {
+      "trigger": "false",
+      "value": "10",
+      "text": "Guilty plea"
+    }, {
+      "trigger": "false",
+      "value": "11",
+      "text": "Retrial"
+    }, {
+      "trigger": "false",
+      "value": "12",
+      "text": "Trial"
+    }]
   }
 }

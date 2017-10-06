@@ -138,47 +138,58 @@
   </div>
 {% endmacro %}
 
-
 {% macro select(data, errorState=false) %}
 
-<div class="form-group {{ 'form-group-error' if errorState }}">
-  <label class="form-label-bold" for="select-box">
-    {{data.label | default("Generic label text")}}
+  <div class="form-group {{ 'form-group-error' if errorState }}">
+    <label class="form-label-bold" for="select-box">
+      {{data.label | default("Generic label text")}}
 
-    {% if data.hint %}
-      <span class="form-hint">
-        {{data.hint}}
-      </span>
-    {% endif %}
+      {% if data.hint %}
+        <span class="form-hint">
+          {{data.hint}}
+        </span>
+      {% endif %}
 
 
-    {% if errorState %}
-      <span class="error-message">
-        {{data.error | default('Generic select error message')}}
-      </span>
-    {% endif %}
-  </label>
-  <select class="form-control typeahead
-    {{ data.cssClasses if data.cssClasses }}
-    {{ 'form-control-error' if errorState }}"
-    id="select-box-{{data.label | nameAttr}}"
-    name="select-box-{{data.label | nameAttr}}">
+      {% if errorState %}
+        <span class="error-message">
+          {{data.error | default('Generic select error message')}}
+        </span>
+      {% endif %}
+    </label>
 
-    <option value=""></option>
-    {% for item in data.options %}
-      <option value="{{item}}">{{item}}</option>
-    {% endfor %}
-  </select>
-</div>
+    <select class="form-control typeahead
+      {{ data.cssClasses if data.cssClasses }}
+      {{ 'form-control-error' if errorState }}"
+      id="select-box-{{data.label | nameAttr}}"
+      name="select-box-{{data.label | nameAttr}}">
 
+      <option value=""></option>
+      {% if data.options[0] | is_string %}
+        {% for item in data.options %}
+          <option value="{{item}}">{{item}}</option>
+        {% endfor %}
+
+      {% else %}
+        {% for item in data.options %}
+          <option data-trigger="{{item.trigger}}" value="{{item.text}}">{{item.text}}</option>
+        {% endfor %}
+      {% endif %}
+    </select>
+  </div>
 {% endmacro %}
 
 
 
-
-
-
-
-
-
-
+{% macro netamount(data, errorState=false) %}
+<div class="form-group {{ 'form-group-error' if errorState }}">
+  <label class="form-label-bold" for="net-amount">
+    Net amount
+    {% if errorState %}
+    <span class="error-message">
+      {{data.error | default('Generic error text')}}
+    </span>
+    {% endif %}
+  </label><span class="input-group-prefix">£</span><input type="number" id="net-amount" name="net-amount-{{data.legend | nameAttr}}" class="form-control form-control-1-4 {{ 'form-control-error' if errorState }}"/>
+</div>
+{% endmacro %}

@@ -43,11 +43,15 @@ module.exports = function(env) {
   ------------------------------------------------------------------ */
 
   filters.nameAttr = function(string) {
-    if(!string){
+    if (!string) {
       return "no-header-attr";
     }
     return string.replace(/\s+/g, '-').toLowerCase();
   }
+
+  filters.is_string = function(obj) {
+    return typeof obj == 'string';
+  };
 
   return filters
 }

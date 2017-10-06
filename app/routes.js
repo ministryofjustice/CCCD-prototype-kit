@@ -6,7 +6,7 @@ var _ = require('underscore')
 
 // Route index page
 router.get('/', function (req, res) {
-  res.render('index')
+  res.render('examples/index')
 })
 
 // Route agfs page

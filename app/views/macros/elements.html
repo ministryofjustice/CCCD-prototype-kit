@@ -158,39 +158,86 @@
       {% endif %}
     </label>
 
-    <select class="form-control typeahead
+    <select class="form-control
+      {{ 'typeahead' if data.typeahead !== false }}
       {{ data.cssClasses if data.cssClasses }}
       {{ 'form-control-error' if errorState }}"
       id="select-box-{{data.label | nameAttr}}"
       name="select-box-{{data.label | nameAttr}}">
 
-      <option value=""></option>
+
       {% if data.options[0] | is_string %}
         {% for item in data.options %}
           <option value="{{item}}">{{item}}</option>
         {% endfor %}
 
       {% else %}
+        <option value="">Please select one</option>
         {% for item in data.options %}
-          <option data-trigger="{{item.trigger}}" value="{{item.text}}">{{item.text}}</option>
+          <option
+            {% for attr in item.dataAttrs %}
+            data-{{attr | safe}}
+            {% endfor %}
+            data-trigger="{{item.trigger}}"
+            value="{{item.text}}">
+          {{item.text}}</option>
         {% endfor %}
       {% endif %}
     </select>
   </div>
 {% endmacro %}
 
-
-
 {% macro netamount(data, errorState=false) %}
-<div class="form-group {{ 'form-group-error' if errorState }}">
-  <label class="form-label-bold" for="net-amount">
-    Net amount
-    {% if errorState %}
-    <span class="error-message">
-      {{data.error | default('Generic error text')}}
-    </span>
-    {% endif %}
-  </label>
-  <span class="input-group-prefix">£</span><input type="number" id="net-amount" name="net-amount-{{data.legend | nameAttr}}" min="0.01" max="999999.99" step="0.01" class="form-control form-control-1-4 {{ 'form-control-error' if errorState }}"/>
-</div>
+  <div class="form-group {{ 'form-group-error' if errorState }}">
+    <label class="form-label-bold" for="net-amount">
+      Net amount
+      {% if errorState %}
+      <span class="error-message">
+        {{data.error | default('Generic error text')}}
+      </span>
+      {% endif %}
+    </label>
+    <span class="input-group-prefix">£</span><input type="number" id="net-amount" name="net-amount-{{data.legend | nameAttr}}" min="0.01" max="999999.99" step="0.01" class="form-control form-control-1-4 {{ 'form-control-error' if errorState }}"/>
+  </div>
+{% endmacro %}
+
+{% macro vatamount(data, errorState=false) %}
+  <div class="form-group {{ 'form-group-error' if errorState }}">
+    <label class="form-label-bold" for="net-amount">
+      VAT amount
+      {% if errorState %}
+      <span class="error-message">
+        {{data.error | default('Generic error text')}}
+      </span>
+      {% endif %}
+    </label>
+    <span class="input-group-prefix">£</span><input type="number" id="vat-amount" name="vat-amount-{{data.legend | nameAttr}}" min="0.01" max="999999.99" step="0.01" class="form-control form-control-1-4 {{ 'form-control-error' if errorState }}"/>
+  </div>
+{% endmacro %}
+
+
+{% macro costpermile(data, errorState=false) %}
+  <div class="form-group {{ 'form-group-error' if errorState }}">
+    <fieldset class="inline">
+      <legend>
+        <h1 class="heading-small">
+          Cost per mile
+        </h1>
+        {% if errorState %}
+        <span class="error-message">
+          Error message about personal details goes here
+        </span>
+      </legend>
+      {% endif %}
+      <div class="multiple-choice">
+        <input id="radio-inline-1" type="radio" name="radio-inline-group" value="25">
+        <label for="radio-inline-1">25p per mile</label>
+      </div>
+      <div class="multiple-choice">
+        <input id="radio-inline-2" type="radio" name="radio-inline-group" value="45">
+        <label for="radio-inline-2">45p per mile</label>
+      </div>
+    </fieldset>
+  </div>
+
 {% endmacro %}

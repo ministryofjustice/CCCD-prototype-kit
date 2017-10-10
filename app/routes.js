@@ -9,18 +9,14 @@ router.get('/', function (req, res) {
   res.render('examples/index')
 })
 
-// Route agfs page
 router.get('/examples/agfs/case-details', function (req, res) {
   res.render('examples/agfs/case-details', data.routes['agfs/case-details'])
 })
 
-// Route agfs page
 router.get('/examples/agfs/defendants', function (req, res) {
   res.render('examples/agfs/defendants', data.routes['agfs/defendants'])
 })
 
-
-// Route agfs page
 router.get('/examples/agfs/offence', function (req, res) {
 
   // read a map of ids to data store names
@@ -34,8 +30,6 @@ router.get('/examples/agfs/offence', function (req, res) {
   res.render('examples/agfs/offence', data.routes['agfs/offence'])
 })
 
-
-// Route agfs page
 router.get('/examples/agfs/fixed-fees', function (req, res) {
 
   // read a map of ids to data store names
@@ -49,7 +43,6 @@ router.get('/examples/agfs/fixed-fees', function (req, res) {
   res.render('examples/agfs/fixed-fees', data.routes['agfs/fixed-fees'])
 })
 
-// Route agfs page
 router.get('/examples/agfs/misc-fees', function (req, res) {
 
   // read a map of ids to data store names
@@ -63,6 +56,18 @@ router.get('/examples/agfs/misc-fees', function (req, res) {
   res.render('examples/agfs/misc-fees', data.routes['agfs/misc-fees'])
 })
 
+router.get('/examples/agfs/expenses', function (req, res) {
+
+  // read a map of ids to data store names
+  var dataMap = data.routes['agfs/expenses'].formData.objRefs;
+
+  // loop over the map and attach the data lists to the options key
+  _.each(dataMap, function(obj, idx, list){
+    data.routes['agfs/expenses'].formData[idx].options = data.lists[list[idx]];
+  });
+
+  res.render('examples/agfs/expenses', data.routes['agfs/expenses'])
+})
 
 // add your routes here
 module.exports = router

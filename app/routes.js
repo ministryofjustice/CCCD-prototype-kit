@@ -69,5 +69,17 @@ router.get('/examples/agfs/expenses', function (req, res) {
   res.render('examples/agfs/expenses', data.routes['agfs/expenses'])
 })
 
+router.get('/examples/agfs/supporting-evidence', function (req, res) {
+  // read a map of ids to data store names
+  var dataMap = data.routes['agfs/supporting-evidence'].formData.objRefs;
+
+  // loop over the map and attach the data lists to the options key
+  _.each(dataMap, function(obj, idx, list){
+    data.routes['agfs/supporting-evidence'].formData[idx].options = data.lists[list[idx]];
+  });
+
+  res.render('examples/agfs/supporting-evidence', data.routes['agfs/supporting-evidence'])
+})
+
 // add your routes here
 module.exports = router

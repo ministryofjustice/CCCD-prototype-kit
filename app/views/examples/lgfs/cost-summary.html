@@ -1,0 +1,26 @@
+{% extends "layout.html" %}
+
+{% block content %}
+
+<main id="content" role="main">
+
+  {% include "./breadcrumb.html" %}
+  <div class="grid-row">
+    <div class="column-two-thirds">
+      <form action="{{formData.action}}" method="post" class="form">
+
+        {% include "includes/tmpl-form-page-header.html" %}
+
+        <h2 class="heading-large">
+          Cost summary
+        </h2>
+
+
+        {% set useSkip = true %}
+        {% include "includes/tmpl-form-buttons.html" %}
+        {% include "includes/tmpl-help-summary.html" %}
+      </form>
+    </div>
+  </div>
+</main>
+{% endblock %}

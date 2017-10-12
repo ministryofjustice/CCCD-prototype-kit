@@ -226,7 +226,239 @@
           "legend": "Date of certification"
         }
       }
+    },
+
+
+    "lgfs/case-details": {
+      "formData": {
+        "pagename": "lgfs-case-details",
+        "action": "/examples/lgfs/defendants",
+        "radiogroup": {
+          "heading": "Adovate category",
+          "bodytext": "Please select relevant option",
+          "options": [
+            "Junior alone",
+            "Leading junior",
+            "Led junior",
+            "QC"
+          ]
+        },
+        "0": {
+          "label": "Advocate",
+          "hint": "Instructed Advocate for the case"
+        },
+        "1": {
+          "label": "Referance number",
+          "hint": "Your internal referance number for this case"
+        },
+        "2": {
+          "label": "Case type",
+          "hint": "For example Trail"
+        },
+        "3": {
+          "label": "Court",
+          "hint": "For example Cardiff"
+        },
+        "4": {
+          "label": "Case number",
+          "hint": "For example T20160001"
+        },
+        "5": {
+          "label": "Transfer court",
+          "hint": "For example T20160001"
+        },
+        "6": {
+          "label": "Transfer case number",
+          "hint": "For example T20160001"
+        },
+        "7": {
+          "legend": "First day of trial"
+        },
+        "8": {
+          "legend": "Estimated trial length",
+          "label": "Days",
+          "hint": "Number of days"
+        },
+        "9": {
+          "legend": "Estimated trial length",
+
+          "hint": "Number of days"
+        },
+        "10": {
+          "legend": "Actual trial length",
+          "label": "Days",
+          "hint": "Number of days"
+        }
+      }
+    },
+    "lgfs/defendants": {
+      "formData": {
+        "pagename": "lgfs-defendants",
+        "action": "/examples/lgfs/offence",
+        "0": {
+          "label": "First name"
+        },
+        "1": {
+          "label": "Last name"
+        },
+        "2": {
+          "legend": "Date of birth"
+        },
+        "3": {
+          "options": [
+            "Order for judicial apportionment"
+          ]
+        },
+        "4": {
+          "legend": "Representation order date"
+        },
+        "5": {
+          "label": "MAAT Referance",
+          "hint": "For example 123456789"
+        },
+        "6": {
+          "value": "Add another defendant",
+          "type": "button"
+        }
+      }
+    },
+    "lgfs/offence": {
+      "formData": {
+        "pagename": "lgfs-offence",
+        "action": "/examples/lgfs/fixedfees",
+        "objRefs": {
+          "0": "agfs-offence-categories",
+          "1": "agfs-offence-classes"
+        },
+        "0": {
+          "label": "Offence category",
+          "hint": "If the offence category is not listed, choose \"Miscellaneous/other\"  ",
+          "cssClasses": "form-control-3-4",
+          "options": "[[ REPLACED WHEN ROUTE IS CALLED ]]"
+        },
+        "1": {
+          "label": "Offence class",
+          "cssClasses": "form-control-3-4",
+          "options": "[[ REPLACED WHEN ROUTE IS CALLED ]]"
+        }
+
+      }
+    },
+    "lgfs/fixed-fees": {
+      "formData": {
+        "pagename": "lgfs-fixed-fees",
+        "action": "/examples/lgfs/misc-fees",
+        "objRefs": {
+          "0": "agfs-case-types"
+        },
+        "0": {
+          "label": "Case type",
+          "cssClasses": "form-control-3-4",
+          "options": "[[ REPLACED WHEN ROUTE IS CALLED ]]"
+        },
+        "1": {
+          "legend": "Date of hearing"
+        }
+      }
+    },
+    "lgfs/misc-fees": {
+      "formData": {
+        "pagename": "lgfs-misc-fees",
+        "action": "/examples/lgfs/misc-fees",
+        "objRefs": {
+          "0": "agfs-misc-fees"
+        },
+        "0": {
+          "label": "Fee type",
+          "hint": "Choose a fee type",
+          "cssClasses": "form-control-3-4",
+          "options": "[[ REPLACED WHEN ROUTE IS CALLED ]]"
+        },
+        "1": {
+          "legend": "Net amount"
+        },
+        "2": {
+          "value": "Add another fee",
+          "type": "button"
+        }
+      }
+    },
+    "lgfs/expenses": {
+      "formData": {
+        "pagename": "lgfs-expenses",
+        "action": "/examples/lgfs/expenses",
+        "objRefs": {
+          "0": "agfs-expense-types",
+          "1": "agfs-travel-reasons"
+        },
+        "0": {
+          "label": "Expense type",
+          "typeahead": false,
+          "options": "[[ REPLACED WHEN ROUTE IS CALLED ]]"
+        },
+        "1": {
+          "label": "Reason for travel",
+          "typeahead": false,
+          "options": "[[ REPLACED WHEN ROUTE IS CALLED ]]"
+        },
+        "2": {
+          "label": "Destination"
+        },
+        "3": {
+          "label": "Distance (miles)"
+        },
+        "4": {
+          "legend": "Date of birth"
+        },
+        "5": {
+          "label": "MAAT Referance",
+          "hint": "For example 123456789"
+        },
+        "6": {
+          "value": "Add another defendant",
+          "type": "button"
+        }
+      }
+    },
+    "lgfs/supporting-evidence": {
+      "formData": {
+        "pagename": "supporting-evidence",
+        "action": "/examples/lgfs/supporting-evidence",
+        "objRefs": {
+          "0": "evidence-check-list"
+        },
+        "0": {
+          "label": "Fee type",
+          "hint": "Choose a fee type",
+          "cssClasses": "form-control-3-4",
+          "options": "[[ REPLACED WHEN ROUTE IS CALLED ]]"
+        }
+      }
+    },
+    "lgfs/certify": {
+      "formData": {
+        "pagename": "lgfs-certify",
+        "action": "/examples/lgfs/certify",
+        "objRefs": {
+          "0": "agfs-certify-options"
+        },
+        "0": {
+          "heading": "this is the heading",
+          "bodytext": "body text here",
+          "options": "[[ REPLACED WHEN ROUTE IS CALLED ]]"
+        },
+        "1": {
+          "label": "Name of person certiying the claim",
+          "hint": "Enter full name"
+        },
+        "2": {
+          "legend": "Date of certification"
+        }
+      }
     }
+
+
+
   },
   "lists": {
     "evidence-check-list": ["Order in respect of judicial apportionment",

@@ -15,6 +15,13 @@ router.get('/examples/agfs/*', function(req, res) {
   res.render(path, utils.loadData(lookup, data))
 })
 
+// lgfs router and data loading.
+router.get('/examples/lgfs/*', function(req, res) {
+  var path = req.path.substring(1);
+  var lookup = path.replace('examples/', '')
+  res.render(path, utils.loadData(lookup, data))
+})
+
 
 // add your routes here
 module.exports = router

@@ -1,0 +1,99 @@
+{% extends "layout.html" %}
+
+{% block content %}
+
+<main id="content" role="main">
+
+  {% include "./breadcrumb.html" %}
+  <div class="grid-row">
+    <div class="column-two-thirds">
+      <form action="{{formData.action}}" method="post" class="form">
+
+        {% include "includes/tmpl-form-page-header.html" %}
+
+        <h2 class="heading-large">
+          Certify the claim
+        </h2>
+
+        <p>Confirm you are the trial advocate (in cases where legal aid was granted on or after 5 May 2015) or instructed advocate and that you are entitled to submit a claim for this case. If our records show that you are not the trial or instructed advocate, we may reject the claim without payment.</p>
+
+        <p>Please choose the relevant option below.</p>
+
+        <div class="form-group">
+          <fieldset>
+            <legend>
+              <h3 class="heading-medium">
+                Final fee claims where the representation order was granted on or after 5 May 2015
+
+              </h3>
+              <span class="body-text">
+                I certify that I am the trial advocate as:
+              </span>
+            </legend>
+
+            <div class="multiple-choice">
+              <input id="radio-1" type="radio" name="radio-group" value="Northern Ireland">
+              <label for="radio-1">Northern Ireland</label>
+            </div>
+
+            <div class="form-block">
+              <h3 class=" heading-medium">
+                All other claims
+              </h3>
+              <span class="body-text">
+                I certify that I am the instructed advocate as:
+              </span>
+            </div>
+
+
+            <div class="multiple-choice">
+              <input id="radio-1" type="radio" name="radio-group" value="I notified the court, in writing before the PCMH that I was the instructed advocate. A copy of the letter is attached.">
+              <label for="radio-1">I notified the court, in writing before the PCMH that I was the instructed advocate. A copy of the letter is attached.</label>
+            </div>
+            <div class="multiple-choice">
+              <input id="radio-1" type="radio" name="radio-group" value="I attended the PCMH (where the client was arraigned) and no other advocate wrote to the court prior to this to advise that they were the instructed advocate.">
+              <label for="radio-1">I attended the PCMH (where the client was arraigned) and no other advocate wrote to the court prior to this to advise that they were the instructed advocate.</label>
+            </div>
+            <div class="multiple-choice">
+              <input id="radio-1" type="radio" name="radio-group" value="I attended the first hearing after the PCMH and no other advocate attended the PCMH or wrote to the court prior to this to advise that they were the instructed advocate.">
+              <label for="radio-1">I attended the first hearing after the PCMH and no other advocate attended the PCMH or wrote to the court prior to this to advise that they were the instructed advocate.</label>
+            </div>
+            <div class="multiple-choice">
+              <input id="radio-1" type="radio" name="radio-group" value="The previous instructed advocate notified the court in writing that they were no longer acting in this case and i was then instructed.">
+              <label for="radio-1">The previous instructed advocate notified the court in writing that they were no longer acting in this case and i was then instructed.</label>
+            </div>
+            <div class="multiple-choice">
+              <input id="radio-1" type="radio" name="radio-group" value="The case was a fixed fee (with a case number beginning with an S or A) and I attended the main hearing.">
+              <label for="radio-1">The case was a fixed fee (with a case number beginning with an S or A) and I attended the main hearing.</label>
+            </div>
+
+          </fieldset>
+        </div>
+
+
+        <p>All of the above options are in accordance with the relevant provision of any secondary legislation arising from the Legal Aid, Sentencing and Punishment of Offenders Act 2012.</p>
+
+        <h3 class="heading-medium">You also confirm that you certify that:</h3>
+        <ul class="list list-bullet">
+          <li>Where you’ve represented more than one defendant in a case, you have only made, and will make, one claim for all those defendants together, including where one defendant has transferred representation to another advocate.</li>
+          <li>Neither your nor any other advocate has received any interim, hardship or staged payment on any case number within this matter other than the one under which this claim is made, unless fully detailed (case number, court and advocate supplier number under which payment was made) within this claim.</li>
+          <li>Where there is a joined indictment, you have included all matters that you as the instructed advocate have dealt with within that indictment in this claim.</li>
+          <li>Where a case has been transferred from one crown court to another, no claim has been made separately for the work in the first crown court and all work in both courts is included in this claim.</li>
+          <li>This work has not been and will not be the subject of any other claim for remuneration from criminal legal aid.</li>
+          <li>The information you have provided is correct and that you have not made, and will not make, any other claim for payment from criminal legal aid for the work you have done on this claim. You understand that if you have given incorrect or misleading information, your payment may be recouped.</li>
+          <li>If you are claiming a staged payment, you will make sure that any subsequent trial advocate is advised of this payment, with all necessary claim and payment details.</li>
+        </ul>
+
+        <div class="form-section">
+          {{FORM.input(formData[1])}}
+          {{FORM.date(formData[2])}}
+        </div>
+
+
+        {% include "includes/tmpl-form-buttons.html" %}
+        {% include "includes/tmpl-help-summary.html" %}
+      </form>
+    </div>
+  </div>
+</main>
+{% endblock %}

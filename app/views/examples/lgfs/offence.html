@@ -1,0 +1,34 @@
+{% extends "layout.html" %}
+
+{% block content %}
+
+<main id="content" role="main">
+
+  {% include "./breadcrumb.html" %}
+  <div class="grid-row">
+    <div class="column-two-thirds">
+      <form action="{{formData.action}}" method="post" class="form">
+
+        {% include "includes/tmpl-form-page-header.html" %}
+
+        <h2 class="heading-large">
+          Offence details
+        </h2>
+
+        <div class="form-section">
+          {{FORM.select(formData[0])}}
+        </div>
+
+        <div class="form-section">
+          {{FORM.select(formData[1])}}
+        </div>
+
+
+
+        {% include "includes/tmpl-form-buttons.html" %}
+        {% include "includes/tmpl-help-summary.html" %}
+      </form>
+    </div>
+  </div>
+</main>
+{% endblock %}

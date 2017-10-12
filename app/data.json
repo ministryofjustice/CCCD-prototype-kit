@@ -205,6 +205,27 @@
           "options": "[[ REPLACED WHEN ROUTE IS CALLED ]]"
         }
       }
+    },
+    "agfs/certify": {
+      "formData": {
+        "pagename": "agfs-certify",
+        "action": "/examples/agfs/certify",
+        "objRefs": {
+          "0": "agfs-certify-options"
+        },
+        "0": {
+          "heading": "this is the heading",
+          "bodytext": "body text here",
+          "options": "[[ REPLACED WHEN ROUTE IS CALLED ]]"
+        },
+        "1": {
+          "label": "Name of person certiying the claim",
+          "hint": "Enter full name"
+        },
+        "2": {
+          "legend": "Date of certification"
+        }
+      }
     }
   },
   "lists": {
@@ -220,6 +241,14 @@
       "Special preparation form",
       "Prior authority CRM4"
     ],
+    "agfs-certify-options": [
+      "I notified the court, in writing before the PCMH that I was the instructed advocate. A copy of the letter is attached.",
+      "I attended the PCMH (where the client was arraigned) and no other advocate wrote to the court prior to this to advise that they were the instructed advocate.",
+      "I attended the first hearing after the PCMH and no other advocate attended the PCMH or wrote to the court prior to this to advise that they were the instructed advocate.",
+      "The previous instructed advocate notified the court in writing that they were no longer acting in this case and i was then instructed.",
+      "The case was a fixed fee (with a case number beginning with an S or A) and I attended the main hearing."
+    ],
+
     "agfs-offence-categories": ["Abandonment of children under two",
       "Abduction of defective from parent",
       "Abduction of unmarried girl under 16 from parent",

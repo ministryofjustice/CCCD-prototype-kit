@@ -2,7 +2,7 @@
 
   <div class="form-group {{ 'form-group-error' if errorState }}">
     <label class="form-label-bold {{'-bold' if data.bold }}" for="general-input-{{data.label | nameAttr}}">
-      {{data.label | default('Generic label text')}}
+      {{data.label | default('Missing data.label')}}
 
       {% if data.hint %}
       <span class="form-hint">
@@ -11,7 +11,7 @@
       {% endif %}
       {% if errorState %}
       <span class="error-message">
-        {{data.error | default('Generic error text')}}
+        {{data.error | default('Missing data.error')}}
       </span>
       {% endif %}
     </label>
@@ -24,13 +24,13 @@
     <fieldset>
       <legend>
         <h1 class="heading-medium">
-          {{data.heading | default('Generic heading text')}}
+          {{data.heading | default('Missing data.heading')}}
         </h1>
 
-        <span class="body-text">{{data.bodytext | default('Generic body text')}}</span>
+        <span class="body-text">{{data.bodytext | default('Missing data.bodytext')}}</span>
         {% if errorState %}
         <span class="error-message">
-          {{data.error | default('Generic error text')}}
+          {{data.error | default('Missing data.error')}}
         </span>
         {% endif %}
       </legend>
@@ -51,12 +51,12 @@
     <fieldset>
       <legend>
         <span class="form-label-bold">
-          {{data.legend | default('Generic label text')}}
+          {{data.legend | default('Missing data.lagend')}}
         </span>
         <span class="form-hint">For example, 31 3 1980</span>
         {% if errorState %}
         <span class="error-message">
-          {{data.error | default('Generic error text')}}
+          {{data.error | default('Missing data.error')}}
         </span>
         {% endif %}
       </legend>
@@ -83,12 +83,12 @@
     <fieldset>
       <legend>
         <span class="form-label-bold">
-          {{data.legend | default('Generic label text')}}
+          {{data.legend | default('Missing data.legend')}}
         </span>
         <span class="form-hint">{{data.hint | default('For example, 31 3 1980')}}</span>
         {% if errorState %}
         <span class="error-message">
-          {{data.error | default('Generic error text')}}
+          {{data.error | default('Missing data.error')}}
         </span>
         {% endif %}
       </legend>
@@ -116,7 +116,7 @@
         {% endif %}
         {% if errorState %}
         <span class="error-message">
-          {{data.error | default('Generic error text')}}
+          {{data.error | default('Missing data.error')}}
         </span>
         {% endif %}
       </legend>
@@ -142,7 +142,7 @@
 
   <div class="form-group {{ 'form-group-error' if errorState }}">
     <label class="form-label-bold" for="select-box">
-      {{data.label | default("Generic label text")}}
+      {{data.label | default("Missing data.label")}}
 
       {% if data.hint %}
         <span class="form-hint">
@@ -153,7 +153,7 @@
 
       {% if errorState %}
         <span class="error-message">
-          {{data.error | default('Generic select error message')}}
+          {{data.error | default('Missing data.error')}}
         </span>
       {% endif %}
     </label>
@@ -193,7 +193,7 @@
       Net amount
       {% if errorState %}
       <span class="error-message">
-        {{data.error | default('Generic error text')}}
+        {{data.error | default('Missing data.error')}}
       </span>
       {% endif %}
     </label>
@@ -207,7 +207,7 @@
       VAT amount
       {% if errorState %}
       <span class="error-message">
-        {{data.error | default('Generic error text')}}
+        {{data.error | default('Missing data.error')}}
       </span>
       {% endif %}
     </label>

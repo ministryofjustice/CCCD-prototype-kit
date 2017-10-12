@@ -77,3 +77,20 @@
 .twitter-typeahead {
   width: 100%;
 }
+
+#content{
+  position: relative;
+}
+.pinned{
+  position: absolute;
+  width: 250px;
+  left: -200px;
+  li{
+    float: none;
+    background-image: none;
+    margin-left: 1em;
+    padding-left: 1em;
+    border-left: 1px solid black;
+  }
+}
+

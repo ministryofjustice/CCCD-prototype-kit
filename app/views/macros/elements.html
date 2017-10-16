@@ -158,13 +158,14 @@
       {% endif %}
     </label>
 
-    <select class="form-control
+    <select autocomplete="off" class="form-control
       {{ 'typeahead' if data.typeahead !== false }}
       {{ data.cssClasses if data.cssClasses }}
       {{ 'form-control-error' if errorState }}"
       id="select-box-{{data.label | nameAttr}}"
       name="select-box-{{data.label | nameAttr}}">
 
+      <option value=""></option>
 
       {% if data.options[0] | is_string %}
         {% for item in data.options %}
@@ -172,7 +173,6 @@
         {% endfor %}
 
       {% else %}
-        <option value="">Please select one</option>
         {% for item in data.options %}
           <option
             {% for attr in item.dataAttrs %}

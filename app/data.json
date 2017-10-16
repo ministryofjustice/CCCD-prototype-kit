@@ -96,7 +96,7 @@
     "agfs/offence": {
       "formData": {
         "pagename": "agfs-offence",
-        "action": "/examples/agfs/fixedfees",
+        "action": "/examples/agfs/fixed-fees",
         "objRefs": {
           "0": "agfs-offence-categories",
           "1": "agfs-offence-classes"
@@ -135,7 +135,7 @@
     "agfs/misc-fees": {
       "formData": {
         "pagename": "agfs-misc-fees",
-        "action": "/examples/agfs/misc-fees",
+        "action": "/examples/agfs/expenses",
         "objRefs": {
           "0": "agfs-misc-fees"
         },
@@ -157,7 +157,7 @@
     "agfs/expenses": {
       "formData": {
         "pagename": "agfs-expenses",
-        "action": "/examples/agfs/expenses",
+        "action": "/examples/agfs/supporting-evidence",
         "objRefs": {
           "0": "agfs-expense-types",
           "1": "agfs-travel-reasons"
@@ -191,10 +191,16 @@
         }
       }
     },
+    "agfs/additional-info": {
+      "formData": {
+        "pagename": "additional-info",
+        "action": "/examples/agfs/cost-summary"
+      }
+    },
     "agfs/supporting-evidence": {
       "formData": {
         "pagename": "supporting-evidence",
-        "action": "/examples/agfs/supporting-evidence",
+        "action": "/examples/agfs/additional-info",
         "objRefs": {
           "0": "evidence-check-list"
         },
@@ -228,32 +234,41 @@
       }
     },
 
-
-    "lgfs/case-details": {
+    "lgfs/bill-type": {
+      "formData": {
+        "pagename": "lgfs-bill-type",
+        "action": "/examples/lgfs/",
+        "radiogroup": {
+          "heading": "Choose your bill type",
+          "bodytext": "Please choose a relevant option",
+          "options": [
+            "Litigator final fee",
+            "Litigator interim fee",
+            "Litigator transfer fee"
+          ]
+        }
+      }
+    },
+    "lgfs/final/case-details": {
       "formData": {
         "pagename": "lgfs-case-details",
-        "action": "/examples/lgfs/defendants",
-        "radiogroup": {
-          "heading": "Adovate category",
-          "bodytext": "Please select relevant option",
-          "options": [
-            "Junior alone",
-            "Leading junior",
-            "Led junior",
-            "QC"
-          ]
+        "action": "/examples/lgfs/final/defendants",
+        "objRefs": {
+          "2": "lgfs-case-type"
         },
         "0": {
-          "label": "Advocate",
-          "hint": "Instructed Advocate for the case"
-        },
-        "1": {
           "label": "Referance number",
           "hint": "Your internal referance number for this case"
         },
+        "1": {
+
+          "label": "Advocate",
+          "hint": "Instructed Advocate for the case"
+        },
         "2": {
           "label": "Case type",
-          "hint": "For example Trail"
+          "hint": "For example Trail",
+          "options": []
         },
         "3": {
           "label": "Court",
@@ -291,7 +306,8 @@
         }
       }
     },
-    "lgfs/defendants": {
+
+    "lgfs/final/defendants": {
       "formData": {
         "pagename": "lgfs-defendants",
         "action": "/examples/lgfs/offence",
@@ -322,10 +338,10 @@
         }
       }
     },
-    "lgfs/offence": {
+    "lgfs/final/offence": {
       "formData": {
         "pagename": "lgfs-offence",
-        "action": "/examples/lgfs/fixedfees",
+        "action": "/examples/lgfs/fixed-fees",
         "objRefs": {
           "0": "agfs-offence-categories",
           "1": "agfs-offence-classes"
@@ -416,6 +432,28 @@
         },
         "6": {
           "value": "Add another defendant",
+          "type": "button"
+        }
+      }
+    },
+    "lgfs/final/warrant-fees": {
+      "formData": {
+        "pagename": "lgfs-warrant-fees",
+        "action": "/examples/lgds/warrant-fees",
+        "objRefs": {
+          "0": "agfs-misc-fees"
+        },
+        "0": {
+          "label": "Fee type",
+          "hint": "Choose a fee type",
+          "cssClasses": "form-control-3-4",
+          "options": "[[ REPLACED WHEN ROUTE IS CALLED ]]"
+        },
+        "1": {
+          "legend": "Net amount"
+        },
+        "2": {
+          "value": "Add another fee",
           "type": "button"
         }
       }
@@ -940,6 +978,60 @@
       "text": "Other",
       "dataAttrs": ["reason-text=\"true\""]
     }],
+    "lgfs-case-type": [{
+      "dataAttrs": ["is-fixed-fee=\"true\""],
+      "value": "1",
+      "text": "Appeal against conviction"
+    }, {
+      "dataAttrs": ["is-fixed-fee=\"true\""],
+      "value": "2",
+      "text": "Appeal against sentence"
+    }, {
+      "dataAttrs": ["is-fixed-fee=\"true\""],
+      "value": "3",
+      "text": "Breach of Crown Court order"
+    }, {
+      "dataAttrs": ["is-fixed-fee=\"true\""],
+      "value": "4",
+      "text": "Committal for Sentence"
+    }, {
+      "dataAttrs": ["is-fixed-fee=\"true\""],
+      "value": "5",
+      "text": "Contempt"
+    }, {
+      "dataAttrs": ["is-fixed-fee=\"false\""],
+      "value": "7",
+      "text": "Cracked before retrial"
+    }, {
+      "dataAttrs": ["is-fixed-fee=\"false\""],
+      "value": "6",
+      "text": "Cracked Trial"
+    }, {
+      "dataAttrs": ["is-fixed-fee=\"false\""],
+      "value": "8",
+      "text": "Discontinuance"
+    }, {
+      "dataAttrs": ["is-fixed-fee=\"true\""],
+      "value": "9",
+      "text": "Elected cases not proceeded"
+    }, {
+      "dataAttrs": ["is-fixed-fee=\"false\""],
+      "value": "10",
+      "text": "Guilty plea"
+    }, {
+      "dataAttrs": ["is-fixed-fee=\"true\""],
+      "value": "13",
+      "text": "Hearing subsequent to sentence"
+    }, {
+      "dataAttrs": ["is-fixed-fee=\"false\""],
+      "value": "11",
+      "text": "Retrial"
+    }, {
+      "dataAttrs": ["is-fixed-fee=\"false\""],
+      "value": "12",
+      "text": "Trial"
+    }],
+
     "agfs-expense-types": [{
       "value": "19",
       "text": "Bike travel",

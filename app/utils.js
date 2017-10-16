@@ -1,6 +1,7 @@
 var _ = require('underscore')
 module.exports = {
   loadData: function(pointer, data) {
+    console.log('>>>', pointer);
     // read a map of ids to data store names
     var dataMap = data.routes[pointer];
 

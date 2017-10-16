@@ -17,7 +17,7 @@ router.get('/examples/agfs/*', function(req, res) {
 
 // Route index page
 router.get('/examples/lgfs/', function(req, res) {
-  res.render('examples/lgfs/bill-type')
+  res.render('examples/lgfs/bill-type', utils.loadData('lgfs/bill-type', data))
 })
 
 // lgfs router and data loading.
@@ -25,7 +25,7 @@ router.get('/examples/lgfs/:folder(final|interim|transfer)/:page*?', function(re
   var page = req.params.page;
   var path = req.path.substring(1);
   var lookup = path.replace('examples/', '')
-
+  console.log('>>>>', lookup);
   if (!page){
     res.redirect('case-details');
     next

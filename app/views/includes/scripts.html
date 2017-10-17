@@ -13,6 +13,11 @@
 {% endif %}
 <code>
 
-{{data | dump}}
+{{formcache | dump | safe}}
+</code>
+<hr>
+<code>
+
+{{formData | dump | safe}}
 
 </code>

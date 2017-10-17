@@ -8,40 +8,38 @@
   <div class="grid-row">
     <div class="column-two-thirds">
       <form action="{{formData.action}}" method="post" class="form">
-
         {% include "includes/tmpl-form-page-header.html" %}
-
         <h2 class="heading-large">
           Case details
         </h2>
 
         <div class="form-section">
-          {{FORM.radiogroup(formData.radiogroup)}}
+          {{FORM.radiogroup(formData.radiogroup, formcache)}}
         </div>
 
         <div class="form-section">
-          {{FORM.input(formData[0])}}
+          {{FORM.input(formData[0], formcache)}}
         </div>
 
         <div class="form-section">
-          {{FORM.input(formData[1])}}
+          {{FORM.input(formData[1], formcache)}}
         </div>
 
         <div class="form-section">
-          {{FORM.input(formData[2])}}
+          {{FORM.input(formData[2], formcache)}}
         </div>
 
         <div class="grid-row">
 
           <div class="column-one-half">
             <div class="form-section">
-              {{FORM.input(formData[3])}}
+              {{FORM.input(formData[3], formcache)}}
             </div>
           </div>
 
           <div class="column-one-half">
             <div class="form-section">
-              {{FORM.input(formData[4])}}
+              {{FORM.input(formData[4], formcache)}}
             </div>
           </div>
         </div>
@@ -50,13 +48,13 @@
 
           <div class="column-one-half">
             <div class="form-section">
-              {{FORM.input(formData[5])}}
+              {{FORM.input(formData[5], formcache)}}
             </div>
           </div>
 
           <div class="column-one-half">
             <div class="form-section">
-              {{FORM.input(formData[6])}}
+              {{FORM.input(formData[6], formcache)}}
             </div>
           </div>
         </div>
@@ -69,13 +67,13 @@
 
           <div class="column-one-half">
             <div class="form-section">
-              {{FORM.date(formData[7])}}
+              {{FORM.date(formData[7], formcache)}}
             </div>
           </div>
 
           <div class="column-one-half">
             <div class="form-section">
-              {{FORM.inputfieldset(formData[8])}}
+              {{FORM.inputfieldset(formData[8], formcache)}}
             </div>
           </div>
         </div>
@@ -83,13 +81,13 @@
 
           <div class="column-one-half">
             <div class="form-section">
-              {{FORM.date(formData[9])}}
+              {{FORM.date(formData[9], formcache)}}
             </div>
           </div>
 
           <div class="column-one-half">
             <div class="form-section">
-              {{FORM.inputfieldset(formData[10])}}
+              {{FORM.inputfieldset(formData[10], formcache)}}
             </div>
           </div>
         </div>

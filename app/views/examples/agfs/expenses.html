@@ -21,41 +21,41 @@
         </h3>
         <div class="grid-row">
           <div class="column-half">
-            {{FORM.select(formData[0])}}
+            {{FORM.select(formData[0], formcache)}}
           </div>
           <div class="column-half">
-            {{FORM.select(formData[1])}}
+            {{FORM.select(formData[1], formcache)}}
           </div>
         </div>
 
         <div class="grid-row">
           <div class="column-two-thirds">
-            {{FORM.input(formData[2])}}
+            {{FORM.input(formData[2], formcache)}}
           </div>
           <div class="column-one-third">
-            {{FORM.input(formData[3])}}
+            {{FORM.input(formData[3], formcache)}}
           </div>
         </div>
 
         <div class="grid-row">
           <div class="column-half">
-            {{FORM.date(formData[4])}}
+            {{FORM.date(formData[4], formcache)}}
           </div>
 
           <div class="column-one-quarter">
             <br/><br/>
-            {{FORM.netamount(formData[1])}}
+            {{FORM.netamount(formData[1], formcache)}}
           </div>
           <div class="column-one-quarter">
             <br/><br/>
-            {{FORM.vatamount(formData[1])}}
+            {{FORM.vatamount(formData[1], formcache)}}
           </div>
         </div>
 
-        {{FORM.costpermile(formData[1])}}
+        {{FORM.costpermile(formData[1], formcache)}}
 
         <div class="form-section">
-          {{FORM.addmore(formData[6])}}
+          {{FORM.addmore(formData[6], formcache)}}
         </div>
 
         {% set useSkip = true %}

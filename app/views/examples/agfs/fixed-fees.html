@@ -18,12 +18,12 @@
           All fees should be entered exclusive of VAT. The system will add VAT to fees for VAT registered users.
         </p>
         <div class="form-section">
-          {{FORM.select(formData[0])}}
+          {{FORM.select(formData[0], formcache)}}
         </div>
 
         <div class="form-section">
-          {{FORM.date(formData[1])}}
-          {{FORM.netamount(formData[1])}}
+          {{FORM.date(formData[1], formcache)}}
+          {{FORM.netamount(formData[1], formcache)}}
         </div>
 
         {% include "includes/tmpl-form-buttons.html" %}

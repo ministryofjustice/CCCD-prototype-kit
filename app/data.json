@@ -256,6 +256,8 @@
         "action": "/examples/lgfs/final/defendants",
         "objRefs": {
           "2": "lgfs-case-type",
+          "3": "courts",
+          "5": "courts",
           "11": "lgfs-supplier-numbers"
         },
         "0": {
@@ -274,7 +276,8 @@
         },
         "3": {
           "label": "Court",
-          "hint": "For example Cardiff"
+          "hint": "For example Cardiff",
+          "options": []
         },
         "4": {
           "label": "Case number",
@@ -282,7 +285,8 @@
         },
         "5": {
           "label": "Transfer court",
-          "hint": "For example T20160001"
+          "hint": "For example T20160001",
+          "options": []
         },
         "6": {
           "label": "Transfer case number",
@@ -306,7 +310,7 @@
           "label": "Days",
           "hint": "Number of days"
         },
-        "11":{
+        "11": {
           "label": "LGFS supplier number",
           "hint": "Admin users can add more LGFS supplier numbers on the Manage provider page",
           "options": [],
@@ -318,7 +322,7 @@
     "lgfs/final/defendants": {
       "formData": {
         "pagename": "lgfs-defendants",
-        "action": "/examples/lgfs/offence",
+        "action": "/examples/lgfs/final/offence",
         "0": {
           "label": "First name"
         },
@@ -507,7 +511,7 @@
 
   },
   "lists": {
-    "lgfs-supplier-numbers":["9393", "23232", "993884"],
+    "lgfs-supplier-numbers": ["9393", "23232", "993884"],
     "evidence-check-list": ["Order in respect of judicial apportionment",
       "LAC1 - memo of conviction",
       "Committal bundle front sheets",
@@ -527,7 +531,88 @@
       "The previous instructed advocate notified the court in writing that they were no longer acting in this case and i was then instructed.",
       "The case was a fixed fee (with a case number beginning with an S or A) and I attended the main hearing."
     ],
-
+    "courts": [
+      "Aylesbury",
+      "Basildon",
+      "Birmingham",
+      "Blackfriars",
+      "Bolton",
+      "Bournemouth",
+      "Bradford",
+      "Bristol",
+      "Burnley",
+      "Caernarfon",
+      "Cambridge",
+      "Canterbury",
+      "Cardiff",
+      "Carlisle",
+      "Central Criminal Court",
+      "Chelmsford",
+      "Chester",
+      "Chichester",
+      "Coventry",
+      "Croydon",
+      "Derby",
+      "Doncaster",
+      "Durham",
+      "Exeter",
+      "Gloucester",
+      "Grimsby",
+      "Guildford",
+      "Harrow",
+      "Hull",
+      "Inner London",
+      "Ipswich",
+      "Isleworth",
+      "Kingston Upon Thames",
+      "Leeds",
+      "Leicester",
+      "Lewes",
+      "Lincoln",
+      "Liverpool",
+      "Luton",
+      "Maidstone",
+      "Manchester (Crown Sq)",
+      "Manchester (Minshull St)",
+      "Merthyr Tydfil",
+      "Middx Guildhall",
+      "Mold",
+      "Newcastle",
+      "Newport",
+      "Newport (IOW)",
+      "Northampton",
+      "Norwich",
+      "Nottingham",
+      "Oxford",
+      "Peterborough",
+      "Plymouth",
+      "Portsmouth",
+      "Preston",
+      "Reading",
+      "Salisbury",
+      "Sheffield",
+      "Shrewsbury",
+      "Snaresbrook",
+      "Southampton",
+      "Southwark",
+      "Stafford",
+      "St Albans",
+      "Stoke on Trent",
+      "Swansea",
+      "Swindon",
+      "Taunton",
+      "Teesside",
+      "Truro",
+      "Warrington",
+      "Warwick",
+      "Weymouth and Dorcester",
+      "Winchester",
+      "Wolverhampton",
+      "Wood Green",
+      "Woolwich",
+      "Worcester",
+      "York"
+    ],
     "agfs-offence-categories": ["Abandonment of children under two",
       "Abduction of defective from parent",
       "Abduction of unmarried girl under 16 from parent",

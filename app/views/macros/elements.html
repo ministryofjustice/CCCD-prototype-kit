@@ -1,5 +1,4 @@
-{% macro input(data, errorState=false) %}
-
+{% macro input(data, formcache={}, errorState=false) %}
   <div class="form-group {{ 'form-group-error' if errorState }}">
     <label class="form-label-bold {{'-bold' if data.bold }}" for="general-input-{{data.label | nameAttr}}">
       {{data.label | default('Missing data.label')}}
@@ -15,11 +14,13 @@
       </span>
       {% endif %}
     </label>
-    <input class="form-control {{ 'form-group-error' if errorState }}" id="general-input-{{data.label | nameAttr}}" type="{{data.type | default('text')}}" name="input-{{data.label | nameAttr}}">
+    {% set lookup = 'input-' + data.label | nameAttr %}
+    <input class="form-control {{ 'form-group-error' if errorState }}" id="general-input-{{data.label | nameAttr}}" type="{{data.type | default('text')}}" name="input-{{data.label | nameAttr}}" value="{{formcache[lookup]}}">
   </div>
 {% endmacro %}
 
-{% macro radiogroup(data, errorState=false) %}
+{% macro radiogroup(data, formcache={}, errorState=false) %}
+  {% set localname = 'radio-group-' + data.heading | nameAttr %}
   <div class="form-group {{ 'form-group-error' if errorState }}">
     <fieldset>
       <legend>
@@ -37,7 +38,7 @@
 
       {% for item in data.options %}
       <div class="multiple-choice">
-        <input id="radio-{{loop.index}}" type="radio" name="radio-group-{{data.heading | nameAttr}}" value="{{item}}" />
+        <input id="radio-{{loop.index}}" type="radio" name="{{localname}}" value="{{item}}" {{'checked' if item == formcache[localname]}} />
         <label for="radio-{{loop.index}}">{{item}}</label>
       </div>
       {% endfor %}
@@ -46,7 +47,7 @@
   </div>
 {% endmacro %}
 
-{% macro date(data, errorState=false) %}
+{% macro date(data, formcache={}, errorState=false) %}
   <div class="form-group {{ 'form-group-error' if errorState }}">
     <fieldset>
       <legend>
@@ -62,23 +63,23 @@
       </legend>
       <div class="form-date">
         <div class="form-group form-group-day">
-          <label class="form-label" for="dob-day-{{data.legend | nameAttr}}">Day</label>
-          <input class="form-control {{ 'form-control-error' if errorState }}" id="dob-day-{{data.legend | nameAttr}}" name="dob-day-{{data.legend | nameAttr}}" type="number" pattern="[0-9]*" min="0" max="31">
+          <label class="form-label" for="{{data.legend | nameAttr}}">Day</label>
+          <input class="form-control {{ 'form-control-error' if errorState }}" id="{{data.legend | nameAttr}}" name="{{data.legend | nameAttr}}" type="number" pattern="[0-9]*" min="0" max="31">
         </div>
         <div class="form-group form-group-month">
-          <label class="form-label" for="dob-month-{{data.legend | nameAttr}}">Month</label>
-          <input class="form-control {{ 'form-control-error' if errorState }}" id="dob-month-{{data.legend | nameAttr}}" name="dob-month-{{data.legend | nameAttr}}" type="number" pattern="[0-9]*" min="0" max="12">
+          <label class="form-label" for="{{data.legend | nameAttr}}">Month</label>
+          <input class="form-control {{ 'form-control-error' if errorState }}" id="{{data.legend | nameAttr}}" name="{{data.legend | nameAttr}}" type="number" pattern="[0-9]*" min="0" max="12">
         </div>
         <div class="form-group form-group-year">
-          <label class="form-label" for="dob-year-{{data.legend | nameAttr}}">Year</label>
-          <input class="form-control {{ 'form-control-error' if errorState }}" id="dob-year-{{data.legend | nameAttr}}" name="dob-year-{{data.legend | nameAttr}}" type="number" pattern="[0-9]*" min="0" max="2016">
+          <label class="form-label" for="{{data.legend | nameAttr}}">Year</label>
+          <input class="form-control {{ 'form-control-error' if errorState }}" id="{{data.legend | nameAttr}}" name="{{data.legend | nameAttr}}" type="number" pattern="[0-9]*" min="0" max="2016">
         </div>
       </div>
     </fieldset>
   </div>
 {% endmacro %}
 
-{% macro inputfieldset(data, errorState=false) %}
+{% macro inputfieldset(data, formcache={}, errorState=false) %}
   <div class="form-group {{ 'form-group-error' if errorState }}">
     <fieldset>
       <legend>
@@ -94,15 +95,15 @@
       </legend>
       <div class="form-date">
         <div class="form-group form-group-day">
-          <label class="form-label" for="dob-day-{{data.legend | nameAttr}}">{{data.label | default('Day')}}</label>
-          <input class="form-control {{ 'form-control-error' if errorState }}" id="dob-day-{{data.legend | nameAttr}}" name="dob-day-{{data.legend | nameAttr}}" type="number" pattern="[0-9]*" min="0" max="31">
+          <label class="form-label" for="{{data.legend | nameAttr}}">{{data.label | default('Day')}}</label>
+          <input class="form-control {{ 'form-control-error' if errorState }}" id="{{data.legend | nameAttr}}" name="{{data.legend | nameAttr}}" type="number" pattern="[0-9]*" min="0" max="31">
         </div>
       </div>
     </fieldset>
   </div>
 {% endmacro %}
 
-{% macro checkboxlist(data, errorState=false) %}
+{% macro checkboxlist(data, formcache={}, errorState=false) %}
   {% if data.heading %}
   <h3 class="heading-medium">{{data.heading}}</h3>
   {% endif %}
@@ -131,14 +132,14 @@
   </div>
 {% endmacro %}
 
-{% macro addmore(data) %}
+{% macro addmore(data, formcache={}) %}
   <hr/>
   <div class="form-group">
     <input type="{{data.type | default('submit')}}" class="button button-secondary" value="{{data.value | default('Add another')}}" />
   </div>
 {% endmacro %}
 
-{% macro select(data, errorState=false) %}
+{% macro select(data, formcache={}, errorState=false) %}
 
   <div class="form-group {{ 'form-group-error' if errorState }}">
     <label class="form-label-bold" for="select-box">
@@ -187,7 +188,7 @@
   </div>
 {% endmacro %}
 
-{% macro netamount(data, errorState=false) %}
+{% macro netamount(data, formcache={}, errorState=false) %}
   <div class="form-group {{ 'form-group-error' if errorState }}">
     <label class="form-label-bold" for="net-amount">
       Net amount
@@ -201,7 +202,7 @@
   </div>
 {% endmacro %}
 
-{% macro vatamount(data, errorState=false) %}
+{% macro vatamount(data, formcache={}, errorState=false) %}
   <div class="form-group {{ 'form-group-error' if errorState }}">
     <label class="form-label-bold" for="net-amount">
       VAT amount
@@ -216,7 +217,7 @@
 {% endmacro %}
 
 
-{% macro costpermile(data, errorState=false) %}
+{% macro costpermile(data, formcache={}, errorState=false) %}
   <div class="form-group {{ 'form-group-error' if errorState }}">
     <fieldset class="inline">
       <legend>

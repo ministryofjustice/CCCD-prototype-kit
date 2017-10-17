@@ -12,11 +12,13 @@ router.get('/', function(req, res) {
 router.get('/examples/agfs/*', function(req, res) {
   var path = req.path.substring(1);
   var lookup = path.replace('examples/', '')
+  data.formcache = res.locals.data;
   res.render(path, utils.loadData(lookup, data))
 })
 
 // Route index page
 router.get('/examples/lgfs/', function(req, res) {
+  data.formcache = res.locals.data;
   res.render('examples/lgfs/bill-type', utils.loadData('lgfs/bill-type', data))
 })
 
@@ -25,7 +27,7 @@ router.get('/examples/lgfs/:folder(final|interim|transfer)/:page*?', function(re
   var page = req.params.page;
   var path = req.path.substring(1);
   var lookup = path.replace('examples/', '')
-  console.log('>>>>', lookup);
+  data.formcache = res.locals.data;
   if (!page){
     res.redirect('case-details');
     next

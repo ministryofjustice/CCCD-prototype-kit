@@ -25,13 +25,13 @@ $(document).ready(function() {
     var $form = $("#fx-form-bill-type");
     switch (val) {
       case 'Litigator final fee':
-        $form.attr("action", $form.attr("action") + "final/");
+        $form.attr("action", window.location.pathname + "final/");
         break;
       case 'Litigator interim fee':
-        $form.attr("action", $form.attr("action") + "interim/");
+        $form.attr("action", window.location.pathname + "interim/");
         break;
       case 'Litigator transfer fee':
-        $form.attr("action", $form.attr("action") + "transfer/");
+        $form.attr("action", window.location.pathname + "transfer/");
         break;
       default:
         alert('switch fell')

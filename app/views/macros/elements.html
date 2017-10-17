@@ -141,6 +141,8 @@
 
 {% macro select(data, formcache={}, errorState=false) %}
 
+  {% set localname = 'select-box-' + data.label | nameAttr %}
+
   <div class="form-group {{ 'form-group-error' if errorState }}">
     <label class="form-label-bold" for="select-box">
       {{data.label | default("Missing data.label")}}
@@ -163,19 +165,21 @@
       {{ 'typeahead' if data.typeahead !== false }}
       {{ data.cssClasses if data.cssClasses }}
       {{ 'form-control-error' if errorState }}"
-      id="select-box-{{data.label | nameAttr}}"
-      name="select-box-{{data.label | nameAttr}}">
+      id="{{localname}}"
+      name="{{localname}}">
 
       <option value=""></option>
 
       {% if data.options[0] | is_string %}
         {% for item in data.options %}
-          <option value="{{item}}">{{item}}</option>
+
+          <option value="{{item}}" {{'selected' if formcache[localname]==item.text}}}>{{item}}</option>
         {% endfor %}
 
       {% else %}
         {% for item in data.options %}
           <option
+            {{'selected' if formcache[localname]==item.text}}
             {% for attr in item.dataAttrs %}
             data-{{attr | safe}}
             {% endfor %}

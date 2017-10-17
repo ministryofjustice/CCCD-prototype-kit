@@ -173,7 +173,7 @@
       {% if data.options[0] | is_string %}
         {% for item in data.options %}
 
-          <option value="{{item}}" {{'selected' if formcache[localname]==item.text}}}>{{item}}</option>
+          <option value="{{item}}" {{'selected' if formcache[localname]==item}}>{{item}}</option>
         {% endfor %}
 
       {% else %}

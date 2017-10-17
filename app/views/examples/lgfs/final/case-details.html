@@ -14,21 +14,7 @@
         </h2>
 
         <div class="form-section">
-          <div class="form-group">
-            <label class="form-label" for="select-box">
-              National Insurance number
-              <span class="form-hint">
-                It's on your National Insurance card, benefit letter, payslip or P60.
-                <br>
-              For example, ‘QQ 12 34 56 C’.</span>
-            </label>
-
-            <select autocomplete="off" class="form-control" id="select-box" name="select-box">
-              <option>GOV.UK elements option 1</option>
-              <option>GOV.UK elements option 2</option>
-              <option>GOV.UK elements option 3</option>
-            </select>
-          </div>
+          {{FORM.select(formData[11], formcache)}}
         </div>
 
         <!-- ref number -->

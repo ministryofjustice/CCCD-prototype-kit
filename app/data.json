@@ -250,11 +250,13 @@
       }
     },
     "lgfs/final/case-details": {
+
       "formData": {
         "pagename": "lgfs-case-details",
         "action": "/examples/lgfs/final/defendants",
         "objRefs": {
-          "2": "lgfs-case-type"
+          "2": "lgfs-case-type",
+          "11": "lgfs-supplier-numbers"
         },
         "0": {
           "label": "Referance number",
@@ -303,6 +305,12 @@
           "legend": "Actual trial length",
           "label": "Days",
           "hint": "Number of days"
+        },
+        "11":{
+          "label": "LGFS supplier number",
+          "hint": "Admin users can add more LGFS supplier numbers on the Manage provider page",
+          "options": [],
+          "typeahead": false
         }
       }
     },
@@ -499,6 +507,7 @@
 
   },
   "lists": {
+    "lgfs-supplier-numbers":["9393", "23232", "993884"],
     "evidence-check-list": ["Order in respect of judicial apportionment",
       "LAC1 - memo of conviction",
       "Committal bundle front sheets",

@@ -104,6 +104,7 @@
 {% endmacro %}
 
 {% macro checkboxlist(data, formcache={}, errorState=false) %}
+  {% set localname = 'checkbox-group-'+ data.heading | nameAttr %}
   {% if data.heading %}
   <h3 class="heading-medium">{{data.heading}}</h3>
   {% endif %}
@@ -124,7 +125,7 @@
 
       {% for item in data.options %}
       <div class="multiple-choice">
-        <input id="checkbox-{{loop.index}}" type="checkbox" name="checkbox-group-{{data.heading | nameAttr}}" value="{{item}}" />
+        <input id="checkbox-{{loop.index}}" type="checkbox" name="{{localname+ '-'+loop.index}}" value="{{item}}" {{'checked' if (item == formcache[localname+'-'+loop.index])}} />
         <label for="checkbox-{{loop.index}}">{{item}}</label>
       </div>
       {% endfor %}

@@ -4,6 +4,11 @@
       "formData": {
         "pagename": "agfs-case-details",
         "action": "/examples/agfs/defendants",
+        "objRefs": {
+          "2": "agfs-case-types",
+          "3": "courts",
+          "5": "courts"
+        },
         "radiogroup": {
           "heading": "Adovate category",
           "bodytext": "Please select relevant option",
@@ -24,11 +29,13 @@
         },
         "2": {
           "label": "Case type",
-          "hint": "For example Trail"
+          "hint": "For example Trail",
+          "options": "[[ REPLACED WHEN ROUTE IS CALLED ]]"
         },
         "3": {
           "label": "Court",
-          "hint": "For example Cardiff"
+          "hint": "For example Cardiff",
+          "options": "[[ REPLACED WHEN ROUTE IS CALLED ]]"
         },
         "4": {
           "label": "Case number",
@@ -36,7 +43,8 @@
         },
         "5": {
           "label": "Transfer court",
-          "hint": "For example T20160001"
+          "hint": "For example T20160001",
+          "options": "[[ REPLACED WHEN ROUTE IS CALLED ]]"
         },
         "6": {
           "label": "Transfer case number",
@@ -123,6 +131,8 @@
           "0": "agfs-case-types"
         },
         "0": {
+          "heading": "Choose your bill type",
+          "bodytext": "Please choose a relevant option",
           "label": "Case type",
           "cssClasses": "form-control-3-4",
           "options": "[[ REPLACED WHEN ROUTE IS CALLED ]]"
@@ -233,7 +243,6 @@
         }
       }
     },
-
     "lgfs/bill-type": {
       "formData": {
         "pagename": "lgfs-bill-type",
@@ -250,7 +259,6 @@
       }
     },
     "lgfs/final/case-details": {
-
       "formData": {
         "pagename": "lgfs-case-details",
         "action": "/examples/lgfs/final/defendants",
@@ -318,7 +326,6 @@
         }
       }
     },
-
     "lgfs/final/defendants": {
       "formData": {
         "pagename": "lgfs-defendants",
@@ -353,7 +360,7 @@
     "lgfs/final/offence": {
       "formData": {
         "pagename": "lgfs-offence",
-        "action": "/examples/lgfs/fixed-fees",
+        "action": "/examples/lgfs/final/fixed-fees",
         "objRefs": {
           "0": "agfs-offence-categories",
           "1": "agfs-offence-classes"
@@ -372,17 +379,13 @@
 
       }
     },
-    "lgfs/fixed-fees": {
+    "lgfs/final/fixed-fees": {
       "formData": {
         "pagename": "lgfs-fixed-fees",
         "action": "/examples/lgfs/misc-fees",
-        "objRefs": {
-          "0": "agfs-case-types"
-        },
         "0": {
           "label": "Case type",
-          "cssClasses": "form-control-3-4",
-          "options": "[[ REPLACED WHEN ROUTE IS CALLED ]]"
+          "cssClasses": "form-control-3-4"
         },
         "1": {
           "legend": "Date of hearing"
@@ -506,8 +509,6 @@
         }
       }
     }
-
-
 
   },
   "lists": {
@@ -1002,55 +1003,19 @@
       "Wasted preparation fee",
       "Written / oral advice"
     ],
-    "agfs-case-types": [{
-      "trigger": "true",
-      "value": "1",
-      "text": "Appeal against conviction"
-    }, {
-      "trigger": "true",
-      "value": "2",
-      "text": "Appeal against sentence"
-    }, {
-      "trigger": "true",
-      "value": "3",
-      "text": "Breach of Crown Court order"
-    }, {
-      "trigger": "true",
-      "value": "4",
-      "text": "Committal for Sentence"
-    }, {
-      "trigger": "true",
-      "value": "5",
-      "text": "Contempt"
-    }, {
-      "trigger": "false",
-      "value": "7",
-      "text": "Cracked before retrial"
-    }, {
-      "trigger": "false",
-      "value": "6",
-      "text": "Cracked Trial"
-    }, {
-      "trigger": "false",
-      "value": "8",
-      "text": "Discontinuance"
-    }, {
-      "trigger": "true",
-      "value": "9",
-      "text": "Elected cases not proceeded"
-    }, {
-      "trigger": "false",
-      "value": "10",
-      "text": "Guilty plea"
-    }, {
-      "trigger": "false",
-      "value": "11",
-      "text": "Retrial"
-    }, {
-      "trigger": "false",
-      "value": "12",
-      "text": "Trial"
-    }],
+    "agfs-case-types": ["Appeal against conviction",
+      "Appeal against sentence",
+      "Breach of Crown Court order",
+      "Committal for Sentence",
+      "Contempt",
+      "Cracked before retrial",
+      "Cracked Trial",
+      "Discontinuance",
+      "Elected cases not proceeded",
+      "Guilty plea",
+      "Retrial",
+      "Trial"
+    ],
     "agfs-travel-reasons": [{
       "value": "1",
       "text": "Court hearing",
@@ -1072,59 +1037,20 @@
       "text": "Other",
       "dataAttrs": ["reason-text=\"true\""]
     }],
-    "lgfs-case-type": [{
-      "dataAttrs": ["is-fixed-fee=\"true\""],
-      "value": "1",
-      "text": "Appeal against conviction"
-    }, {
-      "dataAttrs": ["is-fixed-fee=\"true\""],
-      "value": "2",
-      "text": "Appeal against sentence"
-    }, {
-      "dataAttrs": ["is-fixed-fee=\"true\""],
-      "value": "3",
-      "text": "Breach of Crown Court order"
-    }, {
-      "dataAttrs": ["is-fixed-fee=\"true\""],
-      "value": "4",
-      "text": "Committal for Sentence"
-    }, {
-      "dataAttrs": ["is-fixed-fee=\"true\""],
-      "value": "5",
-      "text": "Contempt"
-    }, {
-      "dataAttrs": ["is-fixed-fee=\"false\""],
-      "value": "7",
-      "text": "Cracked before retrial"
-    }, {
-      "dataAttrs": ["is-fixed-fee=\"false\""],
-      "value": "6",
-      "text": "Cracked Trial"
-    }, {
-      "dataAttrs": ["is-fixed-fee=\"false\""],
-      "value": "8",
-      "text": "Discontinuance"
-    }, {
-      "dataAttrs": ["is-fixed-fee=\"true\""],
-      "value": "9",
-      "text": "Elected cases not proceeded"
-    }, {
-      "dataAttrs": ["is-fixed-fee=\"false\""],
-      "value": "10",
-      "text": "Guilty plea"
-    }, {
-      "dataAttrs": ["is-fixed-fee=\"true\""],
-      "value": "13",
-      "text": "Hearing subsequent to sentence"
-    }, {
-      "dataAttrs": ["is-fixed-fee=\"false\""],
-      "value": "11",
-      "text": "Retrial"
-    }, {
-      "dataAttrs": ["is-fixed-fee=\"false\""],
-      "value": "12",
-      "text": "Trial"
-    }],
+    "lgfs-case-type": ["Appeal against conviction",
+      "Appeal against sentence",
+      "Breach of Crown Court order",
+      "Committal for Sentence",
+      "Contempt",
+      "Cracked before retrial",
+      "Cracked Trial",
+      "Discontinuance",
+      "Elected cases not proceeded",
+      "Guilty plea",
+      "Hearing subsequent to sentence",
+      "Retrial",
+      "Trial"
+    ],
 
     "agfs-expense-types": [{
       "value": "19",

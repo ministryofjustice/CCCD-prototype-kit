@@ -1,6 +1,8 @@
 /* global $ */
 /* global GOVUK */
 
+window.scheme = window.location.pathname.indexOf('/lgfs/') ? 'LGFS' : 'AGFS';
+
 // Warn about using the kit in production
 if (window.console && window.console.info) {
   window.console.info('GOV.UK Prototype Kit - do not use for production')
@@ -38,4 +40,10 @@ $(document).ready(function() {
         break;
     }
   })
+
+  $('body').on('typeahead:change', function(e, value){
+    console.log(value, $(e.target).attr('name'));
+    console.log(window.scheme);
+  })
+
 });

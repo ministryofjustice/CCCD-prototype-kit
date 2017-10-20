@@ -1,5 +1,30 @@
 var _ = require('underscore')
 module.exports = {
+  feetypeLookup: function(string) {
+    string = 'Contempt';
+    var data = {
+      // AGFS case types
+      "basic-fees": [
+        "Cracked before retrial",
+        "Cracked Trial",
+        "Discontinuance",
+        "Guilty plea",
+        "Retrial",
+        "Trial"
+      ],
+      "fixed-fees": [
+        "Appeal against conviction",
+        "Appeal against sentence",
+        "Breach of Crown Court order",
+        "Committal for Sentence",
+        "Contempt",
+        "Elected cases not proceeded",
+        "Hearing subsequent to sentence"
+      ]
+    };
+
+    return !!~data['fixed-fees'].indexOf(string);
+  },
   loadData: function(pointer, data) {
 
     // read a map of ids to data store names

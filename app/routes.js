@@ -22,6 +22,15 @@ router.get('/examples/lgfs/', function(req, res) {
   res.render('examples/lgfs/bill-type', utils.loadData('lgfs/bill-type', data))
 })
 
+router.get('/examples/lgfs/fee-chooser', function(req, res) {
+  var feePath;
+  data.formcache = res.locals.data;
+
+  feePath = utils.feetypeLookup(data.formcache['select-box-case-type']);
+  res.send({feePath:feePath})
+})
+
+
 // lgfs router and data loading.
 router.get('/examples/lgfs/:folder(final|interim|transfer)/:page*?', function(req, res, next) {
   var page = req.params.page;
@@ -32,6 +41,11 @@ router.get('/examples/lgfs/:folder(final|interim|transfer)/:page*?', function(re
     res.redirect('case-details');
     next
   }
+
+  if(path==='examples/lgfs/final/fixed-fees' && data.formcache['select-box-case-type'] == 'Appeal against conviction'){
+    console.log('REDIRECT TO the page');
+  }
+
   res.render(path, utils.loadData(lookup, data))
 })
 

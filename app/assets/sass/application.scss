@@ -12,6 +12,20 @@ $path: "/public/images/";
 
 @import 'govuk_overides';
 
+
+@mixin clearfix {
+  zoom: 1;
+  &:before, &:after {
+    content: "";
+    display: block;
+    height: 0;
+    overflow: hidden;
+  }
+  &:after {
+    clear: both;
+  }
+}
+
 @import 'modules/modules';
 
 // Related items
@@ -56,4 +70,10 @@ $path: "/public/images/";
         margin: 4px 0 0 4px;
     }
 }
+
+#lgfs-trial-dates{
+  display: none;
+}
+
+
 // Add extra styles here, or re-organise the Sass files in whichever way makes most sense to you

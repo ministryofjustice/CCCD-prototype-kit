@@ -14,7 +14,10 @@
         </h2>
 
         <div class="form-section">
-          {{FORM.select(formData[11], formcache)}}
+          {{FORM.radiogroup(formData[11], formcache)}}
+          <div class="form-group">
+            {% include "includes/tmpl-help-with-suppliers.html" %}
+          </div>
           {{FORM.input(formData[0], formcache)}}
         </div>
 
@@ -29,9 +32,14 @@
               {{FORM.input(formData[4], formcache)}}
             </div>
           </div>
+          <div class="grid-row">
+            <div class="column-one-half">
+              {{FORM.date(formData[12], formcache)}}
+            </div>
+          </div>
         </div>
 
-        <div class="form-section">
+        <!-- <div class="form-section">
           <div class="grid-row">
             <div class="column-one-half">
               {{FORM.select(formData[5], formcache)}}
@@ -40,49 +48,45 @@
               {{FORM.input(formData[6], formcache)}}
             </div>
           </div>
-        </div>
+        </div> -->
 
-
-        <div id="lgfs-trial-dates">
-          <!-- DATES -->
-          <h3 class="heading-medium">
-            Trail details
-          </h3>
-
-          <div class="grid-row">
-            <div class="column-one-half">
-              <div class="form-section">
-                {{FORM.date(formData[7], formcache)}}
-              </div>
-            </div>
-
-            <div class="column-one-half">
-              <div class="form-section">
-                {{FORM.inputfieldset(formData[8], formcache)}}
-              </div>
+        <!-- DATES -->
+        <!-- <h3 class="heading-medium">
+          Trail details
+        </h3>
+        <div class="grid-row">
+          <div class="column-one-half">
+            <div class="form-section">
+              {{FORM.date(formData[7], formcache)}}
             </div>
           </div>
 
-          <div class="grid-row">
-
-            <div class="column-one-half">
-              <div class="form-section">
-                {{FORM.date(formData[9], formcache)}}
-              </div>
-            </div>
-
-            <div class="column-one-half">
-              <div class="form-section">
-                {{FORM.inputfieldset(formData[10], formcache)}}
-              </div>
+          <div class="column-one-half">
+            <div class="form-section">
+              {{FORM.inputfieldset(formData[8], formcache)}}
             </div>
           </div>
         </div>
 
-          {% include "includes/tmpl-form-buttons.html" %}
-          {% include "includes/tmpl-help-summary.html" %}
-        </form>
-      </div>
+        <div class="grid-row">
+          <div class="column-one-half">
+            <div class="form-section">
+              {{FORM.date(formData[9], formcache)}}
+            </div>
+          </div>
+
+          <div class="column-one-half">
+            <div class="form-section">
+              {{FORM.inputfieldset(formData[10], formcache)}}
+            </div>
+          </div>
+        </div> -->
+
+
+        {% include "includes/tmpl-form-buttons.html" %}
+        {% include "includes/tmpl-help-summary.html" %}
+      </form>
     </div>
-  </main>
-  {% endblock %}
+  </div>
+</main>
+{% endblock %}

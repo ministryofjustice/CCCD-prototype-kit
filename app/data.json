@@ -335,7 +335,7 @@
     "lgfs/final/defendants-form": {
       "formData": {
         "pagename": "lgfs-defendants-form",
-        "action": "/examples/lgfs/final/offence",
+        "action": "/examples/lgfs/final/defendants-lookup",
         "0": {
           "label": "First name"
         },

@@ -386,6 +386,8 @@
         "1": {
           "label": "Offence class",
           "cssClasses": "form-control-3-4",
+          "typeahead": false,
+          "readonly": true,
           "options": "[[ REPLACED WHEN ROUTE IS CALLED ]]"
         }
 

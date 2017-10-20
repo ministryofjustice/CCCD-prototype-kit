@@ -161,13 +161,18 @@
         </span>
       {% endif %}
     </label>
+    <select autocomplete="off"
+      class="form-control
+        {{ 'typeahead' if data.typeahead !== false }}
+        {{ data.cssClasses if data.cssClasses }}
+        {{ 'form-control-error' if errorState }}
+        "
+      {{ 'disabled' if data.readonly == true}}
 
-    <select autocomplete="off" class="form-control
-      {{ 'typeahead' if data.typeahead !== false }}
-      {{ data.cssClasses if data.cssClasses }}
-      {{ 'form-control-error' if errorState }}"
       id="{{localname}}"
-      name="{{localname}}">
+
+      name="{{localname}}"
+      >
 
       <option value=""></option>
 

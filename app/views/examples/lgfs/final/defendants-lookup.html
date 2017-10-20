@@ -1,0 +1,55 @@
+{% extends "layout.html" %}
+
+{% block content %}
+
+<main id="content" role="main">
+
+  {% include "./breadcrumb.html" %}
+  <div class="grid-row">
+    <div class="column-full">
+      <form action="{{formData.action}}" method="post" class="form">
+
+        {% include "./lgfs-header.html" %}
+
+        <h2 class="heading-large">
+          Defendant details
+        </h2>
+
+        <p>
+          The defendant delow matches your court (<span class="bold-small">{{formcache['select-box-court']}}</span>) <br/> and case number (<span class="bold-small">{{formcache['input-case-number']}}</span>)
+        </p>
+
+
+        <div class="form-group">
+          <table>
+            <thead>
+              <tr>
+                <th>Defendant name</th>
+                <th>Date of birth</th>
+                <th>MAAT reference</th>
+                <th>Representation order date</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Joseph Anderson</td>
+                <td>06/08/1990</td>
+                <td>8825177950</td>
+                <td>01/06/2017</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="form-group">
+
+          {% include "includes/tmpl-help-defendants-missing.html" %}
+        </div>
+
+
+        {% include "includes/tmpl-form-buttons.html" %}
+        {% include "includes/tmpl-help-summary.html" %}
+      </form>
+    </div>
+  </div>
+</main>
+{% endblock %}

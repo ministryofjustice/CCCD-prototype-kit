@@ -262,7 +262,7 @@
     "lgfs/final/case-details": {
       "formData": {
         "pagename": "lgfs-case-details",
-        "action": "/examples/lgfs/final/defendants",
+        "action": "/examples/lgfs/final/defendants-lookup",
         "objRefs": {
           "2": "lgfs-case-types",
           "3": "courts",
@@ -332,9 +332,9 @@
         }
       }
     },
-    "lgfs/final/defendants": {
+    "lgfs/final/defendants-form": {
       "formData": {
-        "pagename": "lgfs-defendants",
+        "pagename": "lgfs-defendants-form",
         "action": "/examples/lgfs/final/offence",
         "0": {
           "label": "First name"
@@ -361,6 +361,12 @@
           "value": "Add another defendant",
           "type": "button"
         }
+      }
+    },
+    "lgfs/final/defendants-lookup": {
+      "formData": {
+        "pagename": "lgfs-defendants-lookup",
+        "action": "/examples/lgfs/final/offence"
       }
     },
     "lgfs/final/offence": {
@@ -518,7 +524,7 @@
 
   },
   "lists": {
-    "lgfs-supplier-numbers": ["9393", "23232", "993884"],
+    "lgfs-supplier-numbers": ["8A222Z", "9B333Y"],
     "evidence-check-list": ["Order in respect of judicial apportionment",
       "LAC1 - memo of conviction",
       "Committal bundle front sheets",

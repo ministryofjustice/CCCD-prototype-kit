@@ -18,7 +18,13 @@
           All fees should be entered exclusive of VAT. The system will add VAT to fees for VAT registered users.
         </p>
         <div class="form-section">
-          {{FORM.select(formData[0], formcache)}}
+          <!--
+            input
+            select
+            radiogroup
+            checkboxlist
+           -->
+          {{FORM.radiogroup(formData[0], formcache)}}
         </div>
 
         <div class="form-section">

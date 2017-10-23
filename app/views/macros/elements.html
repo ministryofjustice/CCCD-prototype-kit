@@ -61,7 +61,7 @@
         <span class="form-label-bold">
           {{data.legend | default('Missing data.lagend')}}
         </span>
-        <span class="form-hint">For example, 31 3 1980</span>
+        <span class="form-hint">{{(data.hint | default('For example, 31 3 1980')) if (data.showhint | default(true))}}</span>
         {% if errorState %}
         <span class="error-message">
           {{data.error | default('Missing data.error')}}

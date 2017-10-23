@@ -208,7 +208,8 @@
 
 {% macro netamount(data, formcache={}, errorState=false) %}
   <div class="form-group {{ 'form-group-error' if errorState }}">
-    <label class="form-label-bold" for="net-amount">
+    {% set lookup = 'input-' + (data.context | default('Missing data.context')) +'-'+(data.legend | nameAttr) %}
+    <label class="form-label-bold" for="{{lookup}}">
       Net amount
       {% if errorState %}
       <span class="error-message">
@@ -216,14 +217,25 @@
       </span>
       {% endif %}
     </label>
-    {% set lookup = 'input-' + (data.context | default('Missing data.context')) +'-'+(data.legend | nameAttr) %}
-    <span class="input-group-prefix">£</span><input type="number" id="{{lookup}}" name="{{lookup}}" min="0.01" max="999999.99" step="0.01" class="form-control form-control-1-4 {{ 'form-control-error' if errorState }}" value="{{formcache[lookup]}}"/>
+    <span class="input-group-prefix">£</span><input
+
+      id="{{lookup}}"
+      name="{{lookup}}"
+      value="{{formcache[lookup]}}"
+      class="form-control form-control-1-4 {{ 'form-control-error' if errorState }}"
+
+      type="number"
+      min="0.01"
+      max="999999.99"
+      step="0.01"
+    />
   </div>
 {% endmacro %}
 
 {% macro vatamount(data, formcache={}, errorState=false) %}
   <div class="form-group {{ 'form-group-error' if errorState }}">
-    <label class="form-label-bold" for="net-amount">
+    {% set lookup = 'input-' + (data.context | default('Missing data.context')) +'-'+(data.legend | nameAttr) %}
+    <label class="form-label-bold" for="{{lookup}}">
       VAT amount
       {% if errorState %}
       <span class="error-message">
@@ -231,7 +243,19 @@
       </span>
       {% endif %}
     </label>
-    <span class="input-group-prefix">£</span><input type="number" id="vat-amount" name="vat-amount-{{data.legend | nameAttr}}" min="0.01" max="999999.99" step="0.01" class="form-control form-control-1-4 {{ 'form-control-error' if errorState }}"/>
+    <span class="input-group-prefix">£</span><input
+
+      id="{{lookup}}"
+      name="{{lookup}}"
+      value="{{formcache[lookup]}}"
+      class="form-control form-control-1-4 {{ 'form-control-error' if errorState }}"
+
+      type="number"
+      min="0.01"
+      max="999999.99"
+      step="0.01"
+
+    />
   </div>
 {% endmacro %}
 

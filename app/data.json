@@ -455,11 +455,10 @@
         "pagename": "lgfs-misc-fees",
         "action": "/examples/lgfs/final/warrant-fees",
         "objRefs": {
-          "0": "agfs-misc-fees"
+          "0": "lgfs-disbursements"
         },
         "0": {
-          "label": "Fee type",
-          "hint": "Choose a fee type",
+          "label": "Disbursement type",
           "cssClasses": "form-control-3-4",
           "options": "[[ REPLACED WHEN ROUTE IS CALLED ]]"
         },
@@ -468,7 +467,11 @@
           "context": "disbursements"
         },
         "2": {
-          "value": "Add another fee",
+          "legend": "VAT amount",
+          "context": "disbursements"
+        },
+        "3": {
+          "value": "Add another disbursement",
           "type": "button"
         }
       }
@@ -477,22 +480,15 @@
       "formData": {
         "pagename": "lgfs-warrant-fees",
         "action": "/examples/lgfs/final/travel-expenses",
-        "objRefs": {
-          "0": "agfs-misc-fees"
-        },
         "0": {
-          "label": "Fee type",
-          "hint": "Choose a fee type",
-          "cssClasses": "form-control-3-4",
-          "options": "[[ REPLACED WHEN ROUTE IS CALLED ]]"
+          "legend": "Warrant issued"
         },
         "1": {
-          "legend": "Net amount",
-          "context": "warrant"
+          "legend": "Warrant executed (if applicable)"
         },
         "2": {
-          "value": "Add another fee",
-          "type": "button"
+          "legend": "Net amount",
+          "context": "warrant"
         }
       }
     },
@@ -578,6 +574,39 @@
 
   },
   "lists": {
+    "lgfs-disbursements": [
+      "Accident reconstruction report",
+      "Accounts",
+      "Computer experts",
+      "Consultant medical reports",
+      "Costs judge application fee",
+      "Costs judge preparation award",
+      "DNA testing",
+      "Engineer",
+      "Enquiry agents",
+      "Facial mapping expert",
+      "Financial expert",
+      "Fingerprint expert",
+      "Fire assessor/explosives expert",
+      "Forensic scientists",
+      "Handwriting expert",
+      "Interpreter",
+      "Lip readers",
+      "Medical expert",
+      "Memorandum of conviction fee",
+      "Meteorologist",
+      "Other",
+      "Overnight expenses",
+      "Pathologist",
+      "Photocopying",
+      "Psychiatric reports",
+      "Psychological report",
+      "Surveyor/architect",
+      "Transcripts",
+      "Translator",
+      "Vet report",
+      "Voice recognition"
+    ],
     "lgfs-misc-fees": [
       "Case uplift",
       "Costs judge application",
@@ -1124,7 +1153,6 @@
       "Retrial",
       "Trial"
     ],
-
     "agfs-expense-types": [{
       "value": "19",
       "text": "Bike travel",

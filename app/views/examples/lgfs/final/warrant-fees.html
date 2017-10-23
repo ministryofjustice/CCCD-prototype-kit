@@ -12,22 +12,15 @@
         {% include "./lgfs-header.html" %}
         <!-- {{formData | dump}} -->
         <h2 class="heading-large">
-          Warrent fees
+          Warrant fee
         </h2>
-        <p>
-          Complete the <a href="#noop" rel="extenal">special preparation form</a> and attach to this claim.
-        </p>
-
-        <h3 class="heading-medium">
-          Item 1
-        </h3>
-        <div class="form-section">
-          {{FORM.select(formData[0], formcache)}}
-          {{FORM.netamount(formData[1], formcache)}}
-        </div>
 
         <div class="form-section">
-          {{FORM.addmore(formData[2], formcache)}}
+          {{FORM.date(formData[0], formcache)}}
+
+          {{FORM.date(formData[1], formcache)}}
+
+          {{FORM.netamount(formData[2], formcache)}}
         </div>
 
         {% set useSkip = true %}

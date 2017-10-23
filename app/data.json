@@ -24,8 +24,8 @@
           "hint": "Instructed Advocate for the case"
         },
         "1": {
-          "label": "Referance number",
-          "hint": "Your internal referance number for this claim"
+          "label": "Reference number",
+          "hint": "Your internal reference number for this claim"
         },
         "2": {
           "label": "Case type",
@@ -92,7 +92,7 @@
           "legend": "Representation order date"
         },
         "5": {
-          "label": "MAAT Referance",
+          "label": "MAAT Reference",
           "hint": "For example 123456789"
         },
         "6": {
@@ -193,7 +193,7 @@
           "legend": "Date of birth"
         },
         "5": {
-          "label": "MAAT Referance",
+          "label": "MAAT Reference",
           "hint": "For example 123456789"
         },
         "6": {
@@ -270,8 +270,8 @@
           "11": "lgfs-supplier-numbers"
         },
         "0": {
-          "label": "Referance number",
-          "hint": "Your internal referance number for this claim"
+          "label": "Reference number",
+          "hint": "Your internal reference number for this claim"
         },
         "1": {
 
@@ -320,8 +320,8 @@
           "hint": "Number of days"
         },
         "11": {
-          "label": "LGFS supplier number",
-          "heading": "LGFS supplier number",
+          "label": "Supplier number",
+          "heading": "Supplier number",
           "hint": "Please choose the relevant option",
           "bodytext": "Please choose the relevant option",
           "options": [],
@@ -354,7 +354,7 @@
           "legend": "Representation order date"
         },
         "5": {
-          "label": "MAAT Referance",
+          "label": "MAAT Reference",
           "hint": "For example 123456789"
         },
         "6": {
@@ -385,7 +385,7 @@
         },
         "1": {
           "label": "Offence class",
-          "cssClasses": "form-control-3-4",
+          "cssClasses": "form-control-3-4 disabled",
           "typeahead": false,
           "readonly": true,
           "options": "[[ REPLACED WHEN ROUTE IS CALLED ]]"
@@ -396,13 +396,13 @@
     "lgfs/final/fixed-fees": {
       "formData": {
         "pagename": "lgfs-fixed-fees",
-        "action": "/examples/lgfs/misc-fees",
+        "action": "/examples/lgfs/final/misc-fees",
         "0": {
-          "label": "Case type",
-          "cssClasses": "form-control-3-4"
+          "legend": "Date of hearing"
         },
         "1": {
-          "legend": "Date of hearing"
+          "legend": "Net Amount",
+          "context": "fixed-fees"
         }
       }
     },
@@ -419,10 +419,24 @@
         }
       }
     },
-    "lgfs/misc-fees": {
+    "lgfs/final/misc-fees": {
       "formData": {
         "pagename": "lgfs-misc-fees",
-        "action": "/examples/lgfs/misc-fees",
+        "action": "/examples/lgfs/final/disbursements",
+
+        "0": {
+          "legend": "Date case was concludesssd"
+        },
+        "2": {
+          "value": "Add another fee",
+          "type": "button"
+        }
+      }
+    },
+    "lgfs/final/disbursements": {
+      "formData": {
+        "pagename": "lgfs-misc-fees",
+        "action": "/examples/lgfs/final/warrant-fees",
         "objRefs": {
           "0": "agfs-misc-fees"
         },
@@ -441,10 +455,32 @@
         }
       }
     },
-    "lgfs/expenses": {
+    "lgfs/final/warrant-fees": {
       "formData": {
-        "pagename": "lgfs-expenses",
-        "action": "/examples/lgfs/expenses",
+        "pagename": "lgfs-warrant-fees",
+        "action": "/examples/lgfs/final/travel-expenses",
+        "objRefs": {
+          "0": "agfs-misc-fees"
+        },
+        "0": {
+          "label": "Fee type",
+          "hint": "Choose a fee type",
+          "cssClasses": "form-control-3-4",
+          "options": "[[ REPLACED WHEN ROUTE IS CALLED ]]"
+        },
+        "1": {
+          "legend": "Net amount"
+        },
+        "2": {
+          "value": "Add another fee",
+          "type": "button"
+        }
+      }
+    },
+    "lgfs/final/travel-expenses": {
+      "formData": {
+        "pagename": "lgfs-travel-expenses",
+        "action": "/examples/lgfs/final/supporting-evidence",
         "objRefs": {
           "0": "agfs-expense-types",
           "1": "agfs-travel-reasons"
@@ -469,7 +505,7 @@
           "legend": "Date of birth"
         },
         "5": {
-          "label": "MAAT Referance",
+          "label": "MAAT Reference",
           "hint": "For example 123456789"
         },
         "6": {
@@ -478,32 +514,10 @@
         }
       }
     },
-    "lgfs/final/warrant-fees": {
-      "formData": {
-        "pagename": "lgfs-warrant-fees",
-        "action": "/examples/lgds/warrant-fees",
-        "objRefs": {
-          "0": "agfs-misc-fees"
-        },
-        "0": {
-          "label": "Fee type",
-          "hint": "Choose a fee type",
-          "cssClasses": "form-control-3-4",
-          "options": "[[ REPLACED WHEN ROUTE IS CALLED ]]"
-        },
-        "1": {
-          "legend": "Net amount"
-        },
-        "2": {
-          "value": "Add another fee",
-          "type": "button"
-        }
-      }
-    },
-    "lgfs/supporting-evidence": {
+    "lgfs/final/supporting-evidence": {
       "formData": {
         "pagename": "supporting-evidence",
-        "action": "/examples/lgfs/supporting-evidence",
+        "action": "/examples/lgfs/final/additional-info",
         "objRefs": {
           "0": "evidence-check-list"
         },
@@ -515,10 +529,16 @@
         }
       }
     },
-    "lgfs/certify": {
+    "lgfs/final/additional-info": {
+      "formData": {
+        "pagename": "additional-info",
+        "action": "/examples/lgfs/final/certify"
+      }
+    },
+    "lgfs/final/certify": {
       "formData": {
         "pagename": "lgfs-certify",
-        "action": "/examples/lgfs/certify",
+        "action": "/examples/lgfs/final/cost-summary",
         "objRefs": {
           "0": "agfs-certify-options"
         },

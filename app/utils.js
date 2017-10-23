@@ -22,10 +22,10 @@ module.exports = {
       ]
     };
 
-    if (!!~data['fixed-fees'].indexOf(string)){
-      return '/examples/lgfs/final/fixed-fees';
+    if (!!~data['basic-fees'].indexOf(string)){
+      return '/examples/lgfs/final/graduated-fees';
     }
-    return '/examples/lgfs/final/graduated-fees';
+    return '/examples/lgfs/final/fixed-fees';
   },
   loadData: function(pointer, data) {
 

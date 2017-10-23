@@ -18,11 +18,18 @@
           All fees should be entered exclusive of VAT. The system will add VAT to fees for VAT registered users.
         </p>
         <div class="form-section">
-          {{FORM.select(formData[0], formcache)}}
+          <div class="form-group ">
+            <label class="form-label-bold " for="general-input-case-type">
+              Case type
+            </label>
+
+            <input class="form-control disabled" type="text" value="{{formcache['select-box-case-type']}}" disabled="disabled">
+          </div>
         </div>
 
         <div class="form-section">
-          {{FORM.date(formData[1], formcache)}}
+          {{FORM.date(formData[0], formcache)}}
+
           {{FORM.netamount(formData[1], formcache)}}
         </div>
 

@@ -94,3 +94,17 @@
   }
 }
 
+  // Disabled state
+  input:disabled {
+    cursor: default;
+  }
+
+  input:disabled + label {
+    @include opacity(0.5);
+    cursor: default;
+  }
+
+.disabled{
+  background-color: $panel-colour;
+  border-color: $secondary-text-colour;
+}

@@ -15,7 +15,14 @@
       {% endif %}
     </label>
     {% set lookup = 'input-' + data.label | nameAttr %}
-    <input class="form-control {{ 'form-group-error' if errorState }}" id="general-input-{{data.label | nameAttr}}" type="{{data.type | default('text')}}" name="input-{{data.label | nameAttr}}" value="{{formcache[lookup]}}">
+    <input
+      class="form-control {{ 'form-group-error' if errorState }} {{ data.cssClasses if data.cssClasses }}"
+      id="{{lookup}}"
+      type="{{data.type | default('text')}}"
+      name="{{lookup}}"
+      value="{{formcache[lookup]}}"
+      {{ 'disabled' if data.readonly == true}}
+    />
   </div>
 {% endmacro %}
 

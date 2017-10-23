@@ -25,7 +25,7 @@
         },
         "1": {
           "label": "Referance number",
-          "hint": "Your internal referance number for this case"
+          "hint": "Your internal referance number for this claim"
         },
         "2": {
           "label": "Case type",
@@ -271,7 +271,7 @@
         },
         "0": {
           "label": "Referance number",
-          "hint": "Your internal referance number for this case"
+          "hint": "Your internal referance number for this claim"
         },
         "1": {
 
@@ -322,8 +322,8 @@
         "11": {
           "label": "LGFS supplier number",
           "heading": "LGFS supplier number",
-          "hint": "Admin users can add more LGFS supplier numbers on the Manage provider page",
-          "bodytext": "Admin users can add more LGFS supplier numbers on the Manage provider page",
+          "hint": "Please choose the relevant option",
+          "bodytext": "Please choose the relevant option",
           "options": [],
           "typeahead": false
         },
@@ -394,6 +394,19 @@
       }
     },
     "lgfs/final/fixed-fees": {
+      "formData": {
+        "pagename": "lgfs-fixed-fees",
+        "action": "/examples/lgfs/misc-fees",
+        "0": {
+          "label": "Case type",
+          "cssClasses": "form-control-3-4"
+        },
+        "1": {
+          "legend": "Date of hearing"
+        }
+      }
+    },
+    "lgfs/final/graduated-fees": {
       "formData": {
         "pagename": "lgfs-fixed-fees",
         "action": "/examples/lgfs/misc-fees",

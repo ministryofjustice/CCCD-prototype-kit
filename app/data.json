@@ -327,7 +327,7 @@
           "options": [],
           "typeahead": false
         },
-        "12":{
+        "12": {
           "legend": "Date case was concluded"
         }
       }
@@ -423,11 +423,28 @@
       "formData": {
         "pagename": "lgfs-misc-fees",
         "action": "/examples/lgfs/final/disbursements",
+        "objRefs": {
+          "0": "lgfs-misc-fees"
+        },
 
         "0": {
-          "legend": "Date case was concludesssd"
+          "label": "Fee type",
+          "hint": "Choose a fee type",
+          "cssClasses": "form-control-3-4",
+          "options": "[[ REPLACED WHEN ROUTE IS CALLED ]]",
+          "typeahead": false
+        },
+        "1": {
+          "label": "Additional case number",
+          "hint": "Separate with commas",
+          "readonly": true,
+          "cssClasses": "disabled form-control-3-4"
         },
         "2": {
+          "legend": "Net amount",
+          "context": "misc-fees"
+        },
+        "3": {
           "value": "Add another fee",
           "type": "button"
         }
@@ -447,7 +464,8 @@
           "options": "[[ REPLACED WHEN ROUTE IS CALLED ]]"
         },
         "1": {
-          "legend": "Net amount"
+          "legend": "Net amount",
+          "context": "disbursements"
         },
         "2": {
           "value": "Add another fee",
@@ -469,7 +487,8 @@
           "options": "[[ REPLACED WHEN ROUTE IS CALLED ]]"
         },
         "1": {
-          "legend": "Net amount"
+          "legend": "Net amount",
+          "context": "warrant"
         },
         "2": {
           "value": "Add another fee",
@@ -559,6 +578,13 @@
 
   },
   "lists": {
+    "lgfs-misc-fees": [
+      "Case uplift",
+      "Costs judge application",
+      "Costs judge preparation",
+      "Evidence provision fee",
+      "Special preparation fee"
+    ],
     "lgfs-supplier-numbers": ["8A222Z", "9B333Y"],
     "evidence-check-list": ["Order in respect of judicial apportionment",
       "LAC1 - memo of conviction",

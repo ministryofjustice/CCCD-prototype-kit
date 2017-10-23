@@ -23,11 +23,12 @@
         </h3>
         <div class="form-section">
           {{FORM.select(formData[0], formcache)}}
-          {{FORM.netamount(formData[1], formcache)}}
+          {{FORM.input(formData[1], formcache)}}
+          {{FORM.netamount(formData[2], formcache)}}
         </div>
 
         <div class="form-section">
-          {{FORM.addmore(formData[2], formcache)}}
+          {{FORM.addmore(formData[3], formcache)}}
         </div>
 
         {% set useSkip = true %}

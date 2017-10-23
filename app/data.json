@@ -537,9 +537,7 @@
           "0": "evidence-check-list"
         },
         "0": {
-          "label": "Fee type",
-          "hint": "Choose a fee type",
-          "cssClasses": "form-control-3-4",
+          "heading": "Supporting evidence checklist",
           "options": "[[ REPLACED WHEN ROUTE IS CALLED ]]"
         }
       }

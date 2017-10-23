@@ -554,20 +554,14 @@
       "formData": {
         "pagename": "lgfs-certify",
         "action": "/examples/lgfs/final/cost-summary",
-        "objRefs": {
-          "0": "agfs-certify-options"
-        },
+
         "0": {
-          "heading": "this is the heading",
-          "bodytext": "body text here",
-          "options": "[[ REPLACED WHEN ROUTE IS CALLED ]]"
-        },
-        "1": {
-          "label": "Name of person certiying the claim",
+          "label": "Name of person certifying",
           "hint": "Enter full name"
         },
-        "2": {
-          "legend": "Date of certification"
+        "1": {
+          "legend": "Date",
+          "showhint": false
         }
       }
     }

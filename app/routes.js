@@ -27,7 +27,7 @@ router.get('/examples/lgfs/fee-chooser', function(req, res) {
   data.formcache = res.locals.data;
 
   feePath = utils.feetypeLookup(data.formcache['select-box-case-type']);
-  res.send({feePath:feePath})
+  res.redirect(feePath);
 })
 
 

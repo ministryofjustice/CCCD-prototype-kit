@@ -91,5 +91,9 @@ $(document).ready(function() {
   });
 
 
+  if($('.fx-for-travel-hook select').val()){
+    $('.fx-for-travel-hook select').trigger('change');
+  }
+
 
 });

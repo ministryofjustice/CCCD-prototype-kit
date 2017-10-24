@@ -576,6 +576,22 @@
     "lgfs/final/certify": {
       "formData": {
         "pagename": "lgfs-certify",
+        "action": "/examples/lgfs/final/thank-you",
+
+        "0": {
+          "label": "Name of person certifying",
+          "hint": "Enter full name"
+        },
+        "1": {
+          "legend": "Date",
+          "showhint": false,
+          "populate": true
+        }
+      }
+    },
+    "lgfs/final/thank-you": {
+      "formData": {
+        "pagename": "lgfs-thank-you",
         "action": "/examples/lgfs/all-claims-list",
 
         "0": {

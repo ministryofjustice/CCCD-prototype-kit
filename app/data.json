@@ -592,7 +592,7 @@
     "lgfs/final/thank-you": {
       "formData": {
         "pagename": "lgfs-thank-you",
-        "action": "/examples/lgfs/all-claims-list",
+        "action": "/examples/lgfs/",
 
         "0": {
           "label": "Name of person certifying",

@@ -182,7 +182,11 @@
       name="{{localname}}"
       >
 
-      <option value=""></option>
+      {% if not data.emptyOption %}
+        <option value=""></option>
+      {% else %}
+        <option value="">Please select ...</option>
+      {% endif %}
 
       {% if data.options[0] | is_string %}
         {% for item in data.options %}
@@ -261,7 +265,8 @@
 
 
 {% macro costpermile(data, formcache={}, errorState=false) %}
-  <div class="form-group {{ 'form-group-error' if errorState }}">
+
+  <div class="form-group {{ 'form-group-error' if errorState }} fx-for-travel">
     <fieldset class="inline">
       <legend>
         <h1 class="heading-small">
@@ -274,11 +279,19 @@
       </legend>
       {% endif %}
       <div class="multiple-choice">
-        <input id="radio-inline-1" type="radio" name="radio-inline-group" value="25">
+        <input id="radio-inline-1" type="radio" name="travel-expence-cpm" value="25"
+
+           {{'checked' if "25" == formcache['travel-expence-cpm']}}
+
+        />
         <label for="radio-inline-1">25p per mile</label>
       </div>
       <div class="multiple-choice">
-        <input id="radio-inline-2" type="radio" name="radio-inline-group" value="45">
+        <input id="radio-inline-2" type="radio" name="travel-expence-cpm" value="45"
+
+          {{'checked' if "45" == formcache['travel-expence-cpm']}}
+
+        />
         <label for="radio-inline-2">45p per mile</label>
       </div>
     </fieldset>

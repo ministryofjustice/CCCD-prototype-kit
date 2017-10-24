@@ -84,4 +84,12 @@ $(document).ready(function() {
     e.preventDefault();
     $('form').submit();
   });
+
+  $('.fx-for-travel-hook').on('change', 'select', function(){
+    console.log('changed');
+    $('.fx-for-travel').removeClass('fx-for-travel')
+  });
+
+
+
 });

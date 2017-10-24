@@ -82,6 +82,7 @@
   position: relative;
 }
 .pinned{
+  display: none;
   position: absolute;
   width: 230px;
   left: -240px;
@@ -107,4 +108,10 @@
 .disabled{
   background-color: $panel-colour;
   border-color: $secondary-text-colour;
+}
+
+
+.fx-for-travel{
+  border: 1px solid red;
+  display: none;
 }

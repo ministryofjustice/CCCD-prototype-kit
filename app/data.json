@@ -408,14 +408,25 @@
     },
     "lgfs/final/graduated-fees": {
       "formData": {
-        "pagename": "lgfs-fixed-fees",
-        "action": "/examples/lgfs/misc-fees",
+        "pagename": "lgfs-graduated-fees",
+        "action": "/examples/lgfs/final/misc-fees",
+
         "0": {
-          "label": "Case type",
-          "cssClasses": "form-control-3-4"
+          "label": "PPE total",
+          "cssClasses": "form-control-1-4"
         },
+
         "1": {
-          "legend": "Date of hearing"
+          "legend": "First day of hearing"
+        },
+        "2": {
+          "label": "Actual trial length",
+          "cssClasses": "form-control-1-4"
+        },
+
+        "3": {
+          "legend": "Net Amount",
+          "context": "fixed-fees"
         }
       }
     },
@@ -438,7 +449,7 @@
           "label": "Additional case number",
           "hint": "Separate with commas",
           "readonly": true,
-          "cssClasses": "disabled form-control-3-4"
+          "cssClasses": "disabled form-control-1-2"
         },
         "2": {
           "legend": "Net amount",
@@ -503,11 +514,13 @@
         "0": {
           "label": "Expense type",
           "typeahead": false,
+          "emptyOption": true,
           "options": "[[ REPLACED WHEN ROUTE IS CALLED ]]"
         },
         "1": {
           "label": "Reason for travel",
           "typeahead": false,
+          "emptyOption": true,
           "options": "[[ REPLACED WHEN ROUTE IS CALLED ]]"
         },
         "2": {
@@ -517,13 +530,19 @@
           "label": "Distance (miles)"
         },
         "4": {
-          "legend": "Date of birth"
+          "legend": "Date of travel",
+          "context": "travel"
         },
         "5": {
-          "label": "MAAT Reference",
-          "hint": "For example 123456789"
+          "legend": "Net Amount",
+          "context": "travel"
         },
         "6": {
+          "legend": "VAT Amount",
+          "context": "travel"
+        },
+
+        "8": {
           "value": "Add another defendant",
           "type": "button"
         }

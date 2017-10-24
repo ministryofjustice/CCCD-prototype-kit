@@ -5,6 +5,14 @@
  * Copyright (c) 2011 "Cowboy" Ben Alman; Licensed MIT, GPL */
 
 (function($) {
+  Number.prototype.pad = function(size) {
+
+    var s = String(this);
+    while (s.length < (size || 2)) {
+      s = "0" + s;
+    }
+    return s;
+  }
 
   var o = $({});
 
@@ -80,20 +88,32 @@ $(document).ready(function() {
     this.submit();
   });
 
-  $('.fx-form-buttons a').on('click', function(e){
+  $('.fx-form-buttons a').on('click', function(e) {
     e.preventDefault();
     $('form').submit();
   });
 
-  $('.fx-for-travel-hook').on('change', 'select', function(){
+  $('.fx-for-travel-hook').on('change', 'select', function() {
     console.log('changed');
     $('.fx-for-travel').removeClass('fx-for-travel')
   });
 
 
-  if($('.fx-for-travel-hook select').val()){
+  if ($('.fx-for-travel-hook select').val()) {
     $('.fx-for-travel-hook select').trigger('change');
   }
 
+  $('.fx-populate').is(function(idx, el) {
+    var $el = $(el);
+    var lookupbase = $el.data('lookupbase');
+    var date = new Date();
+    $el.find('#' + lookupbase + '-day').val((date.getDay()).pad(2));
+    $el.find('#' + lookupbase + '-month').val((date.getMonth()).pad(2));
+    $el.find('#' + lookupbase + '-year').val(date.getFullYear());
+
+
+    console.log();
+
+  });
 
 });

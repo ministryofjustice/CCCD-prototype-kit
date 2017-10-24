@@ -18,16 +18,8 @@
         <p>I certify on behalf of the payee, that the information provided is correct. This work has not been and will not be the subject of any other claim for remuneration from criminal legal aid.</p>
 
         <div class="form-section">
-          <div class="grid-row">
-            <div class="column-one-half">
-              {{FORM.input(formData[0], formcache)}}
-            </div>
-            <div class="column-one-half">
-              {{FORM.date(formData[1], formcache)}}
-            </div>
-          </div>
-
-
+          {{FORM.input(formData[0], formcache)}}
+          {{FORM.date(formData[1], formcache)}}
         </div>
 
         {% include "includes/tmpl-form-buttons.html" %}

@@ -543,7 +543,7 @@
         },
 
         "8": {
-          "value": "Add another defendant",
+          "value": "Add another expense",
           "type": "button"
         }
       }
@@ -564,13 +564,19 @@
     "lgfs/final/additional-info": {
       "formData": {
         "pagename": "additional-info",
+        "action": "/examples/lgfs/final/cost-summary"
+      }
+    },
+    "lgfs/final/cost-summary": {
+      "formData": {
+        "pagename": "cost-summary",
         "action": "/examples/lgfs/final/certify"
       }
     },
     "lgfs/final/certify": {
       "formData": {
         "pagename": "lgfs-certify",
-        "action": "/examples/lgfs/final/cost-summary",
+        "action": "/examples/lgfs/all-claims-list",
 
         "0": {
           "label": "Name of person certifying",
@@ -578,7 +584,8 @@
         },
         "1": {
           "legend": "Date",
-          "showhint": false
+          "showhint": false,
+          "populate": true
         }
       }
     }

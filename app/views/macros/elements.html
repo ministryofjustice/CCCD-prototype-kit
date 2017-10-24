@@ -55,7 +55,12 @@
 {% endmacro %}
 
 {% macro date(data, formcache={}, errorState=false) %}
-  <div class="form-group {{ 'form-group-error' if errorState }}">
+  {% set lookupbase = data.legend | nameAttr %}
+  <!-- THERE IS A BUG HERE
+    YOu will not be able to change the date
+       -->
+  <div class="form-group {{ 'form-group-error' if errorState }}  {{ 'fx-populate' if data.populate }}"
+  {{ "data-lookupbase=" + lookupbase if data.populate }} >
     <fieldset>
       <legend>
         <span class="form-label-bold">
@@ -69,7 +74,6 @@
         {% endif %}
       </legend>
       <div class="form-date">
-      {% set lookupbase = data.legend | nameAttr %}
         <div class="form-group form-group-day">
           <label class="form-label" for="{{lookupbase}}-day">Day</label>
           <input class="form-control {{ 'form-control-error' if errorState }}" id="{{lookupbase}}-day" value="{{formcache[lookupbase+'-day']}}" name="{{lookupbase}}-day" type="number" pattern="[0-9]*" min="0" max="31">
@@ -80,7 +84,7 @@
         </div>
         <div class="form-group form-group-year">
           <label class="form-label" for="{{lookupbase}}-year">Year</label>
-          <input class="form-control {{ 'form-control-error' if errorState }}" id="{{lookupbase}}-year" value="{{formcache[lookupbase+'-year']}}" name="{{lookupbase}}-year" type="number" pattern="[0-9]*" min="0" max="2016">
+          <input class="form-control {{ 'form-control-error' if errorState }}" id="{{lookupbase}}-year" value="{{formcache[lookupbase+'-year']}}" name="{{lookupbase}}-year" type="number" pattern="[0-9]*" min="0" max="2017">
         </div>
       </div>
     </fieldset>
@@ -263,9 +267,7 @@
   </div>
 {% endmacro %}
 
-
 {% macro costpermile(data, formcache={}, errorState=false) %}
-
   <div class="form-group {{ 'form-group-error' if errorState }} fx-for-travel">
     <fieldset class="inline">
       <legend>

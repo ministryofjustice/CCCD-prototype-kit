@@ -281,7 +281,7 @@
       <div class="multiple-choice">
         <input id="radio-inline-1" type="radio" name="travel-expence-cpm" value="25"
 
-           {{'checked' if "25" == formcache['travel-expence-cpm']}}
+           {{'checked' if "25" == (formcache['travel-expence-cpm'] | default('25'))}}
 
         />
         <label for="radio-inline-1">25p per mile</label>

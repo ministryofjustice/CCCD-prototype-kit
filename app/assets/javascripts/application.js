@@ -52,7 +52,7 @@ $(document).ready(function() {
 
 $(document).ready(function() {
   $('#fx-bill-type').on('change', 'input', function(e) {
-    var val = $('input[name=radio-group-choose-your-bill-type]:checked', 'form').val();
+    var val = $('input[name=general-radio-group-choose-your-bill-type-1]:checked', 'form').val();
     var $form = $("#fx-form-bill-type");
     switch (val) {
       case 'Litigator final fee':
@@ -105,15 +105,13 @@ $(document).ready(function() {
 
   $('.fx-populate').is(function(idx, el) {
     var $el = $(el);
-    var lookupbase = $el.data('lookupbase');
+    var contextid = $el.data('contextid');
     var date = new Date();
-    $el.find('#' + lookupbase + '-day').val((date.getDay()).pad(2));
-    $el.find('#' + lookupbase + '-month').val((date.getMonth()).pad(2));
-    $el.find('#' + lookupbase + '-year').val(date.getFullYear());
-
-
-    console.log();
-
+    $el.find('#' + contextid + '-day').val((date.getDay()).pad(2));
+    $el.find('#' + contextid + '-month').val((date.getMonth()).pad(2));
+    $el.find('#' + contextid + '-year').val(date.getFullYear());
   });
+
+
 
 });

@@ -18,24 +18,19 @@
           Complete the <a href="#noop" rel="extenal">special preparation form</a> and attach to this claim.
         </p>
 
-        <h3 class="heading-medium">
-          Item 1
-        </h3>
-        <div class="form-section">
-          {{FORM.select(formData[0], formcache)}}
-          {{FORM.input(formData[1], formcache)}}
-          {{FORM.netamount(formData[2], formcache)}}
-        </div>
+        {% for item in [1,2,3,4,5] %}
+          {{FORM.miscfee(formData, formcache, FORM, item)}}
+        {% endfor %}
 
         <div class="form-section">
-          {{FORM.addmore(formData[3], formcache)}}
+          {{FORM.addmore(formData[3])}}
         </div>
 
-        {% set useSkip = true %}
         {% include "includes/tmpl-form-buttons.html" %}
         {% include "includes/tmpl-help-summary.html" %}
       </form>
     </div>
   </div>
 </main>
+
 {% endblock %}

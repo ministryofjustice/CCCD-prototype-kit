@@ -51,6 +51,10 @@ $(document).ready(function() {
 
 
 $(document).ready(function() {
+  moj.init();
+
+  // /examples/lgfs/
+  // Change the `action` attr on the form for LGFS bill types
   $('#fx-bill-type').on('change', 'input', function(e) {
     var val = $('input[name=general-radio-group-choose-your-bill-type-1]:checked', 'form').val();
     var $form = $("#fx-form-bill-type");
@@ -68,8 +72,9 @@ $(document).ready(function() {
         alert('switch fell')
         break;
     }
-  })
+  });
 
+  // Broadcast the `typeahead:change` event
   $('body').on('typeahead:change', function(e, value) {
     var fxname = $(e.target).attr('name');
     $.publish(fxname, {
@@ -82,27 +87,24 @@ $(document).ready(function() {
     $("select#select-box-offence-class").prop('selectedIndex', _.sample([1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11]));
   })
 
+  // Remove disabled attr from inputs before submit
   $('form').submit(function(e) {
     e.preventDefault();
     $('select:disabled').prop('disabled', false);
     this.submit();
   });
 
-  $('.fx-form-buttons a').on('click', function(e) {
-    e.preventDefault();
-    $('form').submit();
-  });
-
+  // Travel expenses fake reveal
   $('.fx-for-travel-hook').on('change', 'select', function() {
-    console.log('changed');
     $('.fx-for-travel').removeClass('fx-for-travel')
   });
 
-
+  // Trigger fake expense show when page reloads
   if ($('.fx-for-travel-hook select').val()) {
     $('.fx-for-travel-hook select').trigger('change');
   }
 
+  // Populate the date fields with todays date
   $('.fx-populate').is(function(idx, el) {
     var $el = $(el);
     var contextid = $el.data('contextid');
@@ -110,6 +112,17 @@ $(document).ready(function() {
     $el.find('#' + contextid + '-day').val((date.getDay()).pad(2));
     $el.find('#' + contextid + '-month').val((date.getMonth()).pad(2));
     $el.find('#' + contextid + '-year').val(date.getFullYear());
+  });
+
+
+  $('.fx-duplicate').on('click', '.button', function(e){
+    var selector = $(e.delegateTarget).data('selector');
+
+    $($(selector).not(':visible')[0]).removeClass('hidden');
+
+    if(!($(selector).not(':visible')[0])){
+      $('.fx-duplicate').remove()
+    }
   });
 
 

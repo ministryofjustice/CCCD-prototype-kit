@@ -449,7 +449,7 @@
           "label": "Additional case number",
           "hint": "Separate with commas",
           "readonly": true,
-          "cssClasses": "disabled form-control-1-2"
+          "cssClasses": "disabled form-control-1-2 fx-misc-fee-input"
         },
         "2": {
           "legend": "Net amount",
@@ -457,7 +457,8 @@
         },
         "3": {
           "value": "Add another fee",
-          "type": "button"
+          "type": "button",
+          "fxselector": ".fx-misc-fee"
         }
       }
     },

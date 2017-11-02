@@ -148,18 +148,16 @@
 {% endmacro %}
 
 {% macro addmore(data, formcache={}) %}
-  <hr/>
-  <div class="form-group">
+
+  <div class="form-group fx-duplicate" data-selector="{{data.fxselector}}">
     <input type="{{data.type | default('submit')}}" class="button button-secondary" value="{{data.value | default('Add another')}}" />
   </div>
 {% endmacro %}
 
-{% macro select(data, formcache={}, errorState=false) %}
-
-  {% set localname = 'select-box-' + data.label | nameAttr %}
-
+{% macro select(data, formcache={}, seedNum=1) %}
+  {% set contextID = (data.context | default('general')) +'-select-' + (data.label | nameAttr) + '-' + seedNum %}
   <div class="form-group {{ 'form-group-error' if errorState }}">
-    <label class="form-label-bold" for="select-box">
+    <label class="form-label-bold" for="{{contextID}}">
       {{data.label | default("Missing data.label")}}
 
       {% if data.hint %}
@@ -183,9 +181,9 @@
         "
       {{ 'disabled' if data.readonly == true}}
 
-      id="{{localname}}"
+      id="{{contextID}}"
 
-      name="{{localname}}"
+      name="{{contextID}}"
       >
 
       {% if not data.emptyOption %}
@@ -197,13 +195,13 @@
       {% if data.options[0] | is_string %}
         {% for item in data.options %}
 
-          <option value="{{item}}" {{'selected' if formcache[localname]==item}}>{{item}}</option>
+          <option value="{{item}}" {{'selected' if formcache[contextID]==item}}>{{item}}</option>
         {% endfor %}
 
       {% else %}
         {% for item in data.options %}
           <option
-            {{'selected' if formcache[localname]==item.text}}
+            {{'selected' if formcache[contextID]==item.text}}
             {% for attr in item.dataAttrs %}
             data-{{attr | safe}}
             {% endfor %}
@@ -216,10 +214,11 @@
   </div>
 {% endmacro %}
 
-{% macro netamount(data, formcache={}, errorState=false) %}
+{% macro netamount(data, formcache={}, seedNum=1) %}
+  {% set contextID = (data.context | default('general')) +'-input-' + (data.legend | nameAttr) + '-' + seedNum %}
+
   <div class="form-group {{ 'form-group-error' if errorState }}">
-    {% set lookup = 'input-' + (data.context | default('Missing data.context')) +'-'+(data.legend | nameAttr) %}
-    <label class="form-label-bold" for="{{lookup}}">
+    <label class="form-label-bold" for="{{contextID}}">
       Net amount
       {% if errorState %}
       <span class="error-message">
@@ -229,9 +228,9 @@
     </label>
     <span class="input-group-prefix">£</span><input
 
-      id="{{lookup}}"
-      name="{{lookup}}"
-      value="{{formcache[lookup]}}"
+      id="{{contextID}}"
+      name="{{contextID}}"
+      value="{{formcache[contextID]}}"
       class="form-control form-control-1-4 {{ 'form-control-error' if errorState }}"
 
       type="number"
@@ -301,3 +300,27 @@
     </fieldset>
   </div>
 {% endmacro %}
+
+
+{% macro miscfee(data, formcache, FORM, seedNum=1) %}
+
+  <div class="fx-misc-fee {{ 'hidden' if (seedNum > 1)}}">
+
+
+    <h3 class="heading-medium">
+      Item {{seedNum}}
+    </h3>
+    <div class="form-section">
+      {{FORM.select(data[0], formcache, seedNum)}}
+      {{FORM.input(data[1], formcache, seedNum)}}
+      {{FORM.netamount(data[2], formcache, seedNum)}}
+    </div>
+    <hr />
+
+
+  </div>
+{% endmacro %}
+
+
+
+

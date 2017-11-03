@@ -13,6 +13,7 @@ moj.Modules.MiscFee = {
     this.setInitState();
 
   },
+  // View state logic used when page is loaded.
   setInitState: function() {
     var self = this;
     // Get a collection of all the Misc Fees and
@@ -20,31 +21,36 @@ moj.Modules.MiscFee = {
     $(this.el).is(function(idx, el) {
 
       var $el = $(el);
-
       var $select = $el.find('select');
 
       if (!!$select.val()) {
-
         $el.removeClass('hidden');
-
         if (self.checkTrigger($select.val())) {
           $select.change()
         }
       }
     });
   },
+  // Event bining
   bindEvents: function() {
     var self = this;
+
+    // Bind on the select change event to show the `.el-input`
     this.$el.on('change', 'select', function(e) {
 
-      var $input = $(e.delegateTarget).find('.fx-misc-fee-input');
+      // `.el-input` is the entire input field hook
+      var $elInput = $(e.delegateTarget).find('.el-input');
 
+      // Show if the correct value is selected in the dropdown
       if (self.checkTrigger(this.value)) {
-        $input.removeClass('disabled').attr('disabled', false);
+        $elInput.removeClass('hidden');
         return;
       }
 
-      $input.addClass('disabled').attr('disabled', true).val('');
+      // Fall through to hide and clear the input value
+      $elInput.addClass('hidden');
+      $elInput.find('input').val('');
+
     });
   },
 

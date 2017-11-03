@@ -448,8 +448,8 @@
         "1": {
           "label": "Additional case number",
           "hint": "Separate with commas",
-          "readonly": true,
-          "cssClasses": "disabled form-control-1-2 fx-misc-fee-input"
+          "cssClasses": "form-control-1-2 fx-misc-fee-input uppercase",
+          "hidden": true
         },
         "2": {
           "legend": "Net amount",

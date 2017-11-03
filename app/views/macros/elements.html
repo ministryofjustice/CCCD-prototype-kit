@@ -1,6 +1,6 @@
 {% macro input(data,formcache={}, seedNum=1) %}
   {% set contextID = (data.context | default('general')) +'-input-' + (data.label | nameAttr) + '-' + seedNum %}
-  <div class="form-group {{ 'form-group-error' if errorState }}" id="wrapped-{{contextID}}">
+  <div class="form-group el-input {{ 'form-group-error' if errorState }} {{ 'hidden' if data.hidden }}" id="wrapped-{{contextID}}">
     <label class="form-label-bold" for="{{ contextID }}">
       {{data.label | default('Missing data.label')}}
 
@@ -16,13 +16,13 @@
       {% endif %}
     </label>
     <input
-      class="form-control {{ 'form-group-error' if errorState }} {{ data.cssClasses if data.cssClasses }}"
+      class="form-control {{ 'form-group-error' if errorState }} {{ 'disabled' if data.readonly == true}} {{ data.cssClasses if data.cssClasses }}"
       id="{{ contextID }}"
       type="{{data.type | default('text')}}"
       name="{{ contextID }}"
       value="{{formcache[contextID]}}"
       {{ 'disabled' if data.readonly == true}}
-
+      {{ 'data-uppercase=true' if data.uppercase == true}}
     />
   </div>
 {% endmacro %}
@@ -321,6 +321,37 @@
   </div>
 {% endmacro %}
 
+{% macro trialdetails(data, formcache, FORM, keylookup) %}
+  <h3 class="heading-medium">
+    Trail details
+  </h3>
 
+  <div class="grid-row">
 
+    <div class="column-one-half">
+      <div class="form-section">
+        {{FORM.date(data[keylookup[0]], formcache)}}
+      </div>
+    </div>
 
+    <div class="column-one-half">
+      <div class="form-section">
+        {{FORM.inputfieldset(data[keylookup[1]], formcache)}}
+      </div>
+    </div>
+  </div>
+
+  <div class="grid-row">
+    <div class="column-one-half">
+      <div class="form-section">
+        {{FORM.date(data[keylookup[2]], formcache)}}
+      </div>
+    </div>
+
+    <div class="column-one-half">
+      <div class="form-section">
+        {{FORM.inputfieldset(data[keylookup[3]], formcache)}}
+      </div>
+    </div>
+  </div>
+{% endmacro %}

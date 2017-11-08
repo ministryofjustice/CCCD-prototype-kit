@@ -9,10 +9,23 @@
 <script src="/public/javascripts/govuk/show-hide-content.js"></script>
 <script src="/public/javascripts/datalookups.js"></script>
 <script src="/public/javascripts/moj.js"></script>
-<script src="/public/javascripts/modules/moj.Modules.Inputs.js"></script>
+
+<!-- Page controllers -->
+<!-- This section should remain BEFORE the Element Controllers  -->
+<script src="/public/javascripts/modules/moj.Modules.BillType.js"></script>
 <script src="/public/javascripts/modules/moj.Modules.CaseDetails.js"></script>
 <script src="/public/javascripts/modules/moj.Modules.MiscFee.js"></script>
-<script src="/public/javascripts/modules/moj.Modules.BillType.js"></script>
+
+
+<!-- Element controllers -->
+<!-- This section should remain AFTER the Page Controllers  -->
+<script src="/public/javascripts/modules/moj.Modules.TypeAhead.js"></script>
+<script src="/public/javascripts/modules/moj.Modules.Inputs.js"></script>
+
+
+
+
+
 <script src="/public/javascripts/application.js"></script>
 
 {% if useAutoStoreData %}

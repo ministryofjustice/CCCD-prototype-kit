@@ -52,17 +52,7 @@ $(document).ready(function() {
 
 
 $(document).ready(function() {
-  moj.init();
 
-
-
-  // Broadcast the `typeahead:change` event
-  $('body').on('typeahead:change', function(e, value) {
-    var fxname = $(e.target).attr('name');
-    $.publish(fxname, {
-      value: value
-    })
-  })
 
   // Offence Category random chooser
   $.subscribe('select-box-offence-category', function(e, data) {
@@ -108,5 +98,6 @@ $(document).ready(function() {
   });
 
 
+  moj.init();
 
 });

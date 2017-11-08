@@ -15,26 +15,10 @@
           Defendant details
         </h2>
 
-        <h3 class="heading-medium">
-          Defendant 1
-        </h3>
-        <div class="form-section">
-          {{FORM.input(formData[0], formcache)}}
-          {{FORM.input(formData[1], formcache)}}
-        </div>
+        {% for item in [1,2,3,4,5] %}
+          {{FORM.defendant(formData, formcache, FORM, item)}}
+        {% endfor %}
 
-        <div class="form-section">
-          {{FORM.date(formData[2], formcache)}}
-          {{FORM.checkboxlist(formData[3], formcache)}}
-        </div>
-
-        <h3 class="heading-medium">
-          Representation order details
-        </h3>
-        <div class="form-section">
-          {{FORM.date(formData[4], formcache)}}
-          {{FORM.input(formData[5], formcache)}}
-        </div>
 
         <div class="form-section">
           {{FORM.addmore(formData[6], formcache)}}

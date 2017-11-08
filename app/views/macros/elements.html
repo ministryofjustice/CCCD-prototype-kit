@@ -117,8 +117,9 @@
   </div>
 {% endmacro %}
 
-{% macro checkboxlist(data, formcache={}, errorState=false) %}
-  {% set localname = 'checkbox-group-'+ data.heading | nameAttr %}
+{% macro checkboxlist(data, formcache={}, seedNum=1) %}
+  {% set contextID = (data.context | default('general')) +'-checkbox-group-' + (data.heading | nameAttr) + '-' + seedNum %}
+
   {% if data.heading %}
   <h3 class="heading-medium">{{data.heading}}</h3>
   {% endif %}
@@ -139,8 +140,8 @@
 
       {% for item in data.options %}
       <div class="multiple-choice">
-        <input id="checkbox-{{loop.index}}" type="checkbox" name="{{localname+ '-'+loop.index}}" value="{{item}}" {{'checked' if (item == formcache[localname+'-'+loop.index])}} />
-        <label for="checkbox-{{loop.index}}">{{item}}</label>
+        <input id="{{contextID+ '-'+loop.index}}" type="checkbox" name="{{contextID+ '-'+loop.index}}" value="{{item}}" {{'checked' if (item == formcache[contextID+'-'+loop.index])}} />
+        <label for="{{contextID+ '-'+loop.index}}">{{item}}</label>
       </div>
       {% endfor %}
     </fieldset>
@@ -156,7 +157,7 @@
 
 {% macro select(data, formcache={}, seedNum=1) %}
   {% set contextID = (data.context | default('general')) +'-select-' + (data.label | nameAttr) + '-' + seedNum %}
-  <div class="form-group {{ 'form-group-error' if errorState }}">
+  <div class="form-group {{ 'form-group-error' if errorState }} {{ 'fx-typeahead' if data.typeahead !== false }} ">
     <label class="form-label-bold" for="{{contextID}}">
       {{data.label | default("Missing data.label")}}
 
@@ -353,5 +354,31 @@
         {{FORM.inputfieldset(data[keylookup[3]], formcache)}}
       </div>
     </div>
+  </div>
+{% endmacro %}
+
+{% macro defendant(data, formcache, FORM, seedNum=1) %}
+  <div class="fx-defendant {{ 'hidden' if (seedNum > 1)}}">
+    <h3 class="heading-medium">
+      Defendant {{seedNum}}
+    </h3>
+    <div class="form-section">
+      {{FORM.input(data[0], formcache, seedNum)}}
+      {{FORM.input(data[1], formcache, seedNum)}}
+    </div>
+
+    <div class="form-section">
+      {{FORM.date(data[2], formcache, seedNum)}}
+      {{FORM.checkboxlist(data[3], formcache, seedNum)}}
+    </div>
+
+    <h3 class="heading-medium">
+      Representation order details
+    </h3>
+    <div class="form-section">
+      {{FORM.date(data[4], formcache)}}
+      {{FORM.input(data[5], formcache, seedNum)}}
+    </div>
+    <hr />
   </div>
 {% endmacro %}

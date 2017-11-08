@@ -21,11 +21,15 @@
         },
         "0": {
           "label": "Advocate",
-          "hint": "Instructed Advocate for the case"
+          "hint": "Instructed Advocate for the case",
+          "cssClasses": "form-control-3-4"
+
         },
         "1": {
           "label": "Reference number",
-          "hint": "Your internal reference number for this claim"
+          "hint": "Your internal reference number for this claim",
+          "cssClasses": "form-control-3-4"
+
         },
         "2": {
           "label": "Case type",
@@ -97,7 +101,8 @@
         },
         "6": {
           "value": "Add another defendant",
-          "type": "button"
+          "type": "button",
+          "fxselector": ".fx-defendant"
         }
       }
     },

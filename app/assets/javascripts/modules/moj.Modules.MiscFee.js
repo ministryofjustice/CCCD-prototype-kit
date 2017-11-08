@@ -19,12 +19,17 @@ moj.Modules.MiscFee = {
     // Get a collection of all the Misc Fees and
     // apply the current display states
     $(this.el).is(function(idx, el) {
-
       var $el = $(el);
       var $select = $el.find('select');
 
+      // Handel typeahead instances
+      if(!$select.length){
+        $select = $el.find('.tt-input');
+      }
+
       if (!!$select.val()) {
         $el.removeClass('hidden');
+
         if (self.checkTrigger($select.val())) {
           $select.change()
         }

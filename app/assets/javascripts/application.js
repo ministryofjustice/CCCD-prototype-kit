@@ -54,10 +54,7 @@ $(document).ready(function() {
 $(document).ready(function() {
 
 
-  // Offence Category random chooser
-  $.subscribe('select-box-offence-category', function(e, data) {
-    $("select#select-box-offence-class").prop('selectedIndex', _.sample([1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11]));
-  })
+
 
   // Remove disabled attr from inputs before submit
   $('form').submit(function(e) {

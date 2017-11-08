@@ -122,9 +122,12 @@
         },
         "1": {
           "label": "Offence class",
-          "cssClasses": "form-control-3-4",
+          "cssClasses": "form-control-3-4 disabled",
+          "typeahead": false,
+          "readonly": true,
           "options": "[[ REPLACED WHEN ROUTE IS CALLED ]]"
         }
+
 
       }
     },
@@ -136,11 +139,10 @@
           "0": "agfs-case-types"
         },
         "0": {
-          "heading": "Choose your case type",
-          "bodytext": "Please choose a relevant option",
           "label": "Case type",
-          "cssClasses": "form-control-3-4",
+          "cssClasses": "form-control-3-4 disabled",
           "typeahead": false,
+          "readonly": true,
           "options": "[[ REPLACED WHEN ROUTE IS CALLED ]]"
         },
         "1": {
@@ -166,7 +168,8 @@
         },
         "2": {
           "value": "Add another fee",
-          "type": "button"
+          "type": "button",
+          "fxselector": ".fx-misc-fee"
         }
       }
     },

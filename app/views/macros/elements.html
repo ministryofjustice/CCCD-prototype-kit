@@ -195,8 +195,13 @@
 
       {% if data.options[0] | is_string %}
         {% for item in data.options %}
+          <option
+            value="{{item}}"
+            {{'selected' if formcache[contextID]==item}}>
 
-          <option value="{{item}}" {{'selected' if formcache[contextID]==item}}>{{item}}</option>
+            {{item}}
+
+          </option>
         {% endfor %}
 
       {% else %}
@@ -303,10 +308,8 @@
 {% endmacro %}
 
 
-{% macro miscfee(data, formcache, FORM, seedNum=1) %}
-
+{% macro miscfeeLGFS(data, formcache, FORM, seedNum=1) %}
   <div class="fx-misc-fee {{ 'hidden' if (seedNum > 1)}}">
-
 
     <h3 class="heading-medium">
       Item {{seedNum}}
@@ -315,6 +318,22 @@
       {{FORM.select(data[0], formcache, seedNum)}}
       {{FORM.input(data[1], formcache, seedNum)}}
       {{FORM.netamount(data[2], formcache, seedNum)}}
+    </div>
+    <hr />
+
+
+  </div>
+{% endmacro %}
+
+{% macro miscfeeAGFS(data, formcache, FORM, seedNum=1) %}
+  <div class="fx-misc-fee {{ 'hidden' if (seedNum > 1)}}">
+
+    <h3 class="heading-medium">
+      Item {{seedNum}}
+    </h3>
+    <div class="form-section">
+      {{FORM.select(data[0], formcache, seedNum)}}
+      {{FORM.netamount(data[1], formcache, seedNum)}}
     </div>
     <hr />
 

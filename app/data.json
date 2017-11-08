@@ -231,10 +231,16 @@
         }
       }
     },
+    "agfs/cost-summary": {
+      "formData": {
+        "pagename": "cost-summary",
+        "action": "/examples/agfs/certify"
+      }
+    },
     "agfs/certify": {
       "formData": {
         "pagename": "agfs-certify",
-        "action": "/examples/agfs/certify",
+        "action": "/examples/agfs/thank-you",
         "objRefs": {
           "0": "agfs-certify-options"
         },
@@ -250,6 +256,12 @@
         "2": {
           "legend": "Date of certification"
         }
+      }
+    },
+    "agfs/thank-you": {
+      "formData": {
+        "pagename": "agfs-thank-you",
+        "action": "/examples"
       }
     },
     "lgfs/bill-type": {
@@ -371,6 +383,7 @@
         }
       }
     },
+
     "lgfs/final/defendants-lookup": {
       "formData": {
         "pagename": "lgfs-defendants-lookup",
@@ -601,17 +614,7 @@
     "lgfs/final/thank-you": {
       "formData": {
         "pagename": "lgfs-thank-you",
-        "action": "/examples/lgfs/",
-
-        "0": {
-          "label": "Name of person certifying",
-          "hint": "Enter full name"
-        },
-        "1": {
-          "legend": "Date",
-          "showhint": false,
-          "populate": true
-        }
+        "action": "/examples/lgfs/"
       }
     }
 

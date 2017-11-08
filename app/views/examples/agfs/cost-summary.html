@@ -16,11 +16,14 @@
         </h2>
 
 
-
         {% include "includes/tmpl-form-buttons.html" %}
         {% include "includes/tmpl-help-summary.html" %}
       </form>
     </div>
   </div>
 </main>
+<code>
+  {{formcache | dump | safe}}
+
+</code>
 {% endblock %}

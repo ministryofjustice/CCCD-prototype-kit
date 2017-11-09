@@ -1,0 +1,63 @@
+{% extends "layout.html" %}
+
+{% block content %}
+<main id="content" role="main">
+
+  {% include "./breadcrumb.html" %}
+
+  {% if errorState %}
+    {% include "includes/tmpl-error-summary.html" %}
+  {% endif %}
+
+  {% include "includes/tmpl-form-page-header.html" %}
+
+  <div class="grid-row">
+    <div class="column-two-thirds">
+      <form action="#noop" method="post" class="form">
+        <h2 class="heading-large">
+          Graduated fees
+        </h2>
+
+        <p>
+          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fugit eligendi iste facilis laborum ducimus quis quos est non aspernatur.
+        </p>
+
+        <h3 class="heading-medium">
+          Initial fees
+        </h3>
+        <p>
+          Lorem ipsum dolor sit amet, consectetur adipisici <a href="#">A 19px body copy link</a> ad he ck the.
+        </p>
+
+        {% include "includes/tmpl-input.html" %}
+
+        <!-- Check list with reveals -->
+        <div class="form-group">
+          <fieldset>
+            <legend>
+              <h1 class="heading-medium">
+                Fee type
+              </h1>
+              <span class="body-text">Please choose all relevant option</span>
+            </legend>
+            {% include "./includes/daily-attendance.html" %}
+            {% include "./includes/standard-appearance.html" %}
+            {% include "./includes/cases-uplift.html" %}
+
+          </fieldset>
+        </div>
+
+        <!-- Witnesses -->
+        {% include "includes/tmpl-witnesses.html" %}
+
+        <!-- PPE -->
+        {% include "includes/tmpl-ppe.html" %}
+
+        {% include "includes/tmpl-form-buttons.html" %}
+        {% include "includes/tmpl-help-summary.html" %}
+      </form>
+    </div>
+    {% include "includes/sidebar.html" %}
+  </div>
+</main>
+{% endblock %}

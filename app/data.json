@@ -109,7 +109,7 @@
     "agfs/final/offence": {
       "formData": {
         "pagename": "agfs-offence",
-        "action": "/examples/agfs/final/fixed-fees",
+        "action": "/examples/agfs/fee-chooser",
         "objRefs": {
           "0": "agfs-offence-categories",
           "1": "agfs-offence-classes"

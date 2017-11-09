@@ -26,7 +26,10 @@ router.get('/examples/lgfs/fee-chooser', function(req, res) {
   var feePath;
   data.formcache = res.locals.data;
 
-  feePath = utils.feetypeLookup(data.formcache['select-box-case-type']);
+  // the formcache lookup is very flaky. any changes to
+  // macros/elements.html (select macro) might affect this
+  // for the time being
+  feePath = utils.feetypeLookup(data.formcache['general-select-case-type-1']);
   res.redirect(feePath);
 })
 
@@ -40,10 +43,6 @@ router.get('/examples/lgfs/:folder(final|interim|transfer)/:page*?', function(re
   if (!page){
     res.redirect('case-details');
     next
-  }
-
-  if(path==='examples/lgfs/final/fixed-fees' && data.formcache['select-box-case-type'] == 'Appeal against conviction'){
-    console.log('REDIRECT TO the page');
   }
 
   res.render(path, utils.loadData(lookup, data))

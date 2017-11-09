@@ -17,13 +17,13 @@ moj.Modules.BillType = {
     var $form = $("#fx-form-bill-type");
     switch (val) {
       case 'Litigator final fee':
-        $form.attr("action", window.location.pathname + "final/");
+        $form.attr("action", "/examples/lgfs/final/case-details");
         break;
       case 'Litigator interim fee':
-        $form.attr("action", window.location.pathname + "interim/");
+        $form.attr("action", "/examples/lgfs/final/case-details/interim/");
         break;
       case 'Litigator transfer fee':
-        $form.attr("action", window.location.pathname + "transfer/");
+        $form.attr("action", "/examples/lgfs/final/case-details/transfer/");
         break;
       default:
         alert('switch fell')

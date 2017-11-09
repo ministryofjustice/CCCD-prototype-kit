@@ -1,9 +1,9 @@
 {
   "routes": {
-    "agfs/case-details": {
+    "agfs/final/case-details": {
       "formData": {
         "pagename": "agfs-case-details",
-        "action": "/examples/agfs/defendants",
+        "action": "/examples/agfs/final/defendants",
         "objRefs": {
           "2": "agfs-case-types",
           "3": "courts",
@@ -74,10 +74,10 @@
         }
       }
     },
-    "agfs/defendants": {
+    "agfs/final/defendants": {
       "formData": {
         "pagename": "agfs-defendants",
-        "action": "/examples/agfs/offence",
+        "action": "/examples/agfs/final/offence",
         "0": {
           "label": "First name"
         },
@@ -106,10 +106,10 @@
         }
       }
     },
-    "agfs/offence": {
+    "agfs/final/offence": {
       "formData": {
         "pagename": "agfs-offence",
-        "action": "/examples/agfs/fixed-fees",
+        "action": "/examples/agfs/final/fixed-fees",
         "objRefs": {
           "0": "agfs-offence-categories",
           "1": "agfs-offence-classes"
@@ -131,10 +131,10 @@
 
       }
     },
-    "agfs/fixed-fees": {
+    "agfs/final/fixed-fees": {
       "formData": {
         "pagename": "agfs-fixed-fees",
-        "action": "/examples/agfs/misc-fees",
+        "action": "/examples/agfs/final/misc-fees",
         "objRefs": {
           "0": "agfs-case-types"
         },
@@ -150,10 +150,10 @@
         }
       }
     },
-    "agfs/misc-fees": {
+    "agfs/final/misc-fees": {
       "formData": {
         "pagename": "agfs-misc-fees",
-        "action": "/examples/agfs/expenses",
+        "action": "/examples/agfs/final/expenses",
         "objRefs": {
           "0": "agfs-misc-fees"
         },
@@ -173,10 +173,10 @@
         }
       }
     },
-    "agfs/expenses": {
+    "agfs/final/expenses": {
       "formData": {
         "pagename": "agfs-expenses",
-        "action": "/examples/agfs/supporting-evidence",
+        "action": "/examples/agfs/final/supporting-evidence",
         "objRefs": {
           "0": "agfs-expense-types",
           "1": "agfs-travel-reasons"
@@ -210,16 +210,16 @@
         }
       }
     },
-    "agfs/additional-info": {
+    "agfs/final/additional-info": {
       "formData": {
         "pagename": "additional-info",
-        "action": "/examples/agfs/cost-summary"
+        "action": "/examples/agfs/final/cost-summary"
       }
     },
-    "agfs/supporting-evidence": {
+    "agfs/final/supporting-evidence": {
       "formData": {
         "pagename": "supporting-evidence",
-        "action": "/examples/agfs/additional-info",
+        "action": "/examples/agfs/final/additional-info",
         "objRefs": {
           "0": "evidence-check-list"
         },
@@ -231,16 +231,16 @@
         }
       }
     },
-    "agfs/cost-summary": {
+    "agfs/final/cost-summary": {
       "formData": {
         "pagename": "cost-summary",
-        "action": "/examples/agfs/certify"
+        "action": "/examples/agfs/final/certify"
       }
     },
-    "agfs/certify": {
+    "agfs/final/certify": {
       "formData": {
         "pagename": "agfs-certify",
-        "action": "/examples/agfs/thank-you",
+        "action": "/examples/agfs/final/thank-you",
         "objRefs": {
           "0": "agfs-certify-options"
         },
@@ -258,7 +258,7 @@
         }
       }
     },
-    "agfs/thank-you": {
+    "agfs/final/thank-you": {
       "formData": {
         "pagename": "agfs-thank-you",
         "action": "/examples"

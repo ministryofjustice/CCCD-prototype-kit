@@ -1,10 +1,26 @@
+{% include "includes/tmpl-phase-banner.html" %}
+<div class="breadcrumbs">
+  <ol>
+    <li>
+      <a href="/examples/agfs/all-claims-list">Your claims</a>
+    </li>
+    <li>
+      <a title="View archived claims" href="#noop">Archive</a>
+    </li>
+    <li>
+      <a title="Start a new claim" href="/examples/agfs/final/case-details">Start a claim</a>
+    </li>
+  </ol>
+</div>
+
+
 <div class="breadcrumbs {{'pinned' if not setInline}}">
 
   <ol>
     <li>
-      <a href="/examples/agfs/all-claims-list">All claims list</a>
+      <a href="/examples/agfs/case-details">Case details</a>
     </li>
-    <!-- <li>
+    <li>
       <a href="/examples/agfs/defendants-form">Defendant details</a>
     </li>
     <li>
@@ -30,7 +46,7 @@
     </li>
     <li>
       <a href="/examples/agfs/certify">Certify</a>
-    </li> -->
+    </li>
   </ol>
 </div>
 

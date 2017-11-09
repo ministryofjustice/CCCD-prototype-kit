@@ -1,6 +1,6 @@
 var _ = require('underscore')
 module.exports = {
-  feetypeLookup: function(string) {
+  feetypeLookup: function(string, scheme) {
     var data = {
       // AGFS case types
       "basic-fees": [
@@ -23,9 +23,9 @@ module.exports = {
     };
 
     if (!!~data['basic-fees'].indexOf(string)){
-      return '/examples/lgfs/final/graduated-fees';
+      return '/examples/'+ scheme +'/final/graduated-fees';
     }
-    return '/examples/lgfs/final/fixed-fees';
+    return '/examples/'+ scheme +'/final/fixed-fees';
   },
   loadData: function(pointer, data) {
 

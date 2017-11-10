@@ -9,7 +9,7 @@
 
   <div class="grid-row">
     <div class="column-two-thirds">
-      <form action="#noop" method="post" class="form">
+      <form action="{{formData.action}}" method="post" class="form">
         <h2 class="heading-large">
           Graduated fees
         </h2>
@@ -31,7 +31,7 @@
               Case type
             </label>
 
-            <input class="form-control disabled" type="text" value="{{formcache['select-box-case-type']}}" disabled="disabled" />
+            <input class="form-control disabled" type="text" value="{{formcache['general-select-case-type-1']}}" disabled="disabled" />
           </div>
         </div>
 

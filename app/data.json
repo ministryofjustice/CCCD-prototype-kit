@@ -150,6 +150,38 @@
         }
       }
     },
+    "agfs/final/graduated-fees": {
+      "formData": {
+        "pagename": "agfs-graduated-fees",
+        "action": "/examples/agfs/final/misc-fees",
+
+        "0": {
+          "label": "Number of days",
+          "hint": "Include all days attended",
+          "cssClasses": "form-control-1-4"
+        },
+        "1": {
+          "legend": "Date attended",
+          "removeLink": true
+        },
+        "2": {
+          "legend": "Net Amount",
+          "context": "graduated-fees-daily"
+        },
+        "3": {
+          "label": "Total number of prosecution witnesses",
+          "cssClasses": "form-control-1-4"
+        },
+        "4": {
+          "legend": "Net Amount",
+          "context": "graduated-fees-witness"
+        },
+        "5": {
+          "label": "Total number of pages",
+          "cssClasses": "form-control-1-4"
+        }
+      }
+    },
     "agfs/final/misc-fees": {
       "formData": {
         "pagename": "agfs-misc-fees",
@@ -264,6 +296,7 @@
         "action": "/examples"
       }
     },
+
     "lgfs/bill-type": {
       "formData": {
         "pagename": "lgfs-bill-type",
@@ -383,7 +416,6 @@
         }
       }
     },
-
     "lgfs/final/defendants-lookup": {
       "formData": {
         "pagename": "lgfs-defendants-lookup",

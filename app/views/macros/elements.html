@@ -88,6 +88,12 @@
           <label class="form-label" for="{{contextID}}-year">Year</label>
           <input class="form-control {{ 'form-control-error' if errorState }}" id="{{contextID}}-year" value="{{formcache[contextID+'-year']}}" name="{{contextID}}-year" type="number" pattern="[0-9]*" min="0" max="2017">
         </div>
+        {% if data.removeLink %}
+        <div class="remove-date">
+          <p><br></p>
+          <a href="#noop">Remove date</a>
+        </div>
+        {% endif %}
       </div>
     </fieldset>
   </div>
@@ -306,7 +312,6 @@
     </fieldset>
   </div>
 {% endmacro %}
-
 
 {% macro miscfeeLGFS(data, formcache, FORM, seedNum=1) %}
   <div class="fx-misc-fee {{ 'hidden' if (seedNum > 1)}}">

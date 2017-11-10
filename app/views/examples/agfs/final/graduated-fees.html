@@ -5,10 +5,6 @@
 
   {% include "./breadcrumb.html" %}
 
-  {% if errorState %}
-    {% include "includes/tmpl-error-summary.html" %}
-  {% endif %}
-
   {% include "includes/tmpl-form-page-header.html" %}
 
   <div class="grid-row">
@@ -19,17 +15,25 @@
         </h2>
 
         <p>
-          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fugit eligendi iste facilis laborum ducimus quis quos est non aspernatur.
+          All fees should be entered exclusive of VAT. The system will add VAT to fees for VAT registered users.
         </p>
 
         <h3 class="heading-medium">
           Initial fees
         </h3>
         <p>
-          Lorem ipsum dolor sit amet, consectetur adipisici <a href="#">A 19px body copy link</a> ad he ck the.
+          You must enter a quantity and rate. Check the <a href="#noop">graduated fee calculators</a> for help.
         </p>
 
-        {% include "includes/tmpl-input.html" %}
+        <div class="form-section">
+          <div class="form-group ">
+            <label class="form-label-bold " for="general-input-case-type">
+              Case type
+            </label>
+
+            <input class="form-control disabled" type="text" value="{{formcache['select-box-case-type']}}" disabled="disabled" />
+          </div>
+        </div>
 
         <!-- Check list with reveals -->
         <div class="form-group">
@@ -40,24 +44,74 @@
               </h1>
               <span class="body-text">Please choose all relevant option</span>
             </legend>
-            {% include "./includes/daily-attendance.html" %}
-            {% include "./includes/standard-appearance.html" %}
-            {% include "./includes/cases-uplift.html" %}
+
+            <div class="multiple-choice" data-target="option-DA-reveal">
+              <input id="option-DA" name="agfs-grad-fees-1" type="checkbox" value="Option DA value" {{'checked' if "Option DA value" == formcache['agfs-grad-fees-1']}} />
+              <label for="option-DA">Daily attendance fee</label>
+            </div>
+
+            <div class="panel panel-border-narrow js-hidden" id="option-DA-reveal">
+              {{FORM.input(formData[0], formcache)}}
+              {{FORM.date(formData[1], formcache)}}
+              {{FORM.netamount(formData[2], formcache)}}
+            </div>
+
+            <div class="multiple-choice" data-target="option-SAF-reveal">
+              <input id="option-SAF" name="agfs-grad-fees-2" type="checkbox" value="Option SAF value" {{'checked' if "Option SAF value" == formcache['agfs-grad-fees-2']}}  />
+              <label for="option-SAF">Standard appearance fee</label>
+            </div>
+            <div class="multiple-choice" data-target="option-PCM-reveal">
+              <input id="option-PCM" name="agfs-grad-fees-3" type="checkbox" value="Option PCM value" {{'checked' if "Option PCM value" == formcache['agfs-grad-fees-3']}}  />
+              <label for="option-PCM">Plea and cae management</label>
+            </div>
+            <div class="multiple-choice" data-target="option-CV-reveal">
+              <input id="option-CV" name="agfs-grad-fees-4" type="checkbox" value="Option CV value" {{'checked' if "Option CV value" == formcache['agfs-grad-fees-4']}} />
+              <label for="option-CV">Conferences and views</label>
+            </div>
+            <div class="multiple-choice" data-target="option-NDU-reveal">
+              <input id="option-NDU" name="agfs-grad-fees-5" type="checkbox" value="Option NDU value" {{'checked' if "Option NDU value" == formcache['agfs-grad-fees-5']}}  />
+              <label for="option-NDU">Number of defendants uplift</label>
+            </div>
+            <div class="multiple-choice" data-target="option-NCU-reveal">
+              <input id="option-NCU" name="agfs-grad-fees-6" type="checkbox" value="Option NCU value" {{'checked' if "Option NCU value" == formcache['agfs-grad-fees-6']}}  />
+              <label for="option-NCU">Number of cases uplift</label>
+            </div>
+
+
 
           </fieldset>
         </div>
 
+
+
         <!-- Witnesses -->
-        {% include "includes/tmpl-witnesses.html" %}
+        <fieldset>
+          <legend>
+            <h3 class="heading-medium">Witnesses</h3>
+          </legend>
+
+          {{FORM.input(formData[3], formcache)}}
+          {{FORM.netamount(formData[4], formcache)}}
+
+        </fieldset>
+
 
         <!-- PPE -->
-        {% include "includes/tmpl-ppe.html" %}
+        <fieldset>
+          <legend>
+            <h3 class="heading-medium">Pages of prosecution evidance (PPE) </h3>
+          </legend>
+
+          {{FORM.input(formData[5], formcache)}}
+          {{FORM.netamount(formData[6], formcache)}}
+
+        </fieldset>
 
         {% include "includes/tmpl-form-buttons.html" %}
         {% include "includes/tmpl-help-summary.html" %}
       </form>
     </div>
-    {% include "includes/sidebar.html" %}
+
   </div>
 </main>
 {% endblock %}

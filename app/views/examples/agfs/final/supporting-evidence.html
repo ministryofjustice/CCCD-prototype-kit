@@ -20,7 +20,7 @@
         </h3>
 
         <div class="form-group">
-          <fieldset>
+          <fieldset class="inline">
             <legend>
               <h3 class="heading-small">
                 Will you be sending disk evidence with this claim?
@@ -31,14 +31,12 @@
               <input id="example-evidence-disk" type="radio" name="radio-contact-group" value="Yes">
               <label for="example-evidence-disk">Yes</label>
             </div>
-            <div class="panel panel-border-narrow js-hidden" id="evidence-disk">
-
-              <img src="/public/images/disk-evidence-help-text.png" />
-            </div>
-
             <div class="multiple-choice">
               <input id="example-contact-by-phone" type="radio" name="radio-contact-group" value="No">
               <label for="example-contact-by-phone">No</label>
+            </div>
+            <div class="panel panel-border-narrow js-hidden" id="evidence-disk">
+              <img src="/public/images/disk-evidence-help-text.png" />
             </div>
           </fieldset>
         </div>
@@ -58,34 +56,24 @@
         </div>
 
         <div class="form-group">
+          <h3 class="heading-medium">
+            Uploaded documents
+          </h3>
           <table>
             <thead>
               <tr>
-                <th scope="col">Month you apply</th>
-                <th class="numeric" scope="col">Rate for vehicles</th>
-                <th class="numeric" scope="col">Rate for bicycles</th>
+                <th>Document</th>
               </tr>
             </thead>
             <tbody>
               <tr>
-                <th scope="row">January</th>
-                <td class="numeric">£165.00</td>
-                <td class="numeric">£85.00</td>
-              </tr>
-              <tr>
-                <th scope="row">February</th>
-                <td class="numeric">£165.00</td>
-                <td class="numeric">£85.00</td>
-              </tr>
-              <tr>
-                <th scope="row">March</th>
-                <td class="numeric">£151.25</td>
-                <td class="numeric">£77.90</td>
-              </tr>
-              <tr>
-                <th scope="row">April</th>
-                <td class="numeric">£136.10</td>
-                <td class="numeric">£70.10</td>
+                <td>
+                  This_is_someReally_long_filename.pdf
+                  <span style="float:right;" class="font-xsmall">
+                    <a href="#noop">Download</a> |
+                    <a href="#noop">Delete</a>
+                  </span>
+                </td>
               </tr>
             </tbody>
           </table>

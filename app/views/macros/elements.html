@@ -302,7 +302,7 @@
       <div class="multiple-choice">
         <input id="radio-inline-1" type="radio" name="travel-expence-cpm" value="25"
 
-           {{'checked' if "25" == (formcache['travel-expence-cpm'] | default('25'))}}
+           {{'checked' if "25" == (formcache['travel-expence-cpm'])}}
 
         />
         <label for="radio-inline-1">25p per mile</label>
@@ -310,7 +310,7 @@
       <div class="multiple-choice">
         <input id="radio-inline-2" type="radio" name="travel-expence-cpm" value="45"
 
-          {{'checked' if "45" == formcache['travel-expence-cpm']}}
+          {{'checked' if "45" == (formcache['travel-expence-cpm'] | default('45'))}}
 
         />
         <label for="radio-inline-2">45p per mile</label>

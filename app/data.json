@@ -249,6 +249,8 @@
         "0": {
           "label": "Fee type",
           "hint": "Choose a fee type",
+          "typeahead": false,
+          "emptyOption": true,
           "cssClasses": "form-control-3-4",
           "options": "[[ REPLACED WHEN ROUTE IS CALLED ]]"
         },
@@ -313,8 +315,8 @@
           "0": "evidence-check-list"
         },
         "0": {
-          "label": "Fee type",
-          "hint": "Choose a fee type",
+          "heading": "Supporting evidence checklist",
+          "label": "Supporting evidence checklist",
           "cssClasses": "form-control-3-4",
           "options": "[[ REPLACED WHEN ROUTE IS CALLED ]]"
         }

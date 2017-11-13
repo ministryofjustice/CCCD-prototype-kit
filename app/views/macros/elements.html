@@ -90,11 +90,17 @@
         </div>
         {% if data.removeLink %}
         <div class="remove-date">
-          <p><br></p>
+          <br />
           <a href="#noop">Remove date</a>
         </div>
         {% endif %}
       </div>
+      {% if data.addAnotherLink %}
+      <div class="form-group" style="clear:both">
+        <br />
+        <a href="#noop">Add another date</a>
+      </div>
+      {% endif %}
     </fieldset>
   </div>
 {% endmacro %}
@@ -348,7 +354,7 @@
 
 {% macro trialdetails(data, formcache, FORM, keylookup) %}
   <h3 class="heading-medium">
-    Trail details
+    Trial details
   </h3>
 
   <div class="grid-row">

@@ -60,25 +60,50 @@
               <input id="option-SAF" name="agfs-grad-fees-2" type="checkbox" value="Option SAF value" {{'checked' if "Option SAF value" == formcache['agfs-grad-fees-2']}}  />
               <label for="option-SAF">Standard appearance fee</label>
             </div>
+            <div class="panel panel-border-narrow js-hidden" id="option-SAF-reveal">
+              {{FORM.input(formData[3], formcache)}}
+              {{FORM.date(formData[4], formcache)}}
+              {{FORM.netamount(formData[5], formcache)}}
+            </div>
+
             <div class="multiple-choice" data-target="option-PCM-reveal">
               <input id="option-PCM" name="agfs-grad-fees-3" type="checkbox" value="Option PCM value" {{'checked' if "Option PCM value" == formcache['agfs-grad-fees-3']}}  />
-              <label for="option-PCM">Plea and cae management</label>
+              <label for="option-PCM">Plea and case management hearing</label>
             </div>
+            <div class="panel panel-border-narrow js-hidden" id="option-PCM-reveal">
+              {{FORM.input(formData[6], formcache)}}
+              {{FORM.date(formData[7], formcache)}}
+              {{FORM.netamount(formData[8], formcache)}}
+            </div>
+
+
             <div class="multiple-choice" data-target="option-CV-reveal">
               <input id="option-CV" name="agfs-grad-fees-4" type="checkbox" value="Option CV value" {{'checked' if "Option CV value" == formcache['agfs-grad-fees-4']}} />
               <label for="option-CV">Conferences and views</label>
             </div>
+            <div class="panel panel-border-narrow js-hidden" id="option-CV-reveal">
+              {{FORM.input(formData[9], formcache)}}
+              {{FORM.netamount(formData[10], formcache)}}
+            </div>
+
             <div class="multiple-choice" data-target="option-NDU-reveal">
               <input id="option-NDU" name="agfs-grad-fees-5" type="checkbox" value="Option NDU value" {{'checked' if "Option NDU value" == formcache['agfs-grad-fees-5']}}  />
               <label for="option-NDU">Number of defendants uplift</label>
             </div>
+            <div class="panel panel-border-narrow js-hidden" id="option-NDU-reveal">
+              {{FORM.input(formData[11], formcache)}}
+              {{FORM.netamount(formData[12], formcache)}}
+            </div>
+
             <div class="multiple-choice" data-target="option-NCU-reveal">
               <input id="option-NCU" name="agfs-grad-fees-6" type="checkbox" value="Option NCU value" {{'checked' if "Option NCU value" == formcache['agfs-grad-fees-6']}}  />
               <label for="option-NCU">Number of cases uplift</label>
             </div>
-
-
-
+            <div class="panel panel-border-narrow js-hidden" id="option-NCU-reveal">
+              {{FORM.input(formData[13], formcache)}}
+              {{FORM.input(formData[14], formcache)}}
+              {{FORM.netamount(formData[15], formcache)}}
+            </div>
           </fieldset>
         </div>
 
@@ -90,8 +115,8 @@
             <h3 class="heading-medium">Witnesses</h3>
           </legend>
 
-          {{FORM.input(formData[3], formcache)}}
-          {{FORM.netamount(formData[4], formcache)}}
+          {{FORM.input(formData[100], formcache)}}
+          {{FORM.netamount(formData[101], formcache)}}
 
         </fieldset>
 
@@ -102,8 +127,8 @@
             <h3 class="heading-medium">Pages of prosecution evidance (PPE) </h3>
           </legend>
 
-          {{FORM.input(formData[5], formcache)}}
-          {{FORM.netamount(formData[6], formcache)}}
+          {{FORM.input(formData[102], formcache)}}
+          {{FORM.netamount(formData[103], formcache)}}
 
         </fieldset>
 

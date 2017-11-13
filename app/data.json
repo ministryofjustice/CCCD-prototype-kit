@@ -33,7 +33,7 @@
         },
         "2": {
           "label": "Case type",
-          "hint": "For example Trail",
+          "hint": "For example Trial",
           "options": "[[ REPLACED WHEN ROUTE IS CALLED ]]"
         },
         "3": {
@@ -169,18 +169,71 @@
           "context": "graduated-fees-daily"
         },
         "3": {
-          "label": "Total number of prosecution witnesses",
+          "label": "Number of appearances",
           "cssClasses": "form-control-1-4"
         },
         "4": {
+          "legend": "Date of appearance 1",
+          "addAnotherLink": true
+        },
+        "5": {
+          "legend": "Net Amount",
+          "context": "graduated-fees-standard"
+        },
+        "6": {
+          "label": "Number of hearings",
+          "cssClasses": "form-control-1-4"
+        },
+        "7": {
+          "legend": "Date of hearings 1",
+          "addAnotherLink": true
+        },
+        "8": {
+          "legend": "Net Amount",
+          "context": "graduated-fees-case-management"
+        },
+        "9": {
+          "label": "Number of conferences and views",
+          "cssClasses": "form-control-1-4"
+        },
+        "10": {
+          "legend": "Net Amount",
+          "context": "graduated-fees-conferences-views"
+        },
+        "11": {
+          "label": "Number of defendants",
+          "cssClasses": "form-control-1-4"
+        },
+        "12": {
+          "legend": "Net Amount",
+          "context": "graduated-fees-defendants"
+        },
+        "13": {
+          "label": "Number of cases",
+          "cssClasses": "form-control-1-4"
+        },
+        "14": {
+          "label": "Additional case numbers",
+          "hint": "Seperate with commas"
+        },
+        "15": {
+          "legend": "Net Amount",
+          "context": "graduated-fees-defendants"
+        },
+
+        "100": {
+          "label": "Total number of prosecution witnesses",
+          "cssClasses": "form-control-1-4"
+        },
+        "101": {
           "legend": "Net Amount",
           "context": "graduated-fees-witness"
         },
-        "5": {
+        "102": {
           "label": "Total number of pages",
           "cssClasses": "form-control-1-4"
         },
-        "6": {
+        "103": {
           "legend": "Net Amount",
           "context": "graduated-fees-ppe"
         }
@@ -337,7 +390,7 @@
         },
         "2": {
           "label": "Case type",
-          "hint": "For example Trail",
+          "hint": "For example Trial",
           "options": []
         },
         "3": {

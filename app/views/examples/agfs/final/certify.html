@@ -32,7 +32,7 @@
             </legend>
 
             <div class="multiple-choice">
-              <input id="radio-1" type="radio" name="radio-group" value="I attended the main hearing (1st day of trial)">
+              <input id="radio-1" type="radio" name="general-input-certify" {{'checked' if "I attended the main hearing (1st day of trial)" == formcache['general-input-certify']}} value="I attended the main hearing (1st day of trial)">
               <label for="radio-1">I attended the main hearing (1st day of trial)</label>
             </div>
 
@@ -47,23 +47,44 @@
 
 
             <div class="multiple-choice">
-              <input id="radio-1" type="radio" name="radio-group" value="I notified the court, in writing before the PCMH that I was the instructed advocate. A copy of the letter is attached.">
+              <input id="radio-1" type="radio"
+              {{'checked' if "I notified the court, in writing before the PCMH that I was the instructed advocate. A copy of the letter is attached." == formcache['general-input-certify']}}
+              value="I notified the court, in writing before the PCMH that I was the instructed advocate. A copy of the letter is attached."
+              name="general-input-certify"  />
               <label for="radio-1">I notified the court, in writing before the PCMH that I was the instructed advocate. A copy of the letter is attached.</label>
             </div>
             <div class="multiple-choice">
-              <input id="radio-1" type="radio" name="radio-group" value="I attended the PCMH (where the client was arraigned) and no other advocate wrote to the court prior to this to advise that they were the instructed advocate.">
+              <input id="radio-1" type="radio"
+              {{'checked' if "I attended the PCMH (where the client was arraigned) and no other advocate wrote to the court prior to this to advise that they were the instructed advocate." == formcache['general-input-certify']}}
+              value="I attended the PCMH (where the client was arraigned) and no other advocate wrote to the court prior to this to advise that they were the instructed advocate."
+              name="general-input-certify" />
               <label for="radio-1">I attended the PCMH (where the client was arraigned) and no other advocate wrote to the court prior to this to advise that they were the instructed advocate.</label>
             </div>
             <div class="multiple-choice">
-              <input id="radio-1" type="radio" name="radio-group" value="I attended the first hearing after the PCMH and no other advocate attended the PCMH or wrote to the court prior to this to advise that they were the instructed advocate.">
+              <input id="radio-1" type="radio"
+              {{'checked' if "I attended the first hearing after the PCMH and no other advocate attended the PCMH or wrote to the court prior to this to advise that they were the instructed advocate." == formcache['general-input-certify']}}
+
+              value="I attended the first hearing after the PCMH and no other advocate attended the PCMH or wrote to the court prior to this to advise that they were the instructed advocate."
+              name="general-input-certify"
+              />
               <label for="radio-1">I attended the first hearing after the PCMH and no other advocate attended the PCMH or wrote to the court prior to this to advise that they were the instructed advocate.</label>
             </div>
             <div class="multiple-choice">
-              <input id="radio-1" type="radio" name="radio-group" value="The previous instructed advocate notified the court in writing that they were no longer acting in this case and i was then instructed.">
+              <input id="radio-1" type="radio"
+              {{'checked' if "The previous instructed advocate notified the court in writing that they were no longer acting in this case and i was then instructed." == formcache['general-input-certify']}}
+
+              value="The previous instructed advocate notified the court in writing that they were no longer acting in this case and i was then instructed."
+              name="general-input-certify"
+              />
               <label for="radio-1">The previous instructed advocate notified the court in writing that they were no longer acting in this case and i was then instructed.</label>
             </div>
             <div class="multiple-choice">
-              <input id="radio-1" type="radio" name="radio-group" value="The case was a fixed fee (with a case number beginning with an S or A) and I attended the main hearing.">
+              <input id="radio-1" type="radio"
+              {{'checked' if "The case was a fixed fee (with a case number beginning with an S or A) and I attended the main hearing." == formcache['general-input-certify']}}
+
+              value="The case was a fixed fee (with a case number beginning with an S or A) and I attended the main hearing."
+              name="general-input-certify"
+              />
               <label for="radio-1">The case was a fixed fee (with a case number beginning with an S or A) and I attended the main hearing.</label>
             </div>
 

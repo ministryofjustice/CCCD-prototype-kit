@@ -694,7 +694,7 @@
         "action": "/examples/lgfs/final/thank-you",
 
         "0": {
-          "label": "Name of person certiying the claim",
+          "label": "Name of person certifying the claim",
           "hint": "Enter full name",
           "setValue": "Benjamin Matlock"
         },

@@ -4,88 +4,63 @@
 </h3>
 <table class="form-section tbl-defendants">
   <tbody>
-    <tr>
+    <!-- {{FORM.defendantCS(formcache, 1)}} -->
+    {% for item in [1,2,3,4,5] %}
+      {{FORM.defendantCS(formcache, item)}}
+    {% endfor %}
+    <!-- <tr>
       <th style="vertical-align: top; width: 33%;">Defendant 1</th>
       <td style="padding: 0">
         <table class="nested-table" style="border:0;margin-bottom: 0">
           <tbody>
             <tr>
-              <th>Defendant name</th>
-              <td>MODEL</td>
+              <th style="width: 40%;">Defendant name</th>
+              <td>{{formcache['general-input-first-name-1']}} {{formcache['general-input-last-name-1']}}</td>
             </tr>
             <tr>
               <th>Date of birth</th>
-              <td>MODEL</td>
+              <td>{{formcache['general-date-of-birth-1-day']}}/{{formcache['general-date-of-birth-1-month']}}/{{formcache['general-date-of-birth-1-year']}}</td>
             </tr>
             <tr>
-              <th>Date of birth</th>
-              <td>MODEL</td>
+              <th>MAAT Reference</th>
+              <td>{{formcache['general-input-maat-reference-1']}}/</td>
             </tr>
             <tr>
-              <th>Date of birth</th>
-              <td>MODEL</td>
+              <th>Representation order date</th>
+              <td>{{formcache['general-representation-order-date-1-day']}}/{{formcache['general-representation-order-date-1-month']}}/{{formcache['general-representation-order-date-1-year']}}</td>
             </tr>
             <tr>
-              <th>Date of birth</th>
-              <td>MODEL</td>
+              <th>Judical apportionment</th>
+              <td>{{"Yes" if formcache['general-checkbox-group-no-header-attr-1-1'] == 'Order for judicial apportionment' else "No"}}</td>
             </tr>
           </tbody>
         </table>
       </td>
     </tr>
-    <!-- <tr>
-      <th style="vertical-align: top">Defendant 1</th>
+    <tr class="{{ 'hidden' if formcache['general-input-first-name-2'] == ""}}">
+      <th style="vertical-align: top; width: 33%;">Defendant 2</th>
       <td style="padding: 0">
         <table class="nested-table" style="border:0;margin-bottom: 0">
           <tbody>
             <tr>
-              <th>Defendant name</th>
-              <td>MODEL</td>
+              <th style="width: 40%;">Defendant name</th>
+              <td>{{formcache['general-input-first-name-2']}} {{formcache['general-input-last-name-2']}}</td>
             </tr>
             <tr>
               <th>Date of birth</th>
-              <td>MODEL</td>
+              <td>{{formcache['general-date-of-birth-2-day']}}/{{formcache['general-date-of-birth-2-month']}}/{{formcache['general-date-of-birth-2-year']}}</td>
             </tr>
             <tr>
-              <th>Date of birth</th>
-              <td>MODEL</td>
+              <th>MAAT Reference</th>
+              <td>{{formcache['general-input-maat-reference-2']}}/</td>
             </tr>
             <tr>
-              <th>Date of birth</th>
-              <td>MODEL</td>
+              <th>Representation order date</th>
+              <td>{{formcache['general-representation-order-date-2-day']}}/{{formcache['general-representation-order-date-2-month']}}/{{formcache['general-representation-order-date-2-year']}}</td>
             </tr>
             <tr>
-              <th>Date of birth</th>
-              <td>MODEL</td>
-            </tr>
-          </tbody>
-        </table>
-      </td>
-    </tr>
-    <tr>
-      <th style="vertical-align: top">Defendant 1</th>
-      <td style="padding: 0">
-        <table class="nested-table" style="border:0;margin-bottom: 0">
-          <tbody>
-            <tr>
-              <th>Defendant name</th>
-              <td>MODEL</td>
-            </tr>
-            <tr>
-              <th>Date of birth</th>
-              <td>MODEL</td>
-            </tr>
-            <tr>
-              <th>Date of birth</th>
-              <td>MODEL</td>
-            </tr>
-            <tr>
-              <th>Date of birth</th>
-              <td>MODEL</td>
-            </tr>
-            <tr>
-              <th>Date of birth</th>
-              <td>MODEL</td>
+              <th>Judical apportionment</th>
+              <td>{{"Yes" if formcache['general-checkbox-group-no-header-attr-2-1'] == 'Order for judicial apportionment' else "No"}}</td>
             </tr>
           </tbody>
         </table>

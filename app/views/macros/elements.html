@@ -416,3 +416,39 @@
     <hr />
   </div>
 {% endmacro %}
+
+
+{% macro defendantCS(formcache, item)%}
+  {% if  formcache['general-input-first-name-'+item] !== "" %}
+    <tr>
+      <th style="vertical-align: top; width: 33%;">Defendant {{item}}</th>
+      <td style="padding: 0">
+        <table class="nested-table" style="border:0;margin-bottom: 0">
+          <tbody>
+            <tr>
+              <th style="width: 40%;">Defendant name</th>
+              <td>{{formcache['general-input-first-name-'+item]}} {{formcache['general-input-last-name-'+item]}}</td>
+            </tr>
+            <tr>
+              <th>Date of birth</th>
+              <td>{{formcache['general-date-of-birth-'+ item +'-day']}}/{{formcache['general-date-of-birth-'+ item +'-month']}}/{{formcache['general-date-of-birth-'+ item +'-year']}}</td>
+            </tr>
+            <tr>
+              <th>MAAT Reference</th>
+              <td>{{formcache['general-input-maat-reference-'+item]}}</td>
+            </tr>
+            <tr>
+              <th>Representation order date</th>
+              <td>{{formcache['general-representation-order-date-'+ item +'-day']}}/{{formcache['general-representation-order-date-'+ item +'-month']}}/{{formcache['general-representation-order-date-'+ item +'-year']}}</td>
+            </tr>
+            <tr>
+              <th>Judical apportionment</th>
+              <td>{{"Yes" if formcache['general-checkbox-group-no-header-attr-'+ item +'-1'] == 'Order for judicial apportionment' else "No"}}</td>
+            </tr>
+          </tbody>
+        </table>
+      </td>
+    </tr>
+  {% endif %}
+{% endmacro %}
+

@@ -79,7 +79,8 @@
         "pagename": "agfs-defendants",
         "action": "/examples/agfs/final/offence",
         "0": {
-          "label": "First name"
+          "label": "First name",
+          "cssClasses": "fx-defendant-hook"
         },
         "1": {
           "label": "Last name"

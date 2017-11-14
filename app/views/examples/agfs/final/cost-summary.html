@@ -14,7 +14,9 @@
         <h2 class="heading-large">
           Cost summary
         </h2>
-        {% include "examples/shared/includes/cost-summary.html" %}
+        {% include "examples/shared/includes/cost-summary-totals.html" %}
+
+        {% include "examples/shared/includes/cost-summary-actions.html" %}
 
         {% include "examples/agfs/shared/cost-summary-case-details.html" %}
 
@@ -32,6 +34,7 @@
 
         {% include "examples/agfs/shared/cost-summary-additional-info.html" %}
 
+        {% include "examples/shared/includes/cost-summary-actions.html" %}
 
         </form>
       </div>

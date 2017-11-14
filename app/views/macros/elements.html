@@ -1,4 +1,4 @@
-{% macro input(data,formcache={}, seedNum=1) %}
+{% macro input(data, formcache={}, seedNum=1) %}
   {% set contextID = (data.context | default('general')) +'-input-' + (data.label | nameAttr) + '-' + seedNum %}
   <div class="form-group el-input {{ 'form-group-error' if errorState }} {{ 'hidden' if data.hidden }}" id="wrapped-{{contextID}}">
     <label class="form-label-bold" for="{{ contextID }}">
@@ -20,7 +20,11 @@
       id="{{ contextID }}"
       type="{{data.type | default('text')}}"
       name="{{ contextID }}"
-      value="{{formcache[contextID]}}"
+      {% if data.setValue %}
+        value="{{data.setValue}}"
+      {% else %}
+        value="{{formcache[contextID]}}"
+      {% endif %}
       {{ 'disabled' if data.readonly == true}}
       {{ 'data-uppercase=true' if data.uppercase == true}}
     />

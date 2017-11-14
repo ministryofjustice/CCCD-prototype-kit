@@ -341,11 +341,13 @@
           "options": "[[ REPLACED WHEN ROUTE IS CALLED ]]"
         },
         "1": {
-          "label": "Name of person certiying the claim",
-          "hint": "Enter full name"
+          "label": "Name of person certifying the claim",
+          "hint": "Enter full name",
+          "setValue": "Benjamin Matlock"
         },
         "2": {
-          "legend": "Date of certification"
+          "legend": "Date of certification",
+          "populate": true
         }
       }
     },
@@ -692,8 +694,9 @@
         "action": "/examples/lgfs/final/thank-you",
 
         "0": {
-          "label": "Name of person certifying",
-          "hint": "Enter full name"
+          "label": "Name of person certiying the claim",
+          "hint": "Enter full name",
+          "setValue": "Benjamin Matlock"
         },
         "1": {
           "legend": "Date",

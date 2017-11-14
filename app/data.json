@@ -293,12 +293,12 @@
           "legend": "Date of birth"
         },
         "5": {
-          "label": "MAAT Reference",
-          "hint": "For example 123456789"
+          "legend": "Net Amount",
+          "context": "travel-expenses"
         },
         "6": {
-          "value": "Add another defendant",
-          "type": "button"
+          "legend": "VAT Amount",
+          "context": "travel-expenses"
         }
       }
     },

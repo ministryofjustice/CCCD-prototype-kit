@@ -6,15 +6,19 @@
   <tbody>
     <tr>
       <th style="width: 33%;">Case type</th>
-      <td>MODEL</td>
+      <td>{{formcache['general-select-case-type-1'] | empty}}</td>
     </tr>
     <tr>
       <th>Date of hearing</th>
-      <td>MODEL</td>
+      <td>
+      {{formcache['general-date-of-hearing-1-day']}}/
+      {{formcache['general-date-of-hearing-1-month']}}/
+      {{formcache['general-date-of-hearing-1-year']}}</td>
     </tr>
     <tr>
       <th>Net amount</th>
-      <td class="bold-small">£130.00</td>
+      <td class="bold-small">£{{formcache['general-input-date-of-hearing-1']}}</td>
     </tr>
   </tbody>
 </table>
+

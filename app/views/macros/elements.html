@@ -419,7 +419,7 @@
 
 
 {% macro defendantCS(formcache, item)%}
-  {% if  formcache['general-input-first-name-'+item] !== "" %}
+  {% if formcache['general-input-first-name-'+item] %}
     <tr>
       <th style="vertical-align: top; width: 33%;">Defendant {{item}}</th>
       <td style="padding: 0">

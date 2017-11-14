@@ -6,7 +6,7 @@
 
   {% include "./breadcrumb.html" %}
   <div class="grid-row">
-    <div class="column-two-thirds">
+    <div class="column-full">
       <form action="{{formData.action}}" method="post" class="form">
 
         {% include "includes/tmpl-form-page-header.html" %}
@@ -14,16 +14,31 @@
         <h2 class="heading-large">
           Cost summary
         </h2>
+        {% include "examples/shared/includes/cost-summary.html" %}
+
+        {% include "examples/agfs/shared/cost-summary-case-details.html" %}
+
+        {% include "examples/agfs/shared/cost-summary-defendants.html" %}
+
+        {% include "examples/agfs/shared/cost-summary-offence-details.html" %}
+
+        {% include "examples/agfs/shared/cost-summary-fixed-fees.html" %}
+
+        {% include "examples/agfs/shared/cost-summary-misc-fees.html" %}
+
+        {% include "examples/agfs/shared/cost-summary-travel-expenses.html" %}
+
+        {% include "examples/agfs/shared/cost-summary-supporting-evidence.html" %}
+
+        {% include "examples/agfs/shared/cost-summary-additional-info.html" %}
 
 
-        {% include "includes/tmpl-form-buttons.html" %}
-        {% include "includes/tmpl-help-summary.html" %}
-      </form>
+        </form>
+      </div>
     </div>
-  </div>
-</main>
-<code>
-  {{formcache | dump | safe}}
+  </main>
+  <code>
+    {{formcache | dump | safe}}
 
-</code>
-{% endblock %}
+  </code>
+  {% endblock %}

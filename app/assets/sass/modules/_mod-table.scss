@@ -46,7 +46,7 @@ table {
     vertical-align: bottom;
   }
   tbody {
-    tr:nth-child(odd) {
+    tr:nth-child(even) {
       background-color: $grey-3;
       background-color: $grey-4;
     }
@@ -263,4 +263,20 @@ table.figures{
       }
     }
   }
+}
+
+.tbl-case-details{
+  th{
+    width: 33%;
+  }
+}
+
+
+table table > tbody > tr:last-child th,
+table table > tbody > tr:last-child td{
+   border-bottom: green 0px solid;
+}
+
+.bg-white{
+  background-color: white !important;
 }

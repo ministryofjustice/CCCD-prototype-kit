@@ -263,11 +263,12 @@
   </div>
 {% endmacro %}
 
-{% macro vatamount(data, formcache={}, errorState=false) %}
+{% macro vatamount(data, formcache={}, seedNum=1) %}
+  {% set contextID = (data.context | default('general')) +'-input-' + (data.legend | nameAttr) + '-' + seedNum %}
+
   <div class="form-group {{ 'form-group-error' if errorState }}">
-    {% set lookup = 'input-' + (data.context | default('Missing data.context')) +'-'+(data.legend | nameAttr) %}
-    <label class="form-label-bold" for="{{lookup}}">
-      VAT amount
+    <label class="form-label-bold" for="{{contextID}}">
+      Vat amount
       {% if errorState %}
       <span class="error-message">
         {{data.error | default('Missing data.error')}}
@@ -276,16 +277,15 @@
     </label>
     <span class="input-group-prefix">£</span><input
 
-      id="{{lookup}}"
-      name="{{lookup}}"
-      value="{{formcache[lookup]}}"
+      id="{{contextID}}"
+      name="{{contextID}}"
+      value="{{formcache[contextID]}}"
       class="form-control form-control-1-4 {{ 'form-control-error' if errorState }}"
 
       type="number"
       min="0.01"
       max="999999.99"
       step="0.01"
-
     />
   </div>
 {% endmacro %}

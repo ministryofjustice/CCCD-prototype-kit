@@ -249,6 +249,7 @@
         },
         "0": {
           "label": "Fee type",
+          "context": "misc-fee",
           "hint": "Choose a fee type",
           "typeahead": false,
           "emptyOption": true,
@@ -256,7 +257,8 @@
           "options": "[[ REPLACED WHEN ROUTE IS CALLED ]]"
         },
         "1": {
-          "legend": "Net amount"
+          "legend": "Net amount",
+          "context": "misc-fee"
         },
         "2": {
           "value": "Add another fee",

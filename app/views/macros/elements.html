@@ -454,3 +454,25 @@
   {% endif %}
 {% endmacro %}
 
+
+{% macro miscfeesCS(formcache, item)%}
+  {% if formcache['misc-fee-select-fee-type-'+item] %}
+    <tr>
+      <th style="vertical-align: top; width: 33%;">Item {{item}}</th>
+      <td style="padding: 0">
+        <table class="nested-table" style="border:0;margin-bottom: 0">
+          <tbody>
+            <tr>
+              <th style=" width: 33%;">Fee type</th>
+              <td>{{formcache['misc-fee-select-fee-type-'+item]}}</td>
+            </tr>
+            <tr>
+              <th>Net amount</th>
+              <td>£{{formcache['misc-fee-input-net-amount-'+item]}}</td>
+            </tr>
+          </tbody>
+        </table>
+      </td>
+    </tr>
+  {% endif %}
+{% endmacro %}

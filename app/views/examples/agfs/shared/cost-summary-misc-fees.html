@@ -4,6 +4,9 @@
 </h3>
 <table class="form-section tbl-misc-fees">
   <tbody>
+    {% for item in [1,2,3,4,5] %}
+      FORM.miscfeesCS(formcache, item)
+    {% endfor %}
     <tr>
       <th style="vertical-align: top; width: 33%;">Item 1</th>
       <td style="padding: 0">
@@ -11,11 +14,11 @@
           <tbody>
             <tr>
               <th>Fee type</th>
-              <td>MODEL</td>
+              <td>{{formcache['misc-fee-select-fee-type-1']}}</td>
             </tr>
             <tr>
               <th>Net amount</th>
-              <td>MODEL</td>
+              <td>{{formcache['misc-fee-input-net-amount-1']}}</td>
             </tr>
           </tbody>
         </table>

@@ -6,35 +6,69 @@
   <tbody>
     <tr>
       <th style="width:33%;">Advocate category</th>
-      <td>{{formcache['general-radio-group-advocate-category-1'] | empty}}</td>
+      <td>{{formcache['general-radio-group-advocate-category-1']}}</td>
     </tr>
     <tr>
       <th>Advocate</th>
-      <td>{{formcache['general-input-advocate-1'] | empty}}</td>
+      <td>{{formcache['general-input-advocate-1']}}</td>
     </tr>
     <tr>
       <th>Refernace number</th>
-      <td>{{formcache['general-input-reference-number-1'] | empty}}</td>
+      <td>{{formcache['general-input-reference-number-1']}}</td>
     </tr>
     <tr>
       <th>Case type</th>
-      <td>{{formcache['general-select-case-type-1'] | empty}}</td>
+      <td>{{formcache['general-select-case-type-1']}}</td>
     </tr>
     <tr>
       <th>Court</th>
-      <td>{{formcache['general-select-court-1'] | empty}}</td>
+      <td>{{formcache['general-select-court-1']}}</td>
     </tr>
     <tr>
       <th>Case number</th>
-      <td>{{formcache['general-input-case-number-1'] | empty}}</td>
+      <td>{{formcache['general-input-case-number-1']}}</td>
     </tr>
-    <tr>
+
+    <!-- tr>
       <th>Transfer court</th>
-      <td>{{formcache['general-select-transfer-court-1'] | empty }}</td>
+      <td>{{formcache['general-select-transfer-court-1'] }}</td>
     </tr>
+
     <tr>
       <th>Transfer case number</th>
-      <td>{{formcache['general-input-transfer-case-number-1'] | empty}}</td>
+      <td>{{formcache['general-input-transfer-case-number-1']}}</td>
+    </tr -->
+
+    {% if formcache['general-select-case-type-1'] == 'Trial' %}
+    <tr>
+      <th>First day of trial</th>
+      <td>
+
+        {{formcache['first-day-date-first-day-of-trial-1-day']}}/
+        {{formcache['first-day-date-first-day-of-trial-1-month']}}/
+        {{formcache['first-day-date-first-day-of-trial-1-year']}}/
+      </td>
     </tr>
+
+    <tr>
+      <th>Estimated trial length</th>
+      <td>{{formcache['estimated-length-input-days-1']}}</td>
+    </tr>
+
+    <tr>
+      <th>Actual trial length</th>
+      <td>{{formcache['number-of-days-input-days-1']}}</td>
+    </tr>
+
+    <tr>
+      <th>Trial concluded on</th>
+      <td>
+        {{formcache['last-day-date-trial-concluded-on-1-day']}}/
+        {{formcache['last-day-date-trial-concluded-on-1-month']}}/
+        {{formcache['last-day-date-trial-concluded-on-1-year']}}
+      </td>
+    </tr>
+    {% endif %}
+
   </tbody>
 </table>

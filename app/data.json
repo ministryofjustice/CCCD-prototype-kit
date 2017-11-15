@@ -55,22 +55,25 @@
           "hint": "For example T20160001"
         },
         "7": {
-          "legend": "First day of trial"
+          "legend": "First day of trial",
+          "context": "first-day-date"
         },
         "8": {
           "legend": "Estimated trial length",
           "label": "Days",
-          "hint": "Number of days"
+          "hint": "Number of days",
+          "context": "estimated-length"
         },
         "9": {
-          "legend": "Estimated trial length",
-
-          "hint": "Number of days"
+          "legend": "Trial concluded on",
+          "hint": "Number of days",
+          "context": "last-day-date"
         },
         "10": {
           "legend": "Actual trial length",
           "label": "Days",
-          "hint": "Number of days"
+          "hint": "Number of days",
+          "context": "number-of-days"
         }
       }
     },

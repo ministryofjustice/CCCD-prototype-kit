@@ -31,6 +31,32 @@
   </div>
 {% endmacro %}
 
+{% macro inputfieldset(data, formcache={}, seedNum=1) %}
+  {% set contextID = (data.context | default('general')) +'-input-' + (data.label | nameAttr) + '-' + seedNum %}
+  <div class="form-group {{ 'form-group-error' if errorState }}">
+    <fieldset>
+      <legend>
+        <span class="form-label-bold">
+          {{data.legend | default('Missing data.legend')}}
+        </span>
+        <span class="form-hint">{{data.hint | default('For example, 31 3 1980')}}</span>
+        {% if errorState %}
+        <span class="error-message">
+          {{data.error | default('Missing data.error')}}
+        </span>
+        {% endif %}
+      </legend>
+      <div class="form-date">
+        <div class="form-group form-group-day">
+          <label class="form-label" for="{{contextID}}">{{data.label | default('Day')}}</label>
+          <input class="form-control {{ 'form-control-error' if errorState }}" id="{{contextID}}" name="{{contextID}}" type="number" pattern="[0-9]*" value="{{formcache[contextID]}}" />
+        </div>
+      </div>
+    </fieldset>
+  </div>
+{% endmacro %}
+
+
 {% macro radiogroup(data, formcache={}, seedNum=1) %}
   {% set contextID = (data.context | default('general')) +'-radio-group-' + (data.heading | nameAttr) + '-' + seedNum %}
   <div class="form-group {{ 'form-group-error' if errorState }}" id="wrapped-{{contextID}}">
@@ -105,30 +131,6 @@
         <a href="#noop">Add another date</a>
       </div>
       {% endif %}
-    </fieldset>
-  </div>
-{% endmacro %}
-
-{% macro inputfieldset(data, formcache={}, errorState=false) %}
-  <div class="form-group {{ 'form-group-error' if errorState }}">
-    <fieldset>
-      <legend>
-        <span class="form-label-bold">
-          {{data.legend | default('Missing data.legend')}}
-        </span>
-        <span class="form-hint">{{data.hint | default('For example, 31 3 1980')}}</span>
-        {% if errorState %}
-        <span class="error-message">
-          {{data.error | default('Missing data.error')}}
-        </span>
-        {% endif %}
-      </legend>
-      <div class="form-date">
-        <div class="form-group form-group-day">
-          <label class="form-label" for="{{data.legend | nameAttr}}">{{data.label | default('Day')}}</label>
-          <input class="form-control {{ 'form-control-error' if errorState }}" id="{{data.legend | nameAttr}}" name="{{data.legend | nameAttr}}" type="number" pattern="[0-9]*" min="0" max="31">
-        </div>
-      </div>
     </fieldset>
   </div>
 {% endmacro %}

@@ -66,7 +66,6 @@
         },
         "9": {
           "legend": "Trial concluded on",
-          "hint": "Number of days",
           "context": "last-day-date"
         },
         "10": {
@@ -295,7 +294,8 @@
           "label": "Distance (miles)"
         },
         "4": {
-          "legend": "Date of birth"
+          "legend": "Date of birth",
+          "context": "travel-expenses"
         },
         "5": {
           "legend": "Net Amount",
@@ -360,7 +360,7 @@
     "agfs/final/thank-you": {
       "formData": {
         "pagename": "agfs-thank-you",
-        "action": "/examples"
+        "action": "/examples/lgfs/bill-type/"
       }
     },
 
@@ -585,7 +585,7 @@
     "lgfs/final/disbursements": {
       "formData": {
         "pagename": "lgfs-misc-fees",
-        "action": "/examples/lgfs/final/warrant-fees",
+        "action": "/examples/lgfs/final/travel-expenses",
         "objRefs": {
           "0": "lgfs-disbursements"
         },
@@ -701,11 +701,10 @@
 
         "0": {
           "label": "Name of person certifying the claim",
-          "hint": "Enter full name",
-          "setValue": "Benjamin Matlock"
+          "hint": "Enter full name"
         },
         "1": {
-          "legend": "Date",
+          "legend": "Date of certification",
           "showhint": false,
           "populate": true
         }

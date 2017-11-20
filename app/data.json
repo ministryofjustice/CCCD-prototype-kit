@@ -580,19 +580,21 @@
 
         "0": {
           "label": "Fee type",
+          "context": "misc-fee",
           "hint": "Choose a fee type",
           "cssClasses": "form-control-3-4",
           "options": "[[ REPLACED WHEN ROUTE IS CALLED ]]"
         },
         "1": {
           "label": "Additional case number",
+          "context": "misc-fee",
           "hint": "Separate with commas",
           "cssClasses": "form-control-1-2 fx-misc-fee-input uppercase",
           "hidden": true
         },
         "2": {
           "legend": "Net amount",
-          "context": "misc-fees"
+          "context": "misc-fee"
         },
         "3": {
           "value": "Add another fee",

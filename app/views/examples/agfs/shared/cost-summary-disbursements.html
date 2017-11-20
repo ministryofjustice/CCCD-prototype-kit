@@ -1,11 +1,11 @@
 <h3 class="heading-medium">
   Disbursements
-  <a href="./misc-fees" style="float:right;" class="font-small">Change</a>
+  <a href="./disbursements" style="float:right;" class="font-small">Change</a>
 </h3>
 <table class="form-section tbl-misc-fees">
   <tbody>
     {% for item in [1,2,3,4,5] %}
-      {{FORM.miscfeesCS(formcache, item)}}
+      {{FORM.disbursementCS(formcache, item)}}
     {% endfor %}
     <tr class="bg-white">
       <th>Net Total</th>

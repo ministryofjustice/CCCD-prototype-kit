@@ -1,0 +1,52 @@
+{% extends "layout.html" %}
+
+{% block content %}
+
+<main id="content" role="main">
+
+  {% include "./breadcrumb.html" %}
+  <div class="grid-row">
+    <div class="column-full">
+      <form action="{{formData.action}}" method="post" class="form">
+
+        {% include "includes/tmpl-form-page-header.html" %}
+
+        <h2 class="heading-large">
+          Cost summary
+        </h2>
+
+        {{formcache | dump | safe}}
+
+        {% include "examples/shared/includes/cost-summary-totals.html" %}
+
+        {% include "examples/shared/includes/cost-summary-actions.html" %}
+
+        {% include "examples/agfs/shared/cost-summary-case-details.html" %}
+
+        {% include "examples/agfs/shared/cost-summary-defendants.html" %}
+
+        {% include "examples/agfs/shared/cost-summary-offence-details.html" %}
+
+        {% include "examples/agfs/shared/cost-summary-fixed-fees.html" %}
+
+        {% include "examples/agfs/shared/cost-summary-graduated-fees.html" %}
+
+        {% include "examples/agfs/shared/cost-summary-misc-fees.html" %}
+
+        {% include "examples/agfs/shared/cost-summary-travel-expenses.html" %}
+
+        {% include "examples/agfs/shared/cost-summary-supporting-evidence.html" %}
+
+        {% include "examples/agfs/shared/cost-summary-additional-info.html" %}
+
+        {% include "examples/shared/includes/cost-summary-actions.html" %}
+
+        </form>
+      </div>
+    </div>
+  </main>
+  <code>
+    {{formcache | dump | safe}}
+
+  </code>
+  {% endblock %}

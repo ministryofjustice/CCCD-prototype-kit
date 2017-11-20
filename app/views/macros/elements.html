@@ -338,6 +338,7 @@
 
     <h3 class="heading-medium">
       Item {{seedNum}}
+      <a href="#noop" style="float:right;" class="font-small fx-remove-link {{ 'hidden' if (seedNum == 1)}}">Remove</a>
     </h3>
     <div class="form-section">
       {{FORM.select(data[0], formcache, seedNum)}}
@@ -355,6 +356,7 @@
 
     <h3 class="heading-medium">
       Item {{seedNum}}
+      <a href="#noop" style="float:right;" class="font-small fx-remove-link {{ 'hidden' if (seedNum == 1)}}">Remove</a>
     </h3>
     <div class="form-section">
       {{FORM.select(data[0], formcache, seedNum)}}
@@ -405,6 +407,7 @@
   <div class="fx-defendant {{ 'hidden' if (seedNum > 1)}}">
     <h3 class="heading-medium">
       Defendant {{seedNum}}
+      <a href="#noop" style="float:right;" class="font-small fx-remove-link {{ 'hidden' if (seedNum == 1)}}">Remove</a>
     </h3>
     <div class="form-section">
       {{FORM.input(data[0], formcache, seedNum)}}

@@ -9,6 +9,31 @@ router.get('/', function(req, res) {
 })
 
 
+router.get('/examples/agfs/final/cost-summary-static', function(req, res) {
+
+  data.formcache = {
+    "general-radio-group-advocate-category-1": "Junior alone",
+    "general-input-advocate-1": "sdfsdf",
+    "general-input-reference-number-1": "",
+    "general-select-case-type-1": "Retrial",
+    "general-select-court-1": "Reading",
+    "general-input-case-number-1": "CaseNumber goes here",
+    "general-select-transfer-court-1": "",
+    "general-input-transfer-case-number-1": "",
+    "first-day-date-first-day-of-trial-1-day": "",
+    "first-day-date-first-day-of-trial-1-month": "",
+    "first-day-date-first-day-of-trial-1-year": "",
+    "estimated-length-input-days-1": "",
+    "last-day-date-trial-concluded-on-1-day": "",
+    "last-day-date-trial-concluded-on-1-month": "",
+    "last-day-date-trial-concluded-on-1-year": "",
+    "number-of-days-input-days-1": ""
+  };
+  res.render('examples/agfs/final/cost-summary-static', utils.loadData('lgfs/bill-type', data))
+})
+
+
+
 // Route index page
 router.get('/examples/lgfs/bill-type', function(req, res) {
   data.formcache = res.locals.data;
@@ -33,7 +58,7 @@ router.get('/examples/:scheme(lgfs|agfs)/:folder(final|interim|transfer)/:page*?
   var path = req.path.substring(1);
   var lookup = path.replace('examples/', '')
   data.formcache = res.locals.data;
-  if (!page){
+  if (!page) {
     res.redirect('case-details');
     next
   }

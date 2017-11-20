@@ -29,7 +29,7 @@ router.get('/examples/:scheme(lgfs|agfs)/final/cost-summary-static', function(re
   //   "last-day-date-trial-concluded-on-1-year": "",
   //   "number-of-days-input-days-1": ""
   // };
-  res.render('examples/' + req.params.scheme + '/final/cost-summary-static', utils.loadData(req.params.scheme + '/final/cost-summary-static', data))
+  res.render('examples/'+ req.params.scheme +'/final/cost-summary-static', utils.loadData(req.params.scheme + '/final/cost-summary-static', data))
 })
 
 
@@ -48,8 +48,7 @@ router.get('/examples/:scheme(lgfs|agfs)/fee-chooser', function(req, res) {
   // macros/elements.html (select macro) might affect this
   // for the time being
   feePath = utils.feetypeLookup(data.formcache['general-select-case-type-1'], req.params.scheme);
-  data.formcache.feescheme = feePath.type;
-  res.redirect(feePath.path);
+  res.redirect(feePath);
 })
 
 
@@ -63,6 +62,7 @@ router.get('/examples/:scheme(lgfs|agfs)/:folder(final|interim|transfer)/:page*?
     res.redirect('case-details');
     next
   }
+
   res.render(path, utils.loadData(lookup, data))
 })
 

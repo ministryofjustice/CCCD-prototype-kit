@@ -380,7 +380,7 @@
     "agfs/final/thank-you": {
       "formData": {
         "pagename": "agfs-thank-you",
-        "action": "/examples/lgfs/bill-type/"
+        "action": "/examples/agfs/final/case-details"
       }
     },
 

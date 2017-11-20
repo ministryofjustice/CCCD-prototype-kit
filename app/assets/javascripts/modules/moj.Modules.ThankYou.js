@@ -1,4 +1,4 @@
-moj.Modules.Thankyou = {
+moj.Modules.ThankYou = {
   el: '.module-thankyou',
   init: function() {
     if($(this.el).length){

@@ -37,8 +37,11 @@
             <a class="button button-start" href="/examples/lgfs/bill-type" role="button">Start now</a></p>
           </div>
         </div>
-        <img src="/public/images/lgfs.claims.list.png" alt="" />
+        <img src="/public/images/lgfs.claims.list.png" alt="" usemap="#workmap"/>
+        <map name="workmap">
+          <area shape="rect" coords="100,100,250,200" alt="Computer" href="/examples/lgfs/final/cost-summary-static" />
+        </map>
+      </div>
     </div>
-  </div>
-</main>
-{% endblock %}
+  </main>
+  {% endblock %}

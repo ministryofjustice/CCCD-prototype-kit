@@ -15,22 +15,9 @@
           Disbursements
         </h2>
 
-        <h3 class="heading-medium">
-          Item 1
-        </h3>
-
-        <div class="form-section">
-          {{FORM.select(formData[0], formcache)}}
-          <div class="grid-row">
-            <div class="column-one-quarter">
-              {{FORM.netamount(formData[1], formcache)}}
-            </div>
-
-            <div class="column-one-quarter">
-              {{FORM.vatamount(formData[2], formcache)}}
-            </div>
-          </div>
-        </div>
+        {% for item in [1,2,3,4,5] %}
+          {{FORM.disbursementLGFS(formData, formcache, FORM, item)}}
+        {% endfor %}
 
         <div class="form-section">
           {{FORM.addmore(formData[3], formcache)}}

@@ -1,7 +1,7 @@
 {% extends "layout.html" %}
 
 {% block content %}
-<main id="content" role="main">
+<main id="content" class="module-thankyou" role="main">
 
   {% include "./breadcrumb.html" %}
 
@@ -17,20 +17,17 @@
       </p>
 
       <h2 class="heading-medium">What happens next</h2>
-      <p>If you have electonic evidence on disk that relates to this case, you must send it to the Legal Aid Agency.</p>
+      <p>
+        If you have electonic evidence on disk that relates to this case, you must send it to the Legal Aid Agency.
+      </p>
 
       <p>
-
         A caseworker will assess your claim. You will be notified by email when your claim has been processed. You can also check the status of your claim at anytime in the "Your claims" view.
 
       </p>
       {% set tmplButtons = {main: "Submit a new claim", secondary: "View your claims"} %}
       {% include "includes/tmpl-form-buttons.html" %}
-
-
-
       </form>
-
     </div>
   </div>
 </main>

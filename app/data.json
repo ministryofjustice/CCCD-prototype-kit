@@ -738,7 +738,7 @@
     "lgfs/final/thank-you": {
       "formData": {
         "pagename": "lgfs-thank-you",
-        "action": "/examples/lgfs/"
+        "action": "/examples/lgfs/bill-type"
       }
     }
 

@@ -31,7 +31,7 @@
 
 }(jQuery));
 
-window.scheme = window.location.pathname.indexOf('/lgfs/') ? 'LGFS' : 'AGFS';
+window.scheme = !!~window.location.pathname.indexOf('/lgfs/') ? 'LGFS' : 'AGFS';
 
 // Warn about using the kit in production
 if (window.console && window.console.info) {

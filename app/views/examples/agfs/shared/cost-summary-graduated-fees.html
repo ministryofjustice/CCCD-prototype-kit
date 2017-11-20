@@ -1,0 +1,71 @@
+<h3 class="heading-medium">
+  Graduated fees
+  <a href="./graduated-fees" style="float:right;" class="font-small">Change</a>
+</h3>
+<table class="form-section tbl-travel-expenses">
+  <tbody>
+    <tr>
+      <th style="vertical-align: top; width: 33%;">Daily attendance</th>
+      <td style="padding: 0">
+        <table class="nested-table" style="border:0;margin-bottom: 0">
+          <tbody>
+            <tr>
+              <th style="width: 40%;">Number of days</th>
+              <td>{{formcache['DA-input-number-of-days-1']}}</td>
+            </tr>
+            <tr>
+              <th style="vertical-align: top;">Dates attended</th>
+              <td>
+                {{formcache['DA-date-attended-1-day']}}/
+                {{formcache['DA-date-attended-1-month']}}/
+                {{formcache['DA-date-attended-1-year']}}
+              </td>
+            </tr>
+            <tr>
+              <th>Net amount</th>
+              <td>£{{formcache['graduated-fees-daily-input-net-amount-1']}}</td>
+            </tr>
+          </tbody>
+        </table>
+      </td>
+    </tr>
+    <tr>
+      <th style="vertical-align: top; width: 33%;">Witnesses</th>
+      <td style="padding: 0">
+        <table class="nested-table" style="border:0;margin-bottom: 0">
+          <tbody>
+            <tr>
+              <th style="width: 40%;">Number of witnesses</th>
+              <td>{{formcache['general-input-total-number-of-prosecution-witnesses-1']}}</td>
+            </tr>
+            <tr>
+              <th>Net amount</th>
+              <td>£{{formcache['graduated-fees-witness-input-net-amount-1']}}</td>
+            </tr>
+          </tbody>
+        </table>
+      </td>
+    </tr>
+    <tr>
+      <th style="vertical-align: top; width: 33%;">Prosecution Evidence</th>
+      <td style="padding: 0">
+        <table class="nested-table" style="border:0;margin-bottom: 0">
+          <tbody>
+            <tr>
+              <th style="width: 40%;">Number of pages of evidence</th>
+              <td>{{formcache['general-input-total-number-of-pages-1']}}</td>
+            </tr>
+            <tr>
+              <th>Net amount</th>
+              <td>£{{formcache['graduated-fees-ppe-input-net-amount-1']}}</td>
+            </tr>
+          </tbody>
+        </table>
+      </td>
+    </tr>
+    <tr class="bg-white">
+      <th>Net Total</th>
+      <td style="padding-left: 26%" class="bold-small">£87.00</td>
+    </tr>
+  </tbody>
+</table>

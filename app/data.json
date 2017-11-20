@@ -161,66 +161,82 @@
         "0": {
           "label": "Number of days",
           "hint": "Include all days attended",
+          "context": "DA",
           "cssClasses": "form-control-1-4"
         },
         "1": {
           "legend": "Date attended",
+          "context": "DA",
           "removeLink": true
         },
         "2": {
           "legend": "Net Amount",
+          "context": "DA",
           "context": "graduated-fees-daily"
         },
         "3": {
           "label": "Number of appearances",
+          "context": "SAF",
           "cssClasses": "form-control-1-4"
         },
         "4": {
           "legend": "Date of appearance 1",
+          "context": "SAF",
           "addAnotherLink": true
         },
         "5": {
           "legend": "Net Amount",
+          "context": "SAF",
           "context": "graduated-fees-standard"
         },
         "6": {
           "label": "Number of hearings",
+          "context": "PCM",
           "cssClasses": "form-control-1-4"
         },
         "7": {
           "legend": "Date of hearings 1",
+          "context": "PCM",
           "addAnotherLink": true
         },
         "8": {
           "legend": "Net Amount",
+          "context": "PCM",
           "context": "graduated-fees-case-management"
         },
         "9": {
           "label": "Number of conferences and views",
+          "context": "CV",
           "cssClasses": "form-control-1-4"
         },
         "10": {
           "legend": "Net Amount",
+          "context": "CV",
           "context": "graduated-fees-conferences-views"
         },
         "11": {
           "label": "Number of defendants",
+          "context": "NDU",
           "cssClasses": "form-control-1-4"
         },
         "12": {
           "legend": "Net Amount",
+          "context": "NDU",
           "context": "graduated-fees-defendants"
         },
         "13": {
           "label": "Number of cases",
+          "context": "NCU",
           "cssClasses": "form-control-1-4"
         },
         "14": {
           "label": "Additional case numbers",
+          "context": "NCU",
           "hint": "Seperate with commas"
         },
         "15": {
           "legend": "Net Amount",
+          "context": "NCU",
           "context": "graduated-fees-defendants"
         },
 
@@ -292,7 +308,7 @@
           "label": "Distance (miles)"
         },
         "4": {
-          "legend": "Date of birth",
+          "legend": "Date of travel",
           "context": "travel-expenses"
         },
         "5": {

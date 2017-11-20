@@ -40,6 +40,15 @@ moj.Modules.MiscFee = {
   bindEvents: function() {
     var self = this;
 
+    // Listen to the typeaheah change and display nested input
+    $('.fx-misc-fee ').on('typeahead:change', function(e, data){
+      if(data === 'Case uplift'){
+        $(e.delegateTarget).find('.el-input').removeClass('hidden');
+      }
+      return;
+    });
+
+    // This code works when typeahead is not used
     // Bind on the select change event to show the `.el-input`
     this.$el.on('change', 'select', function(e) {
 

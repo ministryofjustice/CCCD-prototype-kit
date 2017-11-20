@@ -253,8 +253,6 @@
           "label": "Fee type",
           "context": "misc-fee",
           "hint": "Choose a fee type",
-          "typeahead": false,
-          "emptyOption": true,
           "cssClasses": "form-control-3-4",
           "options": "[[ REPLACED WHEN ROUTE IS CALLED ]]"
         },
@@ -562,8 +560,7 @@
           "label": "Fee type",
           "hint": "Choose a fee type",
           "cssClasses": "form-control-3-4",
-          "options": "[[ REPLACED WHEN ROUTE IS CALLED ]]",
-          "typeahead": false
+          "options": "[[ REPLACED WHEN ROUTE IS CALLED ]]"
         },
         "1": {
           "label": "Additional case number",

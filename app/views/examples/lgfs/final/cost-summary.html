@@ -16,44 +16,30 @@
         </h2>
 
         {% include "examples/shared/includes/cost-summary-totals.html" %}
+
         {% include "examples/shared/includes/cost-summary-actions.html" %}
 
-        <div class="grid-row">
-          <div class="column-full">
-            <h2 class="heading-large">
-              Claim summary
-            </h2>
+        {% include "examples/agfs/shared/cost-summary-case-details.html" %}
 
-            <p class="font-large" style="color: gray; text-align: center; padding: 350px 20px;font:bold;">
-              This section has been left intentionally blank
-            </p>
+        {% include "examples/agfs/shared/cost-summary-defendants.html" %}
 
-          </div>
-        </div>
-        <style>
-        .fx-form-buttons *{
-          margin-right: 20px;
-          display: inline-block;
-        }
-        .fx-form-buttons a{
-          line-height: 2;
-        }
+        {% include "examples/agfs/shared/cost-summary-offence-details.html" %}
 
-      </style>
+        {% include "examples/agfs/shared/cost-summary-fixed-fees.html" %}
 
+        {% include "examples/agfs/shared/cost-summary-misc-fees.html" %}
 
-      <div class="form-group fx-form-buttons">
-        <input type="submit" class="button" value="Continue and certify">
-        <input type="submit" class="button button-secondary" value="Save as draft">
-        <a href="#noop" style="color:red;">Delete this claim</a>
-      </div>
+        {% include "examples/agfs/shared/cost-summary-travel-expenses.html" %}
 
+        {% include "examples/agfs/shared/cost-summary-supporting-evidence.html" %}
 
+        {% include "examples/agfs/shared/cost-summary-additional-info.html" %}
 
+        {% include "examples/shared/includes/cost-summary-actions.html" %}
 
-      {% include "includes/tmpl-help-summary.html" %}
-    </form>
+      </form>
+
+    </div>
   </div>
-</div>
 </main>
 {% endblock %}

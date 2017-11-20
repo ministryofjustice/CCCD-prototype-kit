@@ -22,10 +22,16 @@ module.exports = {
       ]
     };
 
-    if (!!~data['basic-fees'].indexOf(string)){
-      return '/examples/'+ scheme +'/final/graduated-fees';
+    if (!!~data['basic-fees'].indexOf(string)) {
+      return {
+        path: '/examples/' + scheme + '/final/graduated-fees',
+        type: 'basic-fees'
+      };
     }
-    return '/examples/'+ scheme +'/final/fixed-fees';
+    return {
+      path: '/examples/' + scheme + '/final/fixed-fees',
+      type: 'fixed-fees'
+    };
   },
   loadData: function(pointer, data) {
 

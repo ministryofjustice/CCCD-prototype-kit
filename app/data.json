@@ -167,7 +167,7 @@
         "1": {
           "legend": "Date attended",
           "context": "DA",
-          "removeLink": true
+          "addAnotherLink": true
         },
         "2": {
           "legend": "Net Amount",

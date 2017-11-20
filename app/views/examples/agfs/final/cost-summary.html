@@ -25,9 +25,13 @@
 
         {% include "examples/agfs/shared/cost-summary-offence-details.html" %}
 
-        {% include "examples/agfs/shared/cost-summary-fixed-fees.html" %}
+        {% if formcache['general-select-case-type-1'] == "Trial" %}
+          {% include "examples/agfs/shared/cost-summary-graduated-fees.html" %}
+        {% endif %}
 
-        {% include "examples/agfs/shared/cost-summary-graduated-fees.html" %}
+        {% if formcache['general-select-case-type-1'] !== "Trial" %}
+          {% include "examples/agfs/shared/cost-summary-fixed-fees.html" %}
+        {% endif %}
 
         {% include "examples/agfs/shared/cost-summary-misc-fees.html" %}
 

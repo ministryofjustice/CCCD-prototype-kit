@@ -9,7 +9,7 @@ router.get('/', function(req, res) {
 })
 
 
-router.get('/examples/agfs/final/cost-summary-static', function(req, res) {
+router.get('/examples/:scheme(lgfs|agfs)/final/cost-summary-static', function(req, res) {
 
   data.formcache = {
     "general-radio-group-advocate-category-1": "Junior alone",
@@ -29,7 +29,7 @@ router.get('/examples/agfs/final/cost-summary-static', function(req, res) {
     "last-day-date-trial-concluded-on-1-year": "",
     "number-of-days-input-days-1": ""
   };
-  res.render('examples/agfs/final/cost-summary-static', utils.loadData('lgfs/bill-type', data))
+  res.render('examples/'+ req.params.scheme +'/final/cost-summary-static', utils.loadData(req.params.scheme + '/final/cost-summary-static', data))
 })
 
 

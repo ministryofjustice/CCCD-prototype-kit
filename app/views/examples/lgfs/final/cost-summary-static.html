@@ -9,7 +9,7 @@
     <div class="column-full">
       <form action="{{formData.action}}" method="post" class="form">
 
-        {% include "includes/tmpl-form-page-header.html" %}
+        {% include "./lgfs-header.html" %}
 
         <h2 class="heading-large">
           Cost summary
@@ -27,8 +27,6 @@
 
         {% include "examples/agfs/shared/cost-summary-fixed-fees.html" %}
 
-        {% include "examples/agfs/shared/cost-summary-graduated-fees.html" %}
-
         {% include "examples/agfs/shared/cost-summary-misc-fees.html" %}
 
         {% include "examples/agfs/shared/cost-summary-travel-expenses.html" %}
@@ -39,12 +37,9 @@
 
         {% include "examples/shared/includes/cost-summary-actions.html" %}
 
-        </form>
-      </div>
-    </div>
-  </main>
-  <code>
-    {{formcache | dump | safe}}
+      </form>
 
-  </code>
-  {% endblock %}
+    </div>
+  </div>
+</main>
+{% endblock %}

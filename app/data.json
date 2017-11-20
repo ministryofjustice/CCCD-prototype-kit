@@ -697,6 +697,12 @@
         "action": "/examples/lgfs/final/certify"
       }
     },
+    "lgfs/final/cost-summary-static": {
+      "formData": {
+        "pagename": "cost-summary-static",
+        "action": "/examples/lgfs/final/certify"
+      }
+    },
     "lgfs/final/certify": {
       "formData": {
         "pagename": "lgfs-certify",

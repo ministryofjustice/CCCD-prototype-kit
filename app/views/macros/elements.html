@@ -98,7 +98,15 @@
         <span class="form-label-bold">
           {{data.legend | default('Missing data.lagend')}}
         </span>
-        <span class="form-hint">{{(data.hint | default('For example, 31 3 1980')) if (data.showhint | default(true))}}</span>
+        {% if data.legend == "Date of birth" %}
+          <span class="form-hint">
+            {{(data.hint | default('For example, 31 3 1980')) if (data.showhint | default(true))}}
+          </span>
+        {% else %}
+          <span class="form-hint">
+            {{(data.hint | default('For example, 31 3 2017')) if (data.showhint | default(true))}}
+          </span>
+        {% endif %}
         {% if errorState %}
         <span class="error-message">
           {{data.error | default('Missing data.error')}}
@@ -270,7 +278,7 @@
 
   <div class="form-group {{ 'form-group-error' if errorState }}">
     <label class="form-label-bold" for="{{contextID}}">
-      Vat amount
+      VAT amount
       {% if errorState %}
       <span class="error-message">
         {{data.error | default('Missing data.error')}}

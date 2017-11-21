@@ -349,8 +349,7 @@
         },
         "1": {
           "label": "Name of person certifying the claim",
-          "hint": "Enter full name",
-          "setValue": "Benjamin Matlock"
+          "hint": "Enter full name"
         },
         "2": {
           "legend": "Date of certification",

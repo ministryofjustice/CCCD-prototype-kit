@@ -185,7 +185,12 @@ app.get('/robots.txt', function (req, res) {
 
 app.get('/prototype-admin/clear-data', function (req, res) {
   req.session.destroy()
-  res.render('prototype-admin/clear-data')
+
+
+  var path = !!~req.header('Referer').indexOf('/lgfs/') ? '/examples/lgfs/all-claims-list' : '/examples/agfs/all-claims-list'
+  res.redirect(path)
+
+
 })
 
 // Redirect root to /docs when in promo mode.

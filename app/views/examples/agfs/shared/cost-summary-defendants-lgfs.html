@@ -1,0 +1,42 @@
+<h3 class="heading-medium">
+  Defendants
+  <a href="./defendants-lookup" style="float:right;" class="font-small">Change</a>
+</h3>
+<table class="form-section tbl-defendants">
+  <tbody>
+
+    <tr>
+      <th style="vertical-align: top; width: 33%;">Defendant 1</th>
+      <td style="padding: 0">
+        <table class="nested-table" style="border:0;margin-bottom: 0">
+          <tbody>
+            <tr>
+              <th style="width: 40%;">Defendant name</th>
+              <td>Joseph Anderson</td>
+            </tr>
+            <tr>
+              <th>Date of birth</th>
+              <td>31/03/1990</td>
+            </tr>
+            <tr>
+              <th>MAAT Reference</th>
+              <td>8825177950</td>
+            </tr>
+            <tr>
+              <th>Representation order date</th>
+              <td>01/06/2017</td>
+            </tr>
+            <tr>
+              <th>Judical apportionment</th>
+              <td>No</td>
+            </tr>
+          </tbody>
+        </table>
+      </td>
+    </tr>
+    {% for item in [1,2,3,4,5] %}
+    {{FORM.defendantCS(formcache, item)}}
+    {% endfor %}
+  </tbody>
+</table>
+

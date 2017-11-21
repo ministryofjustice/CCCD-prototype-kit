@@ -5,12 +5,8 @@
 <table class="form-section tbl-case-details">
   <tbody>
     <tr>
-      <th style="width:33%;">Advocate category</th>
-      <td>{{formcache['general-radio-group-advocate-category-1']}}</td>
-    </tr>
-    <tr>
-      <th>Advocate</th>
-      <td>{{formcache['general-input-advocate-1']}}</td>
+      <th style="width:33%;">Supplier number</th>
+      <td>{{formcache['general-radio-group-supplier-number-1']}}</td>
     </tr>
     <tr>
       <th>Refernace number</th>
@@ -39,7 +35,7 @@
       <td>{{formcache['general-input-transfer-case-number-1']}}</td>
     </tr -->
 
-    {% if formcache['general-select-case-type-1'] == 'Trial' %}
+    {% if formcache['general-select-case-type-1'] == 'Trials' %}
     <tr>
       <th>First day of trial</th>
       <td>
@@ -69,6 +65,16 @@
       </td>
     </tr>
     {% endif %}
+
+        <tr>
+      <th>Date case concluded</th>
+      <td>
+
+        {{formcache['general-date-case-was-concluded-1-day']}}/
+        {{formcache['general-date-case-was-concluded-1-month']}}/
+        {{formcache['general-date-case-was-concluded-1-year']}}
+      </td>
+    </tr>
 
   </tbody>
 </table>

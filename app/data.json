@@ -134,25 +134,6 @@
 
       }
     },
-    "agfs/final/fixed-fees": {
-      "formData": {
-        "pagename": "agfs-fixed-fees",
-        "action": "/examples/agfs/final/misc-fees",
-        "objRefs": {
-          "0": "agfs-case-types"
-        },
-        "0": {
-          "label": "Case type",
-          "cssClasses": "form-control-3-4 disabled",
-          "typeahead": false,
-          "readonly": true,
-          "options": "[[ REPLACED WHEN ROUTE IS CALLED ]]"
-        },
-        "1": {
-          "legend": "Date of hearing"
-        }
-      }
-    },
     "agfs/final/graduated-fees": {
       "formData": {
         "pagename": "agfs-graduated-fees",
@@ -261,7 +242,7 @@
     "agfs/final/misc-fees": {
       "formData": {
         "pagename": "agfs-misc-fees",
-        "action": "/examples/agfs/final/expenses",
+        "action": "/examples/agfs/final/travel-expenses",
         "objRefs": {
           "0": "agfs-misc-fees"
         },
@@ -283,7 +264,7 @@
         }
       }
     },
-    "agfs/final/expenses": {
+    "agfs/final/travel-expenses": {
       "formData": {
         "pagename": "agfs-expenses",
         "action": "/examples/agfs/final/supporting-evidence",
@@ -533,6 +514,22 @@
 
       }
     },
+    "agfs/final/fixed-fees": {
+      "formData": {
+        "pagename": "agfs-fixed-fees",
+        "action": "/examples/agfs/final/misc-fees",
+        "objRefs": {
+          "0": "agfs-case-types"
+        },
+        "0": {
+          "legend": "Date of hearing"
+        },
+        "1": {
+          "legend": "Net Amount",
+          "context": "fixed-fees"
+        }
+      }
+    },
     "lgfs/final/fixed-fees": {
       "formData": {
         "pagename": "lgfs-fixed-fees",
@@ -566,7 +563,7 @@
 
         "3": {
           "legend": "Net Amount",
-          "context": "fixed-fees"
+          "context": "graduated-fees"
         }
       }
     },
@@ -674,15 +671,15 @@
         },
         "4": {
           "legend": "Date of travel",
-          "context": "travel"
+          "context": "travel-expenses"
         },
         "5": {
           "legend": "Net Amount",
-          "context": "travel"
+          "context": "travel-expenses"
         },
         "6": {
           "legend": "VAT Amount",
-          "context": "travel"
+          "context": "travel-expenses"
         },
 
         "8": {

@@ -549,15 +549,18 @@
 
         "0": {
           "label": "PPE total",
-          "cssClasses": "form-control-1-4"
+          "cssClasses": "form-control-1-4",
+          "context": "graduated-fees"
         },
 
         "1": {
-          "legend": "First day of hearing"
+          "legend": "First day of hearing",
+          "context": "graduated-fees"
         },
         "2": {
           "label": "Actual trial length",
-          "cssClasses": "form-control-1-4"
+          "cssClasses": "form-control-1-4",
+          "context": "graduated-fees"
         },
 
         "3": {

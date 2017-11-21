@@ -8,14 +8,7 @@ moj.Modules.ThankYou = {
   bindEvents: function() {
     $('.button-secondary').on('click', function(e){
       e.preventDefault();
-
-      if(window.scheme === "LGFS"){
-        window.location = '../bill-type';
-        return;
-      }
-
-      window.location = '../all-claims-list';
-
+      window.location = '/prototype-admin/clear-data';
     });
   }
 }

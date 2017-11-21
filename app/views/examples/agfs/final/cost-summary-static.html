@@ -15,7 +15,46 @@
           Cost summary
         </h2>
 
-        {% include "examples/shared/includes/cost-summary-totals.html" %}
+        <div class="form-section">
+          <div class="grid-row mod-cost-summary">
+            <div class="column-one-quarter">
+              <h1 class="heading-large">
+                <span class="heading-secondary">Fees</span>
+                £24,890.27
+                <span class="heading-secondary">
+                  <a href="#noop" class="font-small">Change fees</a>
+                </span>
+
+              </h1>
+            </div>
+
+            <div class="column-one-quarter">
+              <h1 class="heading-large">
+                <span class="heading-secondary">Expenses</span>
+                £12.00
+                <span class="heading-secondary">
+                  <a href="#noop" class="font-small">Change expenses</a>
+                </span>
+              </h1>
+            </div>
+
+            <div class="column-one-quarter">
+              <h1 class="heading-large">
+                <span class="heading-secondary">VAT</span>
+                £4,980.45
+              </h1>
+            </div>
+
+            <div class="column-one-quarter">
+              <h1 class="heading-large">
+                <span class="heading-secondary">Total</span>
+                £29,882.72
+              </h1>
+            </div>
+          </div>
+        </div>
+
+
 
         {% include "examples/shared/includes/cost-summary-actions.html" %}
 
@@ -26,11 +65,11 @@
         {% include "examples/agfs/shared/cost-summary-offence-details.html" %}
 
         {% if formcache['general-select-case-type-1'] == "Trial" %}
-          {% include "examples/agfs/shared/cost-summary-graduated-fees.html" %}
+        {% include "examples/agfs/shared/cost-summary-graduated-fees.html" %}
         {% endif %}
 
         {% if formcache['general-select-case-type-1'] !== "Trial" %}
-          {% include "examples/agfs/shared/cost-summary-fixed-fees.html" %}
+        {% include "examples/agfs/shared/cost-summary-fixed-fees.html" %}
         {% endif %}
 
         {% include "examples/agfs/shared/cost-summary-misc-fees.html" %}
@@ -43,8 +82,8 @@
 
         {% include "examples/shared/includes/cost-summary-actions.html" %}
 
-        </form>
-      </div>
+      </form>
     </div>
-  </main>
-  {% endblock %}
+  </div>
+</main>
+{% endblock %}

@@ -90,7 +90,10 @@
       "general-date-of-hearing-1-year": "2017",
       "general-input-date-of-hearing-1": "130.00",
       "additional-information": "",
-      "general-date-of-hearing-1-day":"01","general-date-of-hearing-1-month":"08","general-date-of-hearing-1-year":"2017","fixed-fees-input-net-amount-1":"382.98",
+      "general-date-of-hearing-1-day": "01",
+      "general-date-of-hearing-1-month": "08",
+      "general-date-of-hearing-1-year": "2017",
+      "fixed-fees-input-net-amount-1": "382.98",
       "load": "route1"
     },
     "route2": {
@@ -203,7 +206,10 @@
       "travel-expenses-input-net-amount-1": "1.50",
       "travel-expenses-input-vat-amount-1": "1",
       "travel-expence-cpm": "45",
-      "general-date-of-hearing-1-day":"01","general-date-of-hearing-1-month":"08","general-date-of-hearing-1-year":"2017","fixed-fees-input-net-amount-1":"382.98",
+      "general-date-of-hearing-1-day": "01",
+      "general-date-of-hearing-1-month": "08",
+      "general-date-of-hearing-1-year": "2017",
+      "fixed-fees-input-net-amount-1": "382.98",
       "additional-information": ""
     }
   },
@@ -264,7 +270,10 @@
       "travel-input-net-amount-1": "2.50",
       "travel-input-vat-amount-1": "1",
       "travel-expence-cpm": "25",
-      "general-date-of-hearing-1-day":"01","general-date-of-hearing-1-month":"08","general-date-of-hearing-1-year":"2017","fixed-fees-input-net-amount-1":"382.98",
+      "general-date-of-hearing-1-day": "01",
+      "general-date-of-hearing-1-month": "08",
+      "general-date-of-hearing-1-year": "2017",
+      "fixed-fees-input-net-amount-1": "382.98",
       "textarea": ""
     },
     "route2": {
@@ -325,7 +334,16 @@
       "travel-input-net-amount-1": "1.50",
       "travel-input-vat-amount-1": "1",
       "travel-expence-cpm": "45",
-      "general-date-of-hearing-1-day":"01","general-date-of-hearing-1-month":"08","general-date-of-hearing-1-year":"2017","fixed-fees-input-net-amount-1":"382.98",
+      "general-date-of-hearing-1-day": "01",
+      "general-date-of-hearing-1-month": "08",
+      "general-date-of-hearing-1-year": "2017",
+      "fixed-fees-input-net-amount-1": "382.98",
+      "graduated-fees-input-ppe-total-1": "9999",
+      "graduated-fees-first-day-of-hearing-1-day": "26",
+      "graduated-fees-first-day-of-hearing-1-month": "07",
+      "graduated-fees-first-day-of-hearing-1-year": "2017",
+      "graduated-fees-input-actual-trial-length-1": "8",
+      "graduated-fees-input-net-amount-1": "36270.78",
       "textarea": ""
     }
   }

@@ -11,11 +11,53 @@
 
         {% include "./lgfs-header.html" %}
 
+        {% include "examples/shared/includes/cost-summary-evidence.html" %}
+
         <h2 class="heading-large">
           Cost summary
         </h2>
 
-        {% include "examples/shared/includes/cost-summary-totals.html" %}
+        <div class="form-section">
+          <div class="grid-row mod-cost-summary">
+            <div class="column-one-quarter">
+              <h1 class="heading-large">
+                <span class="heading-secondary">Fees</span>
+                £36,270.78
+                <span class="heading-secondary">
+                  <a href="#noop" class="font-small">Change fees</a>
+                </span>
+
+              </h1>
+            </div>
+
+            <div class="column-one-quarter">
+              <h1 class="heading-large">
+                <span class="heading-secondary">Disbursements</span>
+                £1,395.00
+                <span class="heading-secondary">
+                  <a href="#noop" class="font-small">Change disbursements</a>
+                </span>
+              </h1>
+            </div>
+
+            <div class="column-one-quarter">
+              <h1 class="heading-large">
+                <span class="heading-secondary">Expenses</span>
+                £12.00
+                <span class="heading-secondary">
+                  <a href="#noop" class="font-small">Change expenses</a>
+                </span>
+              </h1>
+            </div>
+
+            <div class="column-one-quarter">
+              <h1 class="heading-large">
+                <span class="heading-secondary">Total</span>
+                £45,213.34
+              </h1>
+            </div>
+          </div>
+        </div>
 
         {% include "examples/shared/includes/cost-summary-actions.html" %}
 
@@ -26,11 +68,11 @@
         {% include "examples/agfs/shared/cost-summary-offence-details.html" %}
 
         {% if formcache['general-select-case-type-1'] == "Trial" %}
-          {% include "examples/agfs/shared/cost-summary-graduated-fees-lgfs.html" %}
+        {% include "examples/agfs/shared/cost-summary-graduated-fees-lgfs.html" %}
         {% endif %}
 
         {% if formcache['general-select-case-type-1'] !== "Trial" %}
-          {% include "examples/agfs/shared/cost-summary-fixed-fees.html" %}
+        {% include "examples/agfs/shared/cost-summary-fixed-fees.html" %}
         {% endif %}
 
         {% include "examples/agfs/shared/cost-summary-misc-fees.html" %}

@@ -1,4 +1,4 @@
-moj.Modules.BillType = {
+moj.Modules.CostSummary = {
   el: '.fx-total-up',
 
   init: function() {

@@ -457,7 +457,8 @@
         "pagename": "lgfs-defendants-form",
         "action": "/examples/lgfs/final/defendants-lookup",
         "0": {
-          "label": "First name"
+          "label": "First name",
+          "cssClasses": "fx-defendant-hook"
         },
         "1": {
           "label": "Last name"
@@ -479,7 +480,8 @@
         },
         "6": {
           "value": "Add another defendant",
-          "type": "button"
+          "type": "button",
+          "fxselector": ".fx-defendant"
         }
       }
     },

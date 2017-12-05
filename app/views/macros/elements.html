@@ -368,7 +368,7 @@ value="{{item.text}}">
         {{FORM.vatamount(data[2], formcache, seedNum)}}
       </div>
     </div>
-  <hr />
+    <hr />
   </div>
 </div>
 {% endmacro %}
@@ -452,6 +452,33 @@ value="{{item.text}}">
 </div>
 {% endmacro %}
 
+{% macro defendantSingle(data, formcache, FORM, seedNum=1) %}
+<div class="fx-defendant">
+  <h3 class="heading-medium">
+    Defendant {{seedNum}}
+    <a href="#noop" style="float:right;" class="font-small fx-remove-link {{ 'hidden' if (seedNum == 1)}}">Remove</a>
+  </h3>
+  <div class="form-section">
+    {{FORM.input(data[0], formcache, seedNum)}}
+    {{FORM.input(data[1], formcache, seedNum)}}
+  </div>
+
+  <div class="form-section">
+    {{FORM.date(data[2], formcache, seedNum)}}
+    {{FORM.checkboxlist(data[3], formcache, seedNum)}}
+  </div>
+
+  <h3 class="heading-medium">
+    Representation order details
+  </h3>
+  <div class="form-section">
+    {{FORM.date(data[4], formcache, seedNum)}}
+    {{FORM.input(data[5], formcache, seedNum)}}
+  </div>
+  <hr />
+</div>
+{% endmacro %}
+
 
 {% macro defendantCS(formcache, item)%}
 {% if formcache['general-input-first-name-'+item] %}
@@ -489,49 +516,49 @@ value="{{item.text}}">
 
 
 {% macro miscfeesCS(formcache, item)%}
-  {% if formcache['misc-fee-select-fee-type-'+item] %}
-  <tr>
-    <th style="vertical-align: top; width: 33%;">Item {{item}}</th>
-    <td style="padding: 0">
-      <table class="nested-table" style="border:0;margin-bottom: 0">
-        <tbody>
-          <tr>
-            <th style=" width: 33%;">Fee type</th>
-            <td>{{formcache['misc-fee-select-fee-type-'+item]}}</td>
-          </tr>
-          <tr>
-            <th>Net amount</th>
-            <td>£{{formcache['misc-fee-input-net-amount-'+item]}}</td>
-          </tr>
-        </tbody>
-      </table>
-    </td>
-  </tr>
-  {% endif %}
+{% if formcache['misc-fee-select-fee-type-'+item] %}
+<tr>
+  <th style="vertical-align: top; width: 33%;">Item {{item}}</th>
+  <td style="padding: 0">
+    <table class="nested-table" style="border:0;margin-bottom: 0">
+      <tbody>
+        <tr>
+          <th style=" width: 33%;">Fee type</th>
+          <td>{{formcache['misc-fee-select-fee-type-'+item]}}</td>
+        </tr>
+        <tr>
+          <th>Net amount</th>
+          <td>£{{formcache['misc-fee-input-net-amount-'+item]}}</td>
+        </tr>
+      </tbody>
+    </table>
+  </td>
+</tr>
+{% endif %}
 {% endmacro %}
 
 {% macro disbursementCS(formcache, item)%}
-  {% if formcache['general-select-disbursement-type-'+item] %}
-  <tr>
-    <th style="vertical-align: top; width: 33%;">Item {{item}}</th>
-    <td style="padding: 0">
-      <table class="nested-table" style="border:0;margin-bottom: 0">
-        <tbody>
-          <tr>
-            <th style=" width: 33%;">Fee type</th>
-            <td>{{formcache['general-select-disbursement-type-'+item]}}</td>
-          </tr>
-          <tr>
-            <th>Net amount</th>
-            <td>£{{formcache['disbursements-input-net-amount-'+item]}}</td>
-          </tr>
-          <tr>
-            <th>VAT amount</th>
-            <td>£{{formcache['disbursements-input-vat-amount-'+item]}}</td>
-          </tr>
-        </tbody>
-      </table>
-    </td>
-  </tr>
-  {% endif %}
+{% if formcache['general-select-disbursement-type-'+item] %}
+<tr>
+  <th style="vertical-align: top; width: 33%;">Item {{item}}</th>
+  <td style="padding: 0">
+    <table class="nested-table" style="border:0;margin-bottom: 0">
+      <tbody>
+        <tr>
+          <th style=" width: 33%;">Fee type</th>
+          <td>{{formcache['general-select-disbursement-type-'+item]}}</td>
+        </tr>
+        <tr>
+          <th>Net amount</th>
+          <td>£{{formcache['disbursements-input-net-amount-'+item]}}</td>
+        </tr>
+        <tr>
+          <th>VAT amount</th>
+          <td>£{{formcache['disbursements-input-vat-amount-'+item]}}</td>
+        </tr>
+      </tbody>
+    </table>
+  </td>
+</tr>
+{% endif %}
 {% endmacro %}

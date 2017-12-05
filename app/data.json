@@ -3,7 +3,7 @@
     "agfs/final/case-details": {
       "formData": {
         "pagename": "agfs-case-details",
-        "action": "/examples/agfs/final/defendants",
+        "action": "/examples/agfs/final/defendants-multi",
         "objRefs": {
           "2": "agfs-case-types",
           "3": "courts",
@@ -76,10 +76,11 @@
         }
       }
     },
-    "agfs/final/defendants": {
+    "agfs/final/defendants-multi": {
       "formData": {
-        "pagename": "agfs-defendants",
+        "pagename": "agfs-defendants-multi",
         "action": "/examples/agfs/final/offence",
+        "multi": true,
         "0": {
           "label": "First name",
           "cssClasses": "fx-defendant-hook"
@@ -456,6 +457,7 @@
       "formData": {
         "pagename": "lgfs-defendants-form",
         "action": "/examples/lgfs/final/defendants-lookup",
+        "multi": true,
         "0": {
           "label": "First name",
           "cssClasses": "fx-defendant-hook"
@@ -482,6 +484,38 @@
           "value": "Add another defendant",
           "type": "button",
           "fxselector": ".fx-defendant"
+        }
+      }
+    },
+    "lgfs/final/defendants-form-single": {
+      "formData": {
+        "pagename": "defendants-form-single",
+        "action": "/examples/lgfs/final/defendants-lookup",
+        "multi": false,
+        "0": {
+          "label": "First name"
+        },
+        "1": {
+          "label": "Last name"
+        },
+        "2": {
+          "legend": "Date of birth"
+        },
+        "3": {
+          "options": [
+            "Order for judicial apportionment"
+          ]
+        },
+        "4": {
+          "legend": "Representation order date"
+        },
+        "5": {
+          "label": "MAAT Reference",
+          "hint": "For example 123456789"
+        },
+        "6": {
+          "value": "Add another defendant",
+          "type": "button"
         }
       }
     },

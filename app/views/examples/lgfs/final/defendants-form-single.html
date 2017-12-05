@@ -15,9 +15,12 @@
           Defendant details
         </h2>
 
-        {% for item in [1,2,3,4,5] %}
-          {{FORM.defendant(formData, formcache, FORM, item)}}
+        {% for item in [formcache.seedNum] %}
+          {{FORM.defendantSingle(formData, formcache, FORM, item)}}
         {% endfor %}
+
+
+
 
         <div class="form-section {{'hidden' if formData.multi == false}}">
           {{FORM.addmore(formData[6], formcache)}}

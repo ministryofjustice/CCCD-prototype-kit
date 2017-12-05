@@ -2,7 +2,7 @@
 
 {% block content %}
 
-<main id="content" role="main">
+<main id="content" role="main" class="fx-defendant-lookup">
 
   {% include "./breadcrumb.html" %}
   <div class="grid-row">
@@ -23,36 +23,57 @@
           <table>
             <thead>
               <tr>
+                <th>Primary <br /> defendant</th>
                 <th>Defendant name</th>
                 <th>Date of birth</th>
                 <th>MAAT reference</th>
                 <th>Representation order date</th>
+                <th>Actions</th>
               </tr>
             </thead>
-            <tbody>
+            <tbody class="fx-defendant-count">
               <tr>
+                <td>
+                  <div class="multiple-choice">
+                    <input id="radio-1" type="radio" name="general-input-primary-defendant" value="Yes">
+                    <label for="radio-1" class="">&nbsp;</label>
+                  </div>
+                </td>
                 <td>Joseph Anderson</td>
                 <td>06/08/1990</td>
                 <td>8825177950</td>
                 <td>01/06/2017</td>
+                <td></td>
               </tr>
 
-            {% if formcache['input-first-name'] %}
+              {% for item in [1,2,3,4,5] %}
+              {% if formcache['general-input-first-name-' + item] %}
+
               <tr>
-                <td>{{formcache['input-first-name']}} {{formcache['input-last-name']}}</td>
                 <td>
-                  {{formcache['date-of-birth-day']}}/
-                  {{formcache['date-of-birth-month']}}/
-                  {{formcache['date-of-birth-year']}}
+                  <div class="multiple-choice">
+                    <input id="radio-2" type="radio" name="general-input-primary-defendant" value="Yes">
+                    <label for="radio-2" class="">&nbsp;</label>
+                  </div>
                 </td>
-                <td>{{formcache['input-maat-reference']}}</td>
+                <td>{{formcache['general-input-first-name-' + item]}} {{formcache['general-input-last-name-' + item]}}</td>
                 <td>
-                  {{formcache['representation-order-date-day']}}/
-                  {{formcache['representation-order-date-month']}}/
-                  {{formcache['representation-order-date-year']}}
+                  {{formcache['general-date-of-birth-'+ item +'-day']}}/
+                  {{formcache['general-date-of-birth-'+ item +'-month']}}/
+                  {{formcache['general-date-of-birth-'+ item +'-year']}}
+                </td>
+                <td>{{formcache['general-input-maat-reference-' + item]}}</td>
+                <td>
+                  {{formcache['general-representation-order-date-'+ item +'-day']}}/
+                  {{formcache['general-representation-order-date-'+ item +'-month']}}/
+                  {{formcache['general-representation-order-date-'+ item +'-year']}}
+                </td>
+                <td>
+                  <a href="delete-model/defendant/{{item}}">remove</a>
                 </td>
               </tr>
-            {% endif%}
+              {% endif%}
+              {% endfor %}
 
             </tbody>
           </table>

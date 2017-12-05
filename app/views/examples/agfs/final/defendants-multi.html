@@ -19,8 +19,7 @@
           {{FORM.defendant(formData, formcache, FORM, item)}}
         {% endfor %}
 
-
-        <div class="form-section">
+        <div class="form-section {{'hidden' if formData.multi == false}}">
           {{FORM.addmore(formData[6], formcache)}}
         </div>
 
@@ -29,5 +28,5 @@
       </form>
     </div>
   </div>
-</main>
+</main>{{formcache | dump | safe}}
 {% endblock %}

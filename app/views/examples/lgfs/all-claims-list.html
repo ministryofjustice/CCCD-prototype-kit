@@ -9,13 +9,14 @@
     <div class="column-full">
 
       <h1 class="heading-xlarge">
-        All claims (LGFS)
+        Your claims
       </h1>
+
       <div class="grid-row mod-cost-summary">
         <div class="column-one-quarter">
           <h1 class="heading-large">
-            <span class="heading-secondary">Fees</span>
-            £9,999.99
+            <span class="heading-secondary">Total outstanding</span>
+            £90,426.68
             <span class="heading-secondary">
               <a href="#noop" class="font-small">View details</a>
             </span>
@@ -24,8 +25,11 @@
 
         <div class="column-one-quarter">
           <h1 class="heading-large">
-            <span class="heading-secondary">Expenses</span>
-            £9,999.99
+            <span class="heading-secondary">Total authorised</span>
+            £0.00
+            <span class="heading-secondary">
+              <a href="#noop" class="font-small">View details</a>
+            </span>
           </h1>
         </div>
 
@@ -37,13 +41,12 @@
             <a class="button button-start" href="/examples/lgfs/bill-type" role="button">Start now</a></p>
           </div>
         </div>
-        <img src="/public/images/lgfs.claims.list.png" alt="" usemap="#workmap"/>
-        <!-- map name="workmap">
-          <area shape="rect" coords="100,100,250,200" alt="Computer" href="/examples/lgfs/final/cost-summary-static" />
-        </map -->
-        <a href="/examples/lgfs/final/cost-summary-static?load=route1">API Journey 1</a> |
-        <a href="/examples/lgfs/final/cost-summary-static?load=route2">API Journey 2</a>
+
       </div>
+
+      {% include "includes/tmpl-main-search.html" %}
+      {% include "./all-claims-table.html" %}
+
     </div>
   </main>
   {% endblock %}

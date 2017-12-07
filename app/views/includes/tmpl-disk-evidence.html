@@ -1,26 +1,54 @@
-<h3 class="heading-medium">
-  Evidence supplied on disk
-</h3>
 <div class="form-group">
-  <fieldset>
+  <fieldset class="inline">
     <legend>
-      <h1 class="heading-medium">
+      <h3 class="heading-small">
         Will you be sending disk evidence with this claim?
-      </h1>
+      </h3>
     </legend>
 
     <div class="multiple-choice" data-target="evidence-disk">
       <input id="example-evidence-disk" type="radio" name="radio-contact-group" value="Yes">
       <label for="example-evidence-disk">Yes</label>
     </div>
-    <div class="panel panel-border-narrow js-hidden" id="evidence-disk">
-
-      <img src="/public/images/disk-evidence-help-text.png" />
-    </div>
 
     <div class="multiple-choice">
       <input id="example-contact-by-phone" type="radio" name="radio-contact-group" value="No">
       <label for="example-contact-by-phone">No</label>
+    </div>
+
+    <div class="panel panel-border-narrow js-hidden" id="evidence-disk">
+
+      <h3 class="heading-small">
+        Help with sending the evidence
+      </h3>
+
+      <p>
+        You have electronic evidence on disk that relates to this claim. It is recommended that you send it by recorded delivery.
+      </p>
+      <p>
+        Please fill the
+        <a href="/public/images/CCD-Electronic-Evidence-coversheet.pdf" rel="external" target="_blank">
+          electronic evidence coversheet
+          <span class="visuallyhidden">opens in new window</span>
+        </a>
+        and include it with your disk(s).
+      </p>
+      <p>
+        Legal Aid Agency
+        <br/>
+        Reference:
+        {{formcache['general-input-case-number-1']}}/9876
+        <br/>
+        Fothergill House
+        <br/>
+        16 King Street
+        <br/>
+        Nottingham
+        <br/>
+        NG1 2AS
+      </p>
+
+
     </div>
   </fieldset>
 </div>

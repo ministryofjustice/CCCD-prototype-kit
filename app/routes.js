@@ -20,19 +20,10 @@ router.get('/examples/:scheme(lgfs|agfs)/final/cost-summary-static', function(re
 // Delete defedant model
 router.get('/examples/lgfs/final/delete-model/:model/:id', function(req, res) {
   var id = req.params.id;
+  var model = req.params.model || 'defedant';
 
-  req.session.data["general-input-first-name-" + id] = '';
-  req.session.data["general-input-last-name-" + id] = '';
-  req.session.data["general-date-of-birth-" + id + "-day"] = '';
-  req.session.data["general-date-of-birth-" + id + "-month"] = '';
-  req.session.data["general-date-of-birth-" + id + "-year"] = '';
-  req.session.data["general-checkbox-group-no-header-attr-" + id + "-1"] = '';
-  req.session.data["general-representation-order-date-" + id + "-day"] = '';
-  req.session.data["general-representation-order-date-" + id + "-month"] = '';
-  req.session.data["general-representation-order-date-" + id + "-year"] = '';
-  req.session.data["general-input-maat-reference-" + id] = '';
+  utils.deleteModel[model](req, res);
 
-  res.redirect('../../defendants-lookup')
 })
 
 

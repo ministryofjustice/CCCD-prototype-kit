@@ -22,10 +22,10 @@ module.exports = {
       ]
     };
 
-    if (!!~data['basic-fees'].indexOf(string)){
-      return '/examples/'+ scheme +'/final/graduated-fees';
+    if (!!~data['basic-fees'].indexOf(string)) {
+      return '/examples/' + scheme + '/final/graduated-fees';
     }
-    return '/examples/'+ scheme +'/final/fixed-fees';
+    return '/examples/' + scheme + '/final/fixed-fees';
   },
   loadData: function(pointer, data) {
 
@@ -51,5 +51,29 @@ module.exports = {
     return _.extend({}, data.routes[pointer], {
       formcache: data.formcache
     });
+  },
+  deleteModel: {
+    defendant: function(req, res) {
+      var id = req.params.id;
+      req.session.data["general-input-first-name-" + id] = '';
+      req.session.data["general-input-last-name-" + id] = '';
+      req.session.data["general-date-of-birth-" + id + "-day"] = '';
+      req.session.data["general-date-of-birth-" + id + "-month"] = '';
+      req.session.data["general-date-of-birth-" + id + "-year"] = '';
+      req.session.data["general-checkbox-group-no-header-attr-" + id + "-1"] = '';
+      req.session.data["general-representation-order-date-" + id + "-day"] = '';
+      req.session.data["general-representation-order-date-" + id + "-month"] = '';
+      req.session.data["general-representation-order-date-" + id + "-year"] = '';
+      req.session.data["general-input-maat-reference-" + id] = '';
+      res.redirect('../../defendants-lookup')
+    },
+    disbursement: function(req, res) {
+      var id = req.params.id;
+      req.session.data["general-select-disbursement-type-" + id] = '';
+      req.session.data["disbursements-input-net-amount-" + id] = '';
+      req.session.data["disbursements-input-vat-amount-" + id] = '';
+      res.redirect('../../disbursements')
+    }
   }
 }
+

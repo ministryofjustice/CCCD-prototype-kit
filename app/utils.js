@@ -73,7 +73,15 @@ module.exports = {
       req.session.data["disbursements-input-net-amount-" + id] = '';
       req.session.data["disbursements-input-vat-amount-" + id] = '';
       res.redirect('../../disbursements')
+    },
+    miscfee: function(req, res) {
+      var id = req.params.id;
+
+      req.session.data["misc-fee-select-fee-type-" + id] = '';
+      req.session.data["misc-fee-input-net-amount-" + id] = '';
+      req.session.data["misc-fee-input-additional-case-number-" + id] = '';
+
+      res.redirect('../../misc-fees')
     }
   }
 }
-

@@ -18,7 +18,7 @@ router.get('/examples/:scheme(lgfs|agfs)/final/cost-summary-static', function(re
 
 
 // Delete defedant model
-router.get('/examples/lgfs/final/delete-model/:model/:id', function(req, res) {
+router.get('/examples/:scheme(lgfs|agfs)/final/delete-model/:model/:id', function(req, res) {
   var id = req.params.id;
   var model = req.params.model || 'defedant';
 

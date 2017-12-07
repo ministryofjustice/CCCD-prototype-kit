@@ -21,7 +21,7 @@
         },
         "0": {
           "label": "Advocate",
-          "hint": "Instructed Advocate for the case",
+          "hint": "The instructed Advocate for the case",
           "cssClasses": "form-control-3-4"
 
         },
@@ -397,7 +397,7 @@
         "1": {
 
           "label": "Advocate",
-          "hint": "Instructed Advocate for the case"
+          "hint": "The instructed Advocate for the case"
         },
         "2": {
           "label": "Case type",
@@ -443,8 +443,8 @@
         "11": {
           "label": "Supplier number",
           "heading": "Supplier number",
-          "hint": "Please choose the relevant option",
-          "bodytext": "Please choose the relevant option",
+          "hint": "Please choose the relevant supplier",
+          "bodytext": "Please choose the relevant supplier",
           "options": [],
           "typeahead": false
         },

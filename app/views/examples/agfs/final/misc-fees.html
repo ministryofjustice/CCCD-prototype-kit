@@ -15,19 +15,16 @@
           Miscellaneous fees
         </h2>
         <p>
-          Complete the <a href="#noop" rel="extenal">special preparation form</a> and attach to this claim.
+          Complete the <a href="/public/images/advocate-graduated-fee-special-preparation-form.pdf" target="_blank" rel="extenal">special preparation form</a> and attach to this claim.
         </p>
-
 
         {% for item in [1,2,3,4,5] %}
           {{FORM.miscfeeAGFS(formData, formcache, FORM, item)}}
         {% endfor %}
 
-
         <div class="form-section">
-          {{FORM.addmore(formData[2], formcache)}}
+          {{FORM.addmore(formData[2])}}
         </div>
-
 
         {% include "includes/tmpl-form-buttons.html" %}
         {% include "includes/tmpl-help-summary.html" %}

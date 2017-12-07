@@ -61,11 +61,11 @@
   <div class="form-group {{ 'form-group-error' if errorState }}" id="wrapped-{{contextID}}">
     <fieldset>
       <legend>
-        <h1 class="heading-medium">
+        <h1 class="heading-small">
           {{data.heading | default('Missing data.heading')}}
         </h1>
 
-        <span class="body-text">{{data.bodytext | default('Missing data.bodytext')}}</span>
+        <span class="form-hint">{{data.bodytext | default('Missing data.bodytext')}}</span>
         {% if errorState %}
         <span class="error-message">
           {{data.error | default('Missing data.error')}}

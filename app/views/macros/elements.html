@@ -434,19 +434,28 @@ value="{{item.text}}">
   <div class="form-section">
     {{FORM.input(data[0], formcache, seedNum)}}
     {{FORM.input(data[1], formcache, seedNum)}}
-  </div>
-
-  <div class="form-section">
     {{FORM.date(data[2], formcache, seedNum)}}
     {{FORM.checkboxlist(data[3], formcache, seedNum)}}
-  </div>
 
-  <h3 class="heading-medium">
-    Representation order details
-  </h3>
-  <div class="form-section">
+    <details role="group">
+      <summary role="button" aria-controls="details-content-0" aria-expanded="false">
+        <span class="summary">Help with judicial apportionment</span>
+      </summary>
+      <div class="panel panel-border-narrow" id="details-content-0" aria-hidden="true">
+        <p>
+          Judicial apportionment is when the defendant has applied for and received an order confirming they are not required to pay the full amount of their defence costs. If applicable, please ensure you upload a copy of the order to your claim.
+        </p>
+      </div>
+    </details>
+
+    <h3 class="heading-medium">
+      Representation order details
+    </h3>
+
     {{FORM.date(data[4], formcache, seedNum)}}
     {{FORM.input(data[5], formcache, seedNum)}}
+
+    <a href="#noop">Add another representation order</a>
   </div>
   <hr />
 </div>
@@ -461,19 +470,28 @@ value="{{item.text}}">
   <div class="form-section">
     {{FORM.input(data[0], formcache, seedNum)}}
     {{FORM.input(data[1], formcache, seedNum)}}
-  </div>
-
-  <div class="form-section">
     {{FORM.date(data[2], formcache, seedNum)}}
     {{FORM.checkboxlist(data[3], formcache, seedNum)}}
-  </div>
 
-  <h3 class="heading-medium">
-    Representation order details
-  </h3>
-  <div class="form-section">
+    <details role="group">
+      <summary role="button" aria-controls="details-content-0" aria-expanded="false">
+        <span class="summary">Help with judicial apportionment</span>
+      </summary>
+      <div class="panel panel-border-narrow" id="details-content-0" aria-hidden="true">
+        <p>
+          Judicial apportionment is when the defendant has applied for and received an order confirming they are not required to pay the full amount of their defence costs. If applicable, please ensure you upload a copy of the order to your claim.
+        </p>
+      </div>
+    </details>
+
+    <h3 class="heading-medium">
+      Representation order details
+    </h3>
+
     {{FORM.date(data[4], formcache, seedNum)}}
     {{FORM.input(data[5], formcache, seedNum)}}
+
+    <a href="#noop">Add another representation order</a>
   </div>
   <hr />
 </div>

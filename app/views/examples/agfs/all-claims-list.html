@@ -9,13 +9,14 @@
     <div class="column-full">
 
       <h1 class="heading-xlarge">
-        All claims (AGFS)
+        Your claims
       </h1>
+
       <div class="grid-row mod-cost-summary">
         <div class="column-one-quarter">
           <h1 class="heading-large">
-            <span class="heading-secondary">Fees</span>
-            £9,999.99
+            <span class="heading-secondary">Total outstanding</span>
+            £59,765.44
             <span class="heading-secondary">
               <a href="#noop" class="font-small">View details</a>
             </span>
@@ -24,11 +25,13 @@
 
         <div class="column-one-quarter">
           <h1 class="heading-large">
-            <span class="heading-secondary">Expenses</span>
-            £9,999.99
+            <span class="heading-secondary">Total authorised</span>
+            £0.00
+            <span class="heading-secondary">
+              <a href="#noop" class="font-small">View details</a>
+            </span>
           </h1>
         </div>
-
 
         <div class="column-one-half" style="text-align: right;">
           <p>
@@ -38,17 +41,12 @@
             <a class="button button-start" href="/examples/agfs/final/case-details" role="button">Start now</a>
           </p>
         </div>
-
-
-
-
       </div>
-      <img src="/public/images/agfs.claims.list.png" alt="" usemap="#workmap" />
-      <!-- map name="workmap">
-        <area shape="rect" coords="20,100,150,30" alt="Computer" href="/examples/agfs/final/cost-summary-static" style="border:1px solid red">
-      </map -->
-      <a href="/examples/agfs/final/cost-summary-static?load=route1">API Journey 1</a> |
-      <a href="/examples/agfs/final/cost-summary-static?load=route2">API Journey 2</a>
+
+
+      {% include "includes/tmpl-main-search.html" %}
+      {% include "./all-claims-table.html" %}
+
     </div>
   </div>
 </main>

@@ -2,6 +2,8 @@ moj.Modules.Defendants = {
   el: '.fx-defendant',
   init: function() {
     this.setInitState();
+
+
   },
   // View state logic used when page is loaded.
   setInitState: function() {
@@ -10,7 +12,7 @@ moj.Modules.Defendants = {
     // apply the current display states based on the
     // firstname in this case.
     $(this.el).is(function(idx, el) {
-      if($(this).find('.fx-defendant-hook').val()){
+      if ($(this).find('.fx-defendant-hook').val()) {
         $(el).removeClass('hidden');
       }
     });

@@ -314,7 +314,7 @@
         "pagename": "supporting-evidence",
         "action": "/examples/agfs/final/additional-info",
         "objRefs": {
-          "0": "evidence-check-list"
+          "0": "agfs-evidence-check-list"
         },
         "0": {
           "heading": "Supporting evidence checklist",
@@ -731,7 +731,7 @@
         "pagename": "supporting-evidence",
         "action": "/examples/lgfs/final/additional-info",
         "objRefs": {
-          "0": "evidence-check-list"
+          "0": "lgfs-evidence-check-list"
         },
         "0": {
           "heading": "Supporting evidence checklist",
@@ -823,7 +823,18 @@
       "Special preparation fee"
     ],
     "lgfs-supplier-numbers": ["8A222Z", "9B333Y"],
-    "evidence-check-list": [
+    "agfs-evidence-check-list": [
+      "Representation order",
+      "A copy of the indictment",
+      "Committal bundle front sheets",
+      "Expenses invoices",
+      "Details of previous fee advancements",
+      "Special preparation form",
+      "Hardship supporting evidence",
+      "Justification for out of time claim",
+      "Order in respect of judicial apportionment"
+    ],
+    "lgfs-evidence-check-list": [
       "Representation order",
       "A copy of the indictment",
       "Committal bundle front sheets",

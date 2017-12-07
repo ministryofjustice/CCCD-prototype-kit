@@ -19,33 +19,7 @@
           Evidence supplied on disk
         </h3>
 
-        <div class="form-group">
-          <fieldset>
-            <legend>
-              <h3 class="heading-small">
-                Will you be sending disk evidence with this claim?
-              </h3>
-            </legend>
-
-            <div class="multiple-choice" data-target="evidence-disk">
-              <input id="example-evidence-disk" type="radio" name="radio-contact-group" value="Yes">
-              <label for="example-evidence-disk">Yes</label>
-            </div>
-            <div class="panel panel-border-narrow js-hidden" id="evidence-disk">
-
-              <img src="/public/images/disk-evidence-help-text.png" />
-            </div>
-
-            <div class="multiple-choice">
-              <input id="example-contact-by-phone" type="radio" name="radio-contact-group" value="No">
-              <label for="example-contact-by-phone">No</label>
-            </div>
-          </fieldset>
-        </div>
-
-        <div class="form-group">
-          {% include "includes/tmpl-help-summary.html" %}
-        </div>
+        {% include "includes/tmpl-disk-evidence.html" %}
 
         <div class="form-group">
           <h3 class="heading-medium">

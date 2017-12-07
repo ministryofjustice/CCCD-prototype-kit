@@ -823,15 +823,16 @@
       "Special preparation fee"
     ],
     "lgfs-supplier-numbers": ["8A222Z", "9B333Y"],
-    "evidence-check-list": ["Order in respect of judicial apportionment",
-      "Committal bundle front sheets",
-      "A copy of the indictment",
+    "evidence-check-list": [
       "Representation order",
-      "Hardship supporting evidence",
-      "Details of previous fee advancements",
+      "A copy of the indictment",
+      "Committal bundle front sheets",
       "Expenses invoices",
-      "Justification for out of time claim",
+      "Details of previous fee advancements",
       "Special preparation form",
+      "Hardship supporting evidence",
+      "Justification for out of time claim",
+      "Order in respect of judicial apportionment",
       "Prior authority CRM4"
     ],
     "agfs-certify-options": [

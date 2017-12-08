@@ -1,7 +1,7 @@
 {% macro input(data, formcache={}, seedNum=1) %}
   {% set contextID = (data.context | default('general')) +'-input-' + (data.label | nameAttr) + '-' + seedNum %}
-  <div class="form-group el-input {{ 'form-group-error' if errorState }} {{ 'hidden' if data.hidden }}" id="wrapped-{{contextID}}">
-    <label class="form-label-bold" for="{{ contextID }}">
+  <div class="form-group el-input {{ 'form-group-error' if errorState }} {{ 'hidden' if data.hidden }} {{ data.cssClassesParent if data.cssClassesParent }}" id="wrapped-{{contextID}}" >
+    <label class="form-label-bold {{ data.cssClassesLabel if data.cssClassesLabel }}" for="{{ contextID }}">
       {{data.label | default('Missing data.label')}}
 
       {% if data.hint %}
@@ -90,8 +90,13 @@
     <!-- THERE IS A BUG HERE
       YOu will not be able to change the date
     -->
-    <div class="form-group {{ 'form-group-error' if errorState }}  {{ 'fx-populate' if data.populate }}"
-    {{ "data-contextID=" + contextID if data.populate }} >
+    <div class="form-group
+    {{ 'form-group-error' if errorState }}
+    {{ 'fx-populate' if data.populate }}
+    {{ data.cssClassesParent if data.cssClassesParent }}
+    "
+    {{ "data-contextID=" + contextID if data.populate }}
+    >
     <fieldset>
       <legend>
         <span class="form-label-bold">
@@ -181,7 +186,9 @@
 
 {% macro select(data, formcache={}, seedNum=1) %}
   {% set contextID = (data.context | default('general')) +'-select-' + (data.label | nameAttr) + '-' + seedNum %}
-  <div class="form-group {{ 'form-group-error' if errorState }} {{ 'fx-typeahead' if data.typeahead !== false }} ">
+  <div class="form-group {{ 'form-group-error' if errorState }} {{ 'fx-typeahead' if data.typeahead !== false }}
+  {{ data.cssClassesParent if data.cssClassesParent }}
+   ">
     <label class="form-label-bold" for="{{contextID}}">
       {{data.label | default("Missing data.label")}}
 
@@ -247,7 +254,7 @@
 {% macro netamount(data, formcache={}, seedNum=1) %}
   {% set contextID = (data.context | default('general')) +'-input-' + (data.legend | nameAttr) + '-' + seedNum %}
 
-  <div class="form-group {{ 'form-group-error' if errorState }}">
+  <div class="form-group {{ 'form-group-error' if errorState }} {{ data.cssClassesParent if data.cssClassesParent }}">
     <label class="form-label-bold" for="{{contextID}}">
       Net amount
       {% if errorState %}
@@ -274,7 +281,7 @@
 {% macro vatamount(data, formcache={}, seedNum=1) %}
   {% set contextID = (data.context | default('general')) +'-input-' + (data.legend | nameAttr) + '-' + seedNum %}
 
-  <div class="form-group {{ 'form-group-error' if errorState }}">
+  <div class="form-group {{ 'form-group-error' if errorState }} {{ data.cssClassesParent if data.cssClassesParent }}">
     <label class="form-label-bold" for="{{contextID}}">
       VAT amount
       {% if errorState %}
@@ -298,8 +305,9 @@
   </div>
 {% endmacro %}
 
-{% macro costpermile(data, formcache={}, errorState=false) %}
-  <div class="form-group {{ 'form-group-error' if errorState }} fx-for-travel">
+{% macro costpermile(data, formcache={}, seedNum=1) %}
+  {% set contextID = (data.context | default('general')) +'-cpm-' + (data.label | nameAttr) + '-' + seedNum %}
+  <div class="form-group fx-mileage {{ data.cssClassesParent if data.cssClassesParent }}">
     <fieldset class="inline">
       <legend>
         <h1 class="heading-small">
@@ -312,20 +320,20 @@
       </legend>
       {% endif %}
       <div class="multiple-choice">
-        <input id="radio-inline-1" type="radio" name="travel-expence-cpm" value="25"
+        <input id="{{contextID}}-1" type="radio" name="{{contextID}}" value="25"
 
-        {{'checked' if "25" == (formcache['travel-expence-cpm'])}}
+        {{'checked' if "25" == (formcache[contextID])}}
 
         />
-        <label for="radio-inline-1">25p per mile</label>
+        <label for="{{contextID}}-1">25p per mile</label>
       </div>
       <div class="multiple-choice">
-        <input id="radio-inline-2" type="radio" name="travel-expence-cpm" value="45"
+        <input id="{{contextID}}-2" type="radio" name="{{contextID}}" value="45"
 
-        {{'checked' if "45" == (formcache['travel-expence-cpm'] | default('45'))}}
+        {{'checked' if "45" == (formcache[contextID] | default('45'))}}
 
         />
-        <label for="radio-inline-2">45p per mile</label>
+        <label for="{{contextID}}-2">45p per mile</label>
       </div>
     </fieldset>
   </div>
@@ -459,6 +467,52 @@
     <hr />
   </div>
 {% endmacro %}
+
+{% macro expenses(data, formcache, FORM, seedNum=1) %}
+  <div class="form-section  fx-for-travel-hook  {{ 'hidden' if (seedNum > 1)}}">
+    <h3 class="heading-medium">
+      Item {{seedNum}}
+      <a href="#noop" style="float:right;" class="font-small">Remove this</a>
+    </h3>
+
+    <div class="grid-row">
+      <div class="column-half">
+        {{FORM.select(data[0], formcache, seedNum)}}
+      </div>
+      <div class="column-half">
+        {{FORM.select(data[1], formcache, seedNum)}}
+      </div>
+    </div>
+
+    <div class="grid-row">
+      <div class="column-two-thirds">
+        {{FORM.input(data[2], formcache, seedNum)}}
+      </div>
+      <div class="column-one-third">
+        {{FORM.input(data[3], formcache, seedNum)}}
+      </div>
+    </div>
+
+    <div class="grid-row">
+      <div class="column-half">
+        {{FORM.date(data[4], formcache, seedNum)}}
+      </div>
+
+      <div class="column-one-quarter">
+        <br/><br/>
+        {{FORM.netamount(data[5], formcache, seedNum)}}
+      </div>
+      <div class="column-one-quarter">
+        <br/><br/>
+        {{FORM.vatamount(data[6], formcache, seedNum)}}
+      </div>
+    </div>
+
+    {{FORM.costpermile(data[7], formcache, seedNum)}}
+
+  </div>
+{% endmacro %}
+
 
 {% macro defendantSingle(data, formcache, FORM, seedNum=1) %}
   <div class="fx-defendant">

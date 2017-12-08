@@ -15,50 +15,12 @@
           Travel expenses
         </h2>
 
-        <h3 class="heading-medium">
-          Item 1
-          <a href="#noop" style="float:right;" class="font-small fx-for-travel">Remove this</a>
-        </h3>
+        {% for item in [1,2,3,4,5] %}
+          {{FORM.expenses(formData, formcache, FORM, item)}}
+        {% endfor %}
 
         <div class="form-section">
-          <div class="grid-row">
-            <div class="column-half fx-for-travel-hook">
-              {{FORM.select(formData[0], formcache)}}
-            </div>
-            <div class="column-half fx-for-travel">
-              {{FORM.select(formData[1], formcache)}}
-            </div>
-          </div>
-
-          <div class="grid-row fx-for-travel">
-            <div class="column-two-thirds">
-              {{FORM.input(formData[2], formcache)}}
-            </div>
-            <div class="column-one-third">
-              {{FORM.input(formData[3], formcache)}}
-            </div>
-          </div>
-
-          <div class="grid-row fx-for-travel">
-            <div class="column-half">
-              {{FORM.date(formData[4], formcache)}}
-            </div>
-
-            <div class="column-one-quarter">
-              <br/><br/>
-              {{FORM.netamount(formData[5], formcache)}}
-            </div>
-            <div class="column-one-quarter">
-              <br/><br/>
-              {{FORM.vatamount(formData[6], formcache)}}
-            </div>
-          </div>
-
-          {{FORM.costpermile(formData[7], formcache)}}
-
-          <div class="form-section fx-for-travel">
-            {{FORM.addmore(formData[8], formcache)}}
-          </div>
+          {{FORM.addmore(formData[8], formcache)}}
         </div>
 
 

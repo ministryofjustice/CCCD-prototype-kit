@@ -63,10 +63,6 @@ $(document).ready(function() {
     this.submit();
   });
 
-  // Travel expenses fake reveal
-  $('.fx-for-travel-hook').on('change', 'select', function() {
-    $('.fx-for-travel').removeClass('fx-for-travel')
-  });
 
   // Trigger fake expense show when page reloads
   if ($('.fx-for-travel-hook select').val()) {

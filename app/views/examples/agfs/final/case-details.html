@@ -15,14 +15,9 @@
 
         <div class="form-section">
           {{FORM.radiogroup(formData.radiogroup, formcache)}}
-        </div>
 
-        <div class="form-section">
           {{FORM.input(formData[0], formcache)}}
           {{FORM.input(formData[1], formcache)}}
-        </div>
-
-        <div class="form-section">
           {{FORM.select(formData[2], formcache)}}
           <div class="grid-row">
             <div class="column-one-half">
@@ -33,22 +28,22 @@
               {{FORM.input(formData[4], formcache)}}
             </div>
           </div>
-        </div>
 
-        <div class="form-section hidden">
-          <div class="grid-row">
-            <div class="column-one-half">
-              {{FORM.select(formData[5], formcache)}}
-            </div>
+          <div class="form-group hidden">
+            <div class="grid-row">
+              <div class="column-one-half">
+                {{FORM.select(formData[5], formcache)}}
+              </div>
 
-            <div class="column-one-half">
-              {{FORM.input(formData[6], formcache)}}
+              <div class="column-one-half">
+                {{FORM.input(formData[6], formcache)}}
+              </div>
             </div>
           </div>
-        </div>
 
-        <div class="form-section fx-trialdetails hidden">
-          {{FORM.trialdetails(formData, formcache, FORM, [7,8,9,10])}}
+          <div class="form-group fx-trialdetails hidden">
+            {{FORM.trialdetails(formData, formcache, FORM, [7,8,9,10])}}
+          </div>
         </div>
 
         {% include "includes/tmpl-form-buttons.html" %}

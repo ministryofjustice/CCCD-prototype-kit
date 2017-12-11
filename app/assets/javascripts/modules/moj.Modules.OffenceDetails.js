@@ -1,7 +1,7 @@
 moj.Modules.OffenceDetails = {
   el: '',
   init: function() {
-    this.bindEvents();
+    //this.bindEvents();
   },
   bindEvents: function() {
     // Offence Category random chooser

@@ -15,7 +15,7 @@
           Defendant details
         </h2>
         <p style="width:66%">
-          The defendant listed below matches your supplier number (<span class="bold-small">{{formcache['general-radio-group-supplier-number-1']}}</span>), court (<span class="bold-small">{{formcache['general-select-court-1']}}</span>) and case number (<span class="bold-small">{{formcache['general-input-case-number-1']}}</span>).
+          The defendant listed below matches your supplier number (<span class="bold-small">{{formcache['general-radio-group-supplier-number-1']}}</span>), court (<span class="bold-small">{{formcache['general-select-court-1']}}</span>) and case number (<span class="bold-small" style="text-transform: uppercase;">{{formcache['general-input-case-number-1']}}</span>).
         </p>
 
 
@@ -28,7 +28,7 @@
                 <th>Date of birth</th>
                 <th>MAAT reference</th>
                 <th>Representation order date</th>
-                <th>Actions</th>
+                <th class="hidden">Actions</th>
               </tr>
             </thead>
             <tbody class="fx-defendant-count">
@@ -43,7 +43,7 @@
                 <td>06/08/1990</td>
                 <td>8825177950</td>
                 <td>01/06/2017</td>
-                <td></td>
+                <td class="hidden"></td>
               </tr>
 
               {% for item in [1,2,3,4,5] %}
@@ -68,7 +68,7 @@
                   {{formcache['general-representation-order-date-'+ item +'-month']}}/
                   {{formcache['general-representation-order-date-'+ item +'-year']}}
                 </td>
-                <td>
+                <td class="hidden">
                   <a href="delete-model/defendant/{{item}}">remove</a>
                 </td>
               </tr>

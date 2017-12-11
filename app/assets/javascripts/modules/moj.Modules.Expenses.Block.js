@@ -35,7 +35,6 @@ moj.Modules.ExpensesBlock = function(el) {
   }
 
   this.hookMeUp = function(config) {
-    console.log([config, this.lookup['distance'], config.distance,this.$el.find(this.lookup['distance'])]);
     this.$el.find('.hidden').removeClass('hidden');
     this.$el.find(this.lookup['distance']).toggle(config.distance);
     this.$el.find(this.lookup['location']).toggle(config.location);

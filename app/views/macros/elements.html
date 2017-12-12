@@ -319,7 +319,7 @@
         </span>
       </legend>
       {% endif %}
-      <div class="multiple-choice">
+      <div class="multiple-choice fx-25p">
         <input id="{{contextID}}-1" type="radio" name="{{contextID}}" value="25"
 
         {{'checked' if "25" == (formcache[contextID])}}
@@ -327,7 +327,7 @@
         />
         <label for="{{contextID}}-1">25p per mile</label>
       </div>
-      <div class="multiple-choice">
+      <div class="multiple-choice fx-40p">
         <input id="{{contextID}}-2" type="radio" name="{{contextID}}" value="45"
 
         {{'checked' if "45" == (formcache[contextID] | default('45'))}}

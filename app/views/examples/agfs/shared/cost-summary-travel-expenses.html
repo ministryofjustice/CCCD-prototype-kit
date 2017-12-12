@@ -2,6 +2,7 @@
   Travel expenses
   <a href="./travel-expenses" style="float:right;" class="font-small">Change</a>
 </h3>
+{% if formcache['general-select-expense-type-1'] %}
 <table class="form-section tbl-travel-expenses">
   <tbody>
     <tr>
@@ -51,3 +52,7 @@
     </tr>
   </tbody>
 </table>
+{% else %}
+  <p>There are no travel expenses for this claim.</p>
+{% endif %}
+

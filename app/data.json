@@ -266,7 +266,7 @@
     },
     "agfs/final/travel-expenses": {
       "formData": {
-        "pagename": "agfs-expenses",
+        "pagename": "agfs-travel-expenses",
         "action": "/examples/agfs/final/supporting-evidence",
         "objRefs": {
           "0": "agfs-expense-types",
@@ -275,30 +275,56 @@
         "0": {
           "label": "Expense type",
           "typeahead": false,
+          "cssClasses": "fx-expensetype",
+          "emptyOption": true,
           "options": "[[ REPLACED WHEN ROUTE IS CALLED ]]"
         },
         "1": {
           "label": "Reason for travel",
           "typeahead": false,
+          "emptyOption": true,
+          "cssClasses": "fx-reasonfortravel",
+          "cssClassesParent": "hidden",
           "options": "[[ REPLACED WHEN ROUTE IS CALLED ]]"
         },
         "2": {
-          "label": "Destination"
+          "label": "Destination",
+          "cssClassesParent": "fx-location hidden",
+          "cssClassesLabel": "fx-locationLabel"
         },
         "3": {
-          "label": "Distance (miles)"
+          "label": "Distance (miles)",
+          "cssClassesParent": "fx-distance hidden",
+          "cssClassesLabel": "fx-distanceLabel"
         },
         "4": {
           "legend": "Date of travel",
-          "context": "travel-expenses"
+          "context": "travel-expenses",
+          "cssClassesParent": "hidden"
         },
         "5": {
           "legend": "Net Amount",
-          "context": "travel-expenses"
+          "context": "travel-expenses",
+          "cssClassesParent": "hidden"
         },
         "6": {
           "legend": "VAT Amount",
-          "context": "travel-expenses"
+          "context": "travel-expenses",
+          "cssClassesParent": "hidden"
+        },
+        "7": {
+          "label": "Cost per mile",
+          "cssClassesParent": "hidden"
+        },
+        "8": {
+          "value": "Add another expense",
+          "type": "button",
+          "fxselector": ".fx-for-travel-hook"
+        },
+        "9": {
+          "label": "Hours",
+          "cssClassesParent": "fx-hours",
+          "cssClassesLabel": "fx-hoursLabel"
         }
       }
     },
@@ -713,11 +739,6 @@
           "cssClassesParent": "fx-distance hidden",
           "cssClassesLabel": "fx-distanceLabel"
         },
-        "9": {
-          "label": "Hours",
-          "cssClassesParent": "fx-hours",
-          "cssClassesLabel": "fx-hoursLabel"
-        },
         "4": {
           "legend": "Date of travel",
           "context": "travel-expenses",
@@ -733,7 +754,7 @@
           "context": "travel-expenses",
           "cssClassesParent": "hidden"
         },
-        "7":{
+        "7": {
           "label": "Cost per mile",
           "cssClassesParent": "hidden"
         },
@@ -741,6 +762,11 @@
           "value": "Add another expense",
           "type": "button",
           "fxselector": ".fx-for-travel-hook"
+        },
+        "9": {
+          "label": "Hours",
+          "cssClassesParent": "fx-hours",
+          "cssClassesLabel": "fx-hoursLabel"
         }
       }
     },

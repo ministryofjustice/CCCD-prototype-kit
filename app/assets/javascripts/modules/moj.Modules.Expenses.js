@@ -4,9 +4,22 @@ moj.Modules.Expenses = {
   init: function() {
     var self = this;
 
-    $(this.el).is(function(idx, el){
+    $(this.el).is(function(idx, el) {
       self.blocks.push(new moj.Modules.ExpensesBlock(el))
     })
+
+    // Remove disabled attr from inputs before submit
+    $('form').submit(function(e) {
+      e.preventDefault();
+
+      $('.fx-mileage').is(function(idx, el){
+        if(!$(el).is(':visible')){
+          $(el).remove();
+        }
+      })
+      this.submit();
+    });
+
 
   }
 }

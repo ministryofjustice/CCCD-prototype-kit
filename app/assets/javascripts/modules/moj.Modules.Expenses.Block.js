@@ -20,8 +20,8 @@ moj.Modules.ExpensesBlock = function(el) {
     this.setState();
   }
 
-  this.setState = function(){
-    if(this.$el.find('select.fx-expensetype option:selected').index()){
+  this.setState = function() {
+    if (this.$el.find('select.fx-expensetype option:selected').index()) {
       this.$el.removeClass('hidden');
       this.$el.find('select.fx-expensetype').change();
     }
@@ -38,10 +38,10 @@ moj.Modules.ExpensesBlock = function(el) {
 
   this.hookMeUp = function(config) {
 
-    if(config.mileageType == 'bike'){
+    if (config.mileageType == 'bike') {
       this.$el.find(this.lookup['mileage40']).toggle(false);
       this.$el.find(this.lookup['mileage25'] + ' input').prop('checked', true);
-    } else{
+    } else {
       this.$el.find(this.lookup['mileage40']).toggle(true);
       this.$el.find(this.lookup['mileage40'] + ' input').prop('checked', true);
     }

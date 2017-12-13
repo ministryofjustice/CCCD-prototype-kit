@@ -631,3 +631,56 @@
   </tr>
   {% endif %}
 {% endmacro %}
+
+
+{% macro expensesCS(formcache, item)%}
+  {% if formcache['general-select-expense-type-'+item] %}
+    <tr>
+      <th style="vertical-align: top; width: 33%;">Item {{item}}</th>
+      <td style="padding: 0">
+        <table class="nested-table" style="border:0;margin-bottom: 0">
+          <tbody>
+            <tr>
+              <th style="width: 33%">Expense type</th>
+              <td>{{formcache['general-select-expense-type-' + item]}}</td>
+            </tr>
+            <tr>
+              <th>Reason for travel</th>
+              <td>{{formcache['general-select-reason-for-travel-' + item]}}</td>
+            </tr>
+            <tr>
+              <th>Destination</th>
+              <td>{{formcache['general-input-destination-' + item]}}</td>
+            </tr>
+            {% if formcache['general-input-distance-(miles)-' + item] %}
+              <tr>
+                <th>Distance (miles)</th>
+                <td>{{formcache['general-input-distance-(miles)-' + item]}}</td>
+              </tr>
+            {% endif %}
+              <tr>
+                <th>Date of travel</th>
+                <td>
+                  {{formcache['travel-expenses-date-of-travel-'+ item +'-day']}}/
+                  {{formcache['travel-expenses-date-of-travel-'+ item +'-month']}}/
+                  {{formcache['travel-expenses-date-of-travel-'+ item +'-year']}}
+                </td>
+              </tr>
+            {% if formcache['general-cpm-cost-per-mile-'+ item] %}
+              <tr>
+                <th>Cost per mile</th>
+                <td>{{formcache['general-cpm-cost-per-mile-'+ item]}}</td>
+              </tr>
+            {% endif %}
+            <tr>
+              <th>Net amount</th>
+              <td>£{{formcache['travel-expenses-input-net-amount-1']}}</td>
+            </tr>
+          </tbody>
+        </table>
+      </td>
+    </tr>
+  {% endif %}
+{% endmacro %}
+
+

@@ -3,49 +3,12 @@
   <a href="./travel-expenses" style="float:right;" class="font-small">Change</a>
 </h3>
 {% if formcache['general-select-expense-type-1'] %}
-<table class="form-section tbl-travel-expenses">
+
+  <table class="form-section tbl-misc-fees">
   <tbody>
-    <tr>
-      <th style="vertical-align: top; width: 33%;">Item 1</th>
-      <td style="padding: 0">
-        <table class="nested-table" style="border:0;margin-bottom: 0">
-          <tbody>
-            <tr>
-              <th style="width: 33%">Expense type</th>
-              <td>{{formcache['general-select-expense-type-1']}}</td>
-            </tr>
-            <tr>
-              <th>Reason for travel</th>
-              <td>{{formcache['general-select-reason-for-travel-1']}}</td>
-            </tr>
-            <tr>
-              <th>Destination</th>
-              <td>{{formcache['general-input-destination-1']}}</td>
-            </tr>
-            <tr>
-              <th>Distance (miles)</th>
-              <td>{{formcache['general-input-distance-(miles)-1']}}</td>
-            </tr>
-            <tr>
-              <th>Date of travel</th>
-              <td>
-                {{formcache['travel-expenses-date-of-travel-1-day']}}/
-                {{formcache['travel-expenses-date-of-travel-1-month']}}/
-                {{formcache['travel-expenses-date-of-travel-1-year']}}
-              </td>
-            </tr>
-            <tr>
-              <th>Cost per mile</th>
-              <td>{{formcache['travel-expence-cpm']}}</td>
-            </tr>
-            <tr>
-              <th>Net amount</th>
-              <td>£{{formcache['travel-expenses-input-net-amount-1']}}</td>
-            </tr>
-          </tbody>
-        </table>
-      </td>
-    </tr>
+    {% for item in [1,2,3,4,5] %}
+      {{FORM.expensesCS(formcache, item)}}
+    {% endfor %}
     <tr class="bg-white">
       <th>Net Total</th>
       <td style="padding-left: 22%" class="bold-small">£0.00</td>

@@ -53,17 +53,6 @@ $(document).ready(function() {
 
 $(document).ready(function() {
 
-
-
-
-  // Remove disabled attr from inputs before submit
-  $('form').submit(function(e) {
-    e.preventDefault();
-    $('select:disabled').prop('disabled', false);
-    this.submit();
-  });
-
-
   // Trigger fake expense show when page reloads
   if ($('.fx-for-travel-hook select').val()) {
     $('.fx-for-travel-hook select').trigger('change');

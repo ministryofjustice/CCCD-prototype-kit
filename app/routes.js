@@ -10,12 +10,19 @@ router.get('/', function(req, res) {
   res.render('examples/index')
 })
 
+router.get('/examples/:scheme(lgfs|agfs)/start-a-claim', function (req, res) {
+  req.session.destroy()
+
+  var path = !!~req.header('Referer').indexOf('/lgfs/') ? '/examples/lgfs/bill-type' : '/examples/agfs/final/case-details'
+  res.redirect(path)
+
+})
+
 
 router.get('/examples/:scheme(lgfs|agfs)/final/cost-summary-static', function(req, res) {
   data.formcache = _.extend({}, data.formcache, preloads[req.params.scheme][req.query.load])
   res.render('examples/' + req.params.scheme + '/final/cost-summary-static', utils.loadData(req.params.scheme + '/final/cost-summary-static', data))
 })
-
 
 // Delete defedant model
 router.get('/examples/:scheme(lgfs|agfs)/final/delete-model/:model/:id', function(req, res) {

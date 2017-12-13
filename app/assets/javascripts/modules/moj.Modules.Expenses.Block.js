@@ -12,7 +12,7 @@ moj.Modules.ExpensesBlock = function(el) {
     reasonSet: '.fx-reasonSet',
     distanceLabel: '.fx-distanceLabel',
     mileage40: '.fx-40p',
-    mileage25: '.fx-25p'
+    mileage20: '.fx-20p'
   }
 
   this.init = function() {
@@ -40,7 +40,7 @@ moj.Modules.ExpensesBlock = function(el) {
 
     if (config.mileageType == 'bike') {
       this.$el.find(this.lookup['mileage40']).toggle(false);
-      this.$el.find(this.lookup['mileage25'] + ' input').prop('checked', true);
+      this.$el.find(this.lookup['mileage20'] + ' input').prop('checked', true);
     } else {
       this.$el.find(this.lookup['mileage40']).toggle(true);
       this.$el.find(this.lookup['mileage40'] + ' input').prop('checked', true);

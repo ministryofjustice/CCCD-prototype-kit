@@ -386,7 +386,7 @@
     "agfs/final/thank-you": {
       "formData": {
         "pagename": "agfs-thank-you",
-        "action": "/examples/agfs/final/case-details"
+        "action": "/examples/agfs/start-a-claim"
       }
     },
 
@@ -820,7 +820,7 @@
     "lgfs/final/thank-you": {
       "formData": {
         "pagename": "lgfs-thank-you",
-        "action": "/examples/lgfs/bill-type"
+        "action": "/examples/lgfs/start-a-claim"
       }
     }
 

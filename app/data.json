@@ -873,10 +873,10 @@
       "Committal bundle front sheets",
       "Expenses invoices",
       "Details of previous fee advancements",
-      "Special preparation form",
       "Hardship supporting evidence",
       "Justification for out of time claim",
-      "Order in respect of judicial apportionment"
+      "Order in respect of judicial apportionment",
+      "Special preparation form"
     ],
     "lgfs-evidence-check-list": [
       "Representation order",
@@ -884,11 +884,11 @@
       "Committal bundle front sheets",
       "Expenses invoices",
       "Details of previous fee advancements",
-      "Special preparation form",
       "Hardship supporting evidence",
       "Justification for out of time claim",
       "Order in respect of judicial apportionment",
-      "Prior authority CRM4"
+      "Prior authority CRM4",
+      "Special preparation form"
     ],
     "agfs-certify-options": [
       "I notified the court, in writing before the PCMH that I was the instructed advocate. A copy of the letter is attached.",

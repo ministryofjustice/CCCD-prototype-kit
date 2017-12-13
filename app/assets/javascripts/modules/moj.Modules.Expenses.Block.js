@@ -41,9 +41,14 @@ moj.Modules.ExpensesBlock = function(el) {
     if (config.mileageType == 'bike') {
       this.$el.find(this.lookup['mileage40']).toggle(false);
       this.$el.find(this.lookup['mileage20'] + ' input').prop('checked', true);
+      this.$el.find(this.lookup['mileage20'] + ' label').text('20p per mile');
+
+
     } else {
       this.$el.find(this.lookup['mileage40']).toggle(true);
       this.$el.find(this.lookup['mileage40'] + ' input').prop('checked', true);
+      this.$el.find(this.lookup['mileage20'] + ' label').text('25p per mile');
+
     }
 
     this.$el.find('.hidden').removeClass('hidden');

@@ -293,7 +293,7 @@
           "cssClassesLabel": "fx-locationLabel"
         },
         "3": {
-          "label": "Distance (miles)",
+          "label": "Distance in miles",
           "cssClassesParent": "fx-distance hidden",
           "cssClassesLabel": "fx-distanceLabel"
         },
@@ -735,7 +735,7 @@
           "cssClassesLabel": "fx-locationLabel"
         },
         "3": {
-          "label": "Distance (miles)",
+          "label": "Distance in miles",
           "cssClassesParent": "fx-distance hidden",
           "cssClassesLabel": "fx-distanceLabel"
         },

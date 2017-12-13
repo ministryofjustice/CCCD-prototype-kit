@@ -28,7 +28,7 @@
                 <th style="vertical-align: top">Date of birth</th>
                 <th style="vertical-align: top">MAAT reference</th>
                 <th style="vertical-align: top">Representation <br />order date</th>
-                <th style="vertical-align: top" class="hidden">Actions</th>
+                <th style="vertical-align: top">&nbsp;</th>
               </tr>
             </thead>
             <tbody class="fx-defendant-count">
@@ -43,7 +43,7 @@
                 <td>06/08/1990</td>
                 <td>8825177950</td>
                 <td>01/06/2017</td>
-                <td class="hidden"></td>
+                <td></td>
               </tr>
 
               {% for item in [1,2,3,4,5] %}
@@ -68,7 +68,7 @@
                   {{formcache['general-representation-order-date-'+ item +'-month']}}/
                   {{formcache['general-representation-order-date-'+ item +'-year']}}
                 </td>
-                <td class="hidden">
+                <td>
                   <a href="delete-model/defendant/{{item}}">remove</a>
                 </td>
               </tr>

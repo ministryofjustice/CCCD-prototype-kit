@@ -20,7 +20,14 @@
         {% endfor %}
 
         <div class="form-section">
-          {{FORM.addmore(formData[8], formcache)}}
+          <div class="grid-row">
+            <div class="column-one-third">
+              {{FORM.addmore(formData[8], formcache)}}
+            </div>
+            <div class="column-one-third">
+              <a href="#noop" class="font-small fx-duplicate">Duplicate expense</a>
+            </div>
+          </div>
         </div>
 
 

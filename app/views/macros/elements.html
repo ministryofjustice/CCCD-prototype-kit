@@ -179,7 +179,7 @@
 {% endmacro %}
 
 {% macro addmore(data, formcache={}) %}
-    <div class="form-group fx-duplicate" data-selector="{{data.fxselector}}">
+    <div class="form-group fx-addmore" data-selector="{{data.fxselector}}">
       <input type="{{data.type | default('submit')}}" class="button button-secondary" value="{{data.value | default('Add another')}}" />
     </div>
 {% endmacro %}
@@ -469,10 +469,12 @@
 {% endmacro %}
 
 {% macro expenses(data, formcache, FORM, seedNum=1) %}
-  <div class="form-section  fx-for-travel-hook  {{ 'hidden' if (seedNum > 1)}}">
+  <div class="form-section  fx-for-travel-hook  {{ 'hidden' if (seedNum > 1)}}" data-itemNum="{{seedNum}}">
     <h3 class="heading-medium">
       Item {{seedNum}}
-      <a href="#noop" style="float:right;" class="font-small">Remove this</a>
+      <span style="float:right;">
+        <a href="#noop" class="font-small">Remove this</a>
+      </span>
     </h3>
 
     <div class="grid-row">
@@ -652,10 +654,10 @@
               <th>Destination</th>
               <td>{{formcache['general-input-destination-' + item]}}</td>
             </tr>
-            {% if formcache['general-input-distance-(miles)-' + item] %}
+            {% if formcache['general-input-distance-in-miles-' + item] %}
               <tr>
-                <th>Distance (miles)</th>
-                <td>{{formcache['general-input-distance-(miles)-' + item]}}</td>
+                <th>Distance in miles</th>
+                <td>{{formcache['general-input-distance-in-miles-' + item]}}</td>
               </tr>
             {% endif %}
               <tr>

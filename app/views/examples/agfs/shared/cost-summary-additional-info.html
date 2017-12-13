@@ -2,6 +2,7 @@
   Additional information
   <a href="./additional-info" style="float:right;" class="font-small">Change</a>
 </h3>
+{% if formcache['additional-information'] %}
 <table class="form-section tbl-additional-info">
   <tbody>
     <tr>
@@ -10,3 +11,6 @@
     </tr>
   </tbody>
 </table>
+{% else %}
+  <p>There is no additional information for this claim.</p>
+{% endif %}

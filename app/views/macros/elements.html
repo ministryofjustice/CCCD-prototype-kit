@@ -657,7 +657,7 @@
             {% if formcache['general-input-distance-in-miles-' + item] %}
               <tr>
                 <th>Distance in miles</th>
-                <td>{{formcache['general-input-distance-in-miles-' + item]}}</td>
+                <td>{{formcache['general-input-distance-in-miles-' + item]}} per mile</td>
               </tr>
             {% endif %}
               <tr>
@@ -674,7 +674,7 @@
             {% endif %}
             <tr>
               <th>Net amount</th>
-              <td>£{{formcache['travel-expenses-input-net-amount-1']}}</td>
+              <td>£{{formcache['travel-expenses-input-net-amount-' + item]}}</td>
             </tr>
           </tbody>
         </table>

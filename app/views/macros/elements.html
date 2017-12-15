@@ -599,7 +599,7 @@
           </tr>
           <tr>
             <th>Net amount</th>
-            <td>£{{formcache['misc-fee-input-net-amount-'+item]}}</td>
+            <td class="fx-item-net-amount">{{formcache['misc-fee-input-net-amount-'+item]}}</td>
           </tr>
         </tbody>
       </table>
@@ -621,11 +621,11 @@
           </tr>
           <tr>
             <th>Net amount</th>
-            <td>£{{formcache['disbursements-input-net-amount-'+item]}}</td>
+            <td class="fx-item-net-amount">{{formcache['disbursements-input-net-amount-'+item]}}</td>
           </tr>
           <tr>
             <th>VAT amount</th>
-            <td>£{{formcache['disbursements-input-vat-amount-'+item]}}</td>
+            <td class="fx-item-vat-amount">{{formcache['disbursements-input-vat-amount-'+item]}}</td>
           </tr>
         </tbody>
       </table>
@@ -633,7 +633,6 @@
   </tr>
   {% endif %}
 {% endmacro %}
-
 
 {% macro expensesCS(formcache, item)%}
   {% if formcache['general-select-expense-type-'+item] %}
@@ -674,7 +673,7 @@
             {% endif %}
             <tr>
               <th>Net amount</th>
-              <td>£{{formcache['travel-expenses-input-net-amount-' + item]}}</td>
+              <td class="fx-item-net-amount">{{formcache['travel-expenses-input-net-amount-' + item]}}</td>
             </tr>
           </tbody>
         </table>

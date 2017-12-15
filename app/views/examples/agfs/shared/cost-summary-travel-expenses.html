@@ -4,14 +4,14 @@
 </h3>
 {% if formcache['general-select-expense-type-1'] %}
 
-  <table class="form-section tbl-misc-fees">
+  <table class="form-section tbl-travel-expenses fx-category-block" data-type="expenses">
   <tbody>
     {% for item in [1,2,3,4,5] %}
       {{FORM.expensesCS(formcache, item)}}
     {% endfor %}
     <tr class="bg-white">
       <th>Net Total</th>
-      <td style="padding-left: 22%" class="bold-small">£0.00</td>
+      <td style="padding-left: 22%" class="bold-small fx-category-block-net-total"></td>
     </tr>
   </tbody>
 </table>

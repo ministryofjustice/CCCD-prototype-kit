@@ -25,7 +25,7 @@
   };
 
   $.publish = function() {
-    console.log('pub', arguments);
+    // console.log('pub', arguments);
     o.trigger.apply(o, arguments);
   };
 

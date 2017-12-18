@@ -21,7 +21,7 @@ moj.Modules.CostSummaryBlock = function(el) {
     // the catergoty level total
     catBlockNetTotal: '.fx-category-block-net-total',
 
-    currency: 'USD'
+    currency: 'GBP'
   }
 
   // calculator

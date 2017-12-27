@@ -8,7 +8,7 @@ moj.Modules.CostSummaryHeader = function(el) {
     vat: '.fx-total-vat',
     disbursements: '.fx-total-disbursemens',
     total: '.fx-total-grand',
-    currency: 'USD'
+    currency: 'GBP'
   }
 
   this.totals = {
@@ -38,12 +38,13 @@ moj.Modules.CostSummaryHeader = function(el) {
   }
 
   this.render = function() {
-
+    this.totals.vat = parseFloat(this.totals.total * 0.2);
     $(this.config.fees).text(this.format(this.totals.fees))
     $(this.config.expenses).text(this.format(this.totals.expenses))
     $(this.config.vat).text(this.format(this.totals.vat))
     $(this.config.disbursements).text(this.format(this.totals.disbursements))
     $(this.config.total).text(this.format(this.totals.total))
+
   }
 
   this.init()

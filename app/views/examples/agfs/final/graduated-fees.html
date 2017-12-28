@@ -9,7 +9,8 @@
 
   <div class="grid-row">
     <div class="column-two-thirds">
-      <form action="{{formData.action}}" method="post" class="form">
+      <form action="{{formData.action}}" data-sidebar="{{formData.sidebar}}" method="post" class="form {{formData.cssClasses}}">
+        {% include "./sidebar-cache.html" %}
         <h2 class="heading-large">
           Graduated fees
         </h2>
@@ -131,7 +132,7 @@
         {% include "includes/tmpl-help-summary-agfs.html" %}
       </form>
     </div>
-
+    {% include "./sidebar.html" %}
   </div>
 </main>
 {% endblock %}

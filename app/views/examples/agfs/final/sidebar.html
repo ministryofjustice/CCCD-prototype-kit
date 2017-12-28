@@ -1,0 +1,43 @@
+<div class="column-one-third">
+  <div class="fx-sidebar new-claim-hgroup js-stick-at-top-when-scrolling">
+    <h2>
+      Summary total
+    </h2>
+    <h3 class="fx-sidebar-fees">
+      Fees Total
+      <span class="numeric" data-total-fees="£0.00">
+        {{
+          (formcache['agfs-fixed-fees-fee']| float | default(0)) +
+          (formcache['agfs-misc-fees-fee']| float | default(0)) +
+          (formcache['agfs-graduated-fees-fee']| float | default(0))
+        }}
+      </span>
+    </h3>
+    <h3 class="fx-sidebar-expenses">
+      Expenses Total
+      <span class="numeric" data-total-expenses="£0.00">
+
+        {{(formcache['agfs-travel-expenses-expenses'] | float | default(0))}}
+      </span>
+    </h3>
+    <h3 class="fx-sidebar-disbursements">
+      Disbursement Total
+      <span class="numeric" data-total-expenses="£0.00">
+        {{(formcache['agfs-disbursements-disbursements'] | float | default(0))}}
+      </span>
+    </h3>
+    <h3 class="fx-sidebar-vat">
+      VAT total
+      <span class="numeric" data-total-vat="£0.00">
+        {{(formcache['agfs-disbursements-vat'] | float | default(0)) + (formcache['agfs-travel-expenses-vat'] | float | default(0))}}
+      </span>
+    </h3>
+    <h3 class="fx-sidebar-total">
+      Total
+      <span class="numeric" data-total-grandtotal="£0.00">
+        0
+      </span>
+    </h3>
+  </div>
+</div>
+

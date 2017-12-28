@@ -17,14 +17,11 @@ moj.Modules.Expenses = {
   submitCtrl: function(){
     // Remove disabled attr from inputs before submit
     $('form').submit(function(e) {
-      e.preventDefault();
-
       $('.fx-mileage').is(function(idx, el) {
         if (!$(el).is(':visible')) {
           $(el).remove();
         }
-      })
-      this.submit();
+      });
     });
   }
 

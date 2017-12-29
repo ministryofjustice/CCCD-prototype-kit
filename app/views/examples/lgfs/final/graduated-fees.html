@@ -7,8 +7,8 @@
   {% include "./breadcrumb.html" %}
   <div class="grid-row">
     <div class="column-two-thirds">
-      <form action="{{formData.action}}" method="post" class="form">
-
+      <form action="{{formData.action}}" data-sidebar="{{formData.sidebar}}" method="post" class="form {{formData.cssClasses}}">
+        {% include "./sidebar-cache.html" %}
         {% include "./lgfs-header.html" %}
 
         <h2 class="heading-large">
@@ -42,6 +42,7 @@
         {% include "includes/tmpl-help-summary-lgfs.html" %}
       </form>
     </div>
+    {% include "./sidebar.html" %}
   </div>
 </main>
 {% endblock %}

@@ -7,7 +7,7 @@
   {% include "./breadcrumb.html" %}
   <div class="grid-row">
     <div class="column-full">
-      <form action="{{formData.action}}" method="post" class="form">
+      <form action="{{formData.action}}" data-sidebar="{{formData.sidebar}}" method="post" class="form {{formData.cssClasses}}">
 
         {% include "includes/tmpl-form-page-header.html" %}
 

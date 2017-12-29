@@ -1,0 +1,6 @@
+<input id="page-name" type="hidden" value="{{formData['pagename']}}" />
+<input id="page-fee" type="hidden" name="{{formData['pagename']}}-fee" value="{{formcache[formData['pagename']+'-fee']}}" />
+<input id="page-vat" type="hidden" name="{{formData['pagename']}}-vat" value="{{formcache['page-vat']}}" />
+<input id="page-expenses" type="hidden" name="{{formData['pagename']}}-expenses" value="{{formcache['page-expenses']}}" />
+<input id="page-disbursements" type="hidden" name="{{formData['pagename']}}-disbursements" value="{{formcache['page-disbursements']}}" />
+{{formData['pagename'] | dump | safe}}

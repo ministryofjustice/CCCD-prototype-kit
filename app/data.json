@@ -134,11 +134,29 @@
 
       }
     },
+    "agfs/final/fixed-fees": {
+      "formData": {
+        "pagename": "agfs-fixed-fees",
+        "action": "/examples/agfs/final/misc-fees",
+        "cssClasses": "fx-form",
+        "objRefs": {
+          "0": "agfs-case-types"
+        },
+        "0": {
+          "legend": "Date of hearing"
+        },
+        "1": {
+          "legend": "Net Amount",
+          "context": "fixed-fees",
+          "cssClasses": "fx-calculate fx-fees"
+        }
+      }
+    },
     "agfs/final/graduated-fees": {
       "formData": {
         "pagename": "agfs-graduated-fees",
         "action": "/examples/agfs/final/misc-fees",
-
+        "cssClasses": "fx-form",
         "0": {
           "label": "Number of days",
           "hint": "Include all days attended",
@@ -153,7 +171,8 @@
         "2": {
           "legend": "Net Amount",
           "context": "DA",
-          "context": "graduated-fees-daily"
+          "context": "graduated-fees-daily",
+          "cssClasses": "fx-calculate fx-fees"
         },
         "3": {
           "label": "Number of appearances",
@@ -168,7 +187,8 @@
         "5": {
           "legend": "Net Amount",
           "context": "SAF",
-          "context": "graduated-fees-standard"
+          "context": "graduated-fees-standard",
+          "cssClasses": "fx-calculate fx-fees"
         },
         "6": {
           "label": "Number of hearings",
@@ -182,8 +202,8 @@
         },
         "8": {
           "legend": "Net Amount",
-          "context": "PCM",
-          "context": "graduated-fees-case-management"
+          "context": "graduated-fees-case-management",
+          "cssClasses": "fx-calculate fx-fees"
         },
         "9": {
           "label": "Number of conferences and views",
@@ -192,8 +212,8 @@
         },
         "10": {
           "legend": "Net Amount",
-          "context": "CV",
-          "context": "graduated-fees-conferences-views"
+          "context": "graduated-fees-conferences-views",
+          "cssClasses": "fx-calculate fx-fees"
         },
         "11": {
           "label": "Number of defendants",
@@ -203,7 +223,8 @@
         "12": {
           "legend": "Net Amount",
           "context": "NDU",
-          "context": "graduated-fees-defendants"
+          "context": "graduated-fees-defendants",
+          "cssClasses": "fx-calculate fx-fees"
         },
         "13": {
           "label": "Number of cases",
@@ -218,7 +239,8 @@
         "15": {
           "legend": "Net Amount",
           "context": "NCU",
-          "context": "graduated-fees-defendants"
+          "context": "graduated-fees-case-uplift",
+          "cssClasses": "fx-calculate fx-fees"
         },
 
         "100": {
@@ -227,7 +249,8 @@
         },
         "101": {
           "legend": "Net Amount",
-          "context": "graduated-fees-witness"
+          "context": "graduated-fees-witness",
+          "cssClasses": "fx-calculate fx-fees"
         },
         "102": {
           "label": "Total number of pages",
@@ -235,7 +258,8 @@
         },
         "103": {
           "legend": "Net Amount",
-          "context": "graduated-fees-ppe"
+          "context": "graduated-fees-ppe",
+          "cssClasses": "fx-calculate fx-fees"
         }
       }
     },
@@ -243,6 +267,7 @@
       "formData": {
         "pagename": "agfs-misc-fees",
         "action": "/examples/agfs/final/travel-expenses",
+        "cssClasses": "fx-form",
         "objRefs": {
           "0": "agfs-misc-fees"
         },
@@ -255,7 +280,8 @@
         },
         "1": {
           "legend": "Net amount",
-          "context": "misc-fee"
+          "context": "misc-fee",
+          "cssClasses": "fx-calculate fx-fees"
         },
         "2": {
           "value": "Add another fee",
@@ -268,6 +294,7 @@
       "formData": {
         "pagename": "agfs-travel-expenses",
         "action": "/examples/agfs/final/supporting-evidence",
+        "cssClasses": "fx-form",
         "objRefs": {
           "0": "agfs-expense-types",
           "1": "agfs-travel-reasons"
@@ -305,12 +332,14 @@
         "5": {
           "legend": "Net Amount",
           "context": "travel-expenses",
-          "cssClassesParent": "hidden"
+          "cssClassesParent": "hidden",
+          "cssClasses": "fx-calculate fx-expense"
         },
         "6": {
           "legend": "VAT Amount",
           "context": "travel-expenses",
-          "cssClassesParent": "hidden"
+          "cssClassesParent": "hidden",
+          "cssClasses": "fx-calculate fx-vat"
         },
         "7": {
           "label": "Cost per mile",
@@ -389,7 +418,6 @@
         "action": "/examples/agfs/start-a-claim"
       }
     },
-
     "lgfs/bill-type": {
       "formData": {
         "pagename": "lgfs-bill-type",
@@ -574,40 +602,28 @@
 
       }
     },
-    "agfs/final/fixed-fees": {
-      "formData": {
-        "pagename": "agfs-fixed-fees",
-        "action": "/examples/agfs/final/misc-fees",
-        "objRefs": {
-          "0": "agfs-case-types"
-        },
-        "0": {
-          "legend": "Date of hearing"
-        },
-        "1": {
-          "legend": "Net Amount",
-          "context": "fixed-fees"
-        }
-      }
-    },
     "lgfs/final/fixed-fees": {
       "formData": {
         "pagename": "lgfs-fixed-fees",
         "action": "/examples/lgfs/final/misc-fees",
+        "cssClasses": "fx-form",
+        "sidebar": "fees",
         "0": {
           "legend": "Date of hearing"
         },
         "1": {
           "legend": "Net Amount",
-          "context": "fixed-fees"
+          "context": "fixed-fees",
+          "cssClasses": "fx-calculate fx-fees"
         }
       }
     },
     "lgfs/final/graduated-fees": {
       "formData": {
         "pagename": "lgfs-graduated-fees",
+        "sidebar": "fees",
         "action": "/examples/lgfs/final/misc-fees",
-
+        "cssClasses": "fx-form",
         "0": {
           "label": "PPE total",
           "cssClasses": "form-control-1-4",
@@ -626,7 +642,8 @@
 
         "3": {
           "legend": "Net Amount",
-          "context": "graduated-fees"
+          "context": "graduated-fees",
+          "cssClasses": "fx-calculate fx-fees"
         }
       }
     },
@@ -634,6 +651,7 @@
       "formData": {
         "pagename": "lgfs-misc-fees",
         "action": "/examples/lgfs/final/disbursements",
+        "cssClasses": "fx-form",
         "objRefs": {
           "0": "lgfs-misc-fees"
         },
@@ -654,7 +672,8 @@
         },
         "2": {
           "legend": "Net amount",
-          "context": "misc-fee"
+          "context": "misc-fee",
+          "cssClasses": "fx-calculate fx-fees"
         },
         "3": {
           "value": "Add another fee",
@@ -665,8 +684,9 @@
     },
     "lgfs/final/disbursements": {
       "formData": {
-        "pagename": "lgfs-misc-fees",
+        "pagename": "lgfs-disbursements",
         "action": "/examples/lgfs/final/travel-expenses",
+        "cssClasses": "fx-form",
         "objRefs": {
           "0": "lgfs-disbursements"
         },
@@ -677,11 +697,13 @@
         },
         "1": {
           "legend": "Net amount",
-          "context": "disbursements"
+          "context": "disbursements",
+          "cssClasses": "fx-calculate fx-disbursement"
         },
         "2": {
           "legend": "VAT amount",
-          "context": "disbursements"
+          "context": "disbursements",
+          "cssClasses": "fx-calculate fx-vat"
         },
         "3": {
           "value": "Add another disbursement",
@@ -694,6 +716,7 @@
       "formData": {
         "pagename": "lgfs-warrant-fees",
         "action": "/examples/lgfs/final/travel-expenses",
+        "cssClasses": "fx-form",
         "0": {
           "legend": "Warrant issued"
         },
@@ -710,6 +733,7 @@
       "formData": {
         "pagename": "lgfs-travel-expenses",
         "action": "/examples/lgfs/final/supporting-evidence",
+        "cssClasses": "fx-form",
         "objRefs": {
           "0": "agfs-expense-types",
           "1": "agfs-travel-reasons"
@@ -747,12 +771,14 @@
         "5": {
           "legend": "Net Amount",
           "context": "travel-expenses",
-          "cssClassesParent": "hidden"
+          "cssClassesParent": "hidden",
+          "cssClasses": "fx-calculate fx-expense"
         },
         "6": {
           "legend": "VAT Amount",
           "context": "travel-expenses",
-          "cssClassesParent": "hidden"
+          "cssClassesParent": "hidden",
+          "cssClasses": "fx-calculate fx-vat"
         },
         "7": {
           "label": "Cost per mile",
@@ -823,7 +849,6 @@
         "action": "/examples/lgfs/start-a-claim"
       }
     }
-
   },
   "lists": {
     "lgfs-disbursements": [

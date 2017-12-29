@@ -268,7 +268,7 @@
     id="{{contextID}}"
     name="{{contextID}}"
     value="{{formcache[contextID]}}"
-    class="form-control form-control-1-4 {{ 'form-control-error' if errorState }}"
+    class="form-control form-control-1-4 {{ 'form-control-error' if errorState }} {{ data.cssClasses if data.cssClasses }}"
 
     type="number"
     min="0.01"
@@ -295,7 +295,7 @@
     id="{{contextID}}"
     name="{{contextID}}"
     value="{{formcache[contextID]}}"
-    class="form-control form-control-1-4 {{ 'form-control-error' if errorState }}"
+    class="form-control form-control-1-4 {{ 'form-control-error' if errorState }} {{ data.cssClasses if data.cssClasses }}"
 
     type="number"
     min="0.01"

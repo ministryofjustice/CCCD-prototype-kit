@@ -27,27 +27,26 @@ moj.Modules.Form = {
       $('.fx-calculate.fx-fees').each(function(idx, el) {
         var amount = parseFloat($(el).val() || 0);
         feesArr.push(amount);
-        vatArr.push(amount*0.2);
+        vatArr.push(amount * 0.2);
       });
 
       $('.fx-calculate.fx-expense').each(function(idx, el) {
         var amount = parseFloat($(el).val() || 0);
         expenseArr.push(amount);
-        vatArr.push(amount*0.2);
+        vatArr.push(amount * 0.2);
       });
 
       $('.fx-calculate.fx-disbursement').each(function(idx, el) {
         var amount = parseFloat($(el).val() || 0);
         distbursementArr.push(amount);
-        vatArr.push(amount*0.2);
+        vatArr.push(amount * 0.2);
       });
 
       $('.fx-calculate.fx-vat').each(function(idx, el) {
-
-        console.log('skipped', parseFloat($(el).val() || 0));
+        // console.log('skipped', parseFloat($(el).val() || 0));
       });
 
-      console.log(vatArr.reduce(reducer));
+      // console.log(vatArr.reduce(reducer));
 
       $('[name="' + context + '-fee"]').val(feesArr.reduce(reducer))
       $('[name="' + context + '-vat"]').val(vatArr.reduce(reducer))

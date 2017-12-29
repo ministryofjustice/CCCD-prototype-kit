@@ -6,7 +6,7 @@ moj.Modules.CostSummaryHeader = function(el) {
     fees: '.fx-total-fees',
     expenses: '.fx-total-expenses',
     vat: '.fx-total-vat',
-    disbursements: '.fx-total-disbursemens',
+    disbursements: '.fx-total-disbursements',
     total: '.fx-total-grand',
     currency: 'GBP'
   }
@@ -15,22 +15,25 @@ moj.Modules.CostSummaryHeader = function(el) {
     fees: 0,
     expenses: 0,
     disbursements: 0,
-    vat: 0,
-    total: 0
+    vat: 0
   }
 
 
   this.init = function() {
-    this.bindEvents();
-  }
-
-  this.bindEvents = function() {
+    // this.bindEvents();
     var self = this;
-    $.subscribe('update.blockTotal', function(e, obj) {
-      self.totals[obj.type] = self.totals[obj.type] + obj.value;
-      self.totals.total = self.totals.total + obj.value
-      self.render();
-    });
+    this.totals.fees = parseFloat($.trim(this.$el.find(this.config.fees).text())||0);
+    this.totals.expenses = parseFloat($.trim(this.$el.find(this.config.expenses).text())||0);
+    this.totals.disbursements = parseFloat($.trim(this.$el.find(this.config.disbursements).text())||0);
+    this.totals.vat = parseFloat($.trim(this.$el.find(this.config.vat).text())||0);
+
+
+    this.totals.total = $.map(this.totals, function(val, key){
+      return val;
+    }).reduce(function(a,b){return a+b;});
+
+    this.render();
+
   }
 
   this.format = function(str) {
@@ -38,7 +41,7 @@ moj.Modules.CostSummaryHeader = function(el) {
   }
 
   this.render = function() {
-    this.totals.vat = parseFloat(this.totals.total * 0.2);
+
     $(this.config.fees).text(this.format(this.totals.fees));
     $(this.config.expenses).text(this.format(this.totals.expenses));
     $(this.config.vat).text(this.format(this.totals.vat));

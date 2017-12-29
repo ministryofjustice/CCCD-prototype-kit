@@ -138,6 +138,7 @@
       "formData": {
         "pagename": "agfs-fixed-fees",
         "action": "/examples/agfs/final/misc-fees",
+        "sidebar": "fees",
         "cssClasses": "fx-form",
         "objRefs": {
           "0": "agfs-case-types"
@@ -156,6 +157,7 @@
       "formData": {
         "pagename": "agfs-graduated-fees",
         "action": "/examples/agfs/final/misc-fees",
+        "sidebar": "fees",
         "cssClasses": "fx-form",
         "0": {
           "label": "Number of days",
@@ -267,6 +269,7 @@
       "formData": {
         "pagename": "agfs-misc-fees",
         "action": "/examples/agfs/final/travel-expenses",
+        "sidebar": "fees",
         "cssClasses": "fx-form",
         "objRefs": {
           "0": "agfs-misc-fees"

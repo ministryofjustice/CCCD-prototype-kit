@@ -13,6 +13,12 @@
         }}
       </span>
     </h3>
+    <h3 class="fx-sidebar-disbursements">
+      Disbursement Total
+      <span class="numeric" data-total-expenses="£0.00">
+        {{(formcache['lgfs-disbursements-disbursements'] | float | default(0))}}
+      </span>
+    </h3>
     <h3 class="fx-sidebar-expenses">
       Expenses Total
       <span class="numeric" data-total-expenses="£0.00">
@@ -20,16 +26,20 @@
         {{(formcache['lgfs-travel-expenses-expenses'] | float | default(0))}}
       </span>
     </h3>
-    <h3 class="fx-sidebar-disbursements">
-      Disbursement Total
-      <span class="numeric" data-total-expenses="£0.00">
-        {{(formcache['lgfs-disbursements-disbursements'] | float | default(0))}}
-      </span>
-    </h3>
     <h3 class="fx-sidebar-vat">
       VAT total
       <span class="numeric" data-total-vat="£0.00">
-        {{(formcache['lgfs-disbursements-vat'] | float | default(0)) + (formcache['lgfs-travel-expenses-vat'] | float | default(0))}}
+        {{
+          (formcache['lgfs-disbursements-vat'] | float | default(0))
+          +
+          (formcache['lgfs-travel-expenses-vat'] | float | default(0))
+          +
+          (formcache['lgfs-fixed-fees-vat'] | float | default(0))
+          +
+          (formcache['lgfs-misc-fees-vat'] | float | default(0))
+          +
+          (formcache['lgfs-graduated-fees-vat'] | float | default(0))
+        }}
       </span>
     </h3>
     <h3 class="fx-sidebar-total">

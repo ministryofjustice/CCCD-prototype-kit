@@ -1,0 +1,74 @@
+<div class="form-section">
+  <div class="grid-row mod-cost-summary fx-cost-summary-header">
+    <div class="column-one-quarter">
+      <h1 class="heading-large">
+        <span class="heading-secondary">Fees</span>
+        <span class="fx-total-fees">
+          {{
+          (formcache['agfs-fixed-fees-fee']| float | default(0)) +
+          (formcache['agfs-misc-fees-fee']| float | default(0)) +
+          (formcache['agfs-graduated-fees-fee']| float | default(0))
+          }}
+        </span>
+        <span class="heading-secondary">
+          <a href="#noop" class="font-small">Change fees</a>
+        </span>
+
+      </h1>
+    </div>
+
+    <div class="column-one-quarter">
+      <h1 class="heading-large">
+        <span class="heading-secondary">Expenses</span>
+        <span class="fx-total-expenses">
+          {{(formcache['agfs-travel-expenses-expenses'] | float | default(0))}}
+        </span>
+        <span class="heading-secondary">
+          <a href="#noop" class="font-small">Change expenses</a>
+        </span>
+      </h1>
+    </div>
+
+    <div class="column-one-quarter">
+      <h1 class="heading-large">
+        <span class="heading-secondary">VAT</span>
+        <span class="fx-total-vat">
+          {{
+          (formcache['agfs-travel-expenses-vat'] | float | default(0))
+          +
+          (formcache['agfs-fixed-fees-vat'] | float | default(0))
+          +
+          (formcache['agfs-misc-fees-vat'] | float | default(0))
+          +
+          (formcache['agfs-graduated-fees-vat'] | float | default(0))
+
+        }}
+        </span>
+      </h1>
+    </div>
+
+    <div class="column-one-quarter">
+      <h1 class="heading-large">
+        <span class="heading-secondary">Total</span>
+        <span class="fx-total-grand">
+
+        </span>
+        <span class="form-hint">
+          <span class="fx-total-vat">
+            {{
+              (formcache['agfs-disbursements-vat'] | float | default(0))
+              +
+              (formcache['agfs-travel-expenses-vat'] | float | default(0))
+              +
+              (formcache['agfs-fixed-fees-vat'] | float | default(0))
+              +
+              (formcache['agfs-misc-fees-vat'] | float | default(0))
+              +
+              (formcache['agfs-graduated-fees-vat'] | float | default(0))
+            }}
+          </span> VAT
+      </span>
+      </h1>
+    </div>
+  </div>
+</div>

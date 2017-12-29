@@ -65,10 +65,10 @@ moj.Modules.CostSummaryBlock = function(el) {
     // update the view
     this.$el.find(this.config.catBlockNetTotal).text(this.blockTotal + this.blockVatTotal);
 
-    $.publish('update.blockTotal', {
-      value: this.blockTotal,
-      type: this.$el.data('type')
-    });
+    // $.publish('update.blockTotal', {
+    //   value: this.blockTotal,
+    //   type: this.$el.data('type')
+    // });
   }
 
   // TODO: better!

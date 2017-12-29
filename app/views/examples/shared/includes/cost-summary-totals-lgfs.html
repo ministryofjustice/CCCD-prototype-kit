@@ -1,0 +1,67 @@
+<div class="form-section">
+  <div class="grid-row mod-cost-summary fx-cost-summary-header">
+    <div class="column-one-quarter">
+      <h1 class="heading-large">
+        <span class="heading-secondary">Fees</span>
+        <span class="fx-total-fees">
+          {{
+            (formcache['lgfs-fixed-fees-fee']| float | default(0)) +
+            (formcache['lgfs-misc-fees-fee']| float | default(0)) +
+            (formcache['lgfs-graduated-fees-fee']| float | default(0))
+          }}
+        </span>
+        <span class="heading-secondary">
+          <a href="#noop" class="font-small">Change fees</a>
+        </span>
+
+      </h1>
+    </div>
+    <div class="column-one-quarter">
+      <h1 class="heading-large">
+        <span class="heading-secondary">Disbursements</span>
+        <span class="fx-total-disbursements">
+          {{(formcache['lgfs-disbursements-disbursements'] | float | default(0))}}
+        </span>
+        <span class="heading-secondary">
+          <a href="#noop" class="font-small">Change disbursements</a>
+        </span>
+      </h1>
+    </div>
+    <div class="column-one-quarter">
+      <h1 class="heading-large">
+        <span class="heading-secondary">Expenses</span>
+        <span class="fx-total-expenses">
+          {{(formcache['lgfs-travel-expenses-expenses'] | float | default(0))}}
+        </span>
+        <span class="heading-secondary">
+          <a href="#noop" class="font-small">Change expenses</a>
+        </span>
+      </h1>
+    </div>
+
+    <div class="column-one-quarter">
+      <h1 class="heading-large">
+        <span class="heading-secondary">Total</span>
+        <span class="fx-total-grand">
+
+        </span>
+        <span class="form-hint">
+          <span class="fx-total-vat">
+            {{
+              (formcache['lgfs-disbursements-vat'] | float | default(0))
+              +
+              (formcache['lgfs-travel-expenses-vat'] | float | default(0))
+              +
+              (formcache['lgfs-fixed-fees-vat'] | float | default(0))
+              +
+              (formcache['lgfs-misc-fees-vat'] | float | default(0))
+              +
+              (formcache['lgfs-graduated-fees-vat'] | float | default(0))
+            }}
+          </span> VAT
+      </span>
+
+      </h1>
+    </div>
+  </div>
+</div>

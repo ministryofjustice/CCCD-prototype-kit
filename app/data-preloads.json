@@ -1,6 +1,14 @@
 {
   "agfs": {
     "route1": {
+      "agfs-fixed-fees-fee": "382.98",
+      "agfs-fixed-fees-vat": "93.99",
+      "agfs-graduated-fees-fee": "0",
+      "agfs-graduated-fees-vat": "0",
+      "agfs-misc-fees-fee": "87.00",
+      "agfs-misc-fees-vat": "17.40",
+      "agfs-travel-expenses-expenses": "2.50",
+      "agfs-travel-expenses-vat": "0.50",
       "general-select-expense-type-1": "Car travel",
       "general-select-reason-for-travel-1": "Court hearing",
       "general-input-destination-1": "Manchester Crown Court",
@@ -97,6 +105,14 @@
       "load": "route1"
     },
     "route2": {
+      "agfs-fixed-fees-fee": "",
+      "agfs-fixed-fees-vat": "",
+      "agfs-graduated-fees-fee": "21389.27",
+      "agfs-graduated-fees-vat": "4277.85",
+      "agfs-misc-fees-fee": "645.00",
+      "agfs-misc-fees-vat": "129.00",
+      "agfs-travel-expenses-expenses": "1.50",
+      "agfs-travel-expenses-vat": "0.30",
       "general-radio-group-advocate-category-1": "QC",
       "general-input-advocate-1": "Bernie Durgan",
       "general-input-reference-number-1": "RefNumber-54321",

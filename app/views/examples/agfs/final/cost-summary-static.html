@@ -3,60 +3,17 @@
 {% block content %}
 
 <main id="content" role="main">
-
   {% include "./breadcrumb.html" %}
   <div class="grid-row">
     <div class="column-full">
       <form action="{{formData.action}}" data-sidebar="{{formData.sidebar}}" method="post" class="form {{formData.cssClasses}}">
-
         {% include "includes/tmpl-form-page-header.html" %}
-
         {% include "examples/shared/includes/cost-summary-evidence.html" %}
-
         <h2 class="heading-large">
           Cost summary
         </h2>
 
-        <div class="form-section">
-          <div class="grid-row mod-cost-summary fx-cost-summary-header">
-            <div class="column-one-quarter">
-              <h1 class="heading-large">
-                <span class="heading-secondary">Fees</span>
-                <span class="fx-total-fees"></span>
-                <span class="heading-secondary">
-                  <a href="#noop" class="font-small">Change fees</a>
-                </span>
-
-              </h1>
-            </div>
-
-            <div class="column-one-quarter">
-              <h1 class="heading-large">
-                <span class="heading-secondary">Expenses</span>
-                <span class="fx-total-expenses"></span>
-                <span class="heading-secondary">
-                  <a href="#noop" class="font-small">Change expenses</a>
-                </span>
-              </h1>
-            </div>
-
-            <div class="column-one-quarter">
-              <h1 class="heading-large">
-                <span class="heading-secondary">VAT</span>
-                <span class="fx-total-vat"></span>
-              </h1>
-            </div>
-
-            <div class="column-one-quarter">
-              <h1 class="heading-large">
-                <span class="heading-secondary">Total</span>
-                <span class="fx-total-grand"></span>
-              </h1>
-            </div>
-          </div>
-        </div>
-
-
+        {% include "examples/shared/includes/cost-summary-totals-agfs.html" %}
 
         {% include "examples/shared/includes/cost-summary-actions.html" %}
 
@@ -67,11 +24,11 @@
         {% include "examples/agfs/shared/cost-summary-offence-details.html" %}
 
         {% if formcache['general-select-case-type-1'] == "Trial" %}
-        {% include "examples/agfs/shared/cost-summary-graduated-fees.html" %}
+          {% include "examples/agfs/shared/cost-summary-graduated-fees.html" %}
         {% endif %}
 
         {% if formcache['general-select-case-type-1'] !== "Trial" %}
-        {% include "examples/agfs/shared/cost-summary-fixed-fees.html" %}
+          {% include "examples/agfs/shared/cost-summary-fixed-fees.html" %}
         {% endif %}
 
         {% include "examples/agfs/shared/cost-summary-misc-fees.html" %}

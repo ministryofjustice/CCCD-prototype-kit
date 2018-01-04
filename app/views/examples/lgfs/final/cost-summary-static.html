@@ -17,47 +17,7 @@
           Cost summary
         </h2>
 
-        <div class="form-section">
-          <div class="grid-row mod-cost-summary fx-cost-summary-header">
-            <div class="column-one-quarter">
-              <h1 class="heading-large">
-                <span class="heading-secondary">Fees</span>
-                <span class="fx-total-fees"></span>
-                <span class="heading-secondary">
-                  <a href="#noop" class="font-small">Change fees</a>
-                </span>
-
-              </h1>
-            </div>
-
-            <div class="column-one-quarter">
-              <h1 class="heading-large">
-                <span class="heading-secondary">Disbursements</span>
-                <span class="fx-total-disbursemens"></span>
-                <span class="heading-secondary">
-                  <a href="#noop" class="font-small">Change disbursements</a>
-                </span>
-              </h1>
-            </div>
-
-            <div class="column-one-quarter">
-              <h1 class="heading-large">
-                <span class="heading-secondary">Expenses</span>
-                <span class="fx-total-expenses"></span>
-                <span class="heading-secondary">
-                  <a href="#noop" class="font-small">Change expenses</a>
-                </span>
-              </h1>
-            </div>
-
-            <div class="column-one-quarter">
-              <h1 class="heading-large">
-                <span class="heading-secondary">Total</span>
-                <span class="fx-total-grand"></span>
-              </h1>
-            </div>
-          </div>
-        </div>
+        {% include "examples/shared/includes/cost-summary-totals-lgfs.html" %}
 
         {% include "examples/shared/includes/cost-summary-actions.html" %}
 

@@ -18,9 +18,17 @@
               <tr>
                 <th style="vertical-align: top;">Dates attended</th>
                 <td>
-                  {{formcache['DA-date-attended-1-day']}}/<!--
-                   -->{{formcache['DA-date-attended-1-month']}}/<!--
-                   -->{{formcache['DA-date-attended-1-year']}}
+
+                {% for item in [1,2,3,4,5] %}
+                  {% if formcache['DA-date-attended-'+ item +'-1-day'] %}
+                    {%if not loop.first %}
+                      ,<br>
+                    {% endif %}
+                    {{formcache['DA-date-attended-'+ item +'-1-day']}}/<!--
+                   -->{{formcache['DA-date-attended-'+ item +'-1-month']}}/<!--
+                   -->{{formcache['DA-date-attended-'+ item +'-1-year']}}
+                  {% endif %}
+                {% endfor %}
                 </td>
               </tr>
               <tr>
@@ -45,9 +53,17 @@
               <tr>
                 <th style="vertical-align: top;">Dates attended</th>
                 <td>
-                  {{formcache['SAF-date-of-appearance-1-1-day']}}/<!--
-                   -->{{formcache['SAF-date-of-appearance-1-1-month']}}/<!--
-                   -->{{formcache['SAF-date-of-appearance-1-1-year']}}
+                {% for item in [1,2,3,4,5] %}
+                  {% if formcache['SAF-date-of-appearance-'+ item +'-1-day'] %}
+                    {%if not loop.first %}
+                      ,<br>
+                    {% endif %}
+                    {{formcache['SAF-date-of-appearance-'+ item +'-1-day']}}/<!--
+                   -->{{formcache['SAF-date-of-appearance-'+ item +'-1-month']}}/<!--
+                   -->{{formcache['SAF-date-of-appearance-'+ item +'-1-year']}}
+                  {% endif %}
+                {% endfor %}
+
                 </td>
               </tr>
               <tr>

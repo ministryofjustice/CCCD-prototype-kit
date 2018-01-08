@@ -165,10 +165,47 @@
           "context": "DA",
           "cssClasses": "form-control-1-4"
         },
-        "1": {
-          "legend": "Date attended",
+        "51": {
+          "legend": "Date attended 1",
           "context": "DA",
-          "addAnotherLink": true
+          "cssClassesParent": "fx-da-date",
+          "addAnotherLink": false
+        },
+        "52": {
+          "legend": "Date attended 2",
+          "context": "DA",
+          "cssClassesParent": "fx-da-date hidden",
+          "addAnotherLink": false
+        },
+        "53": {
+          "legend": "Date attended 3",
+          "context": "DA",
+          "cssClassesParent": "fx-da-date hidden",
+          "addAnotherLink": false
+        },
+        "54": {
+          "legend": "Date attended 4",
+          "context": "DA",
+          "cssClassesParent": "fx-da-date hidden",
+          "addAnotherLink": false
+        },
+        "55": {
+          "legend": "Date attended 5",
+          "context": "DA",
+          "cssClassesParent": "fx-da-date hidden",
+          "addAnotherLink": false
+        },
+        "56": {
+          "legend": "Date attended 6",
+          "context": "DA",
+          "cssClassesParent": "fx-da-date hidden",
+          "addAnotherLink": false
+        },
+        "57": {
+          "legend": "Date attended 7",
+          "context": "DA",
+          "cssClassesParent": "fx-da-date hidden",
+          "addAnotherLink": false
         },
         "2": {
           "legend": "Net Amount",

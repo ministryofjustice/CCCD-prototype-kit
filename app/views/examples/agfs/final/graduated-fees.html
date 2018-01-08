@@ -52,10 +52,19 @@
 
               <div class="panel panel-border-narrow js-hidden" id="option-DA-reveal">
                 {{FORM.input(formData[0], formcache)}}
-                {{FORM.date(formData[1], formcache)}}
+                {{FORM.date(formData[51], formcache)}}
+                {{FORM.date(formData[52], formcache)}}
+                {{FORM.date(formData[53], formcache)}}
+                {{FORM.date(formData[54], formcache)}}
+                {{FORM.date(formData[55], formcache)}}
+                {{FORM.date(formData[56], formcache)}}
+                {{FORM.date(formData[57], formcache)}}
+                <div class="form-group fx-addmore" style="clear:both" data-selector=".fx-da-date">
+                  <br />
+                  <a href="#noop">Add another date</a>
+                </div>
                 {{FORM.netamount(formData[2], formcache)}}
               </div>
-
               <div class="multiple-choice" data-target="option-SAF-reveal">
                 <input id="option-SAF" name="agfs-grad-fees-2" type="checkbox" value="Option SAF value" {{'checked' if "Option SAF value" == formcache['agfs-grad-fees-2']}}  />
                 <label for="option-SAF">Standard appearance fee</label>

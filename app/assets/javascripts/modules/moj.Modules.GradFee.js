@@ -16,14 +16,15 @@ moj.Modules.GradFee = {
   // View state logic used when page is loaded.
   setInitState: function() {
     var self = this;
-    $('.panel').is(function(idx, el){
+
+    $('.panel.fx-init').is(function(idx, el){
       var $this = $(this);
-      $this.find('.fx-da-date').is(function(idx, el){
+      var selector = $this.find('.fx-addmore').data();
+      $this.find(selector.selector).is(function(idx, el){
         if($(el).find('input').first().val()){
           $(el).removeClass('hidden');
         }
       });
-
     });
   },
   //  Event bining

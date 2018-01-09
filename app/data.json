@@ -218,26 +218,100 @@
           "context": "SAF",
           "cssClasses": "form-control-1-4"
         },
-        "4": {
-          "legend": "Date of appearance 1",
-          "context": "SAF",
-          "addAnotherLink": true
-        },
         "5": {
           "legend": "Net Amount",
           "context": "SAF",
           "context": "graduated-fees-standard",
           "cssClasses": "fx-calculate fx-fees"
         },
+        "61": {
+          "legend": "Date attended 1",
+          "context": "SAF",
+          "cssClassesParent": "fx-saf-date",
+          "addAnotherLink": false
+        },
+        "62": {
+          "legend": "Date attended 2",
+          "context": "SAF",
+          "cssClassesParent": "fx-saf-date hidden",
+          "addAnotherLink": false
+        },
+        "63": {
+          "legend": "Date attended 3",
+          "context": "SAF",
+          "cssClassesParent": "fx-saf-date hidden",
+          "addAnotherLink": false
+        },
+        "64": {
+          "legend": "Date attended 4",
+          "context": "SAF",
+          "cssClassesParent": "fx-saf-date hidden",
+          "addAnotherLink": false
+        },
+        "65": {
+          "legend": "Date attended 5",
+          "context": "SAF",
+          "cssClassesParent": "fx-saf-date hidden",
+          "addAnotherLink": false
+        },
+        "66": {
+          "legend": "Date attended 6",
+          "context": "SAF",
+          "cssClassesParent": "fx-saf-date hidden",
+          "addAnotherLink": false
+        },
+        "67": {
+          "legend": "Date attended 7",
+          "context": "SAF",
+          "cssClassesParent": "fx-saf-date hidden",
+          "addAnotherLink": false
+        },
         "6": {
           "label": "Number of hearings",
           "context": "PCM",
           "cssClasses": "form-control-1-4"
         },
-        "7": {
-          "legend": "Date of hearings 1",
+        "71": {
+          "legend": "Date attended 1",
           "context": "PCM",
-          "addAnotherLink": true
+          "cssClassesParent": "fx-pcm-date",
+          "addAnotherLink": false
+        },
+        "72": {
+          "legend": "Date attended 2",
+          "context": "PCM",
+          "cssClassesParent": "fx-pcm-date hidden",
+          "addAnotherLink": false
+        },
+        "73": {
+          "legend": "Date attended 3",
+          "context": "PCM",
+          "cssClassesParent": "fx-pcm-date hidden",
+          "addAnotherLink": false
+        },
+        "74": {
+          "legend": "Date attended 4",
+          "context": "PCM",
+          "cssClassesParent": "fx-pcm-date hidden",
+          "addAnotherLink": false
+        },
+        "75": {
+          "legend": "Date attended 5",
+          "context": "PCM",
+          "cssClassesParent": "fx-pcm-date hidden",
+          "addAnotherLink": false
+        },
+        "76": {
+          "legend": "Date attended 6",
+          "context": "PCM",
+          "cssClassesParent": "fx-pcm-date hidden",
+          "addAnotherLink": false
+        },
+        "77": {
+          "legend": "Date attended 7",
+          "context": "PCM",
+          "cssClassesParent": "fx-pcm-date hidden",
+          "addAnotherLink": false
         },
         "8": {
           "legend": "Net Amount",

@@ -101,8 +101,7 @@
       "general-date-of-hearing-1-day": "01",
       "general-date-of-hearing-1-month": "08",
       "general-date-of-hearing-1-year": "2017",
-      "fixed-fees-input-net-amount-1": "382.98",
-      "load": "route1"
+      "fixed-fees-input-net-amount-1": "382.98"
     },
     "route2": {
       "agfs-fixed-fees-fee": "",

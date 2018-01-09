@@ -19,7 +19,7 @@
                 <th style="vertical-align: top;">Dates attended</th>
                 <td>
 
-                {% for item in [1,2,3,4,5] %}
+                {% for item in [1,2,3,4,5,6,7] %}
                   {% if formcache['DA-date-attended-'+ item +'-1-day'] %}
                     {%if not loop.first %}
                       ,<br>
@@ -53,14 +53,14 @@
               <tr>
                 <th style="vertical-align: top;">Dates attended</th>
                 <td>
-                {% for item in [1,2,3,4,5] %}
-                  {% if formcache['SAF-date-of-appearance-'+ item +'-1-day'] %}
+                {% for item in [1,2,3,4,5,6,7] %}
+                  {% if formcache['SAF-date-attended-'+ item +'-1-day'] %}
                     {%if not loop.first %}
                       ,<br>
                     {% endif %}
-                    {{formcache['SAF-date-of-appearance-'+ item +'-1-day']}}/<!--
-                   -->{{formcache['SAF-date-of-appearance-'+ item +'-1-month']}}/<!--
-                   -->{{formcache['SAF-date-of-appearance-'+ item +'-1-year']}}
+                    {{formcache['SAF-date-attended-'+ item +'-1-day']}}/<!--
+                   -->{{formcache['SAF-date-attended-'+ item +'-1-month']}}/<!--
+                   -->{{formcache['SAF-date-attended-'+ item +'-1-year']}}
                   {% endif %}
                 {% endfor %}
 
@@ -88,14 +88,21 @@
               <tr>
                 <th style="vertical-align: top;">Dates attended</th>
                 <td>
-                  {{formcache['PCM-date-of-hearings-1-1-day']}}/<!--
-                   -->{{formcache['PCM-date-of-hearings-1-1-month']}}/<!--
-                   -->{{formcache['PCM-date-of-hearings-1-1-year']}}
+                  {% for item in [1,2,3,4,5,6,7] %}
+                  {% if formcache['PCM-date-attended-'+ item +'-1-day'] %}
+                    {%if not loop.first %}
+                      ,<br>
+                    {% endif %}
+                    {{formcache['PCM-date-attended-'+ item +'-1-day']}}/<!--
+                   -->{{formcache['PCM-date-attended-'+ item +'-1-month']}}/<!--
+                   -->{{formcache['PCM-date-attended-'+ item +'-1-year']}}
+                  {% endif %}
+                {% endfor %}
                 </td>
               </tr>
               <tr>
                 <th>Net amount</th>
-                <td class="fx-item-net-amount">{{formcache['graduated-fees-standard-input-net-amount-1']}}</td>
+                <td class="fx-item-net-amount">{{formcache['graduated-fees-case-management-input-net-amount-1']}}</td>
               </tr>
             </tbody>
           </table>

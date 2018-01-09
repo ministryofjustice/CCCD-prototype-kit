@@ -50,15 +50,11 @@
                 <label for="option-DA">Daily attendance fee</label>
               </div>
 
-              <div class="panel panel-border-narrow js-hidden" id="option-DA-reveal">
+              <div class="panel panel-border-narrow js-hidden fx-init" id="option-DA-reveal">
                 {{FORM.input(formData[0], formcache)}}
-                {{FORM.date(formData[51], formcache)}}
-                {{FORM.date(formData[52], formcache)}}
-                {{FORM.date(formData[53], formcache)}}
-                {{FORM.date(formData[54], formcache)}}
-                {{FORM.date(formData[55], formcache)}}
-                {{FORM.date(formData[56], formcache)}}
-                {{FORM.date(formData[57], formcache)}}
+                {% for item in [51,52,53,54,55,56,57] %}
+                  {{FORM.date(formData[item], formcache)}}
+                {% endfor %}
                 <div class="form-group fx-addmore" style="clear:both" data-selector=".fx-da-date">
                   <br />
                   <a href="#noop">Add another date</a>
@@ -69,9 +65,17 @@
                 <input id="option-SAF" name="agfs-grad-fees-2" type="checkbox" value="Option SAF value" {{'checked' if "Option SAF value" == formcache['agfs-grad-fees-2']}}  />
                 <label for="option-SAF">Standard appearance fee</label>
               </div>
-              <div class="panel panel-border-narrow js-hidden" id="option-SAF-reveal">
+              <div class="panel panel-border-narrow js-hidden fx-init" id="option-SAF-reveal">
                 {{FORM.input(formData[3], formcache)}}
-                {{FORM.date(formData[4], formcache)}}
+
+                {% for item in [61,62,63,64,65,66,67] %}
+                  {{FORM.date(formData[item], formcache)}}
+                {% endfor %}
+
+                <div class="form-group fx-addmore" style="clear:both" data-selector=".fx-saf-date">
+                  <br />
+                  <a href="#noop">Add another date</a>
+                </div>
                 {{FORM.netamount(formData[5], formcache)}}
               </div>
 
@@ -79,10 +83,18 @@
                 <input id="option-PCM" name="agfs-grad-fees-3" type="checkbox" value="Option PCM value" {{'checked' if "Option PCM value" == formcache['agfs-grad-fees-3']}}  />
                 <label for="option-PCM">Plea and trial preparation hearing</label>
               </div>
-              <div class="panel panel-border-narrow js-hidden" id="option-PCM-reveal">
+              <div class="panel panel-border-narrow js-hidden fx-init" id="option-PCM-reveal">
                 {{FORM.input(formData[6], formcache)}}
-                {{FORM.date(formData[7], formcache)}}
+                {% for item in [71,72,73,74,75,76,77] %}
+                  {{FORM.date(formData[item], formcache)}}
+                {% endfor %}
+
+                <div class="form-group fx-addmore" style="clear:both" data-selector=".fx-pcm-date">
+                  <br />
+                  <a href="#noop">Add another date</a>
+                </div>
                 {{FORM.netamount(formData[8], formcache)}}
+                here
               </div>
 
 

@@ -36,7 +36,7 @@
     </tr -->
 
     {% if formcache['general-select-case-type-1'] == 'Trial' %}
-    <tr>
+    <!-- <tr>
       <th>First day of trial</th>
       <td>
 
@@ -63,18 +63,19 @@
         {{formcache['last-day-date-trial-concluded-on-1-month']}}/
         {{formcache['last-day-date-trial-concluded-on-1-year']}}
       </td>
-    </tr>
+    </tr> -->
     {% endif %}
 
         <tr>
       <th>Date case concluded</th>
       <td>
 
-        {{formcache['general-date-case-was-concluded-1-day']}}/
-        {{formcache['general-date-case-was-concluded-1-month']}}/
-        {{formcache['general-date-case-was-concluded-1-year']}}
+        {{formcache['general-date-case-concluded-1-day']}}/<!--
+         -->{{formcache['general-date-case-concluded-1-month']}}/<!--
+         -->{{formcache['general-date-case-concluded-1-year']}}
       </td>
     </tr>
 
   </tbody>
 </table>
+

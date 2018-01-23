@@ -1,0 +1,40 @@
+{% extends "layout.html" %}
+
+{% block content %}
+
+<main id="content" role="main">
+
+  {% include "./breadcrumb.html" %}
+  <div class="grid-row">
+    <div class="column-two-thirds">
+      <form action="{{formData.action}}" data-sidebar="{{formData.sidebar}}" method="post" class="form {{formData.cssClasses}}">
+        {% include "./sidebar-cache.html" %}
+        {% include "./lgfs-header.html" %}
+
+        <h2 class="heading-large">
+          Travel expenses
+        </h2>
+
+        {% for item in [1,2,3,4,5] %}
+          {{FORM.expenses(formData, formcache, FORM, item)}}
+        {% endfor %}
+        <div class="form-section">
+          <div class="grid-row">
+            <div class="column-one-third">
+              {{FORM.addmore(formData[8], formcache)}}
+            </div>
+            <div class="column-one-third">
+              <a href="#noop" class="font-small fx-duplicate">Duplicate expense</a>
+            </div>
+          </div>
+        </div>
+
+
+        {% include "includes/tmpl-form-buttons.html" %}
+        {% include "includes/tmpl-help-summary-lgfs.html" %}
+      </form>
+    </div>
+    {% include "./sidebar.html" %}
+  </div>
+</main>
+{% endblock %}

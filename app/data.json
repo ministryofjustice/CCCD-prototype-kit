@@ -910,6 +910,77 @@
         }
       }
     },
+    "lgfs/final/travel-expenses-maps": {
+      "formData": {
+        "pagename": "lgfs-travel-expenses",
+        "action": "/examples/lgfs/final/supporting-evidence",
+        "cssClasses": "fx-form",
+        "objRefs": {
+          "0": "agfs-expense-types",
+          "1": "agfs-travel-reasons",
+          "2": "courts"
+        },
+        "0": {
+          "label": "Expense type",
+          "typeahead": false,
+          "cssClasses": "fx-expensetype",
+          "emptyOption": true,
+          "options": "[[ REPLACED WHEN ROUTE IS CALLED ]]"
+        },
+        "1": {
+          "label": "Reason for travel",
+          "typeahead": false,
+          "emptyOption": true,
+          "cssClasses": "fx-reasonfortravel",
+          "cssClassesParent": "hidden",
+          "options": "[[ REPLACED WHEN ROUTE IS CALLED ]]"
+        },
+        "2": {
+          "label": "Destination",
+          "element": "select",
+          "emptyOption": true,
+          "cssClassesParent": "fx-location hidden",
+          "cssClassesLabel": "fx-locationLabel",
+          "options": "[[ REPLACED WHEN ROUTE IS CALLED ]]"
+        },
+        "3": {
+          "label": "Distance in miles",
+          "cssClassesParent": "fx-distance hidden",
+          "cssClassesLabel": "fx-distanceLabel"
+        },
+        "4": {
+          "legend": "Date of travel",
+          "context": "travel-expenses",
+          "cssClassesParent": "hidden"
+        },
+        "5": {
+          "legend": "Net Amount",
+          "context": "travel-expenses",
+          "cssClassesParent": "hidden",
+          "cssClasses": "fx-calculate fx-expense"
+        },
+        "6": {
+          "legend": "VAT Amount",
+          "context": "travel-expenses",
+          "cssClassesParent": "hidden",
+          "cssClasses": "fx-calculate fx-vat"
+        },
+        "7": {
+          "label": "Cost per mile",
+          "cssClassesParent": "hidden"
+        },
+        "8": {
+          "value": "Add another expense",
+          "type": "button",
+          "fxselector": ".fx-for-travel-hook"
+        },
+        "9": {
+          "label": "Hours",
+          "cssClassesParent": "fx-hours",
+          "cssClassesLabel": "fx-hoursLabel"
+        }
+      }
+    },
     "lgfs/final/supporting-evidence": {
       "formData": {
         "pagename": "supporting-evidence",

@@ -1,7 +1,7 @@
 moj.Modules.ExpensesBlock = function(el) {
   this.el = el;
   this.$el = $(el)
-
+  this.postcode = 'N1 8LN';
   this.lookup = {
     distance: '.fx-distance',
     hours: '.fx-hours',
@@ -12,12 +12,42 @@ moj.Modules.ExpensesBlock = function(el) {
     reasonSet: '.fx-reasonSet',
     distanceLabel: '.fx-distanceLabel',
     mileage40: '.fx-40p',
-    mileage20: '.fx-20p'
+    mileage20: '.fx-20p',
+    expense: '.fx-expense',
+    vat: '.fx-vat',
   }
 
   this.init = function() {
     this.bindEvents();
     this.setState();
+    this.directions();
+  }
+
+  this.directions = function() {
+    this.directionsService = new moj.Helpers.GMaps.Directions;
+    this.directionsDisplay = new moj.Helpers.GMaps.DirectionsRender;
+  }
+
+  this.calculateDistance = function(destTo, destFrom) {
+    var self = this;
+    this.directionsService.route({
+      origin: destFrom || 'Woking, UK',
+      destination: destTo || 'Southampton, UK',
+      travelMode: 'DRIVING'
+    }, function(response, status) {
+      if (status === 'OK') {
+        var distance = parseFloat(response.routes[0].legs[0].distance.text.split(' ')[0]*1.6).toFixed(0);
+        var multiplier = self.$el.find('.fx-mileage input:checked').val()*0.01;
+        var expense = parseFloat(distance * multiplier).toFixed(2);
+        var vat = parseFloat(expense * 0.2).toFixed(2);
+        self.$el.find(self.lookup.distance + ' input').val(distance);
+        self.$el.find(self.lookup.expense).val(expense)
+        self.$el.find(self.lookup.vat).val(vat)
+        // directionsDisplay.setDirections(response);
+      } else {
+        window.alert('Directions request failed due to ' + status);
+      }
+    })
   }
 
   this.setState = function() {
@@ -34,6 +64,15 @@ moj.Modules.ExpensesBlock = function(el) {
       var config = $(e.target).find(':selected').data();
       self.hookMeUp(config)
     });
+
+    this.$el.on('typeahead:select', function(e, val){
+      self.calculateDistance(val)
+    });
+
+    this.$el.on('change','.fx-mileage', function(){
+      self.calculateDistance(self.$el.find('.tt-input').val());
+    })
+
   }
 
   this.hookMeUp = function(config) {

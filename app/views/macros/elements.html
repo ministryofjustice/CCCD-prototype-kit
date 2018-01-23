@@ -488,7 +488,7 @@
 
     <div class="grid-row">
       <div class="column-two-thirds">
-        {{FORM.input(data[2], formcache, seedNum)}}
+        {{FORM[data[2]["element"]|default("input")](data[2], formcache, seedNum)}}
       </div>
       <div class="column-one-third">
         {{FORM.input(data[3], formcache, seedNum)}}

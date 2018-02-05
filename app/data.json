@@ -376,6 +376,247 @@
         }
       }
     },
+    "agfs/final/graduated-fees-v2": {
+      "formData": {
+        "pagename": "agfs-graduated-fees-v2",
+        "action": "/examples/agfs/final/misc-fees",
+        "sidebar": "fees",
+        "cssClasses": "fx-form",
+        "0": {
+          "label": "Number of days",
+          "hint": "Include all days attended",
+          "context": "DA",
+          "cssClasses": "form-control-1-4"
+        },
+        "41": {
+          "legend": "Date attended 1",
+          "context": "DA",
+          "cssClassesParent": "fx-basic-date",
+          "addAnotherLink": false
+        },
+        "42": {
+          "legend": "Date attended 2",
+          "context": "DA",
+          "cssClassesParent": "fx-basic-date hidden",
+          "addAnotherLink": false
+        },
+        "43": {
+          "legend": "Date attended 3",
+          "context": "DA",
+          "cssClassesParent": "fx-basic-date hidden",
+          "addAnotherLink": false
+        },
+        "51": {
+          "legend": "Date attended 1",
+          "context": "DA",
+          "cssClassesParent": "fx-da-date",
+          "addAnotherLink": false
+        },
+        "52": {
+          "legend": "Date attended 2",
+          "context": "DA",
+          "cssClassesParent": "fx-da-date hidden",
+          "addAnotherLink": false
+        },
+        "53": {
+          "legend": "Date attended 3",
+          "context": "DA",
+          "cssClassesParent": "fx-da-date hidden",
+          "addAnotherLink": false
+        },
+        "54": {
+          "legend": "Date attended 4",
+          "context": "DA",
+          "cssClassesParent": "fx-da-date hidden",
+          "addAnotherLink": false
+        },
+        "55": {
+          "legend": "Date attended 5",
+          "context": "DA",
+          "cssClassesParent": "fx-da-date hidden",
+          "addAnotherLink": false
+        },
+        "56": {
+          "legend": "Date attended 6",
+          "context": "DA",
+          "cssClassesParent": "fx-da-date hidden",
+          "addAnotherLink": false
+        },
+        "57": {
+          "legend": "Date attended 7",
+          "context": "DA",
+          "cssClassesParent": "fx-da-date hidden",
+          "addAnotherLink": false
+        },
+        "2": {
+          "legend": "Net Amount",
+          "context": "DA",
+          "context": "graduated-fees-daily",
+          "cssClasses": "fx-calculate fx-fees"
+        },
+        "3": {
+          "label": "Number of appearances",
+          "context": "SAF",
+          "cssClasses": "form-control-1-4"
+        },
+        "5": {
+          "legend": "Net Amount",
+          "context": "SAF",
+          "context": "graduated-fees-standard",
+          "cssClasses": "fx-calculate fx-fees"
+        },
+        "61": {
+          "legend": "Date attended 1",
+          "context": "SAF",
+          "cssClassesParent": "fx-saf-date",
+          "addAnotherLink": false
+        },
+        "62": {
+          "legend": "Date attended 2",
+          "context": "SAF",
+          "cssClassesParent": "fx-saf-date hidden",
+          "addAnotherLink": false
+        },
+        "63": {
+          "legend": "Date attended 3",
+          "context": "SAF",
+          "cssClassesParent": "fx-saf-date hidden",
+          "addAnotherLink": false
+        },
+        "64": {
+          "legend": "Date attended 4",
+          "context": "SAF",
+          "cssClassesParent": "fx-saf-date hidden",
+          "addAnotherLink": false
+        },
+        "65": {
+          "legend": "Date attended 5",
+          "context": "SAF",
+          "cssClassesParent": "fx-saf-date hidden",
+          "addAnotherLink": false
+        },
+        "66": {
+          "legend": "Date attended 6",
+          "context": "SAF",
+          "cssClassesParent": "fx-saf-date hidden",
+          "addAnotherLink": false
+        },
+        "67": {
+          "legend": "Date attended 7",
+          "context": "SAF",
+          "cssClassesParent": "fx-saf-date hidden",
+          "addAnotherLink": false
+        },
+        "6": {
+          "label": "Number of hearings",
+          "context": "PCM",
+          "cssClasses": "form-control-1-4"
+        },
+        "71": {
+          "legend": "Date attended 1",
+          "context": "PCM",
+          "cssClassesParent": "fx-pcm-date",
+          "addAnotherLink": false
+        },
+        "72": {
+          "legend": "Date attended 2",
+          "context": "PCM",
+          "cssClassesParent": "fx-pcm-date hidden",
+          "addAnotherLink": false
+        },
+        "73": {
+          "legend": "Date attended 3",
+          "context": "PCM",
+          "cssClassesParent": "fx-pcm-date hidden",
+          "addAnotherLink": false
+        },
+        "74": {
+          "legend": "Date attended 4",
+          "context": "PCM",
+          "cssClassesParent": "fx-pcm-date hidden",
+          "addAnotherLink": false
+        },
+        "75": {
+          "legend": "Date attended 5",
+          "context": "PCM",
+          "cssClassesParent": "fx-pcm-date hidden",
+          "addAnotherLink": false
+        },
+        "76": {
+          "legend": "Date attended 6",
+          "context": "PCM",
+          "cssClassesParent": "fx-pcm-date hidden",
+          "addAnotherLink": false
+        },
+        "77": {
+          "legend": "Date attended 7",
+          "context": "PCM",
+          "cssClassesParent": "fx-pcm-date hidden",
+          "addAnotherLink": false
+        },
+        "8": {
+          "legend": "Net Amount",
+          "context": "graduated-fees-case-management",
+          "cssClasses": "fx-calculate fx-fees"
+        },
+        "9": {
+          "label": "Number of conferences and views",
+          "context": "CV",
+          "cssClasses": "form-control-1-4"
+        },
+        "10": {
+          "legend": "Net Amount",
+          "context": "graduated-fees-conferences-views",
+          "cssClasses": "fx-calculate fx-fees"
+        },
+        "11": {
+          "label": "Number of defendants",
+          "context": "NDU",
+          "cssClasses": "form-control-1-4"
+        },
+        "12": {
+          "legend": "Net Amount",
+          "context": "NDU",
+          "context": "graduated-fees-defendants",
+          "cssClasses": "fx-calculate fx-fees"
+        },
+        "13": {
+          "label": "Number of cases",
+          "context": "NCU",
+          "cssClasses": "form-control-1-4"
+        },
+        "14": {
+          "label": "Additional case numbers",
+          "context": "NCU",
+          "hint": "Seperate with commas"
+        },
+        "15": {
+          "legend": "Net Amount",
+          "context": "NCU",
+          "context": "graduated-fees-case-uplift",
+          "cssClasses": "fx-calculate fx-fees"
+        },
+
+        "100": {
+          "label": "Total number of prosecution witnesses",
+          "cssClasses": "form-control-1-4"
+        },
+        "101": {
+          "legend": "Net Amount",
+          "context": "graduated-fees-witness",
+          "cssClasses": "fx-calculate fx-fees"
+        },
+        "102": {
+          "label": "Total number of pages",
+          "cssClasses": "form-control-1-4"
+        },
+        "103": {
+          "legend": "Net Amount",
+          "context": "graduated-fees-ppe",
+          "cssClasses": "fx-calculate fx-fees"
+        }
+      }
+    },
     "agfs/final/misc-fees": {
       "formData": {
         "pagename": "agfs-misc-fees",

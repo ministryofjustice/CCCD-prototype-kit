@@ -18,11 +18,25 @@
         <p>
           All fees should be entered exclusive of VAT. The system will add VAT to fees for VAT registered users.
         </p>
+
+        <h3 class="heading-medium">
+          Basic fees
+        </h3>
         <p>
-          You must enter a quantity and rate. Check the <a href="https://www.gov.uk/government/publications/graduated-fee-calculators" target="_blank" rel="external">graduated fee calculators</a> for help.
+          Please include dates for those Standard appearance and PTPH's included in the basic fee.
         </p>
 
         <div class="form-section">
+          <div class="form-group ">
+            {% for item in [41,42,43] %}
+              {{FORM.date(formData[item], formcache)}}
+            {% endfor %}
+            <div class="form-group fx-addmore" style="clear:both" data-selector=".fx-basic-date">
+                  <br />
+                  <a href="#noop">Add another date</a>
+                </div>
+          </div>
+
           <!-- Check list with reveals -->
           <div class="form-group">
             <fieldset>

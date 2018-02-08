@@ -161,7 +161,7 @@
         "cssClasses": "fx-form",
         "0": {
           "label": "Number of days",
-          "hint": "Include all days attended",
+          "hint": "Enter all days attended, including the first 2 in the basic fee",
           "context": "DA",
           "cssClasses": "form-control-1-4"
         },
@@ -216,6 +216,7 @@
         "3": {
           "label": "Number of appearances",
           "context": "SAF",
+          "hint": "Enter all days attended, including the first 4 in the basic fee",
           "cssClasses": "form-control-1-4"
         },
         "5": {
@@ -320,6 +321,7 @@
         },
         "9": {
           "label": "Number of conferences and views",
+          "hint": "Enter all days attended, including the first 3 in the basic fee",
           "context": "CV",
           "cssClasses": "form-control-1-4"
         },

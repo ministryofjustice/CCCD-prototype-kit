@@ -384,7 +384,7 @@
         "cssClasses": "fx-form",
         "0": {
           "label": "Number of days",
-          "hint": "Include all days attended",
+          "hint": "Deduct 2 days that are included in the basic fee",
           "context": "DA",
           "cssClasses": "form-control-1-4"
         },
@@ -456,6 +456,7 @@
         },
         "3": {
           "label": "Number of appearances",
+          "hint":"Deduct 4 days that are included in the basic fee",
           "context": "SAF",
           "cssClasses": "form-control-1-4"
         },
@@ -561,6 +562,7 @@
         },
         "9": {
           "label": "Number of conferences and views",
+          "hint": "Deduct 3 days that are included in the basic fee",
           "context": "CV",
           "cssClasses": "form-control-1-4"
         },

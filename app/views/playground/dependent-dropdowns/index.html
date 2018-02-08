@@ -1,0 +1,44 @@
+{% extends "../../layout.html" %}
+
+{% block page_title %}
+  {% if serviceName %} {{ serviceName }} {% endif %}
+{% endblock %}
+
+{% block content %}
+
+<main id="content" role="main">
+  <div class="grid-row">
+    <div class="column-two-thirds">
+
+    	<a class="link-back" href="../">Back</a>
+
+	    <h1 class="heading-xlarge">
+	      Dependent drop-downs
+	    </h1>
+
+	    <h2 class="heading-medium">Versions</h2>
+      <ul class="list list-bullet">
+        <li><a href="./version-0/">Version 0</a><br>Scheme 9 data</li>
+        <li><a href="./version-1/">Version 1</a><br>Scheme 10 data</li>
+        <!-- <li><a href="./version-2/">Version 2</a></li>
+        <li><a href="./version-3/">Version 3</a></li> -->
+      </ul>
+
+      <div class="grid-row">
+        <div class="column-full">
+          <hr>
+          
+          <h2 class="heading-medium">Examples and documentation</h2>
+
+          <ul class="list list-bullet">
+            <li><a href="https://github.com/kartik-v/dependent-dropdown">Dependent Dropdown code on GitHub</a> and <a href="http://plugins.krajee.com/dependent-dropdown">Dependent Dropdown demo</a> – JQuery plugin that enables to add and control multi level dependent dropdown lists.</li>
+          </ul>
+
+        </div>
+      </div>
+
+    </div>
+  </div>
+</main>
+
+{% endblock %}

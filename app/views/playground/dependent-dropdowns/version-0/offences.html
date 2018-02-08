@@ -1,0 +1,74 @@
+{% extends "../../../layout.html" %}
+
+{% block page_title %}
+  {% if serviceName %} {{ serviceName }} {% endif %}
+{% endblock %}
+
+{% block page_styles %}
+{% include "./includes/_page_styles.html" %}
+{% endblock %}
+
+{% block page_scripts %}
+{% include "./includes/_page_scripts.html" %}
+{% endblock %}
+
+{% block content %}
+<main id="content" role="main">
+
+    <div class="grid-row">
+        <div class="column-full">
+
+            <a class="link-back" href="../">Back</a>
+
+            <h1 class="heading-xlarge">
+                Offence details
+            </h1>
+
+            <form method="get">
+
+                <div class="form-section">
+
+                  <div class="form-group" data-required="true" data-error="Offence class is required">
+                    <label class="form-label-bold" for="offence-class">
+                      Offence class
+                      <!-- <span class="form-hint">Something</span> -->
+                    </label>
+
+                    <select id="offence-class" name="offence_class" class="form-control form-control-2-3">
+                      <option value=""></option>
+
+                      {% for class in classes -%}
+                      <option value="{{class.id}}" {%- if data['offence_class'] == class.id %}selected="selected"{%- endif %}>{{class.id}} – {{class.name}}</option>
+                      {%- endfor %}
+
+                    </select>
+
+                  </div>
+
+                  <div class="form-group">
+                    <label class="form-label-bold" for="offence-category">
+                      Offence category
+                      <span class="form-hint">If the offence category is not listed, choose "Miscellaneous/other"</span>
+                    </label>
+
+                    <select id="offence-category" name="offence_category" class="form-control form-control-2-3">
+                    </select>
+
+                  </div>
+
+                </div>
+
+                <div class="form-section">
+                  <div class="form-group form-buttons">
+                    <input type="submit" class="button" value="Save and continue">
+                    <a href="{{base}}" class="button button-ghost">Clear selection</a>
+                  </div>
+                </div>
+
+            </form>
+   
+        </div>
+    </div>
+
+</main>
+{% endblock %}

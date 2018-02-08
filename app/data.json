@@ -79,7 +79,7 @@
     "agfs/final/defendants-multi": {
       "formData": {
         "pagename": "agfs-defendants-multi",
-        "action": "/examples/agfs/final/offence",
+        "action": "/examples/agfs/final/offence-new",
         "multi": true,
         "0": {
           "label": "First name",
@@ -111,6 +111,30 @@
       }
     },
     "agfs/final/offence": {
+      "formData": {
+        "pagename": "agfs-offence",
+        "action": "/examples/agfs/fee-chooser",
+        "objRefs": {
+          "0": "agfs-offence-categories",
+          "1": "agfs-offence-classes"
+        },
+        "0": {
+          "label": "Offence category",
+          "hint": "If the offence category is not listed, choose \"Miscellaneous/other\"  ",
+          "cssClasses": "form-control-3-4",
+          "options": "[[ REPLACED WHEN ROUTE IS CALLED ]]"
+        },
+        "1": {
+          "label": "Offence class",
+          "cssClasses": "form-control-3-4",
+          "typeahead": false,
+          "options": "[[ REPLACED WHEN ROUTE IS CALLED ]]"
+        }
+
+
+      }
+    },
+    "agfs/final/offence-new": {
       "formData": {
         "pagename": "agfs-offence",
         "action": "/examples/agfs/fee-chooser",

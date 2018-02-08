@@ -8,7 +8,7 @@ var offences = require('./assets/javascripts/data/scheme-9-offences.json')
 
 
 router.use('/', (req, res, next) => {
-  console.log('>>>', req.originalUrl.split('/'));
+
   req.feature = req.originalUrl.split('/')[1]
   req.version = req.originalUrl.split('/')[2]
   // res.locals.feature = req.feature

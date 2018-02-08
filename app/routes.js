@@ -4,13 +4,24 @@ var data = require('./data.json')
 var preloads = require('./data-preloads.json')
 var utils = require('./utils')
 var _ = require('underscore')
+var offences = require('./assets/javascripts/data/scheme-9-offences.json')
+
+
+router.use('/', (req, res, next) => {
+  console.log('>>>', req.originalUrl.split('/'));
+  req.feature = req.originalUrl.split('/')[1]
+  req.version = req.originalUrl.split('/')[2]
+  // res.locals.feature = req.feature
+  // res.locals.version = req.version
+  next()
+})
 
 // Route index page
 router.get('/', function(req, res) {
   res.render('examples/index')
 })
 
-router.get('/examples/:scheme(lgfs|agfs)/start-a-claim', function (req, res) {
+router.get('/examples/:scheme(lgfs|agfs)/start-a-claim', function(req, res) {
   req.session.destroy()
 
   var path = !!~req.header('Referer').indexOf('/lgfs/') ? '/examples/lgfs/bill-type' : '/examples/agfs/final/case-details'
@@ -52,15 +63,56 @@ router.get('/examples/:scheme(lgfs|agfs)/fee-chooser', function(req, res) {
   res.redirect(feePath);
 })
 
+// Playground > Accordion
+router.use(/\/playground\/accordion\/version-([0-9]+)/, (req, res, next) => {
+  require(`./views/playground/accordion/version-${req.params[0]}/routes`)(req, res, next);
+})
 
+// Playground > Autocomplete
+router.use(/\/playground\/autocomplete\/version-([0-9]+)/, (req, res, next) => {
+  require(`./views/playground/autocomplete/version-${req.params[0]}/routes`)(req, res, next);
+})
+
+// Playground > Collections
+router.use(/\/playground\/collections\/version-([0-9]+)/, (req, res, next) => {
+  require(`./views/playground/collections/version-${req.params[0]}/routes`)(req, res, next);
+})
+
+// Playground > Dependent drop-downs
+router.use(/\/playground\/dependent-dropdowns\/version-([0-9]+)/, (req, res, next) => {
+  require(`./views/playground/dependent-dropdowns/version-${req.params[0]}/routes`)(req, res, next);
+})
+
+// Playground > Search/filter
+router.use(/\/playground\/search-filter\/version-([0-9]+)/, (req, res, next) => {
+  require(`./views/playground/search-filter/version-${req.params[0]}/routes`)(req, res, next);
+})
+
+
+router.get('/public/javascripts/data/scheme-9-offences/:call*?', function(req, res, next){
+  if (req.params.call) {
+    var data = {
+      output: utils.getOffenceClass(req.session.data.offence_class[0]).categories,
+      selected: req.session.data.offence_category
+    }
+
+    res.send(data)
+    return;
+  }
+  res.send(offences)
+  return;
+})
 
 // Gerenal router for AGFS/LGFS pages
 router.get('/examples/:scheme(lgfs|agfs)/:folder(final|interim|transfer)/:page*?', function(req, res, next) {
   var page = req.params.page;
   var path = req.path.substring(1);
   var lookup = path.replace('examples/', '')
+
   data.formcache = res.locals.data;
+  data.formcache.offences = offences;
   data.formcache.seedNum = req.query.seedNum || 1;
+
   if (!page) {
     res.redirect('case-details');
     next
